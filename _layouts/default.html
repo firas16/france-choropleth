@@ -7,6 +7,14 @@ layout: typo
   <meta charset="utf-8">
   <title>Carto</title>
   <style>{% capture styles %}{% include css/style.sass %}{% endcapture %}{{ styles | sassify }}</style>
+
+  {% if page.content contains "tileLayer" %}
+    <style>{% include css/leaflet.css %}</style>
+    <script>{% include js/leaflet.js %}</script>
+  {% endif %}
+
+</head>
+
 </head>
 
 <body>
