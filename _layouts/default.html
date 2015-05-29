@@ -13,6 +13,11 @@ layout: typo
     <script>{% include js/leaflet.js %}</script>
   {% endif %}
 
+  {% if page.content contains "d3" %}
+    <style>{% include css/leaflet.css %}</style>
+    <script>{% include js/d3.js %}</script>
+  {% endif %}
+
 </head>
 
 <body>
