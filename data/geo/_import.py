@@ -50,6 +50,10 @@ subprocess.call(['mapshaper', '-i', './shp/metropoles.shp', './shp/cantons.shp',
 
 subprocess.call(['mapshaper', '-i', './shp/communes-20150101-5m.shp', 
                               '-each', "delete nom, delete surf_m2, delete wikipedia", 
-                              '-simplify', 'visvalingam', '1%', 
                               '-o','force', 'id-field=insee', 'format=topojson', 'topo/communes.json'])
+
+for i in range(1,96):
+  subprocess.call(['mapshaper', '-i', './shp/communes.json', '-filter', 'Math.floor(insee/1000) == '+str(i),
+                              '-o', 'force', 'format=topojson', 'topo/'+str(i)+'.json'])
+
 shutil.rmtree('./shp')
