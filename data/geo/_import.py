@@ -21,7 +21,7 @@ subprocess.call(['mapshaper', '-i', './shp/departements-20140306-5m.shp',
                               '-simplify', 'visvalingam', '1%',
                               '-o','force', 'id-field=insee', 'format=topojson', 'topo/departements.json'])
 
-# # Processing cantons (with missing Lyon metropole and Paris)
+# Processing cantons (adding missing Lyon metropole)
 
 lyon = [75101, 75102, 75103, 75104, 75105, 75106, 75107, 75108, 75109, 75110, 75111, 75112, 75113, 75114, 75115, 
         75116, 75117, 75118, 75119, 75120, 69381, 69382, 69383, 69384, 69385, 69386, 69387, 69388, 69389, 69003, 
