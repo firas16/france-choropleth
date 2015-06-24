@@ -5,14 +5,10 @@ import io, os, csv, requests, tarfile, zipfile, subprocess, shutil
 source = "http://osm13.openstreetmap.fr/~cquest/openfla/export/"
 shp    = ["departements-20140306-5m", "cantons-2015", "communes-20150101-5m"]
 
-def download(shp):
-  for f in shp:
-    print('Processing '+f+'...')
-    url = requests.get(source+f+"-shp.zip")
-    zipfile.ZipFile(io.BytesIO(url.content)).extractall(path="./shp")
-
-download(shp)
-
+for f in shp:
+  print('Processing '+f+'...')
+  url = requests.get(source+f+"-shp.zip")
+  zipfile.ZipFile(io.BytesIO(url.content)).extractall(path="./shp")
 
 # Processing departements
 
@@ -21,7 +17,7 @@ subprocess.call(['mapshaper', '-i', './shp/departements-20140306-5m.shp',
                               '-simplify', 'visvalingam', '1%',
                               '-o','force', 'id-field=insee', 'format=topojson', 'topo/departements.json'])
 
-# Processing cantons (adding missing Lyon metropole)
+# Processing cantons (with Lyon metropole)
 
 lyon = [75101, 75102, 75103, 75104, 75105, 75106, 75107, 75108, 75109, 75110, 75111, 75112, 75113, 75114, 75115, 
         75116, 75117, 75118, 75119, 75120, 69381, 69382, 69383, 69384, 69385, 69386, 69387, 69388, 69389, 69003, 
@@ -46,14 +42,14 @@ subprocess.call(['mapshaper', '-i', './shp/metropoles.shp', './shp/cantons.shp',
                               '-simplify', 'visvalingam', '1%', 
                               '-o','force', 'id-field=insee', 'format=topojson', 'topo/cantons.json'])
 
-# # Processing communes
+# Processing communes
 
 subprocess.call(['mapshaper', '-i', './shp/communes-20150101-5m.shp', 
                               '-each', "delete nom, delete surf_m2, delete wikipedia", 
-                              '-o','force', 'id-field=insee', 'format=topojson', 'topo/communes.json'])
+                              '-o','force', 'id-field=insee', 'format=topojson', 'shp/communes.json'])
 
 for i in range(1,96):
   subprocess.call(['mapshaper', '-i', './shp/communes.json', '-filter', 'Math.floor(insee/1000) == '+str(i),
-                              '-o', 'force', 'format=topojson', 'topo/'+str(i)+'.json'])
+                              '-o', 'force', 'format=topojson', 'topo/'+str(i).zfill(2)+'.json'])
 
 shutil.rmtree('./shp')
