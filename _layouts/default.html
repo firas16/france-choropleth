@@ -10,7 +10,7 @@ layout: typo
 
   {% if page.content contains "tileLayer" %}
     <style>{% include css/leaflet.css %}</style>
-    <script>{% include js/leaflet.js %}{% include js/topojson.js %}</script>
+    <script>L_PREFER_CANVAS = true;{% include js/leaflet.js %}{% include js/topojson.js %}</script>
   {% endif %}
 
   {% if page.content contains "d3" %}
