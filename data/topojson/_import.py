@@ -31,7 +31,7 @@ for i in lyon:
   s+='insee == '+str(i)+' || '
 
 subprocess.call(['mapshaper', '-i', './shp/communes-20150101-5m.shp', '-filter', s[:-4],
-                              '-each', "delete nom, delete surf_m2, delete wikipedia", 
+                              '-each', "insee = '0'+insee, delete nom, delete surf_m2, delete wikipedia", 
                               '-o', 'force', 'format=shapefile', 'shp/metropoles.shp'])
 
 subprocess.call(['mapshaper', '-i', './shp/cantons_2015.shp', 
