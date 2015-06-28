@@ -15,7 +15,7 @@ for f in shp:
 subprocess.call(['mapshaper', '-i', './shp/departements-20140306-5m.shp',
                               '-each', "insee=code_insee, delete code_insee, delete wikipedia, delete nuts3", 
                               '-simplify', 'visvalingam', '1%',
-                              '-o','force', 'id-field=insee', 'format=topojson', 'topo/departements.json'])
+                              '-o','force', 'id-field=insee', 'format=topojson', 'departements.json'])
 
 # Processing cantons (with Lyon metropole)
 
@@ -40,7 +40,7 @@ subprocess.call(['mapshaper', '-i', './shp/cantons_2015.shp',
 
 subprocess.call(['mapshaper', '-i', './shp/metropoles.shp', './shp/cantons.shp', 'combine-files', '-merge-layers', 
                               '-simplify', 'visvalingam', '1%', 
-                              '-o','force', 'id-field=insee', 'format=topojson', 'topo/cantons.json'])
+                              '-o','force', 'id-field=insee', 'format=topojson', 'cantons.json'])
 
 # Processing communes
 
@@ -55,6 +55,6 @@ departements.append("2B")
 
 for i in departements:
   subprocess.call(['mapshaper', '-i', './shp/communes.json', '-filter', 'insee.substring(0,2) == "'+i+'"', 
-                              '-o', 'force', 'format=topojson', 'topo/'+i+'.json'])
+                              '-o', 'force', 'format=topojson', i+'.json'])
 
 shutil.rmtree('./shp')
