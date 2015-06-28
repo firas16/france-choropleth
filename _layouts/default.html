@@ -6,15 +6,17 @@ layout: typo
 <head>
   <meta charset="utf-8">
   <title>Carto</title>
-  <style>{% capture styles %}{% include css/style.sass %}{% endcapture %}{{ styles | sassify }}</style>
+  <style>{% capture styles %}{% include style.sass %}{% endcapture %}{{ styles | sassify }}</style>
 
   {% if page.content contains "tileLayer" %}
-    <style>{% include css/leaflet.css %}</style>
-    <script>L_PREFER_CANVAS = true;{% include js/leaflet.js %}{% include js/topojson.js %}</script>
+    <script>L_PREFER_CANVAS = true;</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" rel="stylesheet"/>
   {% endif %}
 
   {% if page.content contains "d3" %}
-    <script>{% include js/d3.js %}</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
   {% endif %}
 
 </head>
