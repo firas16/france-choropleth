@@ -13,7 +13,6 @@
   .leaflet-control-attribution{
     display: none;
   }
-
   </style>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -39,9 +38,9 @@
                 minZoom: 6, maxZoom: 12 }));
 
   var layers = {};
-  $.getJSON("data/topojson/cantons.json", function(json) {
+  $.getJSON("/json/cantons.json", function(json) {
     read(json);
-    $.getJSON("data/topojson/departements.json", function(json) {
+    $.getJSON("/json/departements.json", function(json) {
       read(json);
       reset();
     });
@@ -83,7 +82,7 @@
   }
 
   function communes(i){
-    $.getJSON("data/topojson/"+i+".json", function(json) {
+    $.getJSON("/json/"+i+".json", function(json) {
       if (layers["can"+i].com != true){
         read(json);
         layers["can"+i].com = true;
