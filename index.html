@@ -100,13 +100,12 @@
   }
 
   function reset() {
-    if(map.getZoom()<=8) {
+    if(map.getZoom()<=8)
       for (el in layers) {
         if (el.substring(0,3) == "com") map.removeLayer(layers[el]);
         if (el.substring(0,3) == "can") map.addLayer(layers[el]);
       }
-    }
-    if(map.getZoom()>8)
+    else
       for (dep in layers["dep"]["_layers"]) {
         d = layers["dep"]["_layers"][dep]; id=d.feature.id;
         if (map.getBounds().contains(d.getBounds()) ||
