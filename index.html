@@ -53,7 +53,8 @@
     });
   });
 
-  map.on('moveend', reset);
+  map.on('zoomend', reset);
+  map.on('dragend', reset);
 
   function read(data, cl) {
     if (data.type === "Topology")
