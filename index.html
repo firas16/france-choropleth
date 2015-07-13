@@ -101,14 +101,11 @@
 
   function reset() {
     if(map.getZoom()<=8) {
-      map.removeLayer(layers["dep"]);
       for (el in layers) {
         if (el.substring(0,3) == "com") map.removeLayer(layers[el]);
         if (el.substring(0,3) == "can") map.addLayer(layers[el]);
       }
     }
-    if(map.getZoom()<=6)
-      map.addLayer(layers["dep"]);
     if(map.getZoom()>8)
       for (dep in layers["dep"]["_layers"]) {
         d = layers["dep"]["_layers"][dep]; id=d.feature.id;
@@ -120,6 +117,10 @@
             communes(id);
         }
       }
+    if(map.getZoom() < 7)
+      map.addLayer(layers["dep"]);
+    else 
+      map.removeLayer(layers["dep"]);
   }
   
   </script>
