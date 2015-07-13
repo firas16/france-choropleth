@@ -112,7 +112,7 @@
         if (map.getBounds().contains(d.getBounds()) ||
             map.getBounds().intersects(d.getBounds())) {
           if (layers["com"+id] != undefined)
-            layers["com"+id].addTo(map);
+            map.addLayer(layers["com"+id]).removeLayer(layers["can"+id]);
           else
             communes(id);
         }
