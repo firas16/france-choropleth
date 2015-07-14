@@ -44,9 +44,9 @@
                 minZoom: 6, maxZoom: 12 })),
       layers = {}, prev;
 
-  $.getJSON("/json/cantons.json", function(json) {
+  $.getJSON("/data/geo/topojson/can.json", function(json) {
     read(json);
-    $.getJSON("/json/departements.json", function(json) {
+    $.getJSON("/data/geo/topojson/dep.json", function(json) {
       read(json);
       reset();
     });
@@ -89,7 +89,7 @@
   }
 
   function communes(i){
-    $.getJSON("/json/"+i+".json", function(json) {
+    $.getJSON("/data/geo/topojson/com"+i+".json", function(json) {
       if (layers["can"+i].com != true){
         read(json);
         layers["can"+i].com = true;
