@@ -41,9 +41,9 @@
              .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
                 subdomains: 'abcd',
                 detectRetina: true,
-                minZoom: 6, maxZoom: 12 }));
+                minZoom: 6, maxZoom: 12 })),
+      layers = {}, prev;
 
-  var layers = {};
   $.getJSON("/json/cantons.json", function(json) {
     read(json);
     $.getJSON("/json/departements.json", function(json) {
@@ -100,12 +100,12 @@
   }
 
   function reset() {
-    if(map.getZoom()<=8)
+    if(map.getZoom() <= 8 && !(prev <= 8))
       for (el in layers) {
         if (el.substring(0,3) == "com") map.removeLayer(layers[el]);
         if (el.substring(0,3) == "can") map.addLayer(layers[el]);
       }
-    else
+    if(map.getZoom() > 8)
       for (dep in layers["dep"]["_layers"]) {
         d = layers["dep"]["_layers"][dep]; id=d.feature.id;
         if (map.getBounds().contains(d.getBounds()) ||
@@ -116,12 +116,15 @@
             communes(id);
         }
       }
-    if(map.getZoom() < 7)
+    if(map.getZoom() <= 6 && !(prev <= 6))
       map.addLayer(layers["dep"]);
-    else 
+
+    if(map.getZoom() >= 7 && !(prev >= 7))
       map.removeLayer(layers["dep"]);
+
+    prev = map.getZoom();
   }
-  
+
   </script>
   
 </body>
