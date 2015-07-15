@@ -16,6 +16,19 @@
   .leaflet-control-attribution{
     display: none;
   }
+  .info {
+    visibility: hidden;
+    padding: 6px 8px;
+    width: 180px;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+  .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+  }
   </style>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -73,10 +86,10 @@
             }
             el.addLayer(json);
             json.on('mouseover', function (e) {
-                $('.title').text(feature.properties.nom);
+              info.update(feature.properties.nom);
             });
             json.on('mouseout', function (e) {
-                $('.title').text("");
+              info.update();
             });
           },
           style: {
@@ -127,8 +140,24 @@
     prev = map.getZoom();
   }
 
+  var info = L.control();
+
+  info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); 
+      return this._div;
+  };
+
+  info.update = function (props) {
+    if (props)
+      this._div.style.visibility = "visible";
+    else
+      this._div.style.visibility = "hidden";
+    this._div.innerHTML = '<h4>Carte administrative</h4>' + props
+  };
+
+  info.addTo(map);
+
   </script>
   
-  <div class="title"></div>
 </body>
 </html>
