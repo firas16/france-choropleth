@@ -17,7 +17,6 @@
     display: none;
   }
   .info {
-    visibility: hidden;
     padding: 6px 8px;
     width: 180px;
     background: white;
@@ -144,15 +143,12 @@
 
   info.onAdd = function (map) {
       this._div = L.DomUtil.create('div', 'info'); 
+      this.update();
       return this._div;
   };
 
   info.update = function (props) {
-    if (props)
-      this._div.style.visibility = "visible";
-    else
-      this._div.style.visibility = "hidden";
-    this._div.innerHTML = '<h4>Carte administrative</h4>' + props
+    this._div.innerHTML = '<h4>Carte administrative</h4>' + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
   };
 
   info.addTo(map);
