@@ -72,6 +72,12 @@
               layers[id] = el;
             }
             el.addLayer(json);
+            json.on('mouseover', function (e) {
+                $('.title').text(feature.properties.nom);
+            });
+            json.on('mouseout', function (e) {
+                $('.title').text("");
+            });
           },
           style: {
             fillColor: "#ccc",
@@ -83,7 +89,6 @@
         })
       }
   }
-  
 
   function communes(i){
     $.getJSON("/data/geo/topojson/com"+i+".json", function(json) {
@@ -124,5 +129,6 @@
 
   </script>
   
+  <div class="title"></div>
 </body>
 </html>
