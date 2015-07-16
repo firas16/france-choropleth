@@ -64,6 +64,7 @@
     });
   });
 
+  info();
   map.on('zoomend', reset);
   map.on('dragend', reset);
 
@@ -84,12 +85,8 @@
               layers[id] = el;
             }
             el.addLayer(json);
-            json.on('mouseover', function (e) {
-              info.update(feature.properties.nom);
-            });
-            json.on('mouseout', function (e) {
-              info.update();
-            });
+            json.on('mouseover', function () { info.update(feature.properties.nom) });
+            json.on('mouseout', function () { info.update() });
           },
           style: {
             fillColor: "#ccc",
@@ -133,20 +130,20 @@
     prev = map.getZoom();
   }
 
-  var info = L.control();
-
-  info.onAdd = function (map) {
-      this._div = L.DomUtil.create('div', 'info'); 
-      this.update();
-      return this._div;
-  };
-
-  info.update = function (props) {
-    this._div.innerHTML = '<h4>Carte administrative</h4>' + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
-  };
-
-  info.addTo(map);
-
+  function info(){
+    window.info = L.control();
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info'); 
+        this.update();
+        return this._div;
+    };
+    info.update = function (props) {
+      this._div.innerHTML = '<h4>Carte administrative</h4>' 
+         + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
+    };
+    info.addTo(map);
+  }
+  
   </script>
   
 </body>
