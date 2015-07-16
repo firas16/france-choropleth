@@ -102,17 +102,6 @@
       }
   }
 
-  function communes(i){
-    $.getJSON("/data/geo/topojson/com"+i+".json", function(json) {
-      if (layers["can"+i].com != true){
-        read(json);
-        layers["can"+i].com = true;
-      }
-      if(map.getZoom()>8)
-        map.addLayer(layers["com"+i]).removeLayer(layers["can"+i]);
-      });
-  }
-
   function reset() {
     if(map.getZoom() <= 8 && !(prev <= 8))
       for (el in layers) {
@@ -127,15 +116,20 @@
           if (layers["com"+id] != undefined)
             map.addLayer(layers["com"+id]).removeLayer(layers["can"+id]);
           else
-            communes(id);
-        }
+            (function(id){ $.getJSON("/data/geo/topojson/com"+id+".json", function(json) {
+              if (layers["can"+id].com != true){
+                read(json);
+                layers["can"+id].com = true;
+              }
+              if(map.getZoom()>8)
+                map.addLayer(layers["com"+id]).removeLayer(layers["can"+id]);
+            });})(id);        
+         }
       }
     if(map.getZoom() <= 6 && !(prev <= 6))
       map.addLayer(layers["dep"]);
-
     if(map.getZoom() >= 7 && !(prev >= 7))
       map.removeLayer(layers["dep"]);
-
     prev = map.getZoom();
   }
 
