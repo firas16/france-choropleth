@@ -53,8 +53,7 @@
              .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
                 subdomains: 'abcd',
                 detectRetina: true,
-                minZoom: 6, maxZoom: 12 })),
-      layers = {}, prev;
+                minZoom: 6, maxZoom: 12 }));
 
   $.getJSON("/data/geo/topojson/can.json", function(json) {
     read(json);
@@ -69,6 +68,8 @@
   map.on('dragend', reset);
 
   function read(data, cl) {
+    if (window.layers === undefined)
+      window.layers = {};
     if (data.type === "Topology")
       for (key in data.objects) {
         geojson = topojson.feature(data, data.objects[key]);
@@ -100,12 +101,12 @@
   }
 
   function reset() {
-    if(map.getZoom() <= 8 && !(prev <= 8))
+    if(map.getZoom() <= 8)
       for (el in layers) {
         if (el.substring(0,3) == "com") map.removeLayer(layers[el]);
         if (el.substring(0,3) == "can") map.addLayer(layers[el]);
       }
-    if(map.getZoom() > 8)
+    else
       for (dep in layers["dep"]["_layers"]) {
         d = layers["dep"]["_layers"][dep]; id=d.feature.id;
         if (map.getBounds().contains(d.getBounds()) ||
@@ -123,11 +124,10 @@
             });})(id);        
          }
       }
-    if(map.getZoom() <= 6 && !(prev <= 6))
+    if(map.getZoom() <= 6)
       map.addLayer(layers["dep"]);
-    if(map.getZoom() >= 7 && !(prev >= 7))
+    else
       map.removeLayer(layers["dep"]);
-    prev = map.getZoom();
   }
 
   function info(){
