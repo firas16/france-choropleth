@@ -55,6 +55,10 @@
                 detectRetina: true,
                 minZoom: 6, maxZoom: 12 }));
 
+france(map);
+
+function france(map) {
+
   $.getJSON("/data/geo/topojson/can.json", function(json) {
     read(json);
     $.getJSON("/data/geo/topojson/dep.json", function(json) {
@@ -143,7 +147,7 @@
     };
     info.addTo(map);
   }
-  
+}
   </script>
   
 </body>
