@@ -11,10 +11,9 @@ function france(map) {
   map.on('zoomend', reset);
   map.on('dragend', reset);
 
-  function read(data, cl) {
+  function read(data) {
     if (window.layers === undefined)
       window.layers = {};
-    if (data.type === "Topology")
       for (key in data.objects) {
         geojson = topojson.feature(data, data.objects[key]);
         new L.GeoJSON(geojson, {
