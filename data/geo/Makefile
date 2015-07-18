@@ -4,7 +4,7 @@
 all: reset dep can com clean
 
 reset: 
-	rm -rf topojson
+	rm -rf tmp topojson
 
 dep:
 	mkdir -p tmp topojson
