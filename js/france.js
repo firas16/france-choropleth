@@ -1,8 +1,8 @@
 function france(map) {
 
-  $.getJSON("/data/geo/topojson/can.json", function(json) {
+  $.getJSON("/data/topojson/can.json", function(json) {
     read(json);
-    $.getJSON("/data/geo/topojson/dep.json", function(json) {
+    $.getJSON("/data/topojson/dep.json", function(json) {
       read(json);
       reset();
     });
@@ -57,7 +57,7 @@ function france(map) {
           if (layers["com"+id] != undefined)
             map.addLayer(layers["com"+id]).removeLayer(layers["can"+id]);
           else
-            (function(id){ $.getJSON("/data/geo/topojson/com"+id+".json", function(json) {
+            (function(id){ $.getJSON("/data/topojson/com"+id+".json", function(json) {
               if (layers["can"+id].com != true){
                 read(json);
                 layers["can"+id].com = true;

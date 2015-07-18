@@ -4,18 +4,18 @@
 all: reset dep can com clean
 
 reset: 
-	rm -rf tmp topojson
+	rm -rf tmp
 
 dep:
-	mkdir -p tmp topojson
+	mkdir -p tmp
 	[ -f tmp/dep.zip ] || curl -o tmp/dep.zip 'http://osm13.openstreetmap.fr/~cquest/openfla/export/departements-20140306-5m-shp.zip'
 	unzip -oq tmp/dep -d tmp
 	mapshaper -i tmp/departements-20140306-5m.shp -simplify visvalingam 1% \
 			  -each 'insee=code_insee, delete nom, delete code_insee, delete wikipedia, delete nuts3' \
-			  -o force id-field=insee format=topojson topojson/dep.json
+			  -o force id-field=insee format=topojson dep.json
 
 can: 
-	mkdir -p tmp topojson
+	mkdir -p tmp
 	[ -f tmp/can.zip ] || curl -o tmp/can.zip 'http://osm13.openstreetmap.fr/~cquest/openfla/export/cantons-2015-shp.zip'
 	unzip -oq tmp/can -d tmp
 	mapshaper -i tmp/cantons_2015.shp \
@@ -30,15 +30,15 @@ can:
 			  -o force id-field=insee format=geojson tmp/metropoles.json
 
 	mapshaper -i tmp/metropoles.json tmp/cantons.json combine-files -merge-layers -simplify visvalingam 1% \
-			  -o force id-field=insee format=topojson topojson/can.json
+			  -o force id-field=insee format=topojson can.json
 
 com:
-	mkdir -p tmp topojson
+	mkdir -p tmp
 	[ -f tmp/com.zip ] || curl -o tmp/com.zip 'http://osm13.openstreetmap.fr/~cquest/openfla/export/communes-20150101-5m-shp.zip'
 	unzip -oq tmp/com -d tmp
 	for i in 0{1..9} {10..19} 2A 2B {21..95}; do \
 		mapshaper -i tmp/communes-20150101-5m.shp -each "delete surf_m2, delete wikipedia" \
-				  -filter "insee.substring(0,2) == '$$i'" -o force id-field=insee format=topojson "topojson/com$$i.json" ; done
+				  -filter "insee.substring(0,2) == '$$i'" -o force id-field=insee format=topojson "com$$i.json" ; done
 
 clean:
 	rm -rf tmp
