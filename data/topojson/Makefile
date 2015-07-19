@@ -1,10 +1,10 @@
-.PHONY: all reset dep can com clean
-.SILENT: all reset dep can com clean
+.PHONY: all reset dep can com names clean
+.SILENT: all reset dep can com names clean
 
-all: reset dep can com clean
+all: reset dep can com names clean
 
 reset: 
-	rm -rf tmp && find . -name "*.topojson" -exec rm -rf {} \;
+	rm -rf tmp && ls | grep -v "Makefile" | xargs rm
 
 dep:
 	mkdir -p tmp
@@ -31,6 +31,11 @@ com:
 	for i in 0{1..9} {10..19} 2A 2B {21..95}; do \
 	mapshaper -i tmp/communes-20150101-5m.shp -rename-layers "com-$$i" -simplify visvalingam 10% -filter "insee.substring(0,2) == '$$i'" -o force id-field=insee "tmp/com$$i.topojson" ; \
 	mapshaper -i "tmp/com$$i.topojson" -o drop-table force id-field=insee "com$$i.topojson"; done
+
+name: can
+	mapshaper -i tmp/can.topojson -each 'insee="can"+insee, delete name, delete obj' -merge-layers -o force tmp/can.csv
+	mapshaper -i tmp/communes-20150101-5m.shp -each 'insee="com"+insee, delete obj, delete wikipedia, delete surf_m2' -merge-layers -o force tmp/com.csv
+	awk 'FNR==1 && NR!=1{next;}{print}' tmp/*.csv > names.csv
 
 clean:
 	rm -rf tmp

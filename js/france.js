@@ -2,7 +2,9 @@ function france(map) {
 
   queue().defer(d3.json, '/data/topojson/dep.topojson')
          .defer(d3.json, '/data/topojson/can.topojson')
-         .await(function (error, dep, can){
+         .defer(d3.csv,  '/data/topojson/names.csv')
+         .await(function (error, dep, can, names){
+           info(names);
            read(dep);
            read(can);   
            reset();        
@@ -24,6 +26,9 @@ function france(map) {
               layers[key] = el;
             }
             el.addLayer(json);
+            if (key != "dep")
+              json.on('mouseover', function () { infobox.update(names[key.slice(0,3)+feature.id]) });
+              json.on('mouseoff',  function () { infobox.update() });
           },
           style: {
             fillColor: "#ccc",
@@ -64,5 +69,23 @@ function france(map) {
       map.addLayer(layers["dep"]);
     else
       map.removeLayer(layers["dep"]);
+  }
+
+  function info(data){
+    window.infobox = L.control();
+    infobox.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info');
+        this.update();
+        return this._div;
+    };
+    infobox.update = function (props) {
+      this._div.innerHTML = '<h4>Carte administrative</h4>'
+         + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
+    };
+    infobox.addTo(map);
+
+    window.names = {};
+    for (obj in data)
+      names[data[obj].insee] = data[obj].nom;
   }
 }
