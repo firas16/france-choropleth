@@ -14,31 +14,27 @@ function france(map) {
   map.on('dragend', reset);
 
   function read(data) {
-    if (window.layers === undefined)
-      window.layers = {};
-      for (key in data.objects) {
-        geojson = topojson.feature(data, data.objects[key]);
-        new L.GeoJSON(geojson, {
-          onEachFeature: function (feature, json) {
-            var el = layers[key];
-            if (el === undefined) {
-              el = new L.layerGroup();
-              layers[key] = el;
-            }
-            el.addLayer(json);
-            if (key != "dep")
-              json.on('mouseover', function () { infobox.update(names[key.slice(0,3)+feature.id]) });
-              json.on('mouseoff',  function () { infobox.update() });
-          },
-          style: {
-            fillColor: "#ccc",
-            color: "#aaa",
-            weight: 1,
-            opacity: 1,
-            fillOpacity: .8
-          }
-        })
-      }
+    if (!window.layers) window.layers = {};
+    for (key in data.objects) {
+      geojson = topojson.feature(data, data.objects[key]);
+      new L.GeoJSON(geojson, {
+        onEachFeature: function (feature, json) {
+          var el = layers[key];
+          if (!el ) { el = new L.layerGroup(); layers[key] = el; }
+          el.addLayer(json);
+          if (key != "dep")
+            json.on('mouseover', function () { infobox.update(names[key.slice(0,3)+feature.id]) });
+            json.on('mouseoff',  function () { infobox.update() });
+        },
+        style: {
+          fillColor: "#ccc",
+          color: "#aaa",
+          weight: 1,
+          opacity: 1,
+          fillOpacity: .8
+        }
+      })
+    }
   }
 
   function reset() {
