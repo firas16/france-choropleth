@@ -24,7 +24,7 @@ function france(map) {
           el.addLayer(json);
           if (key != "dep")
             json.on('mouseover', function () { infobox.update(names[key.slice(0,3)+feature.id]) });
-            json.on('mouseoff',  function () { infobox.update() });
+            json.on('mouseout',  function () { infobox.update() });
         },
         style: {
           fillColor: "#ccc",
