@@ -1,12 +1,12 @@
 function france(map) {
 
-  $.getJSON("/data/topojson/can.topojson", function(json) {
-    read(json);
-    $.getJSON("/data/topojson/dep.topojson", function(json) {
-      read(json);
-      reset();
-    });
-  });
+  queue().defer(d3.json, '/data/topojson/dep.topojson')
+         .defer(d3.json, '/data/topojson/can.topojson')
+         .await(function (error, dep, can){
+           read(dep);
+           read(can);   
+           reset();        
+         });
 
   map.on('zoomend', reset);
   map.on('dragend', reset);
