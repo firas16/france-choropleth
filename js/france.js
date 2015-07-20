@@ -23,7 +23,7 @@ function france(map) {
           if (!el ) { el = new L.layerGroup(); layers[key] = el; }
           el.addLayer(json);
           if (key != "dep")
-            json.on('mouseover', function () { infobox.update(names[key.slice(0,3)+feature.id]) });
+            json.on('mouseover', function () { infobox.update(names[feature.id]) });
             json.on('mouseout',  function () { infobox.update() });
         },
         style: {
@@ -82,6 +82,6 @@ function france(map) {
 
     window.names = {};
     for (obj in data)
-      names[data[obj].insee] = data[obj].nom;
+      names[data[obj].insee] = data[obj].name;
   }
 }
