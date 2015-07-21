@@ -49,7 +49,7 @@ function france(map) {
     else
       for (dep in l["dep"]["_layers"]) {
         d = l["dep"]["_layers"][dep]; i=d.feature.id;
-        if (map.getBounds().contains(d.getBounds()) || map.getBounds().intersects(d.getBounds())) {
+        if (map.getBounds().overlaps(d.getBounds())) {
           if (!l["com-"+i]) (function(i){ $.getJSON("/data/geo/com"+i+".topojson", function(json) {
               draw(json); map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);});})(i);  
           else map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
