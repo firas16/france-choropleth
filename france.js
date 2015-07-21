@@ -50,9 +50,11 @@ function france(map) {
       for (dep in d=l["dep"]["_layers"]) {
         if (map.getBounds().overlaps(d[dep].getBounds())) { (function(i){ 
           if (!l["com-"+i]) 
-          	$.getJSON("/data/geo/com"+i+".topojson", function(json) {
-              draw(json); map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);});  
-          else map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
+          	d3.json("/data/geo/com"+i+".topojson", function(error, com) {
+              draw(com);
+              map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);});  
+          else 
+          	map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
          })(d[dep].feature.id)}
       }
 
