@@ -46,19 +46,10 @@ function france(map) {
     else
       for (dep in layers["dep"]["_layers"]) {
         d = layers["dep"]["_layers"][dep]; id=d.feature.id;
-        if (map.getBounds().contains(d.getBounds()) ||
-            map.getBounds().intersects(d.getBounds())) {
-          if (layers["com-"+id] != undefined)
-            map.addLayer(layers["com-"+id]).removeLayer(layers["can-"+id]);
-          else
-            (function(id){ $.getJSON("/data/geo/com"+id+".topojson", function(json) {
-              if (layers["can-"+id].com != true){
-                read(json);
-                layers["can-"+id].com = true;
-              }
-              if(map.getZoom()>8)
-                map.addLayer(layers["com-"+id]).removeLayer(layers["can-"+id]);
-            });})(id);        
+        if (map.getBounds().contains(d.getBounds()) || map.getBounds().intersects(d.getBounds())) {
+          if (!layers["com-"+id]) (function(id){ $.getJSON("/data/geo/com"+id+".topojson", function(json) {
+              read(json); map.addLayer(layers["com-"+id]).removeLayer(layers["can-"+id]);});})(id);  
+          else map.addLayer(layers["com-"+id]).removeLayer(layers["can-"+id]);
          }
       }
     if(map.getZoom() <= 6)
