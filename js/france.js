@@ -14,13 +14,13 @@ function france(map) {
   map.on('dragend', reset);
 
   function read(data) {
-    if (!window.layers) window.layers = {};
+    if (!window.l) window.l = {};
     for (key in data.objects) {
       geojson = topojson.feature(data, data.objects[key]);
       new L.GeoJSON(geojson, {
         onEachFeature: function (feature, json) {
-          var el = layers[key];
-          if (!el ) { el = new L.layerGroup(); layers[key] = el; }
+          var el = l[key];
+          if (!el ) { el = new L.layerGroup(); l[key] = el; }
           el.addLayer(json);
           if (key != "dep")
             json.on('mouseover', function () { infobox.update(names[feature.id]) });
@@ -39,23 +39,23 @@ function france(map) {
 
   function reset() {
     if(map.getZoom() <= 8)
-      for (el in layers) {
-        if (el.slice(0,3) == "com") map.removeLayer(layers[el]);
-        if (el.slice(0,3) == "can") map.addLayer(layers[el]);
+      for (el in l) {
+        if (el.slice(0,3) == "com") map.removeLayer(l[el]);
+        if (el.slice(0,3) == "can") map.addLayer(l[el]);
       }
     else
-      for (dep in layers["dep"]["_layers"]) {
-        d = layers["dep"]["_layers"][dep]; id=d.feature.id;
+      for (dep in l["dep"]["_layers"]) {
+        d = l["dep"]["_layers"][dep]; i=d.feature.id;
         if (map.getBounds().contains(d.getBounds()) || map.getBounds().intersects(d.getBounds())) {
-          if (!layers["com-"+id]) (function(id){ $.getJSON("/data/geo/com"+id+".topojson", function(json) {
-              read(json); map.addLayer(layers["com-"+id]).removeLayer(layers["can-"+id]);});})(id);  
-          else map.addLayer(layers["com-"+id]).removeLayer(layers["can-"+id]);
+          if (!l["com-"+i]) (function(i){ $.getJSON("/data/geo/com"+i+".topojson", function(json) {
+              read(json); map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);});})(i);  
+          else map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
          }
       }
     if(map.getZoom() <= 6)
-      map.addLayer(layers["dep"]);
+      map.addLayer(l["dep"]);
     else
-      map.removeLayer(layers["dep"]);
+      map.removeLayer(l["dep"]);
   }
 
   function info(data){
