@@ -1,8 +1,8 @@
 function france(map) {
 
-  queue().defer(d3.json, '/data/topojson/dep.topojson')
-         .defer(d3.json, '/data/topojson/can.topojson')
-         .defer(d3.csv,  '/data/topojson/names.csv')
+  queue().defer(d3.json, '/data/geo/dep.topojson')
+         .defer(d3.json, '/data/geo/can.topojson')
+         .defer(d3.csv,  '/data/geo/names.csv')
          .await(function (error, dep, can, names){
            info(names);
            read(dep);
@@ -51,7 +51,7 @@ function france(map) {
           if (layers["com-"+id] != undefined)
             map.addLayer(layers["com-"+id]).removeLayer(layers["can-"+id]);
           else
-            (function(id){ $.getJSON("/data/topojson/com"+id+".topojson", function(json) {
+            (function(id){ $.getJSON("/data/geo/com"+id+".topojson", function(json) {
               if (layers["can-"+id].com != true){
                 read(json);
                 layers["can-"+id].com = true;
