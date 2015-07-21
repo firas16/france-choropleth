@@ -48,12 +48,12 @@ function france(map) {
 
     else
       for (dep in d=l["dep"]["_layers"]) {
-        i=d[dep].feature.id;
-        if (map.getBounds().overlaps(d[dep].getBounds())) {
-          if (!l["com-"+i]) (function(i){ $.getJSON("/data/geo/com"+i+".topojson", function(json) {
-              draw(json); map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);});})(i);  
+        if (map.getBounds().overlaps(d[dep].getBounds())) { (function(i){ 
+          if (!l["com-"+i]) 
+          	$.getJSON("/data/geo/com"+i+".topojson", function(json) {
+              draw(json); map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);});  
           else map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
-         }
+         })(d[dep].feature.id)}
       }
 
     if(map.getZoom() <= 6)
