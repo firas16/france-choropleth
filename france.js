@@ -32,7 +32,8 @@ function france(map) {
           color: "#aaa",
           weight: 1,
           opacity: 1,
-          fillOpacity: .8
+          fillOpacity: .8,
+          interactive: (key!="dep")
         }
       })
     }
