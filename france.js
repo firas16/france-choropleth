@@ -23,24 +23,21 @@ function france(map) {
           var el = l[key];
           if (!el ) { el = new L.layerGroup(); l[key] = el; }
           el.addLayer(json);
-          if (key != "dep")
-            json.on('mouseover', function () { info.update(names[feature.id]) });
-            json.on('mouseout',  function () { info.update() });
+          json.on('mouseover', function () { info.update(names[feature.id]) });
+          json.on('mouseout',  function () { info.update() });
         },
         style: {
           fillColor: "#ccc",
           color: "#aaa",
           weight: 1,
           opacity: 1,
-          fillOpacity: .8,
-          interactive: (key!="dep")
+          fillOpacity: .8
         }
       })
     }
   }
 
   function reset() {
-
     if(map.getZoom() <= 8)
       for (el in l) {
         if (el.slice(0,3) == "com") map.removeLayer(l[el]);
@@ -57,13 +54,6 @@ function france(map) {
             })
           })(d[dep].feature.id)}
       }
-
-    if(map.getZoom() <= 6)
-      map.addLayer(l["dep"]);
-
-    else
-      map.removeLayer(l["dep"]);
-
   }
 
   function show(data){
