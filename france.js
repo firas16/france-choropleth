@@ -1,6 +1,6 @@
 function france(map) {
 
-  var l = {}, names = {}, info = L.control();
+  var l = names = {}, info = L.control();
 
   queue().defer(d3.json, '/data/geo/dep.topojson')
          .defer(d3.json, '/data/geo/can.topojson')
@@ -43,7 +43,6 @@ function france(map) {
         if (el.slice(0,3) == "com") map.removeLayer(l[el]);
         if (el.slice(0,3) == "can") map.addLayer(l[el]);
       }
-
     else
       for (dep in d=l["dep"]["_layers"]) {
         if (map.getBounds().overlaps(d[dep].getBounds())) { 
