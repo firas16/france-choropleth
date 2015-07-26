@@ -25,13 +25,14 @@ function france(map) {
         onEachFeature: function (feature, json) {
           if (!l[key]) l[key] = new L.layerGroup();
           l[key].addLayer(json);
-          json.on('mouseover', function () { info.update(names[feature.id]) });
-          json.on('mouseout',  function () { info.update() });
+          json.on({mouseover: hover, mouseout: out });
         },
         style: {
           fillColor: "#ccc",
+          color: "#000",
           weight: 1,
           stroke: false,
+          opacity: .3,
           fillOpacity: .8
         }
       })
@@ -71,8 +72,18 @@ function france(map) {
 
     for (obj in data)
       names[data[obj].insee] = data[obj].name;
-
     info.addTo(map);
 
   }
+
+  function hover(e) {
+    e.target.setStyle({stroke: true});
+    info.update(names[e.target.feature.id]);
+  }
+
+  function out(e) {
+    e.target.setStyle({stroke: false});
+    info.update();
+  }
+
 }
