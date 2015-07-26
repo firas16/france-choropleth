@@ -1,6 +1,8 @@
 function france(map) {
 
-  var l = names = {}, info = L.control();
+  window.l = {};
+  window.names = {};
+  var info = L.control();
 
   queue().defer(d3.json, '/data/geo/dep.topojson')
          .defer(d3.json, '/data/geo/can.topojson')
