@@ -58,22 +58,18 @@ function france(map) {
   }
 
   function show(data){
-
     info.onAdd = function (map) {
         this._div = L.DomUtil.create('div', 'info');
         this.update();
         return this._div
     };
-
     info.update = function (props) {
       this._div.innerHTML = '<h4>Carte administrative</h4>'
          + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
     };
-
     for (obj in data)
       names[data[obj].insee] = data[obj].name;
     info.addTo(map);
-
   }
 
   function hover(e) {
