@@ -33,7 +33,7 @@ function france(map) {
           weight: 1,
           stroke: false,
           opacity: .3,
-          fillOpacity: .8
+          fillOpacity: .2
         }
       })
     }
