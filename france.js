@@ -21,7 +21,7 @@ function france(map) {
     for (key in data.objects) {
       geojson = topojson.feature(data, data.objects[key]);
       new L.GeoJSON(geojson, {
-        smoothFactor: .5,
+        smoothFactor: 0,
         onEachFeature: function (feature, json) {
           if (!l[key]) l[key] = new L.layerGroup();
           l[key].addLayer(json);
@@ -30,9 +30,8 @@ function france(map) {
         },
         style: {
           fillColor: "#ccc",
-          color: "#aaa",
           weight: 1,
-          opacity: 1,
+          stroke: false,
           fillOpacity: .8
         }
       })
