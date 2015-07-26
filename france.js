@@ -10,8 +10,8 @@ function france(map) {
          .await(function (error, dep, can, names){
            show(names);
            draw(dep);
-           draw(can);   
-           reset();        
+           draw(can);
+           reset();
          });
 
   map.on('zoomend', reset);
@@ -46,11 +46,11 @@ function france(map) {
       }
     else
       for (dep in d=l["dep"]["_layers"]) {
-        if (map.getBounds().overlaps(d[dep].getBounds())) { 
+        if (map.getBounds().overlaps(d[dep].getBounds())) {
           (function(i){
             d3.json((l["com-"+i] || '/data/geo/com'+i+'.topojson'), function (e, com){
-              if (!e) draw(com);  
-              map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);     
+              if (!e) draw(com);
+              map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
             })
           })(d[dep].feature.id)}
       }
