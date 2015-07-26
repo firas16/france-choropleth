@@ -21,6 +21,7 @@ function france(map) {
     for (key in data.objects) {
       geojson = topojson.feature(data, data.objects[key]);
       new L.GeoJSON(geojson, {
+        smoothFactor: .5,
         onEachFeature: function (feature, json) {
           if (!l[key]) l[key] = new L.layerGroup();
           l[key].addLayer(json);
