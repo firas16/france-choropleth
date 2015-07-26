@@ -22,9 +22,8 @@ function france(map) {
       geojson = topojson.feature(data, data.objects[key]);
       new L.GeoJSON(geojson, {
         onEachFeature: function (feature, json) {
-          var el = l[key];
-          if (!el ) { el = new L.layerGroup(); l[key] = el; }
-          el.addLayer(json);
+          if (!l[key]) l[key] = new L.layerGroup();
+          l[key].addLayer(json);
           json.on('mouseover', function () { info.update(names[feature.id]) });
           json.on('mouseout',  function () { info.update() });
         },
