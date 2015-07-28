@@ -28,9 +28,9 @@ for i in 0{1..9} {10..19} 2A 2B {21..95}; do \
 mapshaper -i tmp/communes.topojson -rename-layers "com-$i" -filter "insee.substring(0,2) == '$i'" -dissolve insee -o drop-table force id-field=insee "com$i.topojson"; done
 
 # Generate name list
-mapshaper -i tmp/cantons_2015.shp -each 'insee=ref.substring(1,6), name=nom, delete nom, delete ref, delete bureau, delete canton, delete dep, delete jorf, delete population, delete Nom_1, delete wikipedia' -o force tmp/can.csv
-mapshaper -i tmp/communes-20150101-5m.shp -each 'delete obj, delete wikipedia, delete surf_m2' -merge-layers -o force tmp/com.csv
-awk 'FNR==1 && NR!=1{next;}{print}' tmp/*.csv > names.csv
+mapshaper -i tmp/cantons_2015.shp -each 'insee=ref.substring(1,6), name=nom, delete nom, delete ref, delete bureau, delete canton, delete dep, delete jorf, delete population, delete Nom_1, delete wikipedia' -o force tmp/namecan.csv
+mapshaper -i tmp/communes-20150101-5m.shp -each 'delete obj, delete wikipedia, delete surf_m2' -merge-layers -o force tmp/namecom.csv
+awk 'FNR==1 && NR!=1{next;}{print}' tmp/name*.csv > names.csv
 
 # Remove temporary folder
 rm -rf tmp
