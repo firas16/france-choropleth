@@ -11,8 +11,7 @@ mkdir -p tmp
 unzip -oq "tmp/*.zip" -d tmp
 
 # Generate departements
-mapshaper -i tmp/departements-20140306-5m.shp -rename-layers dep -o force id-field=code_insee tmp/dep.topojson
-mapshaper -i tmp/dep.topojson -simplify visvalingam 1% -o drop-table force id-field=code_insee dep.topojson
+mapshaper -i tmp/departements-20140306-5m.shp -rename-layers dep -simplify visvalingam 1% -dissolve code_insee -o drop-table force id-field=code_insee tmp/dep.topojson
 
 # Communes to cantons correspondence
 iconv -f iso-8859-15 -t utf-8 tmp/comsimp2015.txt > tmp/comsimp2015-utf8.txt
@@ -26,8 +25,7 @@ mapshaper tmp/communes-20150101-5m.shp -join tmp/cog.csv keys=insee,insee:str -e
 # Generate communes
 mapshaper -i tmp/communes-20150101-5m.shp -simplify visvalingam 10% -o force id-field=insee tmp/communes.topojson ; \
 for i in 0{1..9} {10..19} 2A 2B {21..95}; do \
-mapshaper -i tmp/communes.topojson -rename-layers "com-$i" -filter "insee.substring(0,2) == '$i'" -o force id-field=insee "tmp/com$i.topojson" ; \
-mapshaper -i "tmp/com$i.topojson" -o drop-table force id-field=insee "com$i.topojson"; done
+mapshaper -i tmp/communes.topojson -rename-layers "com-$i" -filter "insee.substring(0,2) == '$i'" -dissolve insee -o drop-table force id-field=insee "com$i.topojson"; done
 
 # Generate name list
 mapshaper -i tmp/cantons_2015.shp -each 'insee=ref.substring(1,6), name=nom, delete nom, delete ref, delete bureau, delete canton, delete dep, delete jorf, delete population, delete Nom_1, delete wikipedia' -o force tmp/can.csv
