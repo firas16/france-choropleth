@@ -5,15 +5,20 @@ mkdir -p tmp
 [ -f tmp/dep.zip ] || curl -o tmp/dep.zip 'http://osm13.openstreetmap.fr/~cquest/openfla/export/departements-20140306-5m-shp.zip'
 [ -f tmp/can.zip ] || curl -o tmp/can.zip 'http://osm13.openstreetmap.fr/~cquest/openfla/export/cantons-2015-shp.zip'
 [ -f tmp/com.zip ] || curl -o tmp/com.zip 'http://osm13.openstreetmap.fr/~cquest/openfla/export/communes-20150101-5m-shp.zip'
+[ -f tmp/cog.zip ] || curl -o tmp/cog.zip 'http://www.insee.fr/fr/methodes/nomenclatures/cog/telechargement/2015/txt/comsimp2015.zip'
 
 # Unzip communes
-unzip -oq tmp/dep -d tmp
-unzip -oq tmp/can -d tmp
-unzip -oq tmp/com -d tmp
+unzip -oq "tmp/*.zip" -d tmp
 
 # Generate departements
 mapshaper -i tmp/departements-20140306-5m.shp -rename-layers dep -o force id-field=code_insee tmp/dep.topojson
 mapshaper -i tmp/dep.topojson -simplify visvalingam 1% -o drop-table force id-field=code_insee dep.topojson
+
+# Communes to cantons correspondence
+iconv -f iso-8859-15 -t utf-8 tmp/comsimp2015.txt > tmp/comsimp2015-utf8.txt
+sed 's/	/,/g' tmp/comsimp2015-utf8.txt > tmp/comsimp2015.csv
+awk -F, 'NR > 1 {OFS=","; print $4$5," "$4"-"$7}' tmp/comsimp2015.csv > tmp/comsimp2015-filtered.csv
+sed -e '/-$/d' tmp/comsimp2015-filtered.csv > tmp/communes-cantons.csv
 
 # Generate cantons
 mapshaper -i tmp/cantons_2015.shp -rename-layers can -each 'insee=ref.substring(1,6), obj=ref.substring(1,3), delete ref, delete bureau, delete canton, delete dep, delete jorf, delete population, delete Nom_1, delete wikipedia' -o force id-field=insee tmp/can.topojson
