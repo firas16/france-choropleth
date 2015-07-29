@@ -1,5 +1,5 @@
-# Create temporary folder
-mkdir -p _tmp
+# Create folders
+mkdir -p _tmp geo stats
 
 # Download files
 [ -f _tmp/dep.zip ] || curl -o _tmp/dep.zip 'http://osm13.openstreetmap.fr/~cquest/openfla/export/departements-20140306-5m-shp.zip'
