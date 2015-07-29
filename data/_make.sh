@@ -11,7 +11,7 @@ mkdir -p tmp
 unzip -oq "tmp/*.zip" -d tmp
 
 # Generate departements
-mapshaper -i tmp/departements-20140306-5m.shp -rename-layers dep -simplify visvalingam 1% -dissolve code_insee -o drop-table force id-field=code_insee tmp/dep.topojson
+mapshaper -i tmp/departements-20140306-5m.shp -rename-layers dep -simplify visvalingam 1% -dissolve code_insee -o drop-table force id-field=code_insee geo/dep.topojson
 
 # Communes to cantons correspondence
 iconv -f iso-8859-15 -t utf-8 tmp/comsimp2015.txt > tmp/comsimp2015-utf8.txt
@@ -20,17 +20,17 @@ awk -F, '{OFS=","; print $4$5,$4"-"$7}' tmp/comsimp2015.csv > tmp/cog.txt
 sed '/-$/d;/-9[0-9]$/d;1s/.*/insee,canton/' tmp/cog.txt > tmp/cog.csv
 
 # Generate cantons
-mapshaper tmp/communes-20150101-5m.shp -join tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 1% -o drop-table force id-field=insee can.topojson
+mapshaper tmp/communes-20150101-5m.shp -join tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 1% -o drop-table force id-field=insee geo/can.topojson
 
 # Generate communes
 mapshaper -i tmp/communes-20150101-5m.shp -simplify visvalingam 10% -o force id-field=insee tmp/communes.topojson ; \
 for i in 0{1..9} {10..19} 2A 2B {21..95}; do \
-mapshaper -i tmp/communes.topojson -rename-layers "com-$i" -filter "insee.substring(0,2) == '$i'" -dissolve insee -o drop-table force id-field=insee "com$i.topojson"; done
+mapshaper -i tmp/communes.topojson -rename-layers "com-$i" -filter "insee.substring(0,2) == '$i'" -dissolve insee -o drop-table force id-field=insee geo/"com$i.topojson"; done
 
 # Generate name list
 mapshaper -i tmp/cantons_2015.shp -each 'insee=ref.substring(1,6), name=nom, delete nom, delete ref, delete bureau, delete canton, delete dep, delete jorf, delete population, delete Nom_1, delete wikipedia' -o force tmp/namecan.csv
 mapshaper -i tmp/communes-20150101-5m.shp -each 'delete obj, delete wikipedia, delete surf_m2' -merge-layers -o force tmp/namecom.csv
-awk 'FNR==1 && NR!=1{next;}{print}' tmp/name*.csv > names.csv
+awk 'FNR==1 && NR!=1{next;}{print}' tmp/name*.csv > geo/names.csv
 
 # Remove temporary folder
 rm -rf tmp
