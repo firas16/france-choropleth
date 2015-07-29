@@ -17,7 +17,7 @@ mapshaper -i tmp/departements-20140306-5m.shp -rename-layers dep -simplify visva
 iconv -f iso-8859-15 -t utf-8 tmp/comsimp2015.txt > tmp/comsimp2015-utf8.txt
 sed 's/	/,/g' tmp/comsimp2015-utf8.txt > tmp/comsimp2015.csv
 awk -F, '{OFS=","; print $4$5,$4"-"$7}' tmp/comsimp2015.csv > tmp/cog.txt
-sed '/-$/d;1s/.*/insee,canton/' tmp/cog.txt > tmp/cog.csv
+sed '/-$/d;/-9[0-9]$/d;1s/.*/insee,canton/' tmp/cog.txt > tmp/cog.csv
 
 # Generate cantons
 mapshaper tmp/communes-20150101-5m.shp -join tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 1% -o drop-table force id-field=insee can.topojson
