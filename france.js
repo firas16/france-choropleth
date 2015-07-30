@@ -43,7 +43,7 @@ function france(map) {
   }
 
   function reset() {
-    if(map.getZoom() <= 8)
+    if(map.getZoom() <= 7)
       for (el in l) {
         if (el.slice(0,3) == "com") map.removeLayer(l[el]);
         if (el.slice(0,3) == "can") map.addLayer(l[el]);
