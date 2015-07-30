@@ -27,14 +27,14 @@ function france(map) {
           l[key].addLayer(json);
           json.on({mouseover: hover, mouseout: out });
         },
-        style: {
-          fillColor: "#ccc",
-          color: "#000",
+        style: function(feature){return {
+          fillColor: "#333",
+          color: "#333",
           weight: 1,
           stroke: false,
-          opacity: .3,
-          fillOpacity: .2
-        }
+          opacity: .5,
+          fillOpacity: Math.random()
+        }}
       })
     }
   }
