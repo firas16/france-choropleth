@@ -13,7 +13,7 @@ can = concat([com,com.groupby('canton').sum()])
 # Density and opacity
 df = concat([can,com])
 df['density'] = df.P12_POP/df.SUPERF
-df['opacity'] = qcut(df.density,100, labels=False)*.85+.05
+df['opacity'] = qcut(df.density,100, labels=False)*.8+10
 
 # Export
 df.to_csv('stats/density.csv', columns = ['opacity'], index_label='insee', float_format='%.0f')
