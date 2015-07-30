@@ -11,14 +11,11 @@ mkdir -p _tmp geo stats
 # Unzip communes
 unzip -oq "_tmp/*.zip" -d _tmp
 
+# Process stats
+python3 _generate.py
+
 # Generate departements
 mapshaper -i _tmp/departements-20140306-5m.shp -rename-layers dep -simplify visvalingam 1% -dissolve code_insee -o drop-table force id-field=code_insee geo/dep.topojson
-
-# Communes to cantons correspondence
-iconv -f iso-8859-15 -t utf-8 _tmp/comsimp2015.txt > _tmp/comsimp2015-utf8.txt
-sed 's/	/,/g' _tmp/comsimp2015-utf8.txt > _tmp/comsimp2015.csv
-awk -F, '{OFS=","; print $4$5,$4"-"$7}' _tmp/comsimp2015.csv > _tmp/cog.txt
-sed '/-$/d;/-9[0-9]$/d;1s/.*/insee,canton/' _tmp/cog.txt > _tmp/cog.csv
 
 # Generate cantons
 mapshaper _tmp/communes-20150101-5m.shp -join _tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 5% -o drop-table force id-field=insee geo/can.topojson
