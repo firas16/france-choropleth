@@ -8,7 +8,7 @@ function france(map) {
 
   queue().defer(d3.json, '/data/geo/dep.topojson')
          .defer(d3.json, '/data/geo/can.topojson')
-         .defer(d3.csv,  '/data/geo/data.csv')
+         .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  '/data/stats/unemployement.csv')
          .await(function (error, dep, can, data, stats){
            show(data);

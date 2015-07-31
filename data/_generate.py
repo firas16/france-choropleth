@@ -21,7 +21,7 @@ cc.dropna(subset=['canton']).to_csv('_tmp/cog.csv', columns = ['canton'], index_
 # Density and opacity
 df = concat([cc,concat([cc.groupby('canton').sum(),can],axis=1).dropna(subset=["name","P12_POP"])])
 df['density'] = df.P12_POP/df.SUPERF
-df.to_csv('geo/data.csv', columns = ['name','density'], index_label='insee', float_format='%.0f')
+df.to_csv('stats/data.csv', columns = ['name','density'], index_label='insee', float_format='%.0f')
 
 # Unemployement
 df['unemployement'] = df.P12_CHOM1564/df.P12_POP1564*100
