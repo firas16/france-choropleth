@@ -18,7 +18,7 @@ python3 _generate.py
 mapshaper -i _tmp/departements-20140306-5m.shp -rename-layers dep -simplify visvalingam 1% -dissolve code_insee -o drop-table force id-field=code_insee geo/dep.topojson
 
 # Generate cantons
-mapshaper _tmp/communes-20150101-5m.shp -join _tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 5% -o drop-table force id-field=insee geo/can.topojson
+mapshaper _tmp/communes-20150101-5m.shp -join _tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 1% -o drop-table force id-field=insee geo/can.topojson
 
 # Generate communes
 mapshaper -i _tmp/communes-20150101-5m.shp -simplify visvalingam 5% -o force id-field=insee _tmp/communes.topojson ; \
