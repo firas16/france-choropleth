@@ -29,7 +29,7 @@ function france(map) {
           json.on({mouseover: hover, mouseout: out });
         },
         style: function(feature){return {
-          fillColor: "#333",
+          fillColor: "#08306b",
           color: "#333",
           weight: 1,
           stroke: false,
