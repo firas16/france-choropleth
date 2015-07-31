@@ -2,14 +2,17 @@ function france(map) {
 
   window.l = {};
   window.names = {};
+  window.unemployement = {};
   window.density = {};
   var info = L.control();
 
   queue().defer(d3.json, '/data/geo/dep.topojson')
          .defer(d3.json, '/data/geo/can.topojson')
          .defer(d3.csv,  '/data/geo/data.csv')
-         .await(function (error, dep, can, data){
+         .defer(d3.csv,  '/data/stats/unemployement.csv')
+         .await(function (error, dep, can, data, stats){
            show(data);
+           color(stats);
            draw(dep);
            draw(can);
            reset();
@@ -29,7 +32,7 @@ function france(map) {
           json.on({mouseover: hover, mouseout: out });
         },
         style: function(feature){return {
-          fillColor: "#08306b",
+          fillColor: d3.scale.linear().clamp(1).domain([6,14]).range(["#006837","#d62728"])(unemployement[feature.id]),
           color: "#333",
           weight: 1,
           stroke: false,
@@ -73,6 +76,12 @@ function france(map) {
       density[data[obj].insee] = data[obj].density;
     }
     info.addTo(map);
+  }
+
+  function color(data){
+    for (obj in data) {
+      unemployement[data[obj].insee] = data[obj].unemployement;
+    }
   }
 
   function hover(e) {
