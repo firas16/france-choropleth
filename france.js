@@ -10,7 +10,7 @@ function france(map) {
          .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  '/data/stats/unemployement.csv')
          .await(function (error, base, data, stats){
-           meta(data);
+           show(data);
            color(stats);
            read(base);
            draw();
@@ -59,7 +59,7 @@ function france(map) {
       }
   }
 
-  function meta(data){
+  function show(data){
     info.onAdd = function (map) {
         this._div = L.DomUtil.create('div', 'info');
         this.update();
