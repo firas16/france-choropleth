@@ -8,7 +8,7 @@ mkdir -p _tmp geo stats
 [ -f _tmp/can.txt ] || curl -o _tmp/can.txt 'http://www.insee.fr/fr/methodes/nomenclatures/cog/telechargement/2015/txt/canton2015.txt'
 [ -f _tmp/cc.zip ]  || curl -o _tmp/cc.zip  'http://www.insee.fr/fr/ppp/bases-de-donnees/donnees-detaillees/base-cc-resume-stat/base-cc-resume-15.zip'
 
-# Unzip communes
+# Unzip files
 unzip -oq "_tmp/*.zip" -d _tmp
 
 # Process stats

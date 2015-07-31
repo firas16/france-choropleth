@@ -18,7 +18,7 @@ cc = concat([cc, cog[cog.canton.str[-2:].fillna("99").astype('int') < 50]], axis
 cc.canton[(cc.P12_POP/cc.SUPERF > 75) | (cc.P12_POP > 1000)] = nan
 cc.dropna(subset=['canton']).to_csv('_tmp/cog.csv', columns = ['canton'], index_label = 'insee')
 
-# Density and opacity
+# Density
 df = concat([cc,concat([cc.groupby('canton').sum(),can],axis=1).dropna(subset=["name","P12_POP"])])
 df['density'] = df.P12_POP/df.SUPERF
 df.to_csv('stats/data.csv', columns = ['name','density'], index_label='insee', float_format='%.0f')
