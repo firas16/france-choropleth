@@ -1,25 +1,20 @@
 from pandas import *
 
-# Link communes to cantons
+# Cantons data from ‘code officiel geographique’ database
 cog = read_csv("_tmp/comsimp2015.txt", sep="\t", encoding="iso-8859-1", dtype=str).dropna(subset=['CT'])
-cog['insee'] = cog.DEP+cog.COM
+cog.index = cog.DEP+cog.COM
 cog['canton'] = cog.DEP+"-"+cog.CT
-cog[cog.CT.astype('int') < 50].to_csv('_tmp/cog.csv', columns = ['insee','canton'], index= False)
 
 # Load ‘chiffres clefs’ database
-com = read_excel("_tmp/base-cc-resume-15.xls", sheetname=[0,1], header=5, index_col=[0])
-com = concat([com[0],com[1]])
+cc = read_excel("_tmp/base-cc-resume-15.xls", sheetname=[0,1], header=5, index_col=[0])
+cc = concat([cc[0],cc[1]])
 
-# Concat cantons
-com = concat([com, read_csv("_tmp/cog.csv", index_col=[0])], axis=1).dropna(subset=["LIBGEO"])
-
-# Group by cantons
-can = concat([com,com.groupby('canton').sum()])
+# Link communes to cantons
+cc = concat([cc, cog.canton[cog.CT.astype('int') < 50]], axis=1).dropna(subset=["LIBGEO"])
+cog.to_csv('_tmp/cog.csv', columns = ['canton'], index_label = 'insee')
 
 # Density and opacity
-df = concat([can,com])
+df = concat([cc,cc.groupby('canton').sum(),cc])
 df['density'] = df.P12_POP/df.SUPERF
 df['opacity'] = qcut(df.density,100, labels=False)*.8+10
-
-# Export
 df.to_csv('stats/density.csv', columns = ['opacity'], index_label='insee', float_format='%.0f')
