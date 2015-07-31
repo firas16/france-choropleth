@@ -7,11 +7,9 @@ function france(map) {
 
   queue().defer(d3.json, '/data/geo/dep.topojson')
          .defer(d3.json, '/data/geo/can.topojson')
-         .defer(d3.csv,  '/data/geo/names.csv')
-         .defer(d3.csv,  '/data/stats/density.csv')
-         .await(function (error, dep, can, names, density){
-           show(names);
-           opacity(density);
+         .defer(d3.csv,  '/data/geo/data.csv')
+         .await(function (error, dep, can, data){
+           show(data);
            draw(dep);
            draw(can);
            reset();
@@ -70,14 +68,11 @@ function france(map) {
       this._div.innerHTML = '<h4>Carte administrative</h4>'
          + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
     };
-    for (obj in data)
+    for (obj in data) {
       names[data[obj].insee] = data[obj].name;
-    info.addTo(map);
-  }
-
-  function opacity(data){
-    for (obj in data)
       density[data[obj].insee] = data[obj].opacity/100;
+    }
+    info.addTo(map);
   }
 
   function hover(e) {
