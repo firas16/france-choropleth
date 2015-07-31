@@ -34,7 +34,7 @@ function france(map) {
           weight: 1,
           stroke: false,
           opacity: .5,
-          fillOpacity: (density[feature.id] || 0)
+          fillOpacity: (d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(density[feature.id]) || 0)
         }}
       })
     }
@@ -70,7 +70,7 @@ function france(map) {
     };
     for (obj in data) {
       names[data[obj].insee] = data[obj].name;
-      density[data[obj].insee] = data[obj].opacity/100;
+      density[data[obj].insee] = data[obj].density;
     }
     info.addTo(map);
   }

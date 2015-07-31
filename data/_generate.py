@@ -20,5 +20,5 @@ cc.dropna(subset=['canton']).to_csv('_tmp/cog.csv', columns = ['canton'], index_
 
 # Density and opacity
 df = concat([cc,concat([cc.groupby('canton').sum(),can],axis=1).dropna(subset=["name","P12_POP"])])
-df['opacity'] = qcut(df.P12_POP/df.SUPERF,100, labels=False)*.75+5
-df.to_csv('geo/data.csv', columns = ['name','opacity'], index_label='insee', float_format='%.0f')
+df['density'] = df.P12_POP/df.SUPERF
+df.to_csv('geo/data.csv', columns = ['name','density'], index_label='insee', float_format='%.0f')
