@@ -6,15 +6,13 @@ function france(map) {
   window.density = {};
   var info = L.control();
 
-  queue().defer(d3.json, '/data/geo/dep.topojson')
-         .defer(d3.json, '/data/geo/can.topojson')
+  queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  '/data/stats/unemployement.csv')
-         .await(function (error, dep, can, data, stats){
+         .await(function (error, base, data, stats){
            show(data);
            color(stats);
-           draw(dep);
-           draw(can);
+           draw(base);
            reset();
          });
 

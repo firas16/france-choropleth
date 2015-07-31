@@ -15,10 +15,11 @@ unzip -oq "_tmp/*.zip" -d _tmp
 python3 _generate.py
 
 # Generate TopoJSON
-mapshaper -i _tmp/departements-20140306-5m.shp -rename-layers dep -simplify visvalingam 1% -dissolve code_insee -o drop-table force id-field=code_insee geo/dep.topojson
-mapshaper _tmp/communes-20150101-5m.shp -join _tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 1% -o drop-table force id-field=insee geo/can.topojson
+mapshaper -i _tmp/departements-20140306-5m.shp -rename-layers dep -simplify visvalingam 1% -dissolve code_insee -o drop-table force id-field=code_insee _tmp/dep.topojson
+mapshaper -i _tmp/communes-20150101-5m.shp -join _tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee, obj = insee.slice(0,2)' -rename-layers can -split obj -dissolve insee -simplify visvalingam 1% -o drop-table force id-field=insee _tmp/can.topojson
 mapshaper -i _tmp/communes-20150101-5m.shp -simplify visvalingam 5% -o force id-field=insee _tmp/communes.topojson
-for i in 0{1..9} {10..19} 2A 2B {21..95}; do mapshaper -i _tmp/communes.topojson -rename-layers "com-$i" -filter "insee.substring(0,2) == '$i'" -dissolve insee -o drop-table force id-field=insee geo/"com$i.topojson"; done
+mapshaper -i _tmp/dep.topojson _tmp/can.topojson combine-files -o drop-table force id-field=insee geo/base.topojson
+for i in 0{1..9} {10..19} 2A 2B {21..95}; do mapshaper -i _tmp/communes.topojson -rename-layers "com-$i" -filter "insee.substring(0,2) == '$i'" -dissolve insee -o drop-table force id-field=insee geo/"com$i.topojson"; done;
 
 # Remove temporary folder
 rm -rf _tmp
