@@ -1,14 +1,13 @@
 function france(map) {
 
   var layers = {};
-  window.unemployement = {};
 
   queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  '/data/stats/unemployement.csv')
          .await(function (error, json, data, stats){
            init(data);
-           color(stats);
+           unemployement = read(stats,"unemployement");
            load(json);
            draw();
          });
@@ -42,7 +41,7 @@ function france(map) {
             weight: 1,
             stroke: false,
             opacity: .5,
-            fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(density[feature.id])
+            fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(densities[feature.id])
           }
         }
       })
@@ -70,13 +69,16 @@ function france(map) {
     }
   }
 
+  function read(csv, data) {
+    array = {};
+    for (obj in csv) array[csv[obj].insee] = csv[obj][data];
+    return array;
+  }
+
   function init(data) {
 
-    names = {}, density = {};
-    for (obj in data) {
-      names[data[obj].insee] = data[obj].name;
-      density[data[obj].insee] = data[obj].density;
-    }
+    names = read(data,"name");
+    densities = read(data,"density");
 
     info = L.control();
     info.onAdd = function (map) {
@@ -91,9 +93,4 @@ function france(map) {
     info.addTo(map);
   }
 
-  function color(data) {
-    for (obj in data) {
-      unemployement[data[obj].insee] = data[obj].unemployement;
-    }
-  }
 }
