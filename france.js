@@ -8,35 +8,24 @@ function france(map) {
            unemployement = read(stats);
            load(json);
            draw();
-           map.on({'zoomend': draw, 'dragend': draw});
+           map.on({zoomend: draw, dragend: draw});
          });
 
   function load(json) {
     for (key in json.objects) {
       geojson = topojson.feature(json, json.objects[key]);
-      new L.GeoJSON(geojson, {
-        smoothFactor: 0,
+      new L.GeoJSON(geojson, { smoothFactor: 0,
         onEachFeature: function (feature, json) {
           if (!layers[key]) layers[key] = new L.layerGroup();
           layers[key].addLayer(json);
           json.on({
-            mouseover: function(e) {
-              e.target.setStyle({stroke: true});
-              info.update(names[e.target.feature.id]);
-            },
-            mouseout: function(e) {
-              e.target.setStyle({stroke: false});
-              info.update();
-            }
+            mouseover: function(e) { e.target.setStyle({stroke: 1}); info.update(names[e.target.feature.id]); },
+             mouseout: function(e) { e.target.setStyle({stroke: 0}); info.update(); }
           });
         },
         style: function(feature){
-          return {
+          return { color: "#333", weight: 1, stroke: 0, opacity: .5,
             fillColor: d3.scale.linear().clamp(1).domain([6,14]).range(["#006837","#d62728"])(unemployement[feature.id]),
-            color: "#333",
-            weight: 1,
-            stroke: false,
-            opacity: .5,
             fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(densities[feature.id])
           }
         }
