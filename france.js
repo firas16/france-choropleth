@@ -55,8 +55,8 @@ function france(map) {
       for (dep in d=layers["dep"]["_layers"]) {
         if (map.getBounds().overlaps(d[dep].getBounds())) {
           (function(i) {
-            d3.json((layers["com-"+i] || '/data/geo/com'+i+'.topojson'), function (e, com){
-              if (!e) load(com);
+            d3.json((layers["com-"+i] || '/data/geo/com'+i+'.topojson'), function (error, json){
+              if (!error) load(json);
               map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
             })
           })(d[dep].feature.id)
