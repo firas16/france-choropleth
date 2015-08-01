@@ -1,11 +1,10 @@
-function france(map) {
+function france(map, url, domain, range) {
 
   queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
-         .defer(d3.csv,  '/data/stats/unemployement.csv')
+         .defer(d3.csv,  url)
          .await(function (error, json, data, stats){
-           init(data);
-           unemployement = read(stats);
+           init(data, stats);
            load(json);
            draw();
            map.on({zoomend: draw, dragend: draw});
@@ -25,8 +24,8 @@ function france(map) {
         },
         style: function(feature){
           return { color: "#333", weight: 1, stroke: 0, opacity: .5,
-            fillColor: d3.scale.linear().clamp(1).domain([6,14]).range(["#006837","#d62728"])(unemployement[feature.id]),
-            fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(densities[feature.id])
+             fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(densities[feature.id]),
+               fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(stat[feature.id])
           }
         }
       })
@@ -60,12 +59,11 @@ function france(map) {
     return array;
   }
 
-  function init(data) {
-
+  function init(data, stats) {
     layers = {};
     names = read(data);
     densities = read(data,2);
-
+    stat = read(stats);
     info = new (L.Control.extend({
       onAdd: function () {
         div = L.DomUtil.create('div', 'info');
@@ -79,4 +77,5 @@ function france(map) {
     }));
     info.addTo(map);
   }
+
 }

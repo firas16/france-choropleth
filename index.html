@@ -54,7 +54,7 @@
              .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
                 subdomains: 'abcd', detectRetina: true }));
 
-  france(map);
+  france(map, '/data/stats/unemployement.csv', [6,14], ["#006837","#d62728"]);
 
   </script>
 
