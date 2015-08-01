@@ -8,19 +8,19 @@ function france(map) {
   queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  '/data/stats/unemployement.csv')
-         .await(function (error, base, data, stats){
+         .await(function (error, json, data, stats){
            show(data);
            color(stats);
-           read(base);
+           read(json);
            draw();
          });
 
   map.on('zoomend', draw);
   map.on('dragend', draw);
 
-  function read(data) {
-    for (key in data.objects) {
-      geojson = topojson.feature(data, data.objects[key]);
+  function read(json) {
+    for (key in json.objects) {
+      geojson = topojson.feature(json, json.objects[key]);
       new L.GeoJSON(geojson, {
         smoothFactor: 0,
         onEachFeature: function (feature, json) {
