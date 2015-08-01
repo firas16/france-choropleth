@@ -8,11 +8,8 @@ function france(map) {
            unemployement = read(stats,"unemployement");
            load(json);
            draw();
+           map.on({'zoomend': draw, 'dragend': draw});
          });
-
-  map.on('zoomend', draw);
-  map.on('dragend', draw);
-
 
   function load(json) {
     for (key in json.objects) {
