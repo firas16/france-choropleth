@@ -77,17 +77,17 @@ function france(map) {
     names = read(data);
     densities = read(data,2);
 
-    info = L.control();
-    info.onAdd = function (map) {
-      div = L.DomUtil.create('div', 'info');
-      this.update();
-      return div
-    };
-    info.update = function (props) {
-      div.innerHTML = '<h4>Carte administrative</h4>'
-         + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
-    };
+    info = new (L.Control.extend({
+      onAdd: function () {
+        div = L.DomUtil.create('div', 'info');
+        this.update();
+        return div;
+      },
+      update: function (props) {
+        div.innerHTML = '<h4>Carte administrative</h4>'
+        + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
+      }
+    }));
     info.addTo(map);
   }
-
 }
