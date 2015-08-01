@@ -4,7 +4,6 @@ function france(map) {
   window.names = {};
   window.unemployement = {};
   window.density = {};
-  var info = L.control();
 
   queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
@@ -65,7 +64,8 @@ function france(map) {
   }
 
   function show(data) {
-    info.onAdd = function (map) {
+     info = L.control();
+     info.onAdd = function (map) {
         this._div = L.DomUtil.create('div', 'info');
         this.update();
         return this._div
