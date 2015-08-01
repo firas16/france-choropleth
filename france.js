@@ -1,15 +1,13 @@
 function france(map) {
 
   var layers = {};
-  window.names = {};
   window.unemployement = {};
-  window.density = {};
 
   queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  '/data/stats/unemployement.csv')
          .await(function (error, json, data, stats){
-           show(data);
+           init(data);
            color(stats);
            read(json);
            draw();
@@ -72,21 +70,24 @@ function france(map) {
     }
   }
 
-  function show(data) {
-     info = L.control();
-     info.onAdd = function (map) {
-        this._div = L.DomUtil.create('div', 'info');
-        this.update();
-        return this._div
-    };
-    info.update = function (props) {
-      this._div.innerHTML = '<h4>Carte administrative</h4>'
-         + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
-    };
+  function init(data) {
+
+    names = {}, density = {};
     for (obj in data) {
       names[data[obj].insee] = data[obj].name;
       density[data[obj].insee] = data[obj].density;
     }
+
+    info = L.control();
+    info.onAdd = function (map) {
+      div = L.DomUtil.create('div', 'info');
+      this.update();
+      return div
+    };
+    info.update = function (props) {
+      div.innerHTML = '<h4>Carte administrative</h4>'
+         + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
+    };
     info.addTo(map);
   }
 
