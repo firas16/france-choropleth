@@ -1,6 +1,6 @@
 function france(map) {
 
-  window.l = {};
+  var layers = {};
   window.names = {};
   window.unemployement = {};
   window.density = {};
@@ -24,9 +24,18 @@ function france(map) {
       new L.GeoJSON(geojson, {
         smoothFactor: 0,
         onEachFeature: function (feature, json) {
-          if (!l[key]) l[key] = new L.layerGroup();
-          l[key].addLayer(json);
-          json.on({mouseover: hover, mouseout: out });
+          if (!layers[key]) layers[key] = new L.layerGroup();
+          layers[key].addLayer(json);
+          json.on({
+            mouseover: function(e) {
+              e.target.setStyle({stroke: true});
+              info.update(names[e.target.feature.id]);
+            },
+            mouseout: function(e) {
+              e.target.setStyle({stroke: false});
+              info.update();
+            }
+          });
         },
         style: function(feature){
           return {
@@ -44,18 +53,18 @@ function france(map) {
 
   function draw() {
     if(map.getZoom() <= 8) {
-      for (el in l) {
-        if (el.slice(0,3) == "com") map.removeLayer(l[el]);
-        if (el.slice(0,3) == "can") map.addLayer(l[el]);
+      for (l in layers) {
+        if (l.slice(0,3) == "com") map.removeLayer(layers[l]);
+        if (l.slice(0,3) == "can") map.addLayer(layers[l]);
       }
     }
     else {
-      for (dep in d=l["dep"]["_layers"]) {
+      for (dep in d=layers["dep"]["_layers"]) {
         if (map.getBounds().overlaps(d[dep].getBounds())) {
           (function(i) {
-            d3.json((l["com-"+i] || '/data/geo/com'+i+'.topojson'), function (e, com){
+            d3.json((layers["com-"+i] || '/data/geo/com'+i+'.topojson'), function (e, com){
               if (!e) read(com);
-              map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
+              map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
             })
           })(d[dep].feature.id)
         }
@@ -86,15 +95,4 @@ function france(map) {
       unemployement[data[obj].insee] = data[obj].unemployement;
     }
   }
-
-  function hover(e) {
-    e.target.setStyle({stroke: true});
-    info.update(names[e.target.feature.id]);
-  }
-
-  function out(e) {
-    e.target.setStyle({stroke: false});
-    info.update();
-  }
-
 }
