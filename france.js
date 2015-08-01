@@ -14,7 +14,7 @@ function france(map, url, domain, range) {
       geojson = topojson.feature(json, json.objects[key]);
       new L.GeoJSON(geojson, { smoothFactor: 0,
         onEachFeature: function (feature, json) {
-          if (!layers[key]) layers[key] = new L.layerGroup();
+          layers[key] = layers[key] || new L.layerGroup();
           layers[key].addLayer(json);
           json.on({
             mouseover: function(e) { e.target.setStyle({stroke: 1}); info.update(names[e.target.feature.id]); },
