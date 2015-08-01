@@ -29,37 +29,42 @@ function france(map) {
           l[key].addLayer(json);
           json.on({mouseover: hover, mouseout: out });
         },
-        style: function(feature){return {
-          fillColor: d3.scale.linear().clamp(1).domain([6,14]).range(["#006837","#d62728"])(unemployement[feature.id]),
-          color: "#333",
-          weight: 1,
-          stroke: false,
-          opacity: .5,
-          fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(density[feature.id])
-        }}
+        style: function(feature){
+          return {
+            fillColor: d3.scale.linear().clamp(1).domain([6,14]).range(["#006837","#d62728"])(unemployement[feature.id]),
+            color: "#333",
+            weight: 1,
+            stroke: false,
+            opacity: .5,
+            fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(density[feature.id])
+          }
+        }
       })
     }
   }
 
   function draw() {
-    if(map.getZoom() <= 8)
+    if(map.getZoom() <= 8) {
       for (el in l) {
         if (el.slice(0,3) == "com") map.removeLayer(l[el]);
         if (el.slice(0,3) == "can") map.addLayer(l[el]);
       }
-    else
+    }
+    else {
       for (dep in d=l["dep"]["_layers"]) {
         if (map.getBounds().overlaps(d[dep].getBounds())) {
-          (function(i){
+          (function(i) {
             d3.json((l["com-"+i] || '/data/geo/com'+i+'.topojson'), function (e, com){
               if (!e) read(com);
               map.addLayer(l["com-"+i]).removeLayer(l["can-"+i]);
             })
-          })(d[dep].feature.id)}
+          })(d[dep].feature.id)
+        }
       }
+    }
   }
 
-  function show(data){
+  function show(data) {
     info.onAdd = function (map) {
         this._div = L.DomUtil.create('div', 'info');
         this.update();
@@ -76,7 +81,7 @@ function france(map) {
     info.addTo(map);
   }
 
-  function color(data){
+  function color(data) {
     for (obj in data) {
       unemployement[data[obj].insee] = data[obj].unemployement;
     }
