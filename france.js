@@ -3,7 +3,7 @@ function france(map, url, domain, range) {
   queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  url)
-         .await(function (error, json, data, stats){
+         .await(function (e, json, data, stats){
            init(data, stats);
            load(json);
            draw();
@@ -42,14 +42,9 @@ function france(map, url, domain, range) {
     else {
       for (dep in d=layers["dep"]["_layers"]) {
         if (map.getBounds().overlaps(d[dep].getBounds())) {
-          (function(i) {
-            if (!layers["com-"+i]) {
-              d3.json('/data/geo/com'+i+'.topojson', function (error, json){
-                load(json);
-                map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
-              })
-            }
-            else map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
+          function reload(i) { map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]); }
+          (function(i) { if (layers["com-"+i]) reload(i);
+            else d3.json('/data/geo/com'+i+'.topojson', function (e, json){ load(json); reload(i); })
           })(d[dep].feature.id)
         }
       }
