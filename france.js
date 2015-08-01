@@ -9,14 +9,14 @@ function france(map) {
          .await(function (error, json, data, stats){
            init(data);
            color(stats);
-           read(json);
+           load(json);
            draw();
          });
 
   map.on('zoomend', draw);
   map.on('dragend', draw);
 
-  function read(json) {
+  function load(json) {
     for (key in json.objects) {
       geojson = topojson.feature(json, json.objects[key]);
       new L.GeoJSON(geojson, {
@@ -61,7 +61,7 @@ function france(map) {
         if (map.getBounds().overlaps(d[dep].getBounds())) {
           (function(i) {
             d3.json((layers["com-"+i] || '/data/geo/com'+i+'.topojson'), function (e, com){
-              if (!e) read(com);
+              if (!e) load(com);
               map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
             })
           })(d[dep].feature.id)
