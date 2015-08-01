@@ -1,7 +1,5 @@
 function france(map) {
 
-  var layers = {};
-
   queue().defer(d3.json, '/data/geo/base.topojson')
          .defer(d3.csv,  '/data/stats/data.csv')
          .defer(d3.csv,  '/data/stats/unemployement.csv')
@@ -14,6 +12,7 @@ function france(map) {
 
   map.on('zoomend', draw);
   map.on('dragend', draw);
+
 
   function load(json) {
     for (key in json.objects) {
@@ -77,6 +76,7 @@ function france(map) {
 
   function init(data) {
 
+    layers = {};
     names = read(data,"name");
     densities = read(data,"density");
 
