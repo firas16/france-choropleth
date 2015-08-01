@@ -1,14 +1,13 @@
 function france(map, url, domain, range) {
 
-  queue().defer(d3.json, '/data/geo/base.topojson')
-         .defer(d3.csv,  '/data/stats/data.csv')
-         .defer(d3.csv,  url)
-         .await(function (e, json, data, stats){
-           init(data, stats);
-           load(json);
-           draw();
-           map.on({zoomend: draw, dragend: draw});
-         });
+  d3.json('/data/geo/base.topojson', function (e, json){
+  d3.csv('/data/stats/data.csv', function (e, data){
+  d3.csv(url, function (e, stats){
+    init(data, stats);
+    load(json);
+    draw();
+    map.on({zoomend: draw, dragend: draw});
+  })})});
 
   function load(json) {
     for (key in json.objects) {
