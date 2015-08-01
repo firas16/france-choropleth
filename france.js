@@ -43,10 +43,13 @@ function france(map, url, domain, range) {
       for (dep in d=layers["dep"]["_layers"]) {
         if (map.getBounds().overlaps(d[dep].getBounds())) {
           (function(i) {
-            d3.json((layers["com-"+i] || '/data/geo/com'+i+'.topojson'), function (error, json){
-              if (!error) load(json);
-              map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
-            })
+            if (!layers["com-"+i]) {
+              d3.json('/data/geo/com'+i+'.topojson', function (error, json){
+                load(json);
+                map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
+              })
+            }
+            else map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]);
           })(d[dep].feature.id)
         }
       }
