@@ -5,7 +5,7 @@ function france(map) {
          .defer(d3.csv,  '/data/stats/unemployement.csv')
          .await(function (error, json, data, stats){
            init(data);
-           unemployement = read(stats,"unemployement");
+           unemployement = read(stats);
            load(json);
            draw();
            map.on({'zoomend': draw, 'dragend': draw});
@@ -65,17 +65,17 @@ function france(map) {
     }
   }
 
-  function read(csv, data) {
+  function read(csv, col=1) {
     array = {};
-    for (obj in csv) array[csv[obj].insee] = csv[obj][data];
+    for (obj in csv) array[csv[obj].insee] = csv[obj][Object.keys(csv[0])[col]];
     return array;
   }
 
   function init(data) {
 
     layers = {};
-    names = read(data,"name");
-    densities = read(data,"density");
+    names = read(data);
+    densities = read(data,2);
 
     info = L.control();
     info.onAdd = function (map) {
