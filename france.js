@@ -46,7 +46,7 @@ function france(id, url, domain, range, name, unit) {
                   }
                 }
                 else {
-                  for (dep in d=self.layers["dep"]["_self.layers"]) {
+                  for (dep in d=self.layers["dep"]["_layers"]) {
                     if (self.map.getBounds().overlaps(d[dep].getBounds())) {
                       function reshow(i) { self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]); }
                       (function(i) { if (self.layers["com-"+i]) reshow(i);
