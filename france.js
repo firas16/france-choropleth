@@ -1,4 +1,4 @@
-function france(map, url, domain, range) {
+function france(map, url, domain, range, name, unit) {
 
   d3.json('/data/geo/base.topojson', function (e, json){
   d3.csv('/data/stats/data.csv', function (e, data){
@@ -17,7 +17,7 @@ function france(map, url, domain, range) {
           layers[key] = layers[key] || new L.layerGroup();
           layers[key].addLayer(json);
           json.on({
-            mouseover: function(e) { e.target.setStyle({stroke: 1}); info.update(names[e.target.feature.id]); },
+            mouseover: function(e) { e.target.setStyle({stroke: 1}); info.update(e.target.feature.id); },
              mouseout: function(e) { e.target.setStyle({stroke: 0}); info.update(); }
           });
         },
@@ -68,8 +68,9 @@ function france(map, url, domain, range) {
         return div;
       },
       update: function (props) {
-        div.innerHTML = '<h4>Carte administrative</h4>'
-        + (props ? props : '<span style="color:#aaa">Survolez un territoire</span>')
+        div.innerHTML = '<h4>'+name+'</h4>'
+        + (props ? names[props].replace("e Arr", "<sup>ème</sup> arr")+" : "+stat[props].replace(".", ",")+"&nbsp;"+unit
+          : '<span style="color:#aaa">Survolez un territoire</span>')
       }
     }));
     info.addTo(map);
