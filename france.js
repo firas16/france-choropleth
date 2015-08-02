@@ -1,4 +1,4 @@
-function france(id, url, domain, range, name, unit) {
+function france(id, url, domain, range, title, unit) {
 
   this.init = function() {
                 self.map = L.map(id, {center: [46.6, 2.1], zoom: 6, minZoom: 6, maxZoom: 10, renderer: L.canvas({padding: .5})})
@@ -79,7 +79,7 @@ function france(id, url, domain, range, name, unit) {
                     return div;
                   },
                   update: function (props) {
-                    div.innerHTML = '<h4>'+name+'</h4>'
+                    div.innerHTML = '<h4>'+title+'</h4>'
                     + (props ? self.names[props].replace("e Arr", "<sup>ème</sup> arr")+" : "+self.stat[props].replace(".", ",")+"&nbsp;"+unit
                       : '<span style="color:#aaa">Survolez un territoire</span>')
                   }
@@ -87,10 +87,10 @@ function france(id, url, domain, range, name, unit) {
                 self.info.addTo(self.map);
               }
 
-  this.fill = function (url, domain, range, _name, _unit) {
+  this.fill = function (url, domain, range, _title, _unit) {
                 d3.csv(url, function (e, csv){
                   self.stat = self.read(csv);
-                  name = _name, unit = _unit;
+                  title = _title, unit = _unit;
                   self.info.update();
                   for (l in self.layers) {
                     for (el in c=self.layers[l]["_layers"]) {
