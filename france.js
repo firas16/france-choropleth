@@ -57,9 +57,9 @@ function france(id, url, domain, range, title, unit) {
                 }
               }
 
-  this.read = function(csv, col=1) {
+  this.read = function(csv, col) {
                 array = {};
-                for (obj in csv) array[csv[obj].insee] = csv[obj][Object.keys(csv[0])[col]];
+                for (obj in csv) array[csv[obj].insee] = csv[obj][Object.keys(csv[0])[(col || 1)]];
                 return array;
               }
 
