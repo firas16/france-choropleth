@@ -87,9 +87,11 @@ function france(id, url, domain, range, name, unit) {
                 self.info.addTo(self.map);
               }
 
-  this.fill = function (url, domain, range) {
+  this.fill = function (url, domain, range, _name, _unit) {
                 d3.csv(url, function (e, csv){
                   self.stat = self.read(csv);
+                  name = _name, unit = _unit;
+                  self.info.update();
                   for (l in self.layers) {
                     for (el in c=self.layers[l]["_layers"]) {
                       c[el].setStyle({
