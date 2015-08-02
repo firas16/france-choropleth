@@ -1,15 +1,17 @@
 function france(map, url, domain, range, name, unit) {
 
-  d3.json('/data/geo/base.topojson', function (e, json){
-  d3.csv('/data/stats/data.csv', function (e, data){
-  d3.csv(url, function (e, stats){
-    init(data, stats);
-    load(json);
-    draw();
-    map.on({zoomend: draw, dragend: draw});
-  })})});
+  this.init = function() {
+                d3.json('/data/geo/base.topojson', function (e, json){
+                d3.csv('/data/stats/data.csv', function (e, data){
+                d3.csv(url, function (e, stats){
+                  load(data, stats);
+                  draw(json);
+                  show();
+                  map.on({zoomend: show, dragend: show});
+                })})});
+              }
 
-  this.load = function(json) {
+  this.draw = function(json) {
                 for (key in json.objects) {
                   geojson = topojson.feature(json, json.objects[key]);
                   new L.GeoJSON(geojson, { smoothFactor: 0,
@@ -31,7 +33,7 @@ function france(map, url, domain, range, name, unit) {
                 }
               }
 
-  this.draw = function() {
+  this.show = function() {
                 if(map.getZoom() <= 8) {
                   for (l in layers) {
                     if (l.slice(0,3) == "com") map.removeLayer(layers[l]);
@@ -41,9 +43,9 @@ function france(map, url, domain, range, name, unit) {
                 else {
                   for (dep in d=layers["dep"]["_layers"]) {
                     if (map.getBounds().overlaps(d[dep].getBounds())) {
-                      function reload(i) { map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]); }
-                      (function(i) { if (layers["com-"+i]) reload(i);
-                        else d3.json('/data/geo/com'+i+'.topojson', function (e, json){ load(json); reload(i); })
+                      function reshow(i) { map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]); }
+                      (function(i) { if (layers["com-"+i]) reshow(i);
+                        else d3.json('/data/geo/com'+i+'.topojson', function (e, json){ draw(json); reshow(i); })
                       })(d[dep].feature.id)
                     }
                   }
@@ -56,7 +58,7 @@ function france(map, url, domain, range, name, unit) {
                 return array;
               }
 
-  this.init = function(data, stats) {
+  this.load = function(data, stats) {
                 layers = {};
                 names = read(data);
                 densities = read(data,2);
@@ -75,5 +77,7 @@ function france(map, url, domain, range, name, unit) {
                 }));
                 info.addTo(map);
               }
+
+  this.init();
 
 }
