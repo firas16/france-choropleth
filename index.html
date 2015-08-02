@@ -45,9 +45,11 @@
 
   <p>Leaflet map showing French <em>departements</em>, <em>cantons</em> and <em>communes</em> depending of the zoom level.</p>
 
+  <p> Show : <a href="javascript: map.fill('/data/stats/growth.csv', [-1,1], ['#d62728','#006837'],'Taux de variation','%');">population growth rate</a>, <a href="javascript: map.fill('/data/stats/unemployement.csv', [6,14], ['#006837','#d62728'], 'Taux de chômage', '%');">unemployement rate</a>.
+
   <div id="map"></div>
 
-  <script> var map = new france('map', '/data/stats/unemployement.csv', [6,14], ["#006837","#d62728"], "Taux de chômage", "%") </script>
+  <script> var map = new france('map', '/data/stats/unemployement.csv', [6,14], ['#006837','#d62728'], 'Taux de chômage', '%') </script>
 
 </body>
 </html>
