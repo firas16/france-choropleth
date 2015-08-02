@@ -1,6 +1,9 @@
-function france(map, url, domain, range, name, unit) {
+function france(id, url, domain, range, name, unit) {
 
   this.init = function() {
+                this.map = L.map(id, {center: [46.6, 2.1], zoom: 6, minZoom: 6, maxZoom: 10, renderer: L.canvas({padding: .5})})
+                           .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
+                              subdomains: 'abcd', detectRetina: true }));
                 d3.json('/data/geo/base.topojson', function (e, json){
                 d3.csv('/data/stats/data.csv', function (e, data){
                 d3.csv(url, function (e, stats){
