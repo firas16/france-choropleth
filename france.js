@@ -68,6 +68,10 @@ function france(id, url, domain, range, name, unit) {
                 self.names = self.read(data);
                 self.densities = self.read(data,2);
                 self.stat = self.read(stats);
+                self.info();
+              }
+
+  this.info = function(data, stats) {
                 self.info = new (L.Control.extend({
                   onAdd: function () {
                     div = L.DomUtil.create('div', 'info');
