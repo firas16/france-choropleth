@@ -5,13 +5,15 @@ function france(id, url, domain, range, name, unit) {
                            .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
                               subdomains: 'abcd', detectRetina: true }));
                 d3.json('/data/geo/base.topojson', function (e, json){
-                d3.csv('/data/stats/data.csv', function (e, data){
-                d3.csv(url, function (e, stats){
-                  self.load(data, stats);
-                  self.draw(json);
-                  self.show();
-                  self.map.on({zoomend: self.show, dragend: self.show});
-                })})});
+                  d3.csv('/data/stats/data.csv', function (e, data){
+                    d3.csv(url, function (e, stats){
+                      self.load(data, stats);
+                      self.draw(json);
+                      self.show();
+                      self.map.on({zoomend: self.show, dragend: self.show});
+                    })
+                  })
+                });
               }
 
   this.draw = function(json) {
