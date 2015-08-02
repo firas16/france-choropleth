@@ -1,16 +1,16 @@
 function france(id, url, domain, range, name, unit) {
 
   this.init = function() {
-                this.map = L.map(id, {center: [46.6, 2.1], zoom: 6, minZoom: 6, maxZoom: 10, renderer: L.canvas({padding: .5})})
+                self.map = L.map(id, {center: [46.6, 2.1], zoom: 6, minZoom: 6, maxZoom: 10, renderer: L.canvas({padding: .5})})
                            .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
                               subdomains: 'abcd', detectRetina: true }));
                 d3.json('/data/geo/base.topojson', function (e, json){
                 d3.csv('/data/stats/data.csv', function (e, data){
                 d3.csv(url, function (e, stats){
-                  load(data, stats);
-                  draw(json);
-                  show();
-                  map.on({zoomend: show, dragend: show});
+                  self.load(data, stats);
+                  self.draw(json);
+                  self.show();
+                  self.map.on({zoomend: self.show, dragend: self.show});
                 })})});
               }
 
@@ -37,18 +37,18 @@ function france(id, url, domain, range, name, unit) {
               }
 
   this.show = function() {
-                if(map.getZoom() <= 8) {
+                if(self.map.getZoom() <= 8) {
                   for (l in layers) {
-                    if (l.slice(0,3) == "com") map.removeLayer(layers[l]);
-                    if (l.slice(0,3) == "can") map.addLayer(layers[l]);
+                    if (l.slice(0,3) == "com") self.map.removeLayer(layers[l]);
+                    if (l.slice(0,3) == "can") self.map.addLayer(layers[l]);
                   }
                 }
                 else {
                   for (dep in d=layers["dep"]["_layers"]) {
-                    if (map.getBounds().overlaps(d[dep].getBounds())) {
-                      function reshow(i) { map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]); }
+                    if (self.map.getBounds().overlaps(d[dep].getBounds())) {
+                      function reshow(i) { self.map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]); }
                       (function(i) { if (layers["com-"+i]) reshow(i);
-                        else d3.json('/data/geo/com'+i+'.topojson', function (e, json){ draw(json); reshow(i); })
+                        else d3.json('/data/geo/com'+i+'.topojson', function (e, json){ self.draw(json); reshow(i); })
                       })(d[dep].feature.id)
                     }
                   }
@@ -63,9 +63,9 @@ function france(id, url, domain, range, name, unit) {
 
   this.load = function(data, stats) {
                 layers = {};
-                names = read(data);
-                densities = read(data,2);
-                stat = read(stats);
+                names = self.read(data);
+                densities = self.read(data,2);
+                stat = self.read(stats);
                 info = new (L.Control.extend({
                   onAdd: function () {
                     div = L.DomUtil.create('div', 'info');
@@ -78,9 +78,10 @@ function france(id, url, domain, range, name, unit) {
                       : '<span style="color:#aaa">Survolez un territoire</span>')
                   }
                 }));
-                info.addTo(map);
+                info.addTo(self.map);
               }
 
-  this.init();
+  var self = this;
+  self.init();
 
 }
