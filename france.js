@@ -71,7 +71,7 @@ function france(id, url, domain, range, name, unit) {
                 self.info();
               }
 
-  this.info = function(data, stats) {
+  this.info = function() {
                 self.info = new (L.Control.extend({
                   onAdd: function () {
                     div = L.DomUtil.create('div', 'info');
