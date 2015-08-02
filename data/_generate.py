@@ -26,3 +26,7 @@ df.to_csv('stats/data.csv', columns = ['name','density'], index_label='insee', f
 # Unemployement
 df['unemployement'] = df.P12_CHOM1564/df.P12_POP1564*100
 df.to_csv('stats/unemployement.csv', columns = ['unemployement'], index_label='insee', float_format='%.1f')
+
+# Population growth rate (2007-2012)
+df['growth'] = ((df.P12_POP/df.P07_POP)**(1/5)-1)*100
+df.to_csv('stats/growth.csv', columns = ['growth'], index_label='insee', float_format='%.1f')
