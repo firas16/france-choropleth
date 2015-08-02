@@ -13,7 +13,7 @@ function france(id, url, domain, range, name, unit) {
                       self.map.on({zoomend: self.show, dragend: self.show});
                     })
                   })
-                });
+                })
               }
 
   this.draw = function(json) {
@@ -26,7 +26,7 @@ function france(id, url, domain, range, name, unit) {
                       json.on({
                         mouseover: function(e) { e.target.setStyle({stroke: 1}); self.info.update(e.target.feature.id); },
                          mouseout: function(e) { e.target.setStyle({stroke: 0}); self.info.update(); }
-                      });
+                      })
                     },
                     style: function(feature){
                       return { color: "#333", weight: 1, stroke: 0, opacity: .5,
@@ -94,7 +94,7 @@ function france(id, url, domain, range, name, unit) {
                     for (el in c=self.layers[l]["_layers"]) {
                       c[el].setStyle({
                         fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stat[c[el].feature.id])
-                      });
+                      })
                     }
                   }
                 })
