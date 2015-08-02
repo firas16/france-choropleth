@@ -34,3 +34,7 @@ df.to_csv('stats/growth.csv', columns = ['growth'], index_label='insee', float_f
 # Second home
 df['second'] = df.P12_RSECOCC/df.P12_LOG*100
 df.to_csv('stats/second.csv', columns = ['second'], index_label='insee', float_format='%.1f')
+
+# Empty houses
+df['empty'] = df.P12_LOGVAC/df.P12_LOG*100
+df.to_csv('stats/empty.csv', columns = ['empty'], index_label='insee', float_format='%.1f')
