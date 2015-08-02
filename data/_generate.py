@@ -30,3 +30,7 @@ df.to_csv('stats/unemployement.csv', columns = ['unemployement'], index_label='i
 # Population growth rate (2007-2012)
 df['growth'] = ((df.P12_POP/df.P07_POP)**(1/5)-1)*100
 df.to_csv('stats/growth.csv', columns = ['growth'], index_label='insee', float_format='%.1f')
+
+# Second home
+df['second'] = df.P12_RSECOCC/df.P12_LOG*100
+df.to_csv('stats/second.csv', columns = ['second'], index_label='insee', float_format='%.1f')
