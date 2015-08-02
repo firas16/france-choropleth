@@ -21,17 +21,17 @@ function france(id, url, domain, range, name, unit) {
                   geojson = topojson.feature(json, json.objects[key]);
                   new L.GeoJSON(geojson, { smoothFactor: 0,
                     onEachFeature: function (feature, json) {
-                      layers[key] = layers[key] || new L.layerGroup();
-                      layers[key].addLayer(json);
+                      self.layers[key] = self.layers[key] || new L.layerGroup();
+                      self.layers[key].addLayer(json);
                       json.on({
-                        mouseover: function(e) { e.target.setStyle({stroke: 1}); info.update(e.target.feature.id); },
-                         mouseout: function(e) { e.target.setStyle({stroke: 0}); info.update(); }
+                        mouseover: function(e) { e.target.setStyle({stroke: 1}); self.info.update(e.target.feature.id); },
+                         mouseout: function(e) { e.target.setStyle({stroke: 0}); self.info.update(); }
                       });
                     },
                     style: function(feature){
                       return { color: "#333", weight: 1, stroke: 0, opacity: .5,
-                         fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(densities[feature.id]),
-                           fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(stat[feature.id])
+                         fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.densities[feature.id]),
+                           fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stat[feature.id])
                       }
                     }
                   })
@@ -40,16 +40,16 @@ function france(id, url, domain, range, name, unit) {
 
   this.show = function() {
                 if(self.map.getZoom() <= 8) {
-                  for (l in layers) {
-                    if (l.slice(0,3) == "com") self.map.removeLayer(layers[l]);
-                    if (l.slice(0,3) == "can") self.map.addLayer(layers[l]);
+                  for (l in self.layers) {
+                    if (l.slice(0,3) == "com") self.map.removeLayer(self.layers[l]);
+                    if (l.slice(0,3) == "can") self.map.addLayer(self.layers[l]);
                   }
                 }
                 else {
-                  for (dep in d=layers["dep"]["_layers"]) {
+                  for (dep in d=self.layers["dep"]["_self.layers"]) {
                     if (self.map.getBounds().overlaps(d[dep].getBounds())) {
-                      function reshow(i) { self.map.addLayer(layers["com-"+i]).removeLayer(layers["can-"+i]); }
-                      (function(i) { if (layers["com-"+i]) reshow(i);
+                      function reshow(i) { self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]); }
+                      (function(i) { if (self.layers["com-"+i]) reshow(i);
                         else d3.json('/data/geo/com'+i+'.topojson', function (e, json){ self.draw(json); reshow(i); })
                       })(d[dep].feature.id)
                     }
@@ -64,11 +64,11 @@ function france(id, url, domain, range, name, unit) {
               }
 
   this.load = function(data, stats) {
-                layers = {};
-                names = self.read(data);
-                densities = self.read(data,2);
-                stat = self.read(stats);
-                info = new (L.Control.extend({
+                self.layers = {};
+                self.names = self.read(data);
+                self.densities = self.read(data,2);
+                self.stat = self.read(stats);
+                self.info = new (L.Control.extend({
                   onAdd: function () {
                     div = L.DomUtil.create('div', 'info');
                     this.update();
@@ -76,11 +76,11 @@ function france(id, url, domain, range, name, unit) {
                   },
                   update: function (props) {
                     div.innerHTML = '<h4>'+name+'</h4>'
-                    + (props ? names[props].replace("e Arr", "<sup>ème</sup> arr")+" : "+stat[props].replace(".", ",")+"&nbsp;"+unit
+                    + (props ? self.names[props].replace("e Arr", "<sup>ème</sup> arr")+" : "+self.stat[props].replace(".", ",")+"&nbsp;"+unit
                       : '<span style="color:#aaa">Survolez un territoire</span>')
                   }
                 }));
-                info.addTo(self.map);
+                self.info.addTo(self.map);
               }
 
   var self = this;
