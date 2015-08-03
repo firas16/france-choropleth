@@ -94,25 +94,27 @@ function france(id, url, domain, range, title, unit) {
                   onAdd: function () {
                     this.div = L.DomUtil.create('div', 'legend');
                     return this.div;
+                  },
+                  draw: function() {
+                    d3.selectAll(".legend svg").remove();
+                    var svg = d3.select(".legend").append("svg").attr("id", 'legend').attr("width", 250).attr("height", 40);
+                    var x = d3.scale.linear().domain([Math.min.apply(Math, domain), Math.max.apply(Math, domain)]).range([0, 200]);
+                    var c = d3.scale.linear().domain(domain).range(range);
+                    var axis = d3.svg.axis().scale(x).orient("top").tickSize(1).tickValues(c.domain())
+                    var g = svg.append("g").attr("class", "key").attr("transform", "translate(5,16)");
+
+                    svg.append("svg:defs").append("svg:linearGradient").attr("id", "gradient").selectAll("stop")
+                        .data(c.range().map(function(d, i) { return { x: i < c.domain().length ? x(c.domain()[i])/2 : x.range()[1]/2, z:d }}))
+                        .enter().append("svg:stop")
+                        .attr("offset", function(d) { return d.x+"%"; })
+                        .attr("stop-color", function(d) { return d.z; });
+
+                    g.append("rect").attr("height", 10).attr("x", 0).attr("width", 200).style("fill", "url(#gradient)");
+                    g.call(axis).append("text").attr("class", "caption").attr("y", 21).text(title+" ("+unit+")");
                   }
                 }));
                 self.legend.addTo(self.map);
-
-                var x = d3.scale.linear().domain([Math.min.apply(Math, domain), Math.max.apply(Math, domain)]).range([0, 200]);
-                var c = d3.scale.linear().domain(domain).range(range);
-                var axis = d3.svg.axis().scale(x).orient("top").tickSize(1).tickValues(c.domain())
-                var svg = d3.select(".legend").append("svg").attr("id", 'legend').attr("width", 250).attr("height", 40);
-                var g = svg.append("g").attr("class", "key").attr("transform", "translate(5,16)");
-
-                svg.append("svg:defs").append("svg:linearGradient").attr("id", "gradient").selectAll("stop")
-                    .data(c.range().map(function(d, i) { return { x: i < c.domain().length ? x(c.domain()[i])/2 : x.range()[1]/2, z:d }}))
-                    .enter().append("svg:stop")
-                    .attr("offset", function(d) { return d.x+"%"; })
-                    .attr("stop-color", function(d) { return d.z; });
-
-                g.append("rect").attr("height", 10).attr("x", 0).attr("width", 200).style("fill", "url(#gradient)");
-                g.call(axis).append("text").attr("class", "caption").attr("y", 21).text(title+" ("+unit+")");
-
+                self.legend.draw();
               }
 
   this.fill = function (url, _domain, _range, _title, _unit) {
@@ -121,6 +123,7 @@ function france(id, url, domain, range, title, unit) {
                   title = _title, unit = _unit;
                   range = _range, domain = _domain;
                   self.info.update();
+                  self.legend.draw();
                   for (l in self.layers) {for (el in c=self.layers[l]["_layers"]) {
                       c[el].setStyle({
                         fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stat[c[el].feature.id])
