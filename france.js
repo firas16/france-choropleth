@@ -54,16 +54,16 @@ function france(id, url, domain, range, title, unit, plus) {
                 }
               }
 
-  this.com =  function(i, fnct) {
+  this.com =  function(i, callback) {
                 if (self.layers["com-"+i]) {
                   self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
-                  if (fnct) fnct();
+                  if (callback) callback();
                 }
                 else {
                   d3.json('/data/geo/com'+i+'.topojson', function (e, json){
                     self.draw(json);
                     self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
-                    if (fnct) fnct();
+                    if (callback) callback();
                    })
                 }
               }
