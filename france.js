@@ -1,4 +1,4 @@
-function france(id, url, domain, range, title, unit) {
+function france(id, url, domain, range, title, unit, plus) {
 
   this.init = function() {
                 self.map = L.map(id, {center: [46.6, 2.1], zoom: 6, minZoom: 6, maxZoom: 10, renderer: L.canvas({padding: .5})})
@@ -100,7 +100,7 @@ function france(id, url, domain, range, title, unit) {
                     var svg = d3.select(".legend").append("svg").attr("id", 'legend').attr("width", 250).attr("height", 40);
                     var x = d3.scale.linear().domain([Math.min.apply(Math, domain), Math.max.apply(Math, domain)]).range([0, 200]);
                     window.c = d3.scale.linear().domain(domain).range(range);
-                    var axis = d3.svg.axis().scale(x).orient("top").tickSize(1).tickFormat(d3.format('.0f')).tickValues(c.domain())
+                    var axis = d3.svg.axis().scale(x).orient("top").tickSize(1).tickFormat(d3.format(('' || plus)+'.0f')).tickValues(c.domain())
                     var g = svg.append("g").attr("class", "key").attr("transform", "translate(5,16)");
 
                     svg.append("svg:defs").append("svg:linearGradient").attr("id", "gradient").selectAll("stop")
@@ -117,11 +117,12 @@ function france(id, url, domain, range, title, unit) {
                 self.legend.draw();
               }
 
-  this.fill = function (url, _domain, _range, _title, _unit) {
+  this.fill = function (url, _domain, _range, _title, _unit, _plus) {
                 d3.csv(url, function (e, csv){
                   self.stat = self.read(csv);
                   title = _title, unit = _unit;
                   range = _range, domain = _domain;
+                  plus = _plus;
                   self.info.update();
                   self.legend.draw();
                   for (l in self.layers) {for (el in c=self.layers[l]["_layers"]) {
