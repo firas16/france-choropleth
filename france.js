@@ -134,6 +134,13 @@ function france(id, url, domain, range, title, unit, plus) {
                 })
               }
 
+  this.look = function(id) {
+                for (dep in d=self.layers["dep"]["_layers"]) {
+                  if (d[dep].feature.id == id.slice(0,2)) {
+                    self.map.flyToBounds(d[dep].getBounds());
+                  }
+                }
+              }
 
   var self = this;
   self.init();
