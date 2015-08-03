@@ -148,6 +148,16 @@ function france(id, url, domain, range, title, unit, plus) {
   this.look = function(id) {
                 self.com(id.slice(0,2), function() {
                   for (dep in d=self.layers["dep"]["_layers"]) {
+                    for (l in self.layers) {
+                      for (el in c=self.layers[l]["_layers"]) {
+                        if (id == c[el].feature.id) {
+                          var b = c[el].getBounds(), i = c[el].feature.id;
+                          L.popup().setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
+                           .setContent('<strong>'+self.names[i]+'</strong><br />'+
+                                       title+' : '+self.stat[i]+' '+unit+'</p>').openOn(self.map);
+                        }
+                      }
+                    }
                     if (d[dep].feature.id == id.slice(0,2)) {
                       self.map.flyToBounds(d[dep].getBounds());
                     }
