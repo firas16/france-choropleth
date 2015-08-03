@@ -75,7 +75,7 @@ function france(id, url, domain, range, title, unit, plus) {
               }
 
   this.load = function(data, stats) {
-                self.layers = {}, self.select= {};
+                self.layers = {};
                 self.names = self.read(data);
                 self.densities = self.read(data,2);
                 self.stat = self.read(stats);
