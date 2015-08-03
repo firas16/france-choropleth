@@ -48,12 +48,23 @@ function france(id, url, domain, range, title, unit, plus) {
                 else {
                   for (dep in d=self.layers["dep"]["_layers"]) {
                     if (self.map.getBounds().overlaps(d[dep].getBounds())) {
-                      function reshow(i) { self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]); }
-                      (function(i) { if (self.layers["com-"+i]) reshow(i);
-                        else d3.json('/data/geo/com'+i+'.topojson', function (e, json){ self.draw(json); reshow(i); })
-                      })(d[dep].feature.id)
+                      self.com(d[dep].feature.id)
                     }
                   }
+                }
+              }
+
+  this.com =  function(i, fnct) {
+                if (self.layers["com-"+i]) {
+                  self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
+                  if (fnct) fnct();
+                }
+                else {
+                  d3.json('/data/geo/com'+i+'.topojson', function (e, json){
+                    self.draw(json);
+                    self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
+                    if (fnct) fnct();
+                   })
                 }
               }
 
