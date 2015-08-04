@@ -154,12 +154,8 @@ function france(id, url, domain, range, title, unit, plus) {
                         L.popup().setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
                          .setContent('<strong>'+self.names[i]+'</strong><br />'+
                                      title+' : '+self.stat[i]+' '+unit+'</p>').openOn(self.map);
+                        self.map.flyToBounds(b);
                       }
-                    }
-                  }
-                  for (dep in d=self.layers["dep"]["_layers"]) {
-                    if (d[dep].feature.id == id.slice(0,2)) {
-                      self.map.flyToBounds(d[dep].getBounds());
                     }
                   }
                 })
