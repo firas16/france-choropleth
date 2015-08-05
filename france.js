@@ -7,7 +7,12 @@ function france(id, url, domain, range, title, unit, plus) {
                 d3.json('/data/geo/base.topojson', function (e, json){
                   d3.csv('/data/stats/data.csv', function (e, data){
                     d3.csv(url, function (e, stats){
-                      self.load(data, stats);
+                      self.layers = {};
+                      self.names = self.read(data);
+                      self.densities = self.read(data,2);
+                      self.stat = self.read(stats);
+                      self.info();
+                      self.lgnd();
                       self.draw(json);
                       self.show();
                       self.map.on({zoomend: self.show, dragend: self.show});
@@ -72,15 +77,6 @@ function france(id, url, domain, range, title, unit, plus) {
                 array = {};
                 for (obj in csv) array[csv[obj].insee] = csv[obj][Object.keys(csv[0])[(col || 1)]];
                 return array;
-              }
-
-  this.load = function(data, stats) {
-                self.layers = {};
-                self.names = self.read(data);
-                self.densities = self.read(data,2);
-                self.stat = self.read(stats);
-                self.info();
-                self.lgnd();
               }
 
   this.info = function() {
