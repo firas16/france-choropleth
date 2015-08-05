@@ -14,8 +14,12 @@ function france(id, url, domain, range, title, unit, plus) {
                       self.info();
                       self.lgnd();
                       self.draw(json);
-                      self.show();
                       self.map.on({zoomend: self.show, dragend: self.show});
+                      if(self.map.getZoom() <= 8) {
+                        for (l in self.layers) {
+                          if (l.slice(0,3) == "can") self.map.addLayer(self.layers[l]);
+                        }
+                      }
                     })
                   })
                 })
@@ -44,13 +48,7 @@ function france(id, url, domain, range, title, unit, plus) {
               }
 
   this.show = function() {
-                if(self.map.getZoom() <= 8) {
-                  for (l in self.layers) {
-                    if (l.slice(0,3) == "com") self.map.removeLayer(self.layers[l]);
-                    if (l.slice(0,3) == "can") self.map.addLayer(self.layers[l]);
-                  }
-                }
-                else {
+                if(self.map.getZoom() > 8) {
                   for (dep in d=self.layers["dep"]["_layers"]) {
                     if (self.map.getBounds().overlaps(d[dep].getBounds())) {
                       self.load(d[dep].feature.id)
