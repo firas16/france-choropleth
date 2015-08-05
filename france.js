@@ -141,7 +141,6 @@ function france(id, url, domain, range, title, unit, plus) {
               }
 
   this.look = function(id) {
-                self.looked = id;
                 self.load(id.slice(0,2), function() {
                   for (el in c=self.layers["com-"+id.slice(0,2)]["_layers"]) {
                     if (id == c[el].feature.id) {
@@ -150,7 +149,7 @@ function france(id, url, domain, range, title, unit, plus) {
                       self.map.flyToBounds(self.b);
                     }
                   }
-                });
+                })
               }
 
   this.popup = function(popup, i, b) {
