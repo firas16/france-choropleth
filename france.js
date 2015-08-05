@@ -53,13 +53,13 @@ function france(id, url, domain, range, title, unit, plus) {
                 else {
                   for (dep in d=self.layers["dep"]["_layers"]) {
                     if (self.map.getBounds().overlaps(d[dep].getBounds())) {
-                      self.com(d[dep].feature.id)
+                      self.load(d[dep].feature.id)
                     }
                   }
                 }
               }
 
-  this.com =  function(i, callback) {
+  this.load =  function(i, callback) {
                 if (self.layers["com-"+i]) {
                   self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
                   if (callback) callback();
@@ -144,7 +144,7 @@ function france(id, url, domain, range, title, unit, plus) {
 
   this.look = function(id) {
                 self.looked = id;
-                self.com(id.slice(0,2), function() {
+                self.load(id.slice(0,2), function() {
                   for (el in c=self.layers["com-"+id.slice(0,2)]["_layers"]) {
                     if (id == c[el].feature.id) {
                       self.b = c[el].getBounds(), self.i = c[el].feature.id;
