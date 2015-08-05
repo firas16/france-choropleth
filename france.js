@@ -64,7 +64,8 @@ function france(id, url, domain, range, title, unit, plus) {
                 else {
                   d3.json('/data/geo/com'+i+'.topojson', function (e, json){
                     self.draw(json);
-                    self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
+                    self.map.removeLayer(self.layers["can-"+i]);
+                    self.map.addLayer(self.layers["com-"+i]);
                     if (callback) callback();
                   })
                 }
