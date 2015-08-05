@@ -127,9 +127,7 @@ function france(id, url, domain, range, title, unit, plus) {
   this.fill = function (url, _domain, _range, _title, _unit, _plus) {
                 d3.csv(url, function (e, csv){
                   self.stat = self.read(csv);
-                  title = _title, unit = _unit;
-                  range = _range, domain = _domain;
-                  plus = _plus;
+                  title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
                   self.info.update();
                   self.legend.draw();
                   if (self.pop) self.popup(self.pop, self.i, self.b);
@@ -147,8 +145,7 @@ function france(id, url, domain, range, title, unit, plus) {
                 self.load(id.slice(0,2), function() {
                   for (el in c=self.layers["com-"+id.slice(0,2)]["_layers"]) {
                     if (id == c[el].feature.id) {
-                      self.b = c[el].getBounds(), self.i = c[el].feature.id;
-                      self.pop = L.popup();
+                      self.pop = L.popup(), self.b = c[el].getBounds(), self.i = c[el].feature.id;
                       self.popup(self.pop, self.i, self.b);
                       self.map.flyToBounds(self.b);
                     }
