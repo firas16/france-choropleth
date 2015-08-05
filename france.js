@@ -28,7 +28,7 @@ function france(id, url, domain, range, title, unit, plus) {
   this.draw = function(json) {
                 for (key in json.objects) {
                   geojson = topojson.feature(json, json.objects[key]);
-                  new L.GeoJSON(geojson, { smoothFactor: 0,
+                  new L.GeoJSON(geojson, { smoothFactor: .3,
                     onEachFeature: function (feature, json) {
                       self.layers[key] = self.layers[key] || new L.layerGroup();
                       self.layers[key].addLayer(json);
