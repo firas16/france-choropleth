@@ -9,8 +9,8 @@ function france(id, url, domain, range, title, unit, plus) {
                     d3.csv(url, function (e, stats){
                       self.layers = {};
                       self.names = self.read(data);
-                      self.densities = self.read(data,2);
-                      self.stat = self.read(stats);
+                      self.alpha = self.read(data,2);
+                      self.stats = self.read(stats);
                       self.info();
                       self.draw(json);
                       self.map.on({zoomend: self.show, dragend: self.show});
@@ -32,14 +32,14 @@ function france(id, url, domain, range, title, unit, plus) {
                       self.layers[key] = self.layers[key] || new L.layerGroup();
                       self.layers[key].addLayer(json);
                       json.on({ mouseover: function(e) { e.target.setStyle({stroke: 1});
-                                           d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stat[e.target.feature.id]+" "+unit) },
+                                           d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stats[e.target.feature.id]+" "+unit) },
                                  mouseout: function(e) { e.target.setStyle({stroke: 0});
                                            d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") }})
                     },
                     style: function(feature){
                       return { color: "#333", weight: 1, stroke: 0, opacity: .5,
-                         fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.densities[feature.id]),
-                           fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stat[feature.id])
+                         fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.alpha[feature.id]),
+                           fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[feature.id])
                       }
                     }
                   })
@@ -99,13 +99,13 @@ function france(id, url, domain, range, title, unit, plus) {
 
   this.fill = function (url, _domain, _range, _title, _unit, _plus) {
                 d3.csv(url, function (e, csv){
-                  self.stat = self.read(csv);
+                  self.stats = self.read(csv);
                   title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
                   self.info();
                   if (self.pop) self.popup(self.pop, self.i, self.b);
                   for (l in self.layers) {for (el in c=self.layers[l]["_layers"]) {
                       c[el].setStyle({
-                        fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stat[c[el].feature.id])
+                        fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[c[el].feature.id])
                       })
                     }
                   }
@@ -127,7 +127,7 @@ function france(id, url, domain, range, title, unit, plus) {
   this.popup = function(popup, i, b) {
                 popup.setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
                      .setContent('<strong>'+self.names[i]+'</strong><br />'+
-                                 title+' : '+self.stat[i]+' '+unit+'</p>').openOn(self.map);
+                                 title+' : '+self.stats[i]+' '+unit+'</p>').openOn(self.map);
               }
 
   var self = this;
