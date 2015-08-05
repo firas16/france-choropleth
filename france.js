@@ -69,7 +69,7 @@ function france(id, url, domain, range, title, unit, plus) {
                     self.draw(json);
                     self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
                     if (callback) callback();
-                   })
+                  })
                 }
               }
 
