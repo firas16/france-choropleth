@@ -114,7 +114,7 @@ function france(id, url, domain, range, title, unit, plus) {
                         .attr("offset", function(d) { return d.x+"%"; })
                         .attr("stop-color", function(d) { return d.z; });
 
-                    g.append("rect").attr("height", 10).attr("x", 0).attr("width", 200).style("fill", "url(#gradient)");
+                    g.append("rect").attr("height", 10).attr("x", 0).attr("width", 200).attr("fill", "url(/#gradient)");
                     g.call(axis).append("text").attr("class", "caption").attr("y", 21).text(title+" ("+unit+")");
                   }
                 }));
