@@ -59,7 +59,6 @@ function france(id, url, domain, range, title, unit, plus) {
 
   this.load =  function(i, callback) {
                 if (self.layers["com-"+i]) {
-                  self.map.addLayer(self.layers["com-"+i]).removeLayer(self.layers["can-"+i]);
                   if (callback) callback();
                 }
                 else {
