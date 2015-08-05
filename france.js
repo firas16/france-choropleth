@@ -39,7 +39,7 @@ function france(id, url, domain, range, title, unit, plus) {
                       json.on({
                         mouseover: function(e) {
                           e.target.setStyle({stroke: 1});
-                          d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stats[e.target.feature.id]+" "+unit) ;
+                          d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stats[e.target.feature.id].replace(".",",")+" "+unit) ;
                         },
                         mouseout: function(e) {
                           e.target.setStyle({stroke: 0});
@@ -139,7 +139,7 @@ function france(id, url, domain, range, title, unit, plus) {
   this.popup = function(popup, i, b) {
                 popup.setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
                      .setContent('<strong>'+self.names[i]+'</strong><br />'+
-                                 title+' : '+self.stats[i]+' '+unit+'</p>').openOn(self.map);
+                                 title+' : '+self.stats[i].replace(".",",")+' '+unit+'</p>').openOn(self.map);
               }
 
   var self = this;
