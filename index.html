@@ -17,30 +17,35 @@
     display: none;
   }
 
-  .legend{
-    width: 240px;
-  }
-
-  .info, .legend{
-    width: 210px;
-    padding: 6px 8px 0;
+  .info{
+    width: 260px;
+    padding: 4px 4px 2px;
     background: white;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
     border-radius: 5px;
-  }
-  .info h4, .legend .caption {
-    font-weight: bold;
-    color: #777;
+    opacity: .6;
   }
 
-  .legend .caption span {
+  .info div{
+    margin: 0px 10px;
+  }
+
+  .info .title{
+    font-weight: bold;
+    color: #444;
+}
+
+  .info .title span{
     font-weight: normal;
     font-style: italic;
   }
 
-  .legend svg{
-    opacity: .6;
+  .info .value {
+    margin-bottom: 5px;
+  }
+
+  .info .value span {
+    color: #888;
   }
 
   .key path {
@@ -48,9 +53,8 @@
   }
 
   .key line {
-    stroke-opacity: .5;
+    stroke-opacity: .7;
     stroke: #000;
-    shape-rendering: crispEdges;
   }
 
 

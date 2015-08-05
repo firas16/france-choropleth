@@ -12,7 +12,6 @@ function france(id, url, domain, range, title, unit, plus) {
                       self.densities = self.read(data,2);
                       self.stat = self.read(stats);
                       self.info();
-                      self.lgnd();
                       self.draw(json);
                       self.map.on({zoomend: self.show, dragend: self.show});
                       if(self.map.getZoom() <= 8) {
@@ -32,10 +31,10 @@ function france(id, url, domain, range, title, unit, plus) {
                     onEachFeature: function (feature, json) {
                       self.layers[key] = self.layers[key] || new L.layerGroup();
                       self.layers[key].addLayer(json);
-                      json.on({
-                        mouseover: function(e) { e.target.setStyle({stroke: 1}); self.info.update(e.target.feature.id); },
-                         mouseout: function(e) { e.target.setStyle({stroke: 0}); self.info.update(); }
-                      })
+                      json.on({ mouseover: function(e) { e.target.setStyle({stroke: 1});
+                                           d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stat[e.target.feature.id]+" "+unit) },
+                                 mouseout: function(e) { e.target.setStyle({stroke: 0});
+                                           d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") }})
                     },
                     style: function(feature){
                       return { color: "#333", weight: 1, stroke: 0, opacity: .5,
@@ -78,53 +77,31 @@ function france(id, url, domain, range, title, unit, plus) {
               }
 
   this.info = function() {
-                self.info = new (L.Control.extend({
-                  onAdd: function () {
-                    this.div = L.DomUtil.create('div', 'info');
-                    this.update();
-                    return this.div;
-                  },
-                  update: function (props) {
-                    this.div.innerHTML = '<h4>'+title+'</h4>'
-                    + (props ? self.names[props].replace("e Arr", "<sup>ème</sup> arr")+" : "+self.stat[props].replace(".", ",")+"&nbsp;"+unit
-                      : '<span style="color:#aaa">Survolez un territoire</span>')
-                  }
-                }));
-                self.info.addTo(self.map);
-              }
+                d3.selectAll(".info").remove();
 
-  this.lgnd = function() {
-                self.legend = new (L.Control.extend({
-                  options: { position: 'bottomleft' },
-                  onAdd: function () {
-                    this.div = L.DomUtil.create('div', 'legend');
-                    return this.div;
-                  },
-                  draw: function() {
-                    d3.selectAll(".legend svg").remove();
-                    var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 189]);
-                    var svg = d3.select(".legend").append("svg").attr("width", 210).attr("height", 27).attr("transform", "translate(10,0)");
+                var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control")
 
-                    svg.append("svg:defs").append("svg:linearGradient").attr("id", "gradient").selectAll("stop")
-                        .data(range.map(function(d, i) { return { x: i < domain.length ? x(domain[i])/2 : x.range()[1]/2, z:d }}))
-                        .enter().append("svg:stop").attr("offset", function(d) { return d.x+"%"; }).attr("stop-color", function(d) { return d.z; });
+                div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
+                div.append("div").attr("class", "value").text("").append("span").text("Survolez un territoire");
 
-                    svg.append("rect").attr("height", 12).attr("width", 190).attr("fill", "url(/#gradient)");
+                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
+                var svg = div.append("svg").attr("width", 260).attr("height", 27).attr("transform", "translate(10,0)");
 
-                    svg.append("g").attr("transform", "translate(0,12)").attr("class", "key")
-                       .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
-                 }
-                }));
-                self.legend.addTo(self.map);
-                self.legend.draw();
+                svg.append("svg:defs").append("svg:linearGradient").attr("id", "gradient").selectAll("stop")
+                    .data(range.map(function(d, i) { return { x: i < domain.length ? x(domain[i])/2 : x.range()[1]/2, z:d }}))
+                    .enter().append("svg:stop").attr("offset", function(d) { return d.x+"%"; }).attr("stop-color", function(d) { return d.z; });
+
+                svg.append("rect").attr("height", 12).attr("width", 240).attr("fill", "url(/#gradient)");
+
+                svg.append("g").attr("transform", "translate(0,12)").attr("class", "key")
+                   .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
               }
 
   this.fill = function (url, _domain, _range, _title, _unit, _plus) {
                 d3.csv(url, function (e, csv){
                   self.stat = self.read(csv);
                   title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
-                  self.info.update();
-                  self.legend.draw();
+                  self.info();
                   if (self.pop) self.popup(self.pop, self.i, self.b);
                   for (l in self.layers) {for (el in c=self.layers[l]["_layers"]) {
                       c[el].setStyle({
