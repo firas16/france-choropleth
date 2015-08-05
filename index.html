@@ -16,25 +16,41 @@
   .leaflet-control-attribution{
     display: none;
   }
+
+  .legend{
+    width: 240px;
+  }
+
   .info, .legend{
     width: 210px;
-    padding: 6px 8px;
+    padding: 6px 8px 0;
     background: white;
     background: rgba(255,255,255,0.8);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
   }
-  .info h4 {
-    margin: 0 0 5px;
+  .info h4, .legend .caption {
+    font-weight: bold;
     color: #777;
   }
 
-  #legend{
+  .legend .caption span {
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  .legend svg{
     opacity: .6;
   }
 
   .key path {
-    display: none;
+  display: none;
+  }
+
+  .key line {
+    stroke-opacity: .5;
+    stroke: #000;
+    shape-rendering: crispEdges;
   }
 
 

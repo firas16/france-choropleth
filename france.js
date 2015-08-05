@@ -102,21 +102,18 @@ function france(id, url, domain, range, title, unit, plus) {
                   },
                   draw: function() {
                     d3.selectAll(".legend svg").remove();
-                    var svg = d3.select(".legend").append("svg").attr("id", 'legend').attr("width", 250).attr("height", 40);
-                    var x = d3.scale.linear().domain([Math.min.apply(Math, domain), Math.max.apply(Math, domain)]).range([0, 200]);
-                    window.c = d3.scale.linear().domain(domain).range(range);
-                    var axis = d3.svg.axis().scale(x).orient("top").tickSize(1).tickFormat(d3.format(('' || plus)+'.0f')).tickValues(c.domain())
-                    var g = svg.append("g").attr("class", "key").attr("transform", "translate(5,16)");
+                    var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 189]);
+                    var svg = d3.select(".legend").append("svg").attr("width", 210).attr("height", 27).attr("transform", "translate(10,0)");
 
                     svg.append("svg:defs").append("svg:linearGradient").attr("id", "gradient").selectAll("stop")
-                        .data(c.range().map(function(d, i) { return { x: i < c.domain().length ? x(c.domain()[i])/2 : x.range()[1]/2, z:d }}))
-                        .enter().append("svg:stop")
-                        .attr("offset", function(d) { return d.x+"%"; })
-                        .attr("stop-color", function(d) { return d.z; });
+                        .data(range.map(function(d, i) { return { x: i < domain.length ? x(domain[i])/2 : x.range()[1]/2, z:d }}))
+                        .enter().append("svg:stop").attr("offset", function(d) { return d.x+"%"; }).attr("stop-color", function(d) { return d.z; });
 
-                    g.append("rect").attr("height", 10).attr("x", 0).attr("width", 200).attr("fill", "url(/#gradient)");
-                    g.call(axis).append("text").attr("class", "caption").attr("y", 21).text(title+" ("+unit+")");
-                  }
+                    svg.append("rect").attr("height", 12).attr("width", 190).attr("fill", "url(/#gradient)");
+
+                    svg.append("g").attr("transform", "translate(0,12)").attr("class", "key")
+                       .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
+                 }
                 }));
                 self.legend.addTo(self.map);
                 self.legend.draw();
