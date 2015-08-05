@@ -97,15 +97,15 @@ function france(id, url, domain, range, title, unit, plus) {
                 div.append("div").attr("class", "value").text("").append("span").text("Survolez un territoire");
 
                 var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
-                var svg = div.append("svg").attr("width", 260).attr("height", 27).attr("transform", "translate(10,0)");
+                var svg = div.append("svg").attr("width", 260).attr("height", 23).attr("transform", "translate(10,0)");
 
                 svg.append("svg:defs").append("svg:linearGradient").attr("id", "gradient").selectAll("stop")
                     .data(range.map(function(d, i) { return { x: i < domain.length ? x(domain[i])/2 : x.range()[1]/2, z:d }}))
                     .enter().append("svg:stop").attr("offset", function(d) { return d.x+"%"; }).attr("stop-color", function(d) { return d.z; });
 
-                svg.append("rect").attr("height", 12).attr("width", 240).attr("fill", "url(/#gradient)");
+                svg.append("rect").attr("height", 9).attr("width", 240).attr("fill", "url(/#gradient)");
 
-                svg.append("g").attr("transform", "translate(0,12)").attr("class", "key")
+                svg.append("g").attr("transform", "translate(0,9)").attr("class", "key")
                    .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
               }
 
