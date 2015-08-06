@@ -92,20 +92,15 @@ function france(id, url, domain, range, title, unit, plus) {
                 d3.selectAll(".info").remove();
 
                 var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control")
-
                 div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
                 div.append("div").attr("class", "value").text("").append("span").text("Survolez un territoire");
 
-                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
-                var svg = div.append("svg").attr("width", 260).attr("height", 23).attr("transform", "translate(10,0)");
+                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]), grad = '';
+                for ( el in a = range.map(function(d, i) { return { x: x(domain[i]), z:d }})) grad += ', '+a[el].z+' '+a[el].x/2.39+'%';
+                div.append("div").attr("class", "legend").attr("style", "background: linear-gradient(to right"+grad+"); width: 240px; height: 10px")
 
-                svg.append("svg:defs").append("svg:linearGradient").attr("id", "legend").selectAll("stop")
-                    .data(range.map(function(d, i) { return { x: i < domain.length ? x(domain[i])/2 : x.range()[1]/2, z:d }}))
-                    .enter().append("svg:stop").attr("offset", function(d) { return d.x+"%"; }).attr("stop-color", function(d) { return d.z; });
-
-                svg.append("rect").attr("height", 9).attr("width", 240).attr("fill", "url(#legend)");
-
-                svg.append("g").attr("transform", "translate(0,9)").attr("class", "key")
+                var svg = div.append("svg").attr("width", 260).attr("height", 14).attr("transform", "translate(10,0)");
+                svg.append("g").attr("class", "key")
                    .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
               }
 
