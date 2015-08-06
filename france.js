@@ -37,19 +37,12 @@ function france(id, url, domain, range, title, unit, plus) {
                       self.layers[key] = self.layers[key] || new L.layerGroup();
                       self.layers[key].addLayer(json);
                       json.on({
-                        mouseover: function(e) {
-                          e.target.setStyle({stroke: 1});
-                          d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stats[e.target.feature.id].replace(".",",")+" "+unit) ;
-                        },
-                        mouseout: function(e) {
-                          e.target.setStyle({stroke: 0});
-                          d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") ;
-                        }
+                        mouseover: function(e) { d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stats[e.target.feature.id].replace(".",",")+" "+unit) },
+                         mouseout: function(e) { d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") }
                       })
                     },
                     style: function(feature){
-                      return {
-                        color: "#333", weight: 1, stroke: 0, opacity: .5,
+                      return { stroke: 0,
                         fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.alpha[feature.id]),
                         fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[feature.id])
                       }
