@@ -95,13 +95,15 @@ function france(id, url, domain, range, title, unit, plus) {
                 div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
                 div.append("div").attr("class", "value").text("").append("span").text("Survolez un territoire");
 
-                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]), grad = '';
-                for ( el in a = range.map(function(d, i) { return { x: x(domain[i]), z:d }})) grad += ', '+a[el].z+' '+a[el].x/2.39+'%';
-                div.append("div").attr("class", "legend").attr("style", "background: linear-gradient(to right"+grad+"); width: 240px; height: 10px")
+                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
+                var canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d");
+                var gradient = canvas.createLinearGradient(0,0,240,10);
+                for ( el in a = range.map(function(d, i) { return { x: x(domain[i]), z:d }})) gradient.addColorStop(a[el].x/239,a[el].z);
+                canvas.fillStyle = gradient;
+                canvas.fillRect(10,0,240,10);
 
-                var svg = div.append("svg").attr("width", 260).attr("height", 14).attr("transform", "translate(10,0)");
-                svg.append("g").attr("class", "key")
-                   .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
+                div.append("svg").attr("width", 260).attr("height", 14).attr("transform", "translate(10,0)")
+                   .append("g").attr("class", "key").call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
               }
 
   this.fill = function (url, _domain, _range, _title, _unit, _plus) {
