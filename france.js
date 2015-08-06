@@ -95,8 +95,8 @@ function france(id, url, domain, range, title, unit, plus) {
                 canvas.fillStyle = gradient;
                 canvas.fillRect(10,0,240,10);
 
-                div.append("svg").attr("width", 260).attr("height", 14).attr("transform", "translate(10,0)")
-                   .append("g").attr("class", "key").call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
+                div.append("svg").attr("width", 260).attr("height", 14).append("g").attr("transform", "translate(10,0)").attr("class", "key")
+                   .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
               }
 
   this.fill = function (url, _domain, _range, _title, _unit, _plus) {
