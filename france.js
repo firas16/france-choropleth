@@ -110,14 +110,13 @@ function france(id, url, domain, range, title, unit, plus) {
                 d3.csv(url, function (e, csv){
                   self.stats = self.read(csv);
                   title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
-                  self.info();
-                  if (self.pop) self.popup(self.pop, self.i, self.b);
-                  for (l in self.layers) {for (el in c=self.layers[l]["_layers"]) {
-                      c[el].setStyle({
-                        fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[c[el].feature.id])
-                      })
+                  for (l in self.layers) {
+                    for (el in c=self.layers[l]["_layers"]) {
+                      c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[c[el].feature.id]) })
                     }
                   }
+                  if (self.pop) self.popup(self.pop, self.i, self.b);
+                  self.info();
                 })
               }
 
