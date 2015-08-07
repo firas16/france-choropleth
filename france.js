@@ -115,27 +115,23 @@ function france(id, url, domain, range, title, unit, plus) {
                       c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[c[el].feature.id]) })
                     }
                   }
-                  if (self.pop) self.popup(self.pop, self.i, self.b);
+                  if (self.i) self.look(self.i, 0);
                   self.info();
                 })
               }
 
-  this.look = function(id) {
-                self.load(id.slice(0,2), function() {
-                  for (el in c=self.layers["com-"+id.slice(0,2)]["_layers"]) {
-                    if (id == c[el].feature.id) {
-                      self.pop = L.popup(), self.b = c[el].getBounds(), self.i = c[el].feature.id;
-                      self.popup(self.pop, self.i, self.b);
-                      self.map.flyToBounds(self.b);
+  this.look = function(i, fly) {
+                self.load(i.slice(0,2), function() {
+                  for (el in c=self.layers["com-"+i.slice(0,2)]["_layers"]) {
+                    if (i == c[el].feature.id) {
+                      var b = c[el].getBounds(); self.i = i;
+                      self.popup = L.popup().setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
+                                    .setContent('<strong>'+self.names[i]+'</strong><br />'+
+                                      title+' : '+self.stats[i].replace(".",",")+' '+unit+'</p>').openOn(self.map);
+                      if (fly != 0) self.map.flyToBounds(b);
                     }
                   }
                 })
-              }
-
-  this.popup = function(popup, i, b) {
-                popup.setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
-                     .setContent('<strong>'+self.names[i]+'</strong><br />'+
-                                 title+' : '+self.stats[i].replace(".",",")+' '+unit+'</p>').openOn(self.map);
               }
 
   var self = this;
