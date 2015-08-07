@@ -17,14 +17,17 @@
     display: none;
   }
 
-  .info{
-    line-height: 5px;
-    width: 260px;
+  .info, .search{
     padding: 4px;
     background: white;
     background: rgba(255,255,255,0.8);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
+  }
+
+  .info {
+    line-height: 5px;
+    width: 260px;
   }
 
   .info div{
@@ -64,12 +67,27 @@
     font-size: 10px;
   }
 
+  .leaflet-control {
+    clear: none !important;
+  }
+
+  .search {
+    height: 22px;
+    width: 200px;
+  }
+
+  .search #search {
+    width: 190px;
+  }
+
   </style>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet.js"></script>
   <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet.css" rel="stylesheet" />
+  <script src="/librairies/awesomplete.js"></script>
+  <link href="/librairies/awesomplete.css" rel="stylesheet" />
   <script src="/france.js"></script>
 
 </head>
@@ -81,8 +99,6 @@
   <p>Leaflet map showing French <em>departements</em>, <em>cantons</em> and <em>communes</em> depending of the zoom level.</p>
 
   <p> Show: <a href="javascript: map.fill('/data/stats/second.csv', [0,10,75,100], ['#01665e','#01665e','#e08214','#e08214'], 'Part de résidences secondaires', '%');">second homes</a>, <a href="javascript: map.fill('/data/stats/empty.csv', [0,5,25], ['#045a8d','#045a8d','#e08214'], 'Logements vacants', '%');">empty houses</a>, <a href="javascript: map.fill('/data/stats/growth.csv', [-1,1], ['#bd0026','#045a8d'],'Variation annuelle de la population','%','+');">population growth</a>, <a href="javascript: map.fill('/data/stats/unemployement.csv', [0,5,15,20], ['#006837','#006837','#d62728','#d62728'], 'Taux de chômage', '%');">unemployement</a>.</p>
-
-  <p>Jump to: <a href="javascript: map.look('60142')">La Chapelle-en-Serval</a>, <a href="javascript: map.look('82087')">Lafrançaise</a> or <a href="javascript: map.look('77152')">Dammarie-les-Lys</a>.</p>
 
   <div id="map"></div>
 

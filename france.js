@@ -14,6 +14,7 @@ function france(id, url, domain, range, title, unit, plus) {
                       self.stats = self.read(stats);
 
                       self.info();
+                      self.look();
                       self.draw(json);
                       self.map.on({zoomend: self.show, dragend: self.show});
 
@@ -115,12 +116,12 @@ function france(id, url, domain, range, title, unit, plus) {
                       c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[c[el].feature.id]) })
                     }
                   }
-                  if (self.i) self.look(self.i, 0);
+                  if (self.i) self.jump(self.i, 0);
                   self.info();
                 })
               }
 
-  this.look = function(i, fly) {
+  this.jump = function(i, fly) {
                 self.load(i.slice(0,2), function() {
                   for (el in c=self.layers["com-"+i.slice(0,2)]["_layers"]) {
                     if (i == c[el].feature.id) {
@@ -133,6 +134,21 @@ function france(id, url, domain, range, title, unit, plus) {
                   }
                 })
               }
+
+  this.look = function(i, fly) {
+              var list = []; for (c in n = self.names) { if (c.slice(2,3) != "-") list.push(n[c]+" ("+c.slice(0,2)+")"); }
+              var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
+              window.input = div.append("input").attr("type", "text").attr("id", "search");
+              new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
+              L.DomEvent.disableClickPropagation(div.node());
+              L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
+              input.on('awesomplete-selectcomplete', function(){
+                var value = input.node().value;
+                for (c in n = self.names) {
+                  if (c.slice(0,2) == value.slice(-3,-1) && n[c] == value.slice(0,-5) ) self.jump(c);
+                }
+              });
+            }
 
   var self = this;
   self.init();
