@@ -135,7 +135,7 @@ function france(id, url, domain, range, title, unit, plus) {
                 })
               }
 
-  this.look = function(i, fly) {
+  this.look = function(i) {
               var list = []; for (c in n = self.names) { if (c.slice(2,3) != "-") list.push(n[c]+" ("+c.slice(0,2)+")"); }
               var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
               window.input = div.append("input").attr("type", "text").attr("id", "search");
