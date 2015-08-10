@@ -17,6 +17,24 @@ function france(id, stat, domain, range, title, unit, plus) {
                 })
               }
 
+  this.read = function() {
+                if (!self.data) {
+                  self.data = {};
+                  for (line in csv=arguments[0]) {
+                    self.data[csv[line].insee] ={};
+                  }
+                }
+                for (file in arguments) {
+                  for (column in arguments[file][0]) {
+                    if (column != 'insee') {
+                      for (line in arguments[file]) {
+                        self.data[arguments[file][line].insee][column] = arguments[file][line][column];
+                      }
+                    }
+                  }
+                }
+              }
+
   this.draw = function(json) {
                 for (key in json.objects) {
                   geojson = topojson.feature(json, json.objects[key]);
@@ -38,24 +56,6 @@ function france(id, stat, domain, range, title, unit, plus) {
                 }
               }
 
-  this.read = function() {
-                if (!self.data) {
-                  self.data = {};
-                  for (line in csv=arguments[0]) {
-                    self.data[csv[line].insee] ={};
-                  }
-                }
-                for (file in arguments) {
-                  for (column in arguments[file][0]) {
-                    if (column != 'insee') {
-                      for (line in arguments[file]) {
-                        self.data[arguments[file][line].insee][column] = arguments[file][line][column];
-                      }
-                    }
-                  }
-                }
-              }
-
   this.info = function() {
                 d3.selectAll(".info").remove();
 
@@ -72,28 +72,6 @@ function france(id, stat, domain, range, title, unit, plus) {
 
                 div.append("svg").attr("width", 260).attr("height", 14).append("g").attr("transform", "translate(10,0)").attr("class", "key")
                    .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
-              }
-
-  this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
-                d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
-                  self.read(csv);
-                  stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
-                  for (l in self.map._layers) {
-                    for (el in c=self.map._layers[l]._layers) {
-                      if (self.data[c[el].feature.id]) {
-                        c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[c[el].feature.id][stat]) })
-                      }
-                    }
-                  }
-                  if (self.popup) self.open(self.i, 0);
-                  self.info();
-                })
-              }
-
- this.open = function(i) {
-                self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
-                            .setContent('<strong>'+self.data[i].name+'</strong><br />'+
-                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
               }
 
  this.search = function() {
@@ -114,6 +92,28 @@ function france(id, stat, domain, range, title, unit, plus) {
                 }
               });
             }
+
+ this.open = function(i) {
+                self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
+                            .setContent('<strong>'+self.data[i].name+'</strong><br />'+
+                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
+              }
+
+  this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
+                d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
+                  self.read(csv);
+                  stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
+                  for (l in self.map._layers) {
+                    for (el in c=self.map._layers[l]._layers) {
+                      if (self.data[c[el].feature.id]) {
+                        c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[c[el].feature.id][stat]) })
+                      }
+                    }
+                  }
+                  if (self.popup) self.open(self.i, 0);
+                  self.info();
+                })
+              }
 
   var self = this;
   self.init();
