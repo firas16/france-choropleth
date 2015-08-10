@@ -10,7 +10,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                     d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
                       self.read(data, stats);
                       self.info();
-                      self.look();
+                      self.search();
                       self.draw(json);
                     })
                   })
@@ -74,7 +74,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                    .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
               }
 
-  this.fill = function (_stat, _domain, _range, _title, _unit, _plus) {
+  this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
                 d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
                   self.read(csv);
                   stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
@@ -85,18 +85,18 @@ function france(id, stat, domain, range, title, unit, plus) {
                       }
                     }
                   }
-                  if (self.popup) self.mark(self.i, 0);
+                  if (self.popup) self.open(self.i, 0);
                   self.info();
                 })
               }
 
-  this.mark = function(i, fly) {
+ this.open = function(i, fly) {
                 self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
-                              .setContent('<strong>'+self.data[i].name+'</strong><br />'+
-                                title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
+                            .setContent('<strong>'+self.data[i].name+'</strong><br />'+
+                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
               }
 
-  this.look = function(i) {
+ this.search = function(i) {
               var list = []; for (c in n = self.data) { if (c.slice(2,3) != "-") list.push(n[c].name+" ("+c.slice(0,2)+")"); }
               var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
               window.input = div.append("input").attr("type", "text").attr("id", "search");
@@ -108,7 +108,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                 for (i in n = self.data) {
                   if (i.slice(0,2) == value.slice(-3,-1) && n[i].name == value.slice(0,-5) ) {
                     self.i = i;
-                    self.mark(i);
+                    self.popup(i);
                     self.map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
                   }
                 }
