@@ -55,20 +55,6 @@ function france(id, stat, domain, range, title, unit, plus) {
                 }
               }
 
-  this.load =  function(i, callback) {
-                if (self.layers["com-"+i]) {
-                  if (callback) callback();
-                }
-                else {
-                  d3.json('/data/geo/com'+i+'.topojson', function (e, json){
-                    self.draw(json);
-                    self.map.removeLayer(self.layers["can-"+i]);
-                    self.map.addLayer(self.layers["com-"+i]);
-                    if (callback) callback();
-                  })
-                }
-              }
-
   this.read = function() {
                 if (!self.data) {
                   self.data = {};
@@ -122,17 +108,10 @@ function france(id, stat, domain, range, title, unit, plus) {
               }
 
   this.jump = function(i, fly) {
-                self.load(i.slice(0,2), function() {
-                  for (el in c=self.layers["com-"+i.slice(0,2)]["_layers"]) {
-                    if (i == c[el].feature.id) {
-                      var b = c[el].getBounds(); self.i = i;
-                      self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
-                                    .setContent('<strong>'+self.data[i].name+'</strong><br />'+
-                                      title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
-                      if (fly != 0) self.map.flyToBounds(b);
-                    }
-                  }
-                })
+                self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
+                              .setContent('<strong>'+self.data[i].name+'</strong><br />'+
+                                title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
+                if (fly != 0) self.map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
               }
 
   this.look = function(i) {
