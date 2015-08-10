@@ -16,6 +16,7 @@ tmp:
 
 stats: tmp
 	mkdir -p stats
+	mapshaper -i _tmp/communes-20150101-5m.shp -each 'x = $$.centroidX, y = $$.centroidY' -o drop-table force id-field=insee _tmp/centroids.csv
 	python3 _generate.py
 
 geo: stats

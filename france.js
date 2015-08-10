@@ -137,7 +137,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                   for (el in c=self.layers["com-"+i.slice(0,2)]["_layers"]) {
                     if (i == c[el].feature.id) {
                       var b = c[el].getBounds(); self.i = i;
-                      self.popup = L.popup().setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
+                      self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
                                     .setContent('<strong>'+self.data[i].name+'</strong><br />'+
                                       title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
                       if (fly != 0) self.map.flyToBounds(b);
