@@ -13,7 +13,6 @@ function france(id, stat, domain, range, title, unit, plus) {
                       self.info();
                       self.look();
                       self.draw(json);
-                      self.map.on({zoomend: self.show, dragend: self.show});
 
                       if(self.map.getZoom() <= 8) {
                         for (l in self.layers) {
@@ -53,16 +52,6 @@ function france(id, stat, domain, range, title, unit, plus) {
                       }
                     }
                   })
-                }
-              }
-
-  this.show = function() {
-                if(self.map.getZoom() > 8) {
-                  for (dep in d=self.layers["dep"]["_layers"]) {
-                    if (self.map.getBounds().overlaps(d[dep].getBounds())) {
-                      self.load(d[dep].feature.id)
-                    }
-                  }
                 }
               }
 
