@@ -102,16 +102,15 @@ function france(id, stat, domain, range, title, unit, plus) {
                       }
                     }
                   }
-                  if (self.i) self.jump(self.i, 0);
+                  if (self.popup) self.mark(self.i, 0);
                   self.info();
                 })
               }
 
-  this.jump = function(i, fly) {
+  this.mark = function(i, fly) {
                 self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
                               .setContent('<strong>'+self.data[i].name+'</strong><br />'+
                                 title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
-                if (fly != 0) self.map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
               }
 
   this.look = function(i) {
@@ -123,8 +122,12 @@ function france(id, stat, domain, range, title, unit, plus) {
               L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
               input.on('awesomplete-selectcomplete', function(){
                 var value = input.node().value;
-                for (c in n = self.data) {
-                  if (c.slice(0,2) == value.slice(-3,-1) && n[c].name == value.slice(0,-5) ) self.jump(c);
+                for (i in n = self.data) {
+                  if (i.slice(0,2) == value.slice(-3,-1) && n[i].name == value.slice(0,-5) ) {
+                    self.i = i;
+                    self.mark(i);
+                    self.map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
+                  }
                 }
               });
             }
