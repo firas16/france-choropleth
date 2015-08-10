@@ -90,13 +90,13 @@ function france(id, stat, domain, range, title, unit, plus) {
                 })
               }
 
- this.open = function(i, fly) {
+ this.open = function(i) {
                 self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
                             .setContent('<strong>'+self.data[i].name+'</strong><br />'+
                               title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
               }
 
- this.search = function(i) {
+ this.search = function() {
               var list = []; for (c in n = self.data) { if (c.slice(2,3) != "-") list.push(n[c].name+" ("+c.slice(0,2)+")"); }
               var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
               window.input = div.append("input").attr("type", "text").attr("id", "search");
