@@ -41,15 +41,15 @@ function france(id, stat, domain, range, title, unit, plus) {
   this.read = function() {
                 if (!self.data) {
                   self.data = {};
-                  for (obj in csv=arguments[0]) {
-                    self.data[csv[obj].insee] ={};
+                  for (line in csv=arguments[0]) {
+                    self.data[csv[line].insee] ={};
                   }
                 }
-                for (f in arguments) {
-                  for (el in arguments[f][0]) {
-                    if ( el != 'insee' ) {
-                      for (obj in arguments[f]) {
-                        self.data[arguments[f][obj].insee][el] = arguments[f][obj][el];
+                for (file in arguments) {
+                  for (column in arguments[file][0]) {
+                    if (column != 'insee') {
+                      for (line in arguments[file]) {
+                        self.data[arguments[file][line].insee][column] = arguments[file][line][column];
                       }
                     }
                   }
