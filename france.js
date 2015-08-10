@@ -8,18 +8,10 @@ function france(id, stat, domain, range, title, unit, plus) {
                 d3.json('/data/geo/base.topojson', function (e, json){
                   d3.csv('/data/stats/data.csv', function (e, data){
                     d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
-                      self.layers = {};
                       self.read(data, stats);
                       self.info();
                       self.look();
                       self.draw(json);
-
-                      if(self.map.getZoom() <= 8) {
-                        for (l in self.layers) {
-                          if (l.slice(0,3) == "can") self.map.addLayer(self.layers[l]);
-                        }
-                      }
-
                     })
                   })
                 })
@@ -28,30 +20,30 @@ function france(id, stat, domain, range, title, unit, plus) {
   this.draw = function(json) {
                 for (key in json.objects) {
                   geojson = topojson.feature(json, json.objects[key]);
-                  new L.GeoJSON(geojson, {
-                    smoothFactor: .3,
-                    onEachFeature: function (feature, json) {
-                      self.layers[key] = self.layers[key] || new L.layerGroup();
-                      self.layers[key].addLayer(json);
-                      json.on({
-                        mouseover: function(e) {
-                          e.target.setStyle({stroke: 1});
-                          d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) ;
-                        },
-                        mouseout: function(e) {
-                          e.target.setStyle({stroke: 0});
-                          d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") ;
+                  self.map.addLayer(
+                    new L.GeoJSON(geojson, {
+                      smoothFactor: .3,
+                      onEachFeature: function (feature, json) {
+                        json.on({
+                          mouseover: function(e) {
+                            e.target.setStyle({stroke: 1});
+                            d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) ;
+                          },
+                          mouseout: function(e) {
+                            e.target.setStyle({stroke: 0});
+                            d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") ;
+                          }
+                        })
+                      },
+                      style: function(feature){
+                        if (self.data[feature.id]) return {
+                          color: "#333", weight: 1, stroke: 0, opacity: .5,
+                          fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.data[feature.id].density),
+                          fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[feature.id][stat])
                         }
-                      })
-                    },
-                    style: function(feature){
-                      if (self.data[feature.id]) return {
-                        color: "#333", weight: 1, stroke: 0, opacity: .5,
-                        fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.data[feature.id].density),
-                        fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[feature.id][stat])
                       }
-                    }
-                  })
+                    })
+                  )
                 }
               }
 
@@ -95,8 +87,8 @@ function france(id, stat, domain, range, title, unit, plus) {
                 d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
                   self.read(csv);
                   stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
-                  for (l in self.layers) {
-                    for (el in c=self.layers[l]["_layers"]) {
+                  for (l in self.map._layers) {
+                    for (el in c=self.map._layers[l]._layers) {
                       if (self.data[c[el].feature.id]) {
                         c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[c[el].feature.id][stat]) })
                       }
