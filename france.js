@@ -1,4 +1,4 @@
-function france(id, url, domain, range, title, unit, plus) {
+function france(id, stat, domain, range, title, unit, plus) {
 
   this.init = function() {
                 self.map = L.map(id, { center: [46.6, 2.1], zoom: 6, minZoom: 6, maxZoom: 9, renderer: L.canvas({padding: .4})})
@@ -7,12 +7,9 @@ function france(id, url, domain, range, title, unit, plus) {
 
                 d3.json('/data/geo/base.topojson', function (e, json){
                   d3.csv('/data/stats/data.csv', function (e, data){
-                    d3.csv(url, function (e, stats){
+                    d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
                       self.layers = {};
-                      self.names = self.read(data);
-                      self.alpha = self.read(data,2);
-                      self.stats = self.read(stats);
-
+                      self.read(data, stats);
                       self.info();
                       self.look();
                       self.draw(json);
@@ -40,7 +37,7 @@ function france(id, url, domain, range, title, unit, plus) {
                       json.on({
                         mouseover: function(e) {
                           e.target.setStyle({stroke: 1});
-                          d3.selectAll(".info .value").text(self.names[e.target.feature.id]+" : "+self.stats[e.target.feature.id].replace(".",",")+" "+unit) ;
+                          d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) ;
                         },
                         mouseout: function(e) {
                           e.target.setStyle({stroke: 0});
@@ -49,10 +46,10 @@ function france(id, url, domain, range, title, unit, plus) {
                       })
                     },
                     style: function(feature){
-                      return {
+                      if (self.data[feature.id]) return {
                         color: "#333", weight: 1, stroke: 0, opacity: .5,
-                        fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.alpha[feature.id]),
-                        fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[feature.id])
+                        fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.data[feature.id].density),
+                        fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[feature.id][stat])
                       }
                     }
                   })
@@ -83,10 +80,22 @@ function france(id, url, domain, range, title, unit, plus) {
                 }
               }
 
-  this.read = function(csv, col) {
-                array = {};
-                for (obj in csv) array[csv[obj].insee] = csv[obj][Object.keys(csv[0])[(col || 1)]];
-                return array;
+  this.read = function() {
+                if (!self.data) {
+                  self.data = {};
+                  for (obj in csv=arguments[0]) {
+                    self.data[csv[obj].insee] ={};
+                  }
+                }
+                for (f in arguments) {
+                  for (el in arguments[f][0]) {
+                    if ( el != 'insee' ) {
+                      for (obj in arguments[f]) {
+                        self.data[arguments[f][obj].insee][el] = arguments[f][obj][el];
+                      }
+                    }
+                  }
+                }
               }
 
   this.info = function() {
@@ -107,13 +116,15 @@ function france(id, url, domain, range, title, unit, plus) {
                    .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
               }
 
-  this.fill = function (url, _domain, _range, _title, _unit, _plus) {
-                d3.csv(url, function (e, csv){
-                  self.stats = self.read(csv);
-                  title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
+  this.fill = function (_stat, _domain, _range, _title, _unit, _plus) {
+                d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
+                  self.read(csv);
+                  stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
                   for (l in self.layers) {
                     for (el in c=self.layers[l]["_layers"]) {
-                      c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.stats[c[el].feature.id]) })
+                      if (self.data[c[el].feature.id]) {
+                        c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[c[el].feature.id][stat]) })
+                      }
                     }
                   }
                   if (self.i) self.jump(self.i, 0);
@@ -127,8 +138,8 @@ function france(id, url, domain, range, title, unit, plus) {
                     if (i == c[el].feature.id) {
                       var b = c[el].getBounds(); self.i = i;
                       self.popup = L.popup().setLatLng(L.latLng(b.getNorth(), (b.getWest()+b.getEast())/2))
-                                    .setContent('<strong>'+self.names[i]+'</strong><br />'+
-                                      title+' : '+self.stats[i].replace(".",",")+' '+unit+'</p>').openOn(self.map);
+                                    .setContent('<strong>'+self.data[i].name+'</strong><br />'+
+                                      title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
                       if (fly != 0) self.map.flyToBounds(b);
                     }
                   }
@@ -136,7 +147,7 @@ function france(id, url, domain, range, title, unit, plus) {
               }
 
   this.look = function(i) {
-              var list = []; for (c in n = self.names) { if (c.slice(2,3) != "-") list.push(n[c]+" ("+c.slice(0,2)+")"); }
+              var list = []; for (c in n = self.data) { if (c.slice(2,3) != "-") list.push(n[c].name+" ("+c.slice(0,2)+")"); }
               var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
               window.input = div.append("input").attr("type", "text").attr("id", "search");
               new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
@@ -144,8 +155,8 @@ function france(id, url, domain, range, title, unit, plus) {
               L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
               input.on('awesomplete-selectcomplete', function(){
                 var value = input.node().value;
-                for (c in n = self.names) {
-                  if (c.slice(0,2) == value.slice(-3,-1) && n[c] == value.slice(0,-5) ) self.jump(c);
+                for (c in n = self.data) {
+                  if (c.slice(0,2) == value.slice(-3,-1) && n[c].name == value.slice(0,-5) ) self.jump(c);
                 }
               });
             }
