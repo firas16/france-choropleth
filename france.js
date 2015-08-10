@@ -24,20 +24,11 @@ function france(id, stat, domain, range, title, unit, plus) {
                     new L.GeoJSON(geojson, {
                       smoothFactor: .3,
                       onEachFeature: function (feature, json) {
-                        json.on({
-                          mouseover: function(e) {
-                            e.target.setStyle({stroke: 1});
-                            d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) ;
-                          },
-                          mouseout: function(e) {
-                            e.target.setStyle({stroke: 0});
-                            d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") ;
-                          }
-                        })
+                        json.on({ mouseover: function(e) { d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) },
+                                  mouseout:  function(e) { d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") } })
                       },
                       style: function(feature){
-                        if (self.data[feature.id]) return {
-                          color: "#333", weight: 1, stroke: 0, opacity: .5,
+                        if (self.data[feature.id]) return { stroke: 0,
                           fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.data[feature.id].density),
                           fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[feature.id][stat])
                         }
