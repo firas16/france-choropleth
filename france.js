@@ -37,9 +37,8 @@ function france(id, stat, domain, range, title, unit, plus) {
 
   this.draw = function(json) {
                 for (key in json.objects) {
-                  geojson = topojson.feature(json, json.objects[key]);
                   self.map.addLayer(
-                    new L.GeoJSON(geojson, {
+                    new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
                       onEachFeature: function (feature, json) {
                         json.on({ mouseover: function(e) { d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) },
