@@ -103,7 +103,7 @@ function france(id, stat, domain, range, title, unit, plus) {
  this.popup = function(i) {
                 self.marker = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
                             .setContent('<strong>'+self.data[i].name+'</strong><br />'+
-                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
+                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit).openOn(self.map);
               }
 
   this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
