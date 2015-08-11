@@ -37,8 +37,7 @@ function france(id, stat, domain, range, title, unit, plus) {
 
   this.draw = function(json) {
                 for (key in json.objects) {
-                  self.map.addLayer(
-                    new L.GeoJSON(topojson.feature(json, json.objects[key]), {
+                  self.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
                       onEachFeature: function (feature, json) {
                         json.on({ mouseover: function(e) { d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) },
@@ -50,8 +49,8 @@ function france(id, stat, domain, range, title, unit, plus) {
                           fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[feature.id][stat])
                         }
                       }
-                    })
-                  )
+                    });
+                  self.layer.addTo(self.map);
                 }
               }
 
@@ -102,14 +101,13 @@ function france(id, stat, domain, range, title, unit, plus) {
                 d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
                   self.read(csv);
                   stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
-                  for (l in self.map._layers) {
-                    for (el in c=self.map._layers[l]._layers) {
-                      if (self.data[c[el].feature.id]) {
-                        c[el].setStyle({ fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[c[el].feature.id][stat]) })
-                      }
+                  self.layer.eachLayer( function(e) {
+                    if (self.data[e.feature.id]) {
+                      var scale = d3.scale.linear().clamp(1).domain(domain).range(range);
+                      e.setStyle({ fillColor: scale(self.data[e.feature.id][stat]) });
                     }
-                  }
-                  if (self.popup) self.open(self.i, 0);
+                  });
+                  if (self.popup) self.open(self.i);
                   self.info();
                 })
               }
