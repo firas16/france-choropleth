@@ -65,7 +65,10 @@ function france(id, stat, domain, range, title, unit, plus) {
                 var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
                 var canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d");
                 var gradient = canvas.createLinearGradient(0,0,240,10);
-                for (var el in a = range.map(function(d, i) { return { x: x(domain[i]), z:d }})) gradient.addColorStop(a[el].x/239,a[el].z);
+                var a = range.map(function(d, i) { return { x: x(domain[i]), z:d }});
+                for (var el in a) {
+                  gradient.addColorStop(a[el].x/239,a[el].z);
+                }
                 canvas.fillStyle = gradient;
                 canvas.fillRect(10,0,240,10);
 
@@ -74,16 +77,21 @@ function france(id, stat, domain, range, title, unit, plus) {
               }
 
  this.search = function() {
-              var list = []; for (var c in n = self.data) { if (c.slice(2,3) != "-") list.push(n[c].name+" ("+c.slice(0,2)+")"); }
+              var list = [];
+              for (var c in self.data) {
+                if (c.slice(2,3) != "-") {
+                  list.push(self.data[c].name+" ("+c.slice(0,2)+")");
+                }
+              }
               var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
-              window.input = div.append("input").attr("type", "text").attr("id", "search");
+              var input = div.append("input").attr("type", "text").attr("id", "search");
               new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
               L.DomEvent.disableClickPropagation(div.node());
               L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
               input.on('awesomplete-selectcomplete', function(){
                 var value = input.node().value;
-                for (var i in n = self.data) {
-                  if (i.slice(0,2) == value.slice(-3,-1) && n[i].name == value.slice(0,-5) ) {
+                for (var i in self.data) {
+                  if (i.slice(0,2) == value.slice(-3,-1) && self.data[i].name == value.slice(0,-5) ) {
                     self.i = i;
                     self.popup(i);
                     self.map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
