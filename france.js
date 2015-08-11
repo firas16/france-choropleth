@@ -91,8 +91,8 @@ function france(id, stat, domain, range, title, unit, plus) {
               });
             }
 
- this.open = function(i) {
-                self.popup = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
+ this.popup = function(i) {
+                self.marker = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
                             .setContent('<strong>'+self.data[i].name+'</strong><br />'+
                               title+' : '+self.data[i][stat].replace(".",",")+' '+unit+'</p>').openOn(self.map);
               }
@@ -107,7 +107,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                       e.setStyle({ fillColor: scale(self.data[e.feature.id][stat]) });
                     }
                   });
-                  if (self.popup) self.open(self.i);
+                  if (self.marker) self.popup(self.i);
                   self.info();
                 })
               }
