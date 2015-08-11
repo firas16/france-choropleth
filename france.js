@@ -18,17 +18,18 @@ function france(id, stat, domain, range, title, unit, plus) {
               }
 
   this.read = function() {
-                if (!self.data) {
-                  self.data = {};
-                  for (var line in csv=arguments[0]) {
-                    self.data[csv[line].insee] = {};
-                  }
-                }
                 for (var file in arguments) {
-                  for (var column in arguments[file][0]) {
+                  var f = arguments[file];
+                  if (!self.data) {
+                    self.data = {};
+                    for (var line in f) {
+                      self.data[f[line].insee] = {};
+                    }
+                  }
+                  for (var column in f[0]) {
                     if (column != 'insee') {
-                      for (var line in arguments[file]) {
-                        self.data[arguments[file][line].insee][column] = arguments[file][line][column];
+                      for (var line in f) {
+                        self.data[f[line].insee][column] = f[line][column];
                       }
                     }
                   }
