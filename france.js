@@ -20,14 +20,14 @@ function france(id, stat, domain, range, title, unit, plus) {
   this.read = function() {
                 if (!self.data) {
                   self.data = {};
-                  for (line in csv=arguments[0]) {
-                    self.data[csv[line].insee] ={};
+                  for (var line in csv=arguments[0]) {
+                    self.data[csv[line].insee] = {};
                   }
                 }
-                for (file in arguments) {
-                  for (column in arguments[file][0]) {
+                for (var file in arguments) {
+                  for (var column in arguments[file][0]) {
                     if (column != 'insee') {
-                      for (line in arguments[file]) {
+                      for (var line in arguments[file]) {
                         self.data[arguments[file][line].insee][column] = arguments[file][line][column];
                       }
                     }
@@ -36,7 +36,7 @@ function france(id, stat, domain, range, title, unit, plus) {
               }
 
   this.draw = function(json) {
-                for (key in json.objects) {
+                for (var key in json.objects) {
                   self.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
                       onEachFeature: function (feature, json) {
@@ -64,7 +64,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                 var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
                 var canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d");
                 var gradient = canvas.createLinearGradient(0,0,240,10);
-                for ( el in a = range.map(function(d, i) { return { x: x(domain[i]), z:d }})) gradient.addColorStop(a[el].x/239,a[el].z);
+                for (var el in a = range.map(function(d, i) { return { x: x(domain[i]), z:d }})) gradient.addColorStop(a[el].x/239,a[el].z);
                 canvas.fillStyle = gradient;
                 canvas.fillRect(10,0,240,10);
 
@@ -73,7 +73,7 @@ function france(id, stat, domain, range, title, unit, plus) {
               }
 
  this.search = function() {
-              var list = []; for (c in n = self.data) { if (c.slice(2,3) != "-") list.push(n[c].name+" ("+c.slice(0,2)+")"); }
+              var list = []; for (var c in n = self.data) { if (c.slice(2,3) != "-") list.push(n[c].name+" ("+c.slice(0,2)+")"); }
               var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
               window.input = div.append("input").attr("type", "text").attr("id", "search");
               new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
@@ -81,7 +81,7 @@ function france(id, stat, domain, range, title, unit, plus) {
               L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
               input.on('awesomplete-selectcomplete', function(){
                 var value = input.node().value;
-                for (i in n = self.data) {
+                for (var i in n = self.data) {
                   if (i.slice(0,2) == value.slice(-3,-1) && n[i].name == value.slice(0,-5) ) {
                     self.i = i;
                     self.popup(i);
