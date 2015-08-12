@@ -94,7 +94,7 @@ function france(map, stat, domain, range, title, unit, plus) {
                 input.on('awesomplete-selectcomplete', function(){
                   var value = input.node().value;
                   for (var i in self.data) {
-                    if (i.slice(0,2) == value.slice(-3,-1) && self.data[i].name == value.slice(0,-5) ) {
+                    if (value == self.data[i].name+" ("+i.slice(0,2)+")" && i[3] != "-") {
                       self.i = i;
                       self.popup(i);
                       map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
