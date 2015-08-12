@@ -77,7 +77,7 @@ function france(map, stat, domain, range, title, unit, plus) {
 
  this.search = function() {
                 var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
-                var input = div.append("input").attr("type", "text").attr("id", "search");
+                var input = div.append("input").attr("type", "text").attr("id", "search").attr("placeholder","Commune ou un code postal");
 
                 L.DomEvent.disableClickPropagation(div.node());
                 L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
