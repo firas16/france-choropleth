@@ -4,10 +4,10 @@ function france(map, stat, domain, range, title, unit, plus) {
                 d3.json('/data/geo/base.topojson', function (e, json){
                   d3.csv('/data/stats/data.csv', function (e, data){
                     d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
-                      self.read(data, stats);
-                      self.info();
-                      self.search();
-                      self.draw(json);
+                      $.read(data, stats);
+                      $.info();
+                      $.search();
+                      $.draw(json);
                     })
                   })
                 })
@@ -16,16 +16,16 @@ function france(map, stat, domain, range, title, unit, plus) {
   this.read = function() {
                 for (var file in arguments) {
                   var f = arguments[file];
-                  if (!self.data) {
-                    self.data = {};
+                  if (!$.data) {
+                    $.data = {};
                     for (var line in f) {
-                      self.data[f[line].insee] = {};
+                      $.data[f[line].insee] = {};
                     }
                   }
                   for (var column in f[0]) {
                     if (column != 'insee') {
                       for (var line in f) {
-                        self.data[f[line].insee][column] = f[line][column];
+                        $.data[f[line].insee][column] = f[line][column];
                       }
                     }
                   }
@@ -36,21 +36,21 @@ function france(map, stat, domain, range, title, unit, plus) {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]);
                 var color = d3.scale.linear().clamp(1).domain(domain).range(range);
                 for (var key in json.objects) {
-                  self.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
+                  $.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
                       onEachFeature: function (feature, layer) {
                         var i = feature.id, input = d3.selectAll(".info .value");
-                        layer.on({ mouseover: function() { input.attr("value", self.data[i].name+" : "+self.data[i][stat].replace(".",",")+" "+unit) },
+                        layer.on({ mouseover: function() { input.attr("value", $.data[i].name+" : "+$.data[i][stat].replace(".",",")+" "+unit) },
                                    mouseout:  function() { input.attr("value", "") } })
                       },
                       style: function(feature){
-                        if (self.data[feature.id]) return { stroke: 0,
-                          fillOpacity: alpha(self.data[feature.id].density),
-                          fillColor: color(self.data[feature.id][stat])
+                        if ($.data[feature.id]) return { stroke: 0,
+                          fillOpacity: alpha($.data[feature.id].density),
+                          fillColor: color($.data[feature.id][stat])
                         }
                       }
                     });
-                  self.layer.addTo(map);
+                  $.layer.addTo(map);
                 }
               }
 
@@ -83,9 +83,9 @@ function france(map, stat, domain, range, title, unit, plus) {
                 L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
 
                 var list = [];
-                for (var c in self.data) {
-                  if (self.data[c].x && self.data[c].y) {
-                    list.push(self.data[c].name+" ("+self.data[c].postcode+")");
+                for (var c in $.data) {
+                  if ($.data[c].x && $.data[c].y) {
+                    list.push($.data[c].name+" ("+$.data[c].postcode+")");
                   }
                 }
 
@@ -93,11 +93,11 @@ function france(map, stat, domain, range, title, unit, plus) {
 
                 input.on('awesomplete-selectcomplete', function(){
                   var value = input.node().value;
-                  for (var i in self.data) {
-                    if (value == self.data[i].name+" ("+self.data[i].postcode+")" && i[3] != "-") {
-                      self.i = i;
-                      self.popup(i);
-                      map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
+                  for (var i in $.data) {
+                    if (value == $.data[i].name+" ("+$.data[i].postcode+")" && i[3] != "-") {
+                      $.i = i;
+                      $.popup(i);
+                      map.flyTo(L.latLng($.data[i].y, $.data[i].x), 9);
                       break;
                     }
                   }
@@ -105,9 +105,9 @@ function france(map, stat, domain, range, title, unit, plus) {
               }
 
  this.popup = function(i) {
-                self.marker = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
-                            .setContent('<strong>'+self.data[i].name+'</strong><br />'+
-                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit).openOn(map);
+                $.marker = L.popup().setLatLng(L.latLng($.data[i].y, $.data[i].x))
+                            .setContent('<strong>'+$.data[i].name+'</strong><br />'+
+                              title+' : '+$.data[i][stat].replace(".",",")+' '+unit).openOn(map);
               }
 
   this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
@@ -115,20 +115,20 @@ function france(map, stat, domain, range, title, unit, plus) {
                 title = _title, range = _range, plus = _plus;
                 var color = d3.scale.linear().clamp(1).domain(domain).range(range);
                 d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
-                  self.read(csv);
-                  self.layer.eachLayer( function(e) {
-                    if (self.data[e.feature.id]) {
-                      e.setStyle({ fillColor: color(self.data[e.feature.id][stat]) });
+                  $.read(csv);
+                  $.layer.eachLayer( function(e) {
+                    if ($.data[e.feature.id]) {
+                      e.setStyle({ fillColor: color($.data[e.feature.id][stat]) });
                     }
                   });
-                  self.info();
-                  if (self.marker) {
-                    self.popup(self.i);
+                  $.info();
+                  if ($.marker) {
+                    $.popup($.i);
                   }
                 })
               }
 
-  var self = this;
-  self.init();
+  var $ = this;
+  $.init();
 
 }
