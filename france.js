@@ -76,28 +76,28 @@ function france(map, stat, domain, range, title, unit, plus) {
               }
 
  this.search = function() {
-              var list = [];
-              for (var c in self.data) {
-                if (c.slice(2,3) != "-") {
-                  list.push(self.data[c].name+" ("+c.slice(0,2)+")");
-                }
-              }
-              var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
-              var input = div.append("input").attr("type", "text").attr("id", "search");
-              new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
-              L.DomEvent.disableClickPropagation(div.node());
-              L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
-              input.on('awesomplete-selectcomplete', function(){
-                var value = input.node().value;
-                for (var i in self.data) {
-                  if (i.slice(0,2) == value.slice(-3,-1) && self.data[i].name == value.slice(0,-5) ) {
-                    self.i = i;
-                    self.popup(i);
-                    map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
+                var list = [];
+                for (var c in self.data) {
+                  if (c.slice(2,3) != "-") {
+                    list.push(self.data[c].name+" ("+c.slice(0,2)+")");
                   }
                 }
-              });
-            }
+                var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
+                var input = div.append("input").attr("type", "text").attr("id", "search");
+                new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
+                L.DomEvent.disableClickPropagation(div.node());
+                L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
+                input.on('awesomplete-selectcomplete', function(){
+                  var value = input.node().value;
+                  for (var i in self.data) {
+                    if (i.slice(0,2) == value.slice(-3,-1) && self.data[i].name == value.slice(0,-5) ) {
+                      self.i = i;
+                      self.popup(i);
+                      map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
+                    }
+                  }
+                });
+              }
 
  this.popup = function(i) {
                 self.marker = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
