@@ -33,7 +33,7 @@ df = concat([df, xy, cp], axis=1).dropna(subset=["name","P12_POP"])
 
 df['density'] = (df.P12_POP/df.SUPERF).map(lambda x: '%.0f' % x)
 
-df.to_csv('stats/data.csv', columns = ['postcode','name','density','x','y'], index_label='id', float_format='%.2f')
+df.to_csv('geo/data.csv', columns = ['postcode','name','density','x','y'], index_label='id', float_format='%.2f')
 
 
 # Unemployement

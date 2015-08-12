@@ -1,8 +1,8 @@
 function france(map, stat, domain, range, title, unit, plus) {
 
   this.init = function() {
-                d3.json('/data/geo/base.topojson', function (e, json){
-                  d3.csv('/data/stats/data.csv', function (e, data){
+                d3.json('/data/geo/france.topojson', function (e, json){
+                  d3.csv('/data/geo/data.csv', function (e, data){
                     d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
                       $.read(data, stats);
                       $.info();
