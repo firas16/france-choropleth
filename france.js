@@ -84,7 +84,7 @@ function france(map, stat, domain, range, title, unit, plus) {
 
                 var list = [];
                 for (var c in self.data) {
-                  if (c.slice(2,3) != "-") {
+                  if (self.data[c].x && self.data[c].y) {
                     list.push(self.data[c].name+" ("+c.slice(0,2)+")");
                   }
                 }
