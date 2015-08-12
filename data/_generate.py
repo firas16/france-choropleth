@@ -14,6 +14,7 @@ cen = read_csv("_tmp/centroids.csv").set_index('insee')
 
 # Load ‘chiffres clefs’ database
 cc = read_excel("_tmp/base-cc-resume-15.xls", sheetname=[0,1], header=5, index_col=[0])
+cc[1].index = cc[1].index.astype('str')
 cc = concat([cc[0],cc[1]]).rename(columns = {'LIBGEO':'name'})
 
 # Link communes to cantons

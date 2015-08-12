@@ -1,4 +1,21 @@
 insee,name,density,x,y
+01-01,Ambérieu-en-Bugey,30,,
+01-02,Attignat,59,,
+01-03,Bellegarde-sur-Valserine,30,,
+01-04,Belley,38,,
+01-07,Ceyzériat,27,,
+01-08,Châtillon-sur-Chalaronne,34,,
+01-09,Gex,50,,
+01-10,Hauteville-Lompnes,19,,
+01-11,Lagnieu,25,,
+01-12,Meximieux,42,,
+01-14,Nantua,28,,
+01-16,Pont-d'Ain,31,,
+01-17,Replonges,33,,
+01-18,Saint-Étienne-du-Bois,34,,
+01-20,Thoiry,23,,
+01-22,Villars-les-Dombes,37,,
+01-23,Vonnas,62,,
 01001,L'Abergement-Clémenciat,49,4.93,46.15
 01002,L'Abergement-de-Varey,26,5.43,46.01
 01004,Ambérieu-en-Bugey,579,5.37,45.96
@@ -418,6 +435,27 @@ insee,name,density,x,y
 01454,Virignin,119,5.71,45.73
 01456,Vongnes,36,5.72,45.81
 01457,Vonnas,160,5.00,46.22
+02-01,Bohain-en-Vermandois,46,,
+02-02,Château-Thierry,31,,
+02-03,Chauny,47,,
+02-04,Essômes-sur-Marne,25,,
+02-05,Fère-en-Tardenois,28,,
+02-06,Guignicourt,25,,
+02-07,Guise,33,,
+02-08,Hirson,26,,
+02-09,Laon-1,42,,
+02-10,Laon-2,29,,
+02-11,Marle,26,,
+02-12,Ribemont,40,,
+02-13,Saint-Quentin-1,31,,
+02-14,Saint-Quentin-2,39,,
+02-15,Saint-Quentin-3,33,,
+02-16,Soissons-1,33,,
+02-17,Soissons-2,39,,
+02-18,Tergnier,38,,
+02-19,Vervins,24,,
+02-20,Vic-sur-Aisne,36,,
+02-21,Villers-Cotterêts,25,,
 02001,Abbécourt,91,3.18,49.60
 02002,Achery,90,3.40,49.69
 02003,Acy,86,3.42,49.35
@@ -1234,6 +1272,21 @@ insee,name,density,x,y
 02832,Wiège-Faty,30,3.71,49.88
 02833,Wimy,37,4.00,49.95
 02834,Wissignicourt,33,3.44,49.53
+03-01,Bellerive-sur-Allier,40,,
+03-02,Bourbon-l'Archambault,13,,
+03-03,Commentry,18,,
+03-04,Cusset,21,,
+03-05,Dompierre-sur-Besbre,13,,
+03-06,Gannat,22,,
+03-07,Huriel,13,,
+03-08,Lapalisse,16,,
+03-11,Montluçon-3,17,,
+03-12,Montluçon-4,36,,
+03-13,Moulins-1,21,,
+03-14,Moulins-2,14,,
+03-15,Saint-Pourçain-sur-Sioule,36,,
+03-16,Souvigny,19,,
+03-19,Yzeure,17,,
 03001,Abrest,267,3.45,46.10
 03002,Agonges,15,3.15,46.62
 03003,Ainay-le-Château,42,2.72,46.72
@@ -1554,6 +1607,19 @@ insee,name,density,x,y
 03319,Voussac,13,3.07,46.33
 03320,Ygrande,15,2.94,46.55
 03321,Yzeure,300,3.38,46.56
+04-01,Barcelonnette,5,,
+04-02,Castellane,6,,
+04-03,Château-Arnoux-Saint-Auban,26,,
+04-04,Digne-les-Bains-1,9,,
+04-05,Digne-les-Bains-2,25,,
+04-06,Forcalquier,15,,
+04-07,Manosque-1,11,,
+04-08,Manosque-2,12,,
+04-11,Reillanne,8,,
+04-12,Riez,8,,
+04-13,Seyne,7,,
+04-14,Sisteron,8,,
+04-15,Valensole,14,,
 04001,Aiglun,91,6.14,44.06
 04004,Allemagne-en-Provence,16,6.03,43.79
 04005,Allons,3,6.59,43.98
@@ -1754,6 +1820,17 @@ insee,name,density,x,y
 04242,Villeneuve,145,5.86,43.90
 04244,Volonne,68,6.03,44.12
 04245,Volx,158,5.83,43.87
+05-01,Argentière-la-Bessée,9,,
+05-02,Briançon-1,8,,
+05-03,Briançon-2,5,,
+05-04,Chorges,16,,
+05-05,Embrun,12,,
+05-10,Guillestre,7,,
+05-11,Laragne-Montéglin,16,,
+05-12,Saint-Bonnet-en-Champsaur,11,,
+05-13,Serres,8,,
+05-14,Tallard,23,,
+05-15,Veynes,8,,
 05001,Abriès,4,6.94,44.82
 05002,Agnières-en-Dévoluy,nan,,
 05003,Aiguilles,11,6.88,44.78
@@ -1931,6 +2008,12 @@ insee,name,density,x,y
 05182,Villar-Loubière,2,6.14,44.84
 05183,Villar-Saint-Pancrace,34,6.65,44.84
 05184,Vitrolles,14,5.95,44.42
+06-10,Contes,10,,
+06-11,Grasse-1,11,,
+06-14,Menton,51,,
+06-24,Tourrette-Levens,8,,
+06-25,Valbonne,11,,
+06-26,Vence,9,,
 06001,Aiglun,6,6.93,43.85
 06002,Amirat,5,6.81,43.90
 06003,Andon,10,6.82,43.78
@@ -2094,6 +2177,23 @@ insee,name,density,x,y
 06161,Villeneuve-Loubet,756,7.11,43.65
 06162,La Brigue,8,7.65,44.06
 06163,Tende,12,7.54,44.10
+07-01,Annonay-1,68,,
+07-02,Annonay-2,25,,
+07-03,Aubenas-1,18,,
+07-04,Aubenas-2,34,,
+07-05,Bourg-Saint-Andéol,10,,
+07-06,Cheylard,15,,
+07-07,Guilherand-Granges,54,,
+07-08,Lamastre,24,,
+07-09,Pouzin,36,,
+07-10,Privas,18,,
+07-11,Sarras,57,,
+07-12,Teil,19,,
+07-13,Thueyts,11,,
+07-14,Tournon-sur-Rhône,48,,
+07-15,Vallon-Pont-d'Arc,24,,
+07-16,Vans,19,,
+07-17,Voulte-sur-Rhône,18,,
 07001,Accons,42,4.39,44.89
 07002,Ailhon,69,4.33,44.60
 07003,Aizac,23,4.33,44.72
@@ -2433,6 +2533,23 @@ insee,name,density,x,y
 07347,Vocance,34,4.56,45.19
 07348,Vogüé,81,4.41,44.56
 07349,La Voulte-sur-Rhône,527,4.78,44.80
+08-01,Attigny,13,,
+08-02,Bogny-sur-Meuse,27,,
+08-03,Carignan,22,,
+08-04,Charleville-Mézières-1,41,,
+08-05,Charleville-Mézières-2,42,,
+08-08,Château-Porcien,21,,
+08-09,Givet,43,,
+08-10,Nouvion-sur-Meuse,24,,
+08-11,Rethel,23,,
+08-12,Revin,15,,
+08-13,Rocroi,25,,
+08-14,Sedan-1,33,,
+08-15,Sedan-2,21,,
+08-16,Sedan-3,25,,
+08-17,Signy-l'Abbaye,18,,
+08-18,Villers-Semeuse,69,,
+08-19,Vouziers,14,,
 08001,Acy-Romance,40,4.33,49.49
 08003,Aiglemont,188,4.77,49.79
 08004,Aire,34,4.16,49.47
@@ -2896,6 +3013,19 @@ insee,name,density,x,y
 08501,Williers,23,5.30,49.67
 08502,Yoncq,7,5.02,49.57
 08503,Yvernaumont,50,4.66,49.68
+09-01,Haute-Ariège,6,,
+09-02,Arize-Lèze,21,,
+09-03,Couserans Est,11,,
+09-04,Couserans Ouest,8,,
+09-05,Foix,41,,
+09-06,Mirepoix,17,,
+09-07,Pamiers-1,21,,
+09-08,Pamiers-2,44,,
+09-09,Pays d'Olmes,15,,
+09-10,Portes d'Ariège,32,,
+09-11,Portes du Couserans,22,,
+09-12,Sabarthès,8,,
+09-13,Val d'Ariège,25,,
 09001,Aigues-Juntes,6,1.47,43.05
 09002,Aigues-Vives,116,1.88,43.00
 09003,L'Aiguillon,60,1.90,42.91
@@ -3228,6 +3358,18 @@ insee,name,density,x,y
 09340,Vira,32,1.76,43.05
 09341,Viviès,30,1.78,43.06
 09342,Sainte-Suzanne,23,1.38,43.21
+10-01,Aix-en-Othe,22,,
+10-02,Arcis-sur-Aube,14,,
+10-03,Bar-sur-Aube,15,,
+10-04,Bar-sur-Seine,19,,
+10-05,Brienne-le-Château,18,,
+10-06,Creney-près-Troyes,24,,
+10-07,Nogent-sur-Seine,26,,
+10-08,Riceys,16,,
+10-09,Romilly-sur-Seine,37,,
+10-10,Saint-André-les-Vergers,75,,
+10-11,Saint-Lyé,17,,
+10-17,Vendeuvre-sur-Barse,27,,
 10002,Ailleville,54,4.69,48.25
 10003,Aix-en-Othe,71,3.74,48.20
 10004,Allibaudières,11,4.12,48.59
@@ -3661,6 +3803,21 @@ insee,name,density,x,y
 10443,Vougrey,11,4.23,48.09
 10444,Vulaines,27,3.63,48.24
 10445,Yèvres-le-Petit,8,4.49,48.48
+11-01,Bram,17,,
+11-03,Carcassonne-2,35,,
+11-04,Carcassonne-3,46,,
+11-05,Castelnaudary,30,,
+11-07,Fabrezan,12,,
+11-08,Lézignan-Corbières,45,,
+11-09,Limoux,17,,
+11-10,Montréal,28,,
+11-12,Narbonne-2,69,,
+11-14,Quillan,9,,
+11-15,Rieux-Minervois,19,,
+11-16,Sallèles-d'Aude,55,,
+11-17,Sigean,9,,
+11-18,Trèbes,21,,
+11-19,Villemoustaussou,16,,
 11001,Aigues-Vives,52,2.53,43.24
 11002,Airoux,27,1.87,43.37
 11003,Ajac,37,2.14,43.04
@@ -4099,6 +4256,25 @@ insee,name,density,x,y
 11439,Villespy,55,2.10,43.32
 11440,Villetritouls,7,2.49,43.08
 11441,Vinassan,284,3.10,43.21
+12-01,Aubrac et Carladez,11,,
+12-02,Aveyron et Tarn,19,,
+12-03,Causse-Comtal,20,,
+12-04,Causses-Rougiers,9,,
+12-05,Ceor-Ségala,21,,
+12-06,Enne et Alzou,27,,
+12-07,Lot et Dourdou,17,,
+12-08,Lot et Montbazinois,28,,
+12-09,Lot et Palanges,13,,
+12-10,Lot et Truyère,16,,
+12-11,Millau-1,21,,
+12-12,Millau-2,17,,
+12-13,Monts du Réquistanais,19,,
+12-15,Raspes et Lévezou,12,,
+12-19,Saint-Affrique,16,,
+12-20,Tarn et Causses,11,,
+12-21,Vallon,21,,
+12-22,Villefranche-de-Rouergue,23,,
+12-23,Villeneuvois et Villefranchois,25,,
 12001,Agen-d'Aveyron,48,2.69,44.35
 12002,Aguessac,49,3.07,44.16
 12003,Les Albres,22,2.18,44.54
@@ -4403,6 +4579,10 @@ insee,name,density,x,y
 12304,Vitrac-en-Viadène,7,2.84,44.79
 12305,Viviez,206,2.22,44.56
 12307,Curan,8,2.85,44.20
+13-07,Châteaurenard,56,,
+13-25,Pélissanne,36,,
+13-26,Salon-de-Provence-1,26,,
+13-28,Trets,23,,
 13001,Aix-en-Provence,759,5.40,43.54
 13002,Allauch,411,5.51,43.35
 13003,Alleins,145,5.15,43.71
@@ -4522,6 +4702,39 @@ insee,name,density,x,y
 13117,Vitrolles,953,5.26,43.45
 13118,Coudoux,274,5.25,43.56
 13119,Carnoux-en-Provence,1961,5.57,43.26
+13201,Marseille 1er Arrondissement,21651,5.38,43.30
+13202,Marseille 2e Arrondissement,4816,5.36,43.32
+13203,Marseille 3e Arrondissement,17179,5.38,43.31
+13204,Marseille 4e Arrondissement,16507,5.40,43.31
+13205,Marseille 5e Arrondissement,20741,5.40,43.29
+13206,Marseille 6e Arrondissement,19923,5.38,43.29
+13207,Marseille 7e Arrondissement,6141,5.30,43.28
+13208,Marseille 8e Arrondissement,4208,5.38,43.24
+13209,Marseille 9e Arrondissement,1172,5.45,43.23
+13210,Marseille 10e Arrondissement,5007,5.43,43.28
+13211,Marseille 11e Arrondissement,1692,5.48,43.29
+13212,Marseille 12e Arrondissement,4293,5.44,43.31
+13213,Marseille 13e Arrondissement,3203,5.43,43.35
+13214,Marseille 14e Arrondissement,3707,5.39,43.34
+13215,Marseille 15e Arrondissement,4782,5.36,43.36
+13216,Marseille 16e Arrondissement,1049,5.31,43.36
+14-01,Aunay-sur-Odon,38,,
+14-02,Bayeux,50,,
+14-03,Bretteville-l'Orgueilleuse,48,,
+14-04,Cabourg,39,,
+14-10,Condé-sur-Noireau,34,,
+14-11,Courseulles-sur-Mer,36,,
+14-12,Évrecy,47,,
+14-13,Falaise,34,,
+14-15,Honfleur-Deauville,50,,
+14-17,Lisieux,53,,
+14-18,Livarot,29,,
+14-19,Mézidon-Canon,31,,
+14-21,Pont-l'Évêque,45,,
+14-22,Thury-Harcourt,37,,
+14-23,Trévières,33,,
+14-24,Troarn,43,,
+14-25,Vire,39,,
 14001,Ablon,100,0.29,49.39
 14002,Acqueville,28,-0.37,48.97
 14003,Agy,56,-0.78,49.24
@@ -5228,6 +5441,18 @@ insee,name,density,x,y
 14762,Vire,514,-0.89,48.85
 14763,Vouilly,24,-1.03,49.30
 14764,Pont-d'Ouilly,52,-0.41,48.88
+15-01,Arpajon-sur-Cère,21,,
+15-05,Mauriac,16,,
+15-06,Maurs,17,,
+15-07,Murat,10,,
+15-08,Naucelles,18,,
+15-09,Neuvéglise,9,,
+15-10,Riom-ès-Montagnes,9,,
+15-11,Saint-Flour-1,12,,
+15-12,Saint-Flour-2,12,,
+15-13,Saint-Paul-des-Landes,14,,
+15-14,Vic-sur-Cère,16,,
+15-15,Ydes,14,,
 15001,Allanche,16,2.95,45.23
 15002,Alleuze,9,3.10,44.96
 15003,Ally,28,2.33,45.16
@@ -5488,6 +5713,20 @@ insee,name,density,x,y
 15267,Ytrac,104,2.37,44.92
 15268,Le Rouget,117,2.23,44.86
 15269,Besse,33,2.35,45.10
+16-04,Boëme-Echelle,43,,
+16-05,Boixe-et-Manslois,33,,
+16-06,Charente-Bonnieure,20,,
+16-07,Charente-Champagne,36,,
+16-08,Charente-Nord,24,,
+16-09,Charente-Sud,24,,
+16-10,Charente-Vienne,19,,
+16-11,Cognac-1,42,,
+16-12,Cognac-2,64,,
+16-15,Jarnac,50,,
+16-16,Touvre-et-Braconne,30,,
+16-17,Tude-et-Lavalette,20,,
+16-18,Val de Nouère,34,,
+16-19,Val de Tardoire,31,,
 16001,Abzac,15,0.72,46.10
 16002,Les Adjots,48,0.20,46.08
 16003,Agris,44,0.33,45.78
@@ -5892,6 +6131,22 @@ insee,name,density,x,y
 16423,Xambes,57,0.11,45.82
 16424,Yviers,23,-0.02,45.27
 16425,Yvrac-et-Malleyrand,28,0.47,45.73
+17-02,Chaniers,40,,
+17-05,Île de Ré,73,,
+17-06,Jarrie,48,,
+17-07,Jonzac,34,,
+17-09,Marans,47,,
+17-10,Marennes,31,,
+17-11,Matha,24,,
+17-12,Pons,30,,
+17-18,Saint-Jean-d'Angély,31,,
+17-19,Saint-Porchaire,47,,
+17-21,Saintonge Estuaire,39,,
+17-22,Saujon,62,,
+17-23,Surgères,43,,
+17-24,Thénac,43,,
+17-25,Tonnay-Charente,29,,
+17-27,Trois Monts,27,,
 17002,Agudelle,23,-0.47,45.38
 17003,Aigrefeuille-d'Aunis,222,-0.94,46.12
 17004,Île-d'Aix,203,-1.17,46.02
@@ -6364,6 +6619,19 @@ insee,name,density,x,y
 17484,Port-des-Barques,336,-1.08,45.94
 17485,Le Grand-Village-Plage,172,-1.24,45.86
 17486,La Brée-les-Bains,101,-1.35,46.01
+18-01,Aubigny-sur-Nère,8,,
+18-02,Avord,21,,
+18-07,Chârost,21,,
+18-08,Châteaumeillant,12,,
+18-09,Dun-sur-Auron,12,,
+18-10,Guerche-sur-l'Aubois,16,,
+18-11,Mehun-sur-Yèvre,24,,
+18-12,Saint-Amand-Montrond,22,,
+18-14,Saint-Germain-du-Puy,16,,
+18-15,Saint-Martin-d'Auxigny,20,,
+18-16,Sancerre,20,,
+18-17,Trouy,20,,
+18-19,Vierzon-2,27,,
 18001,Achères,30,2.46,47.28
 18002,Ainay-le-Vieil,16,2.54,46.66
 18003,Les Aix-d'Angillon,131,2.56,47.19
@@ -6654,6 +6922,20 @@ insee,name,density,x,y
 18288,Vorly,13,2.47,46.94
 18289,Vornay,22,2.59,46.97
 18290,Vouzeron,10,2.22,47.27
+19-01,Allassac,29,,
+19-02,Argentat,14,,
+19-07,Égletons,12,,
+19-08,Haute-Dordogne,12,,
+19-09,Malemort-sur-Corrèze,46,,
+19-10,Midi Corrézien,27,,
+19-11,Naves,24,,
+19-12,Plateau de Millevaches,9,,
+19-13,Saint-Pantaléon-de-Larche,38,,
+19-14,Sainte-Fortunade,22,,
+19-15,Seilhac-Monédières,13,,
+19-17,Ussel,14,,
+19-18,Uzerche,20,,
+19-19,Yssandonnais,35,,
 19001,Affieux,12,1.77,45.51
 19002,Aix,8,2.39,45.61
 19003,Albignac,24,1.68,45.15
@@ -6940,6 +7222,21 @@ insee,name,density,x,y
 19287,Vitrac-sur-Montane,9,1.93,45.37
 19288,Voutezac,56,1.44,45.29
 19289,Yssandon,36,1.38,45.20
+21-01,Arnay-le-Duc,14,,
+21-02,Auxonne,33,,
+21-04,Brazey-en-Plaine,36,,
+21-05,Châtillon-sur-Seine,9,,
+21-13,Dijon-6,39,,
+21-14,Fontaine-lès-Dijon,15,,
+21-15,Genlis,55,,
+21-16,Is-sur-Tille,13,,
+21-17,Ladoix-Serrigny,34,,
+21-18,Longvic,24,,
+21-19,Montbard,14,,
+21-20,Nuits-Saint-Georges,34,,
+21-21,Saint-Apollinaire,22,,
+21-22,Semur-en-Auxois,14,,
+21-23,Talant,26,,
 21001,Agencourt,103,4.99,47.13
 21002,Agey,34,4.76,47.29
 21003,Ahuy,198,5.02,47.37
@@ -7646,6 +7943,24 @@ insee,name,density,x,y
 21715,Voudenay,9,4.38,47.09
 21716,Vougeot,206,4.96,47.17
 21717,Voulaines-les-Templiers,13,4.78,47.83
+22-01,Bégard,54,,
+22-02,Broons,30,,
+22-03,Callac,20,,
+22-06,Lamballe,45,,
+22-08,Lanvallay,53,,
+22-09,Loudéac,31,,
+22-10,Mûr-de-Bretagne,28,,
+22-11,Paimpol,62,,
+22-13,Plaintel,30,,
+22-14,Plancoët,45,,
+22-15,Plélo,31,,
+22-16,Plénée-Jugon,41,,
+22-17,Pléneuf-Val-André,48,,
+22-19,Pleslin-Trigavou,40,,
+22-20,Plestin-les-Grèves,25,,
+22-22,Plouha,51,,
+22-23,Rostrenen,19,,
+22-27,Tréguier,53,,
 22001,Allineuc,25,-2.87,48.31
 22002,Andel,92,-2.55,48.49
 22003,Aucaleuc,142,-2.13,48.45
@@ -8019,6 +8334,21 @@ insee,name,density,x,y
 22389,Yffiniac,277,-2.68,48.47
 22390,Yvias,65,-3.05,48.71
 22391,Yvignac-la-Tour,34,-2.17,48.35
+23-01,Ahun,14,,
+23-02,Aubusson,16,,
+23-03,Auzances,10,,
+23-04,Bonnat,18,,
+23-05,Bourganeuf,10,,
+23-06,Boussac,14,,
+23-07,Dun-le-Palestel,21,,
+23-08,Évaux-les-Bains,14,,
+23-09,Felletin,9,,
+23-10,Gouzon,14,,
+23-11,Grand-Bourg,19,,
+23-12,Guéret-1,45,,
+23-13,Guéret-2,20,,
+23-14,Saint-Vaury,28,,
+23-15,Souterraine,24,,
 23001,Ahun,45,2.02,46.09
 23002,Ajain,33,2.00,46.21
 23003,Alleyrat,15,2.15,45.99
@@ -8279,6 +8609,27 @@ insee,name,density,x,y
 23264,La Villedieu,8,1.89,45.73
 23265,La Villeneuve,19,2.42,45.90
 23266,La Villetelle,10,2.34,45.92
+24-02,Bergerac-2,47,,
+24-03,Brantôme,20,,
+24-05,Haut-Périgord Noir,21,,
+24-06,Isle-Loue-Auvézère,23,,
+24-07,Isle-Manoire,35,,
+24-08,Lalinde,19,,
+24-09,Montpon-Ménestérol,18,,
+24-10,Pays de la Force,18,,
+24-11,Pays de Montaigne et Gurson,28,,
+24-12,Périgord Central,22,,
+24-13,Périgord Vert Nontronnais,21,,
+24-16,Ribérac,21,,
+24-17,Saint-Astier,37,,
+24-18,Sarlat-la-Canéda,40,,
+24-19,Sud-Bergeracois,27,,
+24-20,Terrasson-Lavilledieu,26,,
+24-21,Thiviers,24,,
+24-22,Trélissac,51,,
+24-23,Vallée Dordogne,23,,
+24-24,Vallée de l'Isle,23,,
+24-25,Vallée de l'Homme,21,,
 24001,Abjat-sur-Bandiat,24,0.76,45.58
 24002,Agonac,45,0.75,45.28
 24004,Ajat,16,1.03,45.16
@@ -8836,6 +9187,21 @@ insee,name,density,x,y
 24585,Villefranche-du-Périgord,30,1.11,44.63
 24586,Villetoureix,54,0.36,45.27
 24587,Vitrac,62,1.22,44.84
+25-02,Baume-les-Dames,27,,
+25-03,Bavans,29,,
+25-04,Besançon-1,69,,
+25-05,Besançon-2,53,,
+25-07,Besançon-4,44,,
+25-08,Besançon-5,48,,
+25-09,Besançon-6,59,,
+25-11,Frasne,24,,
+25-12,Maîche,30,,
+25-14,Morteau,33,,
+25-15,Ornans,28,,
+25-16,Pontarlier,45,,
+25-17,Saint-Vit,35,,
+25-18,Valdahon,24,,
+25-19,Valentigney,33,,
 25001,Abbans-Dessous,73,5.87,47.13
 25002,Abbans-Dessus,69,5.89,47.13
 25003,Abbenans,32,6.45,47.50
@@ -9430,6 +9796,18 @@ insee,name,density,x,y
 25633,Vuillafans,112,6.22,47.06
 25634,Vuillecin,41,6.33,46.95
 25635,Vyt-lès-Belvoir,25,6.63,47.35
+26-02,Crest,21,,
+26-03,Dieulefit,19,,
+26-04,Diois,6,,
+26-05,Drôme des collines,40,,
+26-06,Grignan,32,,
+26-07,Loriol-sur-Drôme,32,,
+26-10,Nyons et Baronnies,8,,
+26-11,Romans-sur-Isère,54,,
+26-12,Saint-Vallier,51,,
+26-13,Tain-l'Hermitage,69,,
+26-14,Tricastin,36,,
+26-19,Vercors-Monts du Matin,17,,
 26001,Aix-en-Diois,22,5.38,44.70
 26002,Albon,68,4.86,45.24
 26003,Aleyrac,7,4.95,44.50
@@ -9799,6 +10177,26 @@ insee,name,density,x,y
 26380,Gervans,172,4.83,45.11
 26381,Jaillans,97,5.17,45.03
 26382,Saint-Vincent-la-Commanderie,36,5.13,44.93
+27-01,Andelys,47,,
+27-02,Bernay,36,,
+27-03,Beuzeville,40,,
+27-04,Bourg-Achard,47,,
+27-05,Bourgtheroulde-Infreville,56,,
+27-06,Breteuil,26,,
+27-07,Brionne,44,,
+27-08,Conches-en-Ouche,35,,
+27-10,Évreux-2,57,,
+27-11,Évreux-3,55,,
+27-12,Gaillon,52,,
+27-13,Gisors,42,,
+27-15,Neubourg,49,,
+27-16,Pacy-sur-Eure,49,,
+27-17,Pont-Audemer,55,,
+27-18,Pont-de-l'Arche,49,,
+27-19,Romilly-sur-Andelle,36,,
+27-20,Saint-André-de-l'Eure,39,,
+27-21,Val-de-Reuil,38,,
+27-22,Verneuil-sur-Avre,33,,
 27001,Aclou,76,0.70,49.17
 27002,Acon,52,1.10,48.77
 27003,Acquigny,86,1.18,49.16
@@ -10474,6 +10872,21 @@ insee,name,density,x,y
 27699,Voiscreville,73,0.77,49.28
 27700,Vraiville,89,1.04,49.22
 27701,Val-de-Reuil,524,1.21,49.26
+28-01,Anet,52,,
+28-02,Auneau,34,,
+28-03,Brou,22,,
+28-04,Chartres-1,39,,
+28-05,Chartres-2,48,,
+28-06,Chartres-3,53,,
+28-07,Châteaudun,24,,
+28-08,Dreux-1,51,,
+28-09,Dreux-2,45,,
+28-10,Épernon,46,,
+28-11,Illiers-Combray,32,,
+28-12,Lucé,61,,
+28-13,Nogent-le-Rotrou,29,,
+28-14,Saint-Lubin-des-Joncherets,22,,
+28-15,Voves,19,,
 28001,Abondant,64,1.42,48.80
 28002,Allaines-Mervilliers,15,1.82,48.19
 28003,Allainville,27,1.29,48.72
@@ -10876,6 +11289,20 @@ insee,name,density,x,y
 28424,Yèvres,41,1.19,48.19
 28425,Ymeray,91,1.70,48.51
 28426,Ymonville,24,1.75,48.25
+29-06,Briec,32,,
+29-07,Carhaix-Plouguer,20,,
+29-09,Crozon,32,,
+29-10,Douarnenez,51,,
+29-13,Landerneau,63,,
+29-14,Landivisiau,49,,
+29-15,Lesneven,72,,
+29-17,Morlaix,41,,
+29-19,Plonéour-Lanvern,43,,
+29-20,Plouigneau,30,,
+29-21,Pont-de-Buis-lès-Quimerch,30,,
+29-25,Quimperlé,32,,
+29-26,Saint-Pol-de-Léon,60,,
+29-27,Saint-Renan,57,,
 29001,Argol,31,-4.29,48.25
 29002,Arzano,41,-3.44,47.89
 29003,Audierne,729,-4.54,48.02
@@ -11159,6 +11586,12 @@ insee,name,density,x,y
 29300,Le Trévoux,73,-3.66,47.89
 29301,Trézilidé,63,-4.08,48.61
 29302,Pont-de-Buis-lès-Quimerch,93,-4.11,48.27
+2A-05,Ajaccio-5,31,,
+2A-07,Grand Sud,12,,
+2A-08,Gravona-Prunelli,11,,
+2A-09,Sartenais-Valinco,8,,
+2A-10,Sevi-Sorru-Cinarca,7,,
+2A-11,Taravo-Ornano,9,,
 2A001,Afa,244,8.80,41.98
 2A004,Ajaccio,808,8.70,41.93
 2A006,Alata,101,8.73,41.97
@@ -11283,6 +11716,17 @@ insee,name,density,x,y
 2A360,Zigliara,11,8.98,41.83
 2A362,Zonza,18,9.27,41.72
 2A363,Zoza,10,9.07,41.72
+2B-05,Biguglia-Nebbio,9,,
+2B-06,Borgo,17,,
+2B-07,Calvi,8,,
+2B-08,Cap Corse,17,,
+2B-09,Casinca-Fumalto,35,,
+2B-10,Castagniccia,21,,
+2B-11,Corte,12,,
+2B-12,Fiumorbo-Castello,6,,
+2B-13,Ghisonaccia,6,,
+2B-14,Golo-Morosaglia,8,,
+2B-15,île-Rousse,9,,
 2B002,Aghione,7,9.41,42.10
 2B003,Aiti,3,9.23,42.40
 2B005,Alando,10,9.29,42.31
@@ -11519,6 +11963,19 @@ insee,name,density,x,y
 2B364,Zuani,6,9.34,42.27
 2B365,San-Gavino-di-Fiumorbo,7,9.25,41.97
 2B366,Chisa,3,9.27,41.92
+30-02,Alès-1,69,,
+30-03,Alès-2,15,,
+30-04,Alès-3,44,,
+30-05,Bagnols-sur-Cèze,67,,
+30-07,Calvisson,52,,
+30-08,Grand-Combe,21,,
+30-14,Pont-Saint-Esprit,30,,
+30-15,Quissac,33,,
+30-16,Redessan,44,,
+30-18,Rousson,35,,
+30-19,Saint-Gilles,60,,
+30-20,Uzès,37,,
+30-22,Vigan,10,,
 30001,Aigaliers,17,4.31,44.07
 30002,Aigremont,54,4.12,43.96
 30003,Aigues-Mortes,148,4.18,43.55
@@ -11872,6 +12329,18 @@ insee,name,density,x,y
 30354,Montagnac,26,4.15,43.94
 30355,Saint-Paul-les-Fonts,174,4.62,44.08
 30356,Rodilhan,632,4.43,43.83
+31-01,Auterive,29,,
+31-02,Bagnères-de-Luchon,21,,
+31-04,Castanet-Tolosan,53,,
+31-06,Cazères,23,,
+31-07,Escalquens,37,,
+31-08,Léguevin,33,,
+31-10,Pechbonnieu,52,,
+31-11,Plaisance-du-Touch,43,,
+31-13,Revel,39,,
+31-14,Saint-Gaudens,25,,
+31-24,Toulouse-10,60,,
+31-27,Villemur-sur-Tarn,50,,
 31001,Agassac,12,0.89,43.37
 31002,Aignes,11,1.59,43.33
 31003,Aigrefeuille,246,1.59,43.57
@@ -12461,6 +12930,23 @@ insee,name,density,x,y
 31591,Escoulis,19,1.03,43.11
 31592,Larra,93,1.22,43.73
 31593,Cazac,14,0.95,43.35
+32-01,Adour-Gersoise,20,,
+32-02,Armagnac-Ténarèze,20,,
+32-03,Astarac-Gimone,16,,
+32-04,Auch-1,17,,
+32-05,Auch-2,26,,
+32-06,Auch-3,24,,
+32-07,Baïse-Armagnac,22,,
+32-08,Fezensac,12,,
+32-09,Fleurance-Lomagne,19,,
+32-10,Gascogne-Auscitaine,21,,
+32-11,Gimone-Arrats,21,,
+32-12,Grand-Bas-Armagnac,18,,
+32-13,Isle-Jourdain,33,,
+32-14,Lectoure-Lomagne,16,,
+32-15,Mirande-Astarac,19,,
+32-16,Pardiac-Rivière-Basse,15,,
+32-17,Val de Save,18,,
 32001,Aignan,23,0.09,43.69
 32002,Ansan,12,0.78,43.69
 32003,Antras,8,0.44,43.73
@@ -12924,6 +13410,18 @@ insee,name,density,x,y
 32466,Viozan,15,0.47,43.39
 32467,Saint-Caprais,17,0.79,43.59
 32468,Aussos,9,0.64,43.38
+33-10,Coteaux de Dordogne,50,,
+33-11,Créon,54,,
+33-12,Entre-Deux-Mers,41,,
+33-13,Estuaire,60,,
+33-15,Landes des Graves,17,,
+33-16,Libournais-Fronsadais,57,,
+33-20,Nord-Gironde,39,,
+33-21,Nord-Libournais,41,,
+33-22,Nord-Médoc,27,,
+33-27,Réolais et Les Bastides,33,,
+33-29,Sud-Gironde,17,,
+33-30,Sud-Médoc,14,,
 33001,Abzac,138,-0.13,45.01
 33002,Aillas,23,-0.07,44.48
 33003,Ambarès-et-Lagrave,570,-0.50,44.94
@@ -13466,6 +13964,15 @@ insee,name,density,x,y
 33553,Virsac,288,-0.44,45.03
 33554,Yvrac,332,-0.47,44.88
 33555,Marcheprime,185,-0.86,44.70
+34-05,Cazouls-lès-Béziers,20,,
+34-06,Clermont-l'Hérault,18,,
+34-07,Crès,73,,
+34-09,Gignac,18,,
+34-11,Lodève,13,,
+34-12,Lunel,53,,
+34-14,Mèze,42,,
+34-23,Saint-Gély-du-Fesc,33,,
+34-24,Saint-Pons-de-Thomières,14,,
 34001,Abeilhan,191,3.30,43.46
 34002,Adissan,232,3.43,43.53
 34003,Agde,485,3.48,43.31
@@ -13809,6 +14316,20 @@ insee,name,density,x,y
 34342,Viols-en-Laval,13,3.74,43.74
 34343,Viols-le-Fort,70,3.69,43.74
 34344,La Grande-Motte,804,4.08,43.57
+35-01,Antrain,42,,
+35-02,Bain-de-Bretagne,47,,
+35-05,Châteaugiron,54,,
+35-06,Combourg,55,,
+35-07,Dol-de-Bretagne,40,,
+35-08,Fougères-1,51,,
+35-09,Fougères-2,41,,
+35-10,Guerche-de-Bretagne,46,,
+35-11,Guichen,42,,
+35-12,Janzé,63,,
+35-15,Montauban-de-Bretagne,47,,
+35-16,Montfort-sur-Meu,38,,
+35-17,Redon,42,,
+35-27,Vitré,46,,
 35001,Acigné,212,-1.52,48.15
 35002,Amanlis,64,-1.50,48.00
 35003,Andouillé-Neuville,65,-1.60,48.30
@@ -14162,6 +14683,16 @@ insee,name,density,x,y
 35361,Le Vivier-sur-Mer,459,-1.78,48.60
 35362,Le Tronchet,98,-1.84,48.49
 35363,Pont-Péan,435,-1.70,48.01
+36-01,Ardentes,23,,
+36-02,Argenton-sur-Creuse,20,,
+36-03,Blanc,12,,
+36-04,Buzançais,13,,
+36-08,Châtre,15,,
+36-09,Issoudun,20,,
+36-10,Levroux,11,,
+36-11,Neuvy-Saint-Sépulchre,17,,
+36-12,Saint-Gaultier,11,,
+36-13,Valençay,17,,
 36001,Aigurande,55,1.84,46.46
 36002,Aize,7,1.71,47.11
 36003,Ambrault,37,1.95,46.78
@@ -14409,6 +14940,15 @@ insee,name,density,x,y
 36246,Villiers,8,1.20,46.88
 36247,Vineuil,28,1.65,46.91
 36248,Vouillon,17,1.91,46.82
+37-01,Amboise,33,,
+37-02,Ballan-Miré,41,,
+37-03,Bléré,23,,
+37-04,Château-Renault,23,,
+37-05,Chinon,29,,
+37-06,Descartes,17,,
+37-08,Langeais,25,,
+37-09,Loches,17,,
+37-13,Sainte-Maure-de-Touraine,26,,
 37001,Abilly,38,0.73,46.94
 37002,Ambillou,37,0.45,47.45
 37003,Amboise,324,1.00,47.39
@@ -14686,6 +15226,22 @@ insee,name,density,x,y
 37280,Vou,11,0.85,47.09
 37281,Vouvray,133,0.80,47.43
 37282,Yzeures-sur-Creuse,26,0.88,46.79
+38-01,Bièvre,43,,
+38-02,Bourgoin-Jallieu,69,,
+38-03,Chartreuse-Guiers,33,,
+38-04,Charvieu-Chavagneux,49,,
+38-07,Fontaine-Vercors,14,,
+38-08,Grand-Lemps,61,,
+38-10,Grenoble-2,33,,
+38-13,Haut-Grésivaudan,21,,
+38-15,Matheysine-Trièves,14,,
+38-17,Morestel,54,,
+38-18,Moyen Grésivaudan,34,,
+38-19,Oisans-Romanche,12,,
+38-21,Roussillon,45,,
+38-23,Sud Grésivaudan,32,,
+38-25,Tullins,37,,
+38-29,Voiron,35,,
 38001,Les Abrets,524,5.59,45.54
 38002,Les Adrets,58,5.99,45.26
 38003,Agnin,129,4.86,45.34
@@ -15219,6 +15775,20 @@ insee,name,density,x,y
 38565,Voreppe,337,5.64,45.29
 38566,Vourey,234,5.52,45.32
 38567,Chamrousse,35,5.89,45.12
+39-01,Arbois,22,,
+39-02,Authume,33,,
+39-03,Bletterans,33,,
+39-04,Champagnole,24,,
+39-08,Lons-le-Saunier-2,42,,
+39-09,Moirans-en-Montagne,20,,
+39-10,Mont-sous-Vaudrey,28,,
+39-11,Morez,27,,
+39-12,Poligny,25,,
+39-13,Saint-Amour,24,,
+39-14,Saint-Claude,34,,
+39-15,Saint-Laurent-en-Grandvaux,17,,
+39-16,Saint-Lupicin,22,,
+39-17,Tavaux,36,,
 39001,Abergement-la-Ronce,110,5.38,47.06
 39002,Abergement-le-Grand,14,5.68,46.91
 39003,Abergement-le-Petit,25,5.70,46.91
@@ -15763,6 +16333,20 @@ insee,name,density,x,y
 39584,Vriange,22,5.58,47.18
 39585,Vulvoz,4,5.79,46.32
 39586,Aresches,8,5.92,46.89
+40-01,Adour Armagnac,26,,
+40-02,Chalosse Tursan,31,,
+40-03,Côte d'Argent,14,,
+40-04,Coteau de Chalosse,42,,
+40-05,Dax-1,30,,
+40-07,Grands Lacs,9,,
+40-08,Haute Lande Armagnac,6,,
+40-09,Marensin Sud,32,,
+40-10,Mont-de-Marsan-1,19,,
+40-11,Mont-de-Marsan-2,35,,
+40-12,Orthe et Arrigans,47,,
+40-13,Pays morcenais tarusate,13,,
+40-14,Pays Tyrossais,48,,
+40-15,Seignanx,49,,
 40001,Aire-sur-l'Adour,106,-0.26,43.70
 40002,Amou,56,-0.74,43.59
 40003,Angoumé,38,-1.14,43.70
@@ -16094,6 +16678,20 @@ insee,name,density,x,y
 40332,Ychoux,19,-0.96,44.36
 40333,Ygos-Saint-Saturnin,22,-0.72,44.00
 40334,Yzosse,76,-1.02,43.72
+41-01,Beauce,20,,
+41-03,Blois-2,52,,
+41-04,Blois-3,47,,
+41-05,Chambord,13,,
+41-06,Montoire-sur-le-Loir,22,,
+41-07,Montrichard,37,,
+41-08,Onzain,27,,
+41-09,Perche,18,,
+41-10,Romorantin-Lanthenay,10,,
+41-11,Saint-Aignan,29,,
+41-12,Selles-sur-Cher,25,,
+41-13,Sologne,14,,
+41-14,Vendôme,39,,
+41-15,Vineuil,30,,
 41001,Ambloy,15,0.97,47.71
 41002,Angé,49,1.24,47.32
 41003,Areines,126,1.10,47.80
@@ -16385,6 +16983,16 @@ insee,name,density,x,y
 41295,Vineuil,333,1.39,47.59
 41296,Vouzon,19,2.05,47.64
 41297,Yvoy-le-Marron,12,1.85,47.64
+42-01,Andrézieux-Bouthéon,74,,
+42-02,Boën-sur-Lignon,22,,
+42-03,Charlieu,44,,
+42-04,Coteau,40,,
+42-05,Feurs,50,,
+42-06,Firminy,74,,
+42-07,Montbrison,29,,
+42-08,Pilat,35,,
+42-09,Renaison,19,,
+42-20,Saint-Just-Saint-Rambert,32,,
 42001,Aboën,44,4.13,45.41
 42002,Ailleux,16,3.93,45.80
 42003,Ambierle,59,3.89,46.11
@@ -16712,6 +17320,21 @@ insee,name,density,x,y
 42337,Vivans,10,3.94,46.18
 42338,Vougy,68,4.12,46.09
 42339,Chausseterre,15,3.77,45.90
+43-02,Bas-en-Basset,23,,
+43-03,Boutières,21,,
+43-04,Brioude,27,,
+43-05,Deux Rivières et Vallées,58,,
+43-06,Emblavez-et-Meygal,42,,
+43-07,Gorges de l'Allier-Gévaudan,8,,
+43-08,Mézenc,10,,
+43-10,Pays de Lafayette,12,,
+43-11,Plateau du Haut-Velay granitique,15,,
+43-12,Puy-en-Velay-1,37,,
+43-13,Puy-en-Velay-2,46,,
+43-16,Saint-Paulien,22,,
+43-17,Sainte-Florine,15,,
+43-18,Velay volcanique,15,,
+43-19,Yssingeaux,32,,
 43001,Agnat,10,3.45,45.35
 43002,Aiguilhe,1426,3.89,45.05
 43003,Allègre,41,3.69,45.19
@@ -16972,6 +17595,10 @@ insee,name,density,x,y
 43265,Les Villettes,105,4.18,45.24
 43267,Vorey,37,3.91,45.19
 43268,Yssingeaux,88,4.13,45.14
+44-01,Ancenis,32,,
+44-03,Blain,44,,
+44-06,Châteaubriant,26,,
+44-08,Guémené-Penfao,38,,
 44001,Abbaretz,32,-1.49,47.56
 44002,Aigrefeuille-sur-Maine,234,-1.42,47.07
 44003,Ancenis,374,-1.18,47.38
@@ -17193,6 +17820,19 @@ insee,name,density,x,y
 44222,La Roche-Blanche,77,-1.14,47.44
 44223,Geneston,447,-1.53,47.06
 44224,La Grigonnais,75,-1.68,47.52
+45-01,Beaugency,27,,
+45-02,Châlette-sur-Loing,42,,
+45-03,Châteauneuf-sur-Loire,17,,
+45-04,Courtenay,31,,
+45-05,Ferté-Saint-Aubin,14,,
+45-07,Gien,13,,
+45-08,Lorris,24,,
+45-09,Malesherbes,36,,
+45-10,Meung-sur-Loire,22,,
+45-11,Montargis,32,,
+45-17,Pithiviers,23,,
+45-20,Saint-Jean-le-Blanc,33,,
+45-21,Sully-sur-Loire,18,,
 45001,Adon,8,2.80,47.76
 45002,Aillant-sur-Milleron,14,2.94,47.80
 45004,Amilly,293,2.78,47.99
@@ -17527,6 +18167,22 @@ insee,name,density,x,y
 45346,Vitry-aux-Loges,43,2.25,47.93
 45347,Vrigny,51,2.25,48.07
 45348,Yèvre-la-Ville,27,2.32,48.14
+46-02,Cahors-2,36,,
+46-03,Cahors-3,40,,
+46-04,Causse et Bouriane,22,,
+46-05,Causse et Vallées,11,,
+46-06,Cère et Ségala,22,,
+46-07,Figeac-1,36,,
+46-08,Figeac-2,24,,
+46-09,Gourdon,23,,
+46-10,Gramat,17,,
+46-11,Lacapelle-Marival,18,,
+46-12,Luzech,20,,
+46-13,Marches du Sud-Quercy,17,,
+46-14,Martel,25,,
+46-15,Puy-l'Evêque,23,,
+46-16,Saint-Céré,26,,
+46-17,Souillac,24,,
 46001,Albas,24,1.24,44.46
 46002,Albiac,24,1.81,44.77
 46003,Alvignac,56,1.69,44.83
@@ -17867,6 +18523,22 @@ insee,name,density,x,y
 46338,Bessonies,13,2.14,44.81
 46339,Saint-Jean-Lagineste,26,1.85,44.83
 46340,Saint-Pierre-Lafeuille,43,1.46,44.52
+47-05,Albret,18,,
+47-06,Confluent,32,,
+47-07,Coteaux de Guyenne,26,,
+47-08,Forêts de Gascogne,13,,
+47-09,Fumélois,25,,
+47-10,Haut Agenais Périgord,20,,
+47-11,Lavardac,30,,
+47-12,Livradais,32,,
+47-13,Marmande-1,55,,
+47-14,Marmande-2,47,,
+47-15,Ouest agenais,16,,
+47-16,Pays de Serres,28,,
+47-17,Sud-Est agenais,41,,
+47-18,Tonneins,29,,
+47-19,Val du Dropt,23,,
+47-21,Villeneuve-sur-Lot-2,39,,
 47001,Agen,2936,0.63,44.20
 47002,Agmé,27,0.34,44.49
 47003,Agnac,33,0.38,44.64
@@ -18186,6 +18858,17 @@ insee,name,density,x,y
 47326,Virazeil,85,0.24,44.51
 47327,Xaintrailles,40,0.26,44.21
 47328,Saint-Georges,34,0.93,44.44
+48-01,Aumont-Aubrac,8,,
+48-02,Canourgue,8,,
+48-03,Chirac,23,,
+48-04,Collet-de-Dèze,8,,
+48-05,Florac,7,,
+48-06,Grandrieu,8,,
+48-07,Langogne,9,,
+48-08,Marvejols,9,,
+48-11,Saint-Alban-sur-Limagnole,9,,
+48-12,Saint-Chély-d'Apcher,22,,
+48-13,Saint-Etienne-du-Valdonnez,7,,
 48001,Albaret-le-Comtal,6,3.14,44.87
 48002,Albaret-Sainte-Marie,36,3.25,44.89
 48003,Allenc,6,3.68,44.55
@@ -18371,6 +19054,22 @@ insee,name,density,x,y
 48195,Les Vignes,4,3.25,44.27
 48197,La Villedieu,2,3.54,44.72
 48198,Villefort,82,3.93,44.44
+49-03,Angers-3,56,,
+49-05,Angers-5,49,,
+49-06,Angers-6,42,,
+49-08,Beaufort-en-Vallée,24,,
+49-09,Beaupréau,63,,
+49-10,Chalonnes-sur-Loire,41,,
+49-11,Chemillé-Melay,47,,
+49-13,Cholet-2,31,,
+49-14,Doué-la-Fontaine,37,,
+49-15,Longué-Jumelles,27,,
+49-16,Pommeraye,56,,
+49-17,Ponts-de-Cé,49,,
+49-18,Saint-Macaire-en-Mauges,45,,
+49-19,Saumur,52,,
+49-20,Segré,28,,
+49-21,Tiercé,38,,
 49001,Les Alleuds,84,-0.42,47.31
 49002,Allonnes,82,0.01,47.30
 49003,Ambillou-Château,48,-0.34,47.26
@@ -18734,6 +19433,28 @@ insee,name,density,x,y
 49378,Vivy,106,-0.07,47.32
 49380,Vaulandry,nan,,
 49381,Yzernay,45,-0.70,47.03
+50-01,Agon-Coutainville,35,,
+50-02,Avranches,54,,
+50-03,Bréhal,43,,
+50-04,Bricquebec,39,,
+50-05,Carentan,29,,
+50-09,Condé-sur-Vire,36,,
+50-10,Coutances,55,,
+50-11,Créances,32,,
+50-14,Hague,42,,
+50-15,Isigny-le-Buat,30,,
+50-16,Mortainais,24,,
+50-17,Pieux,48,,
+50-18,Pont-Hébert,38,,
+50-19,Pontorson,44,,
+50-20,Quettreville-sur-Sienne,37,,
+50-21,Saint-Hilaire-du-Harcouët,33,,
+50-22,Saint-Lô-1,47,,
+50-23,Saint-Lô-2,54,,
+50-24,Tourlaville,51,,
+50-25,Valognes,37,,
+50-26,Val-de-Saire,43,,
+50-27,Villedieu-les-Poêles,37,,
 50001,Acqueville,115,-1.75,49.61
 50002,Agneaux,639,-1.13,49.12
 50003,Agon-Coutainville,225,-1.58,49.04
@@ -19335,6 +20056,22 @@ insee,name,density,x,y
 50646,Le Vrétot,30,-1.71,49.45
 50647,Yquelon,486,-1.55,48.84
 50648,Yvetot-Bocage,91,-1.51,49.50
+51-01,Argonne Suippe et Vesle,10,,
+51-02,Bourgogne,42,,
+51-03,Châlons-en-Champagne-1,15,,
+51-04,Châlons-en-Champagne-2,31,,
+51-05,Châlons-en-Champagne-3,15,,
+51-06,Dormans-Paysages de Champagne,26,,
+51-07,Épernay-1,39,,
+51-08,Épernay-2,36,,
+51-09,Fismes-Montagne de Reims,39,,
+51-10,Mourmelon-Vesle et Monts de Champagne,26,,
+51-14,Reims-4,26,,
+51-18,Reims-8,46,,
+51-20,Sermaize-les-Bains,18,,
+51-21,Sézanne-Brie et Champagne,16,,
+51-22,Vertus-Plaine Champenoise,18,,
+51-23,Vitry-le-François-Champagne et Der,16,,
 51001,Ablancourt,21,4.53,48.81
 51002,Saint-Martin-d'Ablois,67,3.84,49.01
 51003,Aigny,23,4.22,49.04
@@ -19955,6 +20692,21 @@ insee,name,density,x,y
 51660,Warmeriville,94,4.24,49.35
 51662,Witry-lès-Reims,287,4.11,49.30
 51663,Magenta,1801,3.97,49.05
+52-01,Bologne,14,,
+52-02,Bourbonne-les-Bains,13,,
+52-03,Chalindrey,17,,
+52-04,Châteauvillain,11,,
+52-05,Chaumont-1,34,,
+52-06,Chaumont-2,33,,
+52-07,Chaumont-3,26,,
+52-08,Eurville-Bienville,20,,
+52-09,Joinville,17,,
+52-10,Langres,23,,
+52-11,Nogent,21,,
+52-12,Poissons,11,,
+52-13,Saint-Dizier-1,36,,
+52-16,Villegusien-le-Lac,10,,
+52-17,Wassy,20,,
 52001,Ageville,16,5.34,48.11
 52002,Aigremont,5,5.72,48.01
 52003,Aillianville,7,5.48,48.33
@@ -20393,6 +21145,18 @@ insee,name,density,x,y
 52548,Vraincourt,25,5.12,48.23
 52549,Vroncourt-la-Côte,5,5.51,48.15
 52550,Wassy,86,4.93,48.50
+53-01,Azé,33,,
+53-02,Bonchamp-lès-Laval,47,,
+53-03,Château-Gontier,29,,
+53-04,Cossé-le-Vivien,32,,
+53-05,Ernée,28,,
+53-06,Évron,25,,
+53-07,Gorron,25,,
+53-09,Lassay-les-Châteaux,28,,
+53-13,Loiron,37,,
+53-14,Mayenne,30,,
+53-15,Meslay-du-Maine,23,,
+53-17,Villaines-la-Juhel,21,,
 53001,Ahuillé,63,-0.87,48.02
 53002,Alexain,38,-0.76,48.23
 53003,Ambrières-les-Vallées,72,-0.62,48.42
@@ -20654,6 +21418,21 @@ insee,name,density,x,y
 53273,Villiers-Charlemagne,39,-0.68,47.93
 53274,Vimarcé,11,-0.23,48.19
 53276,Voutré,49,-0.29,48.14
+54-01,Baccarat,21,,
+54-02,Entre Seille et Meurthe,38,,
+54-03,Grand Couronné,44,,
+54-04,Jarny,27,,
+54-05,Jarville-la-Malgrange,47,,
+54-08,Lunéville-1,30,,
+54-09,Lunéville-2,26,,
+54-10,Meine au Saintois,29,,
+54-11,Mont-Saint-Martin,38,,
+54-15,Neuves-Maisons,55,,
+54-16,Nord-Toulois,25,,
+54-17,Pays de Briey,26,,
+54-18,Pont-à-Mousson,44,,
+54-20,Toul,51,,
+54-23,Villerupt,36,,
 54001,Abaucourt,39,6.27,48.89
 54002,Abbéville-lès-Conflans,29,5.84,49.20
 54003,Aboncourt,15,5.98,48.36
@@ -21248,6 +22027,23 @@ insee,name,density,x,y
 54600,Xousse,20,6.71,48.65
 54601,Xures,18,6.66,48.69
 54602,Han-devant-Pierrepont,29,5.71,49.40
+55-01,Ancerville,29,,
+55-02,Bar-le-Duc-1,28,,
+55-03,Bar-le-Duc-2,38,,
+55-04,Belleville-sur-Meuse,13,,
+55-05,Bouligny,22,,
+55-06,Clermont-en-Argonne,12,,
+55-07,Commercy,20,,
+55-08,Dieue-sur-Meuse,14,,
+55-09,Étain,19,,
+55-10,Ligny-en-Barrois,14,,
+55-11,Montmédy,17,,
+55-12,Revigny-sur-Ornain,20,,
+55-13,Saint-Mihiel,14,,
+55-14,Stenay,18,,
+55-15,Vaucouleurs,14,,
+55-16,Verdun-1,21,,
+55-17,Verdun-2,57,,
 55001,Abainville,21,5.51,48.53
 55002,Abaucourt-Hautecourt,11,5.55,49.20
 55004,Aincreville,10,5.12,49.37
@@ -21748,6 +22544,17 @@ insee,name,density,x,y
 55583,Woël,14,5.74,49.04
 55584,Woimbey,8,5.45,48.97
 55586,Xivray-et-Marvoisin,6,5.73,48.87
+56-02,Gourin,24,,
+56-03,Grand-Champ,39,,
+56-04,Guer,42,,
+56-05,Guidel,41,,
+56-10,Moréac,37,,
+56-11,Muzillac,67,,
+56-13,Ploërmel,32,,
+56-15,Pontivy,35,,
+56-16,Questembert,48,,
+56-17,Quiberon,40,,
+56-20,Vannes-2,75,,
 56001,Allaire,89,-2.18,47.64
 56002,Ambon,46,-2.54,47.56
 56003,Arradon,295,-2.82,47.63
@@ -22009,6 +22816,22 @@ insee,name,density,x,y
 56262,Bono,356,-2.94,47.64
 56263,Sainte-Anne-d'Auray,518,-2.95,47.70
 56264,Kernascléden,48,-3.33,48.01
+57-01,Algrange,41,,
+57-02,Bitche,30,,
+57-03,Boulay-Moselle,43,,
+57-04,Bouzonville,43,,
+57-05,Coteaux de Moselle,40,,
+57-07,Faulquemont,39,,
+57-09,Freyming-Merlebach,67,,
+57-14,Metzervisse,46,,
+57-16,Pays Messin,38,,
+57-17,Phalsbourg,35,,
+57-20,Sarralbe,39,,
+57-21,Sarrebourg,28,,
+57-22,Sarreguemines,63,,
+57-23,Saulnois,23,,
+57-24,Sillon Mosellan,69,,
+57-27,Yutz,49,,
 57001,Aboncourt,65,6.35,49.26
 57002,Aboncourt-sur-Seille,20,6.36,48.82
 57003,Abreschviller,37,7.16,48.60
@@ -22739,6 +23562,20 @@ insee,name,density,x,y
 57764,Zoufftgen,60,6.13,49.47
 57765,Diesen,198,6.69,49.18
 57767,Stuckange,229,6.23,49.32
+58-01,Charité-sur-Loire,15,,
+58-02,Château-Chinon,11,,
+58-03,Clamecy,16,,
+58-04,Corbigny,11,,
+58-05,Cosne-Cours-sur-Loire,29,,
+58-06,Decize,16,,
+58-07,Fourchambault,40,,
+58-08,Guérigny,13,,
+58-09,Imphy,19,,
+58-10,Luzy,10,,
+58-13,Nevers-3,25,,
+58-15,Pouilly-sur-Loire,15,,
+58-16,Saint-Pierre-le-Moûtier,13,,
+58-17,Varennes-Vauzelles,32,,
 58001,Achun,6,3.66,47.13
 58002,Alligny-Cosne,25,3.07,47.44
 58003,Alligny-en-Morvan,13,4.17,47.21
@@ -23051,6 +23888,19 @@ insee,name,density,x,y
 58311,Ville-Langy,11,3.50,46.94
 58312,Villiers-sur-Yonne,19,3.55,47.41
 58313,Vitry-Laché,5,3.57,47.19
+59-04,Armentières,54,,
+59-05,Aulnoye-Aymeries,62,,
+59-07,Avesnes-sur-Helpe,34,,
+59-08,Bailleul,70,,
+59-09,Cambrai,50,,
+59-10,Cateau-Cambrésis,48,,
+59-11,Caudry,60,,
+59-17,Dunkerque-2,47,,
+59-19,Fourmies,37,,
+59-20,Grande-Synthe,43,,
+59-21,Hazebrouck,71,,
+59-30,Maubeuge,70,,
+59-41,Wormhout,58,,
 59001,Abancourt,78,3.21,50.24
 59002,Abscon,588,3.30,50.33
 59003,Aibes,41,4.10,50.23
@@ -23701,6 +24551,25 @@ insee,name,density,x,y
 59668,Zuydcoote,664,2.49,51.06
 59669,Zuytpeene,45,2.42,50.79
 59670,Don,591,2.92,50.54
+60-01,Beauvais-1,68,,
+60-02,Beauvais-2,43,,
+60-03,Chantilly,57,,
+60-04,Chaumont-en-Vexin,43,,
+60-05,Clermont,53,,
+60-06,Compiègne-1,27,,
+60-07,Compiègne-2,35,,
+60-09,Crépy-en-Valois,39,,
+60-10,Estrées-Saint-Denis,44,,
+60-11,Grandvilliers,36,,
+60-12,Méru,63,,
+60-13,Montataire,49,,
+60-14,Mouy,38,,
+60-15,Nanteuil-le-Haudouin,40,,
+60-17,Noyon,46,,
+60-18,Pont-Sainte-Maxence,42,,
+60-19,Saint-Just-en-Chaussée,40,,
+60-20,Senlis,49,,
+60-21,Thourotte,48,,
 60001,Abancourt,106,1.77,49.69
 60002,Abbecourt,103,2.16,49.36
 60003,Abbeville-Saint-Lucien,98,2.17,49.52
@@ -24394,6 +25263,25 @@ insee,name,density,x,y
 60701,Wavignies,123,2.36,49.55
 60702,Welles-Pérennes,19,2.48,49.61
 60703,Aux Marais,129,2.04,49.41
+61-01,Aigle,49,,
+61-04,Argentan-1,33,,
+61-05,Argentan-2,20,,
+61-06,Athis-de-l'Orne,25,,
+61-07,Bagnoles-de-l'Orne,27,,
+61-08,Bretoncelles,22,,
+61-09,Ceton,26,,
+61-10,Damigny,33,,
+61-11,Domfront,29,,
+61-12,Ferté-Macé,40,,
+61-13,Flers-1,58,,
+61-14,Flers-2,67,,
+61-15,Magny-le-Désert,19,,
+61-16,Mortagne-au-Perche,26,,
+61-17,Radon,27,,
+61-18,Rai,20,,
+61-19,Sées,22,,
+61-20,Tourouvre,22,,
+61-21,Vimoutiers,17,,
 61001,Alençon,2463,0.09,48.43
 61002,Almenêches,34,0.13,48.70
 61003,Anceins,19,0.50,48.87
@@ -24899,6 +25787,28 @@ insee,name,density,x,y
 61511,Vrigny,25,,
 61512,Les Yveteaux,18,-0.27,48.71
 61513,Yvrandes,16,,
+62-01,Aire-sur-la-Lys,55,,
+62-03,Arras-2,69,,
+62-04,Arras-3,63,,
+62-05,Auchel,65,,
+62-06,Auxi-le-Château,34,,
+62-07,Avesnes-le-Comte,45,,
+62-09,Bapaume,47,,
+62-10,Berck,45,,
+62-13,Boulogne-sur-Mer-1,57,,
+62-14,Boulogne-sur-Mer-2,64,,
+62-15,Brebières,52,,
+62-16,Bruay-la-Buissière,56,,
+62-18,Calais-1,60,,
+62-19,Calais-2,55,,
+62-22,Desvres,46,,
+62-24,Étaples,39,,
+62-25,Fruges,36,,
+62-31,Lillers,73,,
+62-33,Lumbres,42,,
+62-34,Marck,61,,
+62-37,Saint-Omer,47,,
+62-38,Saint-Pol-sur-Ternoise,40,,
 62001,Ablain-Saint-Nazaire,179,2.70,50.40
 62002,Ablainzevelle,48,2.74,50.15
 62003,Acheville,207,2.88,50.38
@@ -25794,6 +26704,21 @@ insee,name,density,x,y
 62907,Libercourt,1282,3.00,50.48
 62908,La Capelle-lès-Boulogne,239,1.72,50.73
 62909,Ytres,103,3.00,50.07
+63-01,Aigueperse,51,,
+63-02,Ambert,14,,
+63-05,Billom,34,,
+63-06,Brassac-les-Mines,16,,
+63-18,Issoire,49,,
+63-19,Lezoux,48,,
+63-20,Maringues,34,,
+63-22,Monts du Livradois,18,,
+63-23,Orcines,23,,
+63-26,Saint-Éloy-les-Mines,16,,
+63-27,Saint-Georges-de-Mons,24,,
+63-28,Saint-Ours,14,,
+63-29,Sancy,14,,
+63-30,Thiers,20,,
+63-31,Vic-le-Comte,35,,
 63001,Aigueperse,250,3.20,46.01
 63002,Aix-la-Fayette,5,3.53,45.51
 63003,Ambert,113,3.76,45.56
@@ -26264,6 +27189,21 @@ insee,name,density,x,y
 63471,Youx,51,2.80,46.14
 63472,Yronde-et-Buron,45,3.25,45.61
 63473,Yssac-la-Tourette,168,3.09,45.93
+64-02,Artix et Pays de Soubestre,34,,
+64-03,Baïgura et Mondarrain,27,,
+64-08,Billère et Coteaux de Jurançon,46,,
+64-09,Cur de Béarn,31,,
+64-12,Montagne Basque,14,,
+64-13,Nive-Adour,45,,
+64-14,Oloron-Sainte-Marie-1,11,,
+64-15,Oloron-Sainte-Marie-2,24,,
+64-16,Orthez et Terres des Gaves et du Sel,33,,
+64-17,"Ouzom, Gave et Rives du Neez",53,,
+64-22,"Pays de Bidache, Amikuze et Ostibarre",22,,
+64-23,Pays de Morlaàs et du Montanérès,34,,
+64-25,Terres des Luys et Coteaux du Vic-Bilh,25,,
+64-26,Ustaritz-Vallées de Nive et Nivelle,41,,
+64-27,Vallées de l'Ousse et du Lagoin,39,,
 64001,Aast,39,-0.08,43.29
 64002,Abère,27,-0.18,43.39
 64003,Abidos,76,-0.63,43.40
@@ -26811,6 +27751,18 @@ insee,name,density,x,y
 64558,Villefranque,138,-1.45,43.44
 64559,Viodos-Abense-de-Bas,60,-0.90,43.25
 64560,Viven,49,-0.38,43.46
+65-03,Coteaux,24,,
+65-04,Haute-Bigorre,33,,
+65-05,Lourdes-1,46,,
+65-06,Lourdes-2,19,,
+65-07,Moyen Adour,54,,
+65-08,"Neste, Aure et Louron",12,,
+65-09,Ossun,48,,
+65-13,Val d'Adour-Rustan-Madiranais,27,,
+65-14,Vallée de l'Arros et des Baïses,27,,
+65-15,Vallée de la Barousse,18,,
+65-16,Vallée des Gaves,8,,
+65-17,Vic-en-Bigorre,35,,
 65001,Adast,260,-0.08,42.97
 65002,Adé,105,-0.03,43.14
 65003,Adervielle-Pouchergues,13,0.39,42.80
@@ -27285,6 +28237,13 @@ insee,name,density,x,y
 65480,Vizos,16,-0.00,42.89
 65481,Barèges,4,0.11,42.88
 65482,Cantaous,78,0.45,43.10
+66-01,Aspres,20,,
+66-02,Canigou,9,,
+66-13,Pyrénées catalanes,9,,
+66-14,Ribéral,9,,
+66-15,Vallée de l'Agly,15,,
+66-16,Vallée de la Têt,9,,
+66-17,Vallespir-Albères,14,,
 66001,L'Albère,5,2.90,42.48
 66002,Alénya,615,2.98,42.64
 66003,Amélie-les-Bains-Palalda,125,2.68,42.44
@@ -27511,6 +28470,17 @@ insee,name,density,x,y
 66232,Vira,2,2.39,42.76
 66233,Vivès,16,2.77,42.53
 66234,Le Vivier,7,2.44,42.76
+67-01,Bischwiller,26,,
+67-02,Bouxwiller,55,,
+67-03,Brumath,69,,
+67-04,Erstein,52,,
+67-08,Ingwiller,44,,
+67-11,Mutzig,35,,
+67-12,Obernai,31,,
+67-13,Reichshoffen,40,,
+67-14,Saverne,45,,
+67-16,Sélestat,58,,
+67-23,Wissembourg,66,,
 67001,Achenheim,339,7.63,48.58
 67002,Adamswiller,120,7.20,48.91
 67003,Albé,43,7.34,48.36
@@ -28038,6 +29008,16 @@ insee,name,density,x,y
 67558,Zinswiller,110,7.58,48.92
 67559,Zittersheim,30,7.34,48.90
 67560,Zoebersdorf,91,7.52,48.79
+68-01,Altkirch,49,,
+68-02,Brunstatt,68,,
+68-03,Cernay,48,,
+68-06,Ensisheim,57,,
+68-07,Guebwiller,36,,
+68-09,Masevaux,49,,
+68-13,Rixheim,44,,
+68-14,Saint-Louis,52,,
+68-15,Sainte-Marie-aux-Mines,50,,
+68-16,Wintzenheim,34,,
 68001,Algolsheim,162,7.55,48.00
 68002,Altenach,61,7.11,47.60
 68004,Altkirch,602,7.24,47.62
@@ -28415,6 +29395,14 @@ insee,name,density,x,y
 68384,Zillisheim,320,7.30,47.69
 68385,Zimmerbach,388,7.23,48.07
 68386,Zimmersheim,354,7.38,47.72
+69-02,Arbresle,54,,
+69-03,Belleville,32,,
+69-04,Bois-d'Oingt,56,,
+69-07,Gleizé,31,,
+69-08,Mornant,48,,
+69-10,Tarare,43,,
+69-11,Thizy-les-Bourgs,25,,
+69-12,Vaugneray,63,,
 69001,Affoux,32,4.41,45.84
 69002,Aigueperse,19,4.42,46.28
 69003,Albigny-sur-Saône,1087,4.83,45.86
@@ -28708,6 +29696,32 @@ insee,name,density,x,y
 69297,Ternay,666,4.81,45.61
 69298,Toussieu,489,4.98,45.66
 69299,Colombier-Saugnieu,90,5.10,45.72
+69381,Lyon 1er Arrondissement,19344,4.83,45.77
+69382,Lyon 2e Arrondissement,9079,4.83,45.75
+69383,Lyon 3e Arrondissement,15454,4.87,45.75
+69384,Lyon 4e Arrondissement,12369,4.82,45.78
+69385,Lyon 5e Arrondissement,7495,4.80,45.76
+69386,Lyon 6e Arrondissement,13124,4.85,45.77
+69387,Lyon 7e Arrondissement,7769,4.84,45.73
+69388,Lyon 8e Arrondissement,12212,4.87,45.73
+69389,Lyon 9e Arrondissement,6680,4.81,45.78
+70-01,Dampierre-sur-Salon,17,,
+70-02,Gray,25,,
+70-03,Héricourt-1,59,,
+70-04,Héricourt-2,28,,
+70-05,Jussey,17,,
+70-06,Lure-1,35,,
+70-07,Lure-2,38,,
+70-08,Luxeuil-les-Bains,48,,
+70-09,Marnay,28,,
+70-10,Mélisey,21,,
+70-11,Port-sur-Saône,27,,
+70-12,Rioz,28,,
+70-13,Saint-Loup-sur-Semouse,35,,
+70-14,Scey-sur-Saône-et-Saint-Albin,23,,
+70-15,Vesoul-1,36,,
+70-16,Vesoul-2,32,,
+70-17,Villersexel,30,,
 70001,Abelcourt,47,6.28,47.79
 70002,Aboncourt-Gesincourt,21,5.97,47.77
 70003,Achey,11,5.61,47.58
@@ -29253,6 +30267,27 @@ insee,name,density,x,y
 70581,Vy-lès-Lure,42,6.44,47.65
 70582,Vy-lès-Rupt,12,5.89,47.64
 70583,Vy-lès-Filain,21,6.20,47.51
+71-01,Autun-1,16,,
+71-02,Autun-2,14,,
+71-03,Blanzy,22,,
+71-04,Chagny,40,,
+71-08,Chapelle-de-Guinchay,30,,
+71-09,Charolles,18,,
+71-10,Chauffailles,30,,
+71-11,Cluny,20,,
+71-13,Creusot-2,42,,
+71-14,Cuiseaux,36,,
+71-15,Digoin,17,,
+71-16,Gergy,31,,
+71-17,Givry,30,,
+71-18,Gueugnon,13,,
+71-19,Hurigny,47,,
+71-20,Louhans,35,,
+71-24,Ouroux-sur-Saône,35,,
+71-25,Paray-le-Monial,21,,
+71-26,Pierre-de-Bresse,24,,
+71-27,Saint-Rémy,50,,
+71-29,Tournus,37,,
 71001,L'Abergement-de-Cuisery,95,4.96,46.58
 71002,L'Abergement-Sainte-Colombe,59,5.03,46.75
 71003,Allerey-sur-Saône,49,4.97,46.91
@@ -29826,6 +30861,19 @@ insee,name,density,x,y
 71589,Vitry-sur-Loire,16,3.72,46.68
 71590,Volesvres,29,4.17,46.47
 71591,Fleurville,124,4.88,46.44
+72-01,Bonnétable,33,,
+72-03,Château-du-Loir,29,,
+72-05,Ferté-Bernard,40,,
+72-06,Flèche,35,,
+72-07,Loué,31,,
+72-08,Lude,23,,
+72-09,Mamers,28,,
+72-16,Mans-7,64,,
+72-17,Sablé-sur-Sarthe,33,,
+72-18,Saint-Calais,24,,
+72-19,Savigné-l'Évêque,56,,
+72-20,Sillé-le-Guillaume,32,,
+72-21,Suze-sur-Sarthe,44,,
 72001,Aigné,127,0.11,48.07
 72002,Aillières-Beauvoir,14,0.32,48.40
 72003,Allonnes,614,0.14,47.96
@@ -30201,6 +31249,20 @@ insee,name,density,x,y
 72384,Vouvray-sur-Loir,99,0.46,47.69
 72385,Yvré-le-Pôlin,83,0.16,47.83
 72386,Yvré-l'Évêque,156,0.28,48.02
+73-01,Aix-les-Bains-1,46,,
+73-03,Albertville-1,36,,
+73-04,Albertville-2,37,,
+73-05,Bourg-Saint-Maurice,17,,
+73-06,Bugey savoyard,45,,
+73-10,Modane,7,,
+73-11,Montmélian,36,,
+73-12,Motte-Servolex,35,,
+73-13,Moûtiers,18,,
+73-14,Pont-de-Beauvoisin,34,,
+73-16,Saint-Alban-Leysse,19,,
+73-17,Saint-Jean-de-Maurienne,14,,
+73-18,Saint-Pierre-d'Albigny,25,,
+73-19,Ugine,22,,
 73001,Aiguebelette-le-Lac,31,5.81,45.55
 73002,Aiguebelle,294,6.30,45.53
 73003,Aigueblanche,157,6.51,45.52
@@ -30506,6 +31568,18 @@ insee,name,density,x,y
 73328,Viviers-du-Lac,543,5.90,45.65
 73329,Voglans,373,5.89,45.63
 73330,Yenne,127,5.76,45.70
+74-03,Annecy-le-Vieux,60,,
+74-05,Bonneville,43,,
+74-06,Cluses,17,,
+74-07,Évian-les-Bains,30,,
+74-08,Faverges,29,,
+74-10,Mont-Blanc,23,,
+74-11,Roche-sur-Foron,56,,
+74-12,Rumilly,58,,
+74-13,Saint-Julien-en-Genevois,50,,
+74-15,Sciez,54,,
+74-16,Seynod,29,,
+74-17,Thonon-les-Bains,56,,
 74001,Abondance,23,6.73,46.27
 74002,Alby-sur-Chéran,334,6.02,45.82
 74003,Alex,59,6.24,45.88
@@ -30801,6 +31875,44 @@ insee,name,density,x,y
 74314,Vulbens,93,5.94,46.11
 74315,Yvoire,283,6.33,46.36
 75056,Paris,21258,,
+75101,Paris 1er Arrondissement,9344,2.34,48.86
+75102,Paris 2e Arrondissement,22616,2.34,48.87
+75103,Paris 3e Arrondissement,30762,2.36,48.86
+75104,Paris 4e Arrondissement,17356,2.36,48.85
+75105,Paris 5e Arrondissement,23693,2.35,48.84
+75106,Paris 6e Arrondissement,20104,2.33,48.85
+75107,Paris 7e Arrondissement,13959,2.31,48.86
+75108,Paris 8e Arrondissement,9987,2.31,48.87
+75109,Paris 9e Arrondissement,27282,2.34,48.88
+75110,Paris 10e Arrondissement,32690,2.36,48.88
+75111,Paris 11e Arrondissement,42236,2.38,48.86
+75112,Paris 12e Arrondissement,8880,2.42,48.83
+75113,Paris 13e Arrondissement,25509,2.36,48.83
+75114,Paris 14e Arrondissement,25018,2.33,48.83
+75115,Paris 15e Arrondissement,28088,2.29,48.84
+75116,Paris 16e Arrondissement,10239,2.26,48.86
+75117,Paris 17e Arrondissement,30010,2.31,48.89
+75118,Paris 18e Arrondissement,33506,2.35,48.89
+75119,Paris 19e Arrondissement,27410,2.38,48.89
+75120,Paris 20e Arrondissement,32995,2.40,48.86
+76-01,Barentin,47,,
+76-02,Bois-Guillaume,57,,
+76-03,Bolbec,65,,
+76-04,Canteleu,72,,
+76-07,Dieppe-1,52,,
+76-08,Dieppe-2,45,,
+76-10,Eu,35,,
+76-11,Fécamp,55,,
+76-12,Gournay-en-Bray,28,,
+76-20,Luneray,46,,
+76-21,Mesnil-Esnard,48,,
+76-23,Neufchâtel-en-Bray,32,,
+76-24,Notre-Dame-de-Bondeville,53,,
+76-25,Notre-Dame-de-Gravenchon,58,,
+76-26,Octeville-sur-Mer,42,,
+76-32,Saint-Romain-de-Colbosc,54,,
+76-33,Saint-Valery-en-Caux,46,,
+76-35,Yvetot,53,,
 76001,Allouville-Bellefosse,80,0.67,49.59
 76002,Alvimare,89,0.63,49.61
 76004,Ambrumesnil,99,0.99,49.86
@@ -31546,6 +32658,19 @@ insee,name,density,x,y
 76757,Yvecrique,111,0.81,49.69
 76758,Yvetot,1559,0.76,49.62
 76759,Yville-sur-Seine,58,0.88,49.41
+77-03,Claye-Souilly,54,,
+77-05,Coulommiers,40,,
+77-06,Ferté-sous-Jouarre,39,,
+77-07,Fontainebleau,36,,
+77-08,Fontenay-Trésigny,38,,
+77-11,Melun,49,,
+77-12,Mitry-Mory,58,,
+77-13,Montereau-Fault-Yonne,46,,
+77-14,Nangis,41,,
+77-15,Nemours,34,,
+77-18,Provins,30,,
+77-21,Serris,44,,
+77-22,Torcy,67,,
 77001,Achères-la-Forêt,97,2.56,48.35
 77002,Amillis,40,3.14,48.74
 77003,Amponville,32,2.53,48.29
@@ -32060,6 +33185,13 @@ insee,name,density,x,y
 77532,Vulaines-lès-Provins,6,3.22,48.56
 77533,Vulaines-sur-Seine,598,2.77,48.43
 77534,Yèbles,57,2.77,48.64
+78-01,Aubergenville,52,,
+78-02,Bonnières-sur-Seine,54,,
+78-07,Limay,62,,
+78-09,Maurepas,65,,
+78-14,Rambouillet,41,,
+78-15,Saint-Cyr-l'École,51,,
+78-19,Verneuil-sur-Seine,54,,
 78003,Ablis,126,1.85,48.53
 78005,Achères,2062,2.09,48.97
 78006,Adainville,74,1.66,48.72
@@ -32322,6 +33454,20 @@ insee,name,density,x,y
 78683,Villiers-Saint-Frédéric,540,1.88,48.82
 78686,Viroflay,4492,2.17,48.80
 78688,Voisins-le-Bretonneux,4819,2.05,48.76
+79-01,Autize-Egray,34,,
+79-02,Bressuire,16,,
+79-03,Celles-sur-Belle,24,,
+79-04,Cerizay,31,,
+79-05,Frontenay-Rohan-Rohan,45,,
+79-06,Gâtine,24,,
+79-07,Mauléon,21,,
+79-08,Melle,24,,
+79-09,Mignon-et-Boutonne,25,,
+79-13,Parthenay,25,,
+79-14,Plaine Niortaise,39,,
+79-15,Saint-Maixent-l'École,43,,
+79-16,Thouars,70,,
+79-17,Val de Thouet,25,,
 79001,L'Absie,77,-0.56,46.65
 79002,Adilly,24,-0.32,46.70
 79003,Aiffres,208,-0.41,46.28
@@ -32627,6 +33773,27 @@ insee,name,density,x,y
 79355,Vouillé,146,-0.36,46.32
 79356,Voultegon,nan,,
 79357,Xaintray,22,-0.48,46.50
+80-01,Abbeville-1,37,,
+80-02,Abbeville-2,47,,
+80-03,Ailly-sur-Noye,34,,
+80-04,Ailly-sur-Somme,37,,
+80-05,Albert,34,,
+80-07,Amiens-2,63,,
+80-08,Amiens-3,47,,
+80-09,Amiens-4,45,,
+80-11,Amiens-6,71,,
+80-12,Amiens-7,65,,
+80-13,Corbie,48,,
+80-14,Doullens,31,,
+80-15,Flixecourt,42,,
+80-16,Friville-Escarbotin,56,,
+80-17,Gamaches,43,,
+80-18,Ham,42,,
+80-19,Moreuil,45,,
+80-20,Péronne,35,,
+80-21,Poix-de-Picardie,29,,
+80-22,Roye,34,,
+80-23,Rue,28,,
 80001,Abbeville,917,1.83,50.11
 80002,Ablaincourt-Pressoir,29,2.82,49.84
 80003,Acheux-en-Amiénois,86,2.53,50.07
@@ -33409,6 +34576,26 @@ insee,name,density,x,y
 80834,Yzengremer,156,1.52,50.06
 80835,Yzeux,53,2.11,49.98
 80836,Yonval,61,1.79,50.09
+81-02,Albi-2,59,,
+81-03,Albi-3,30,,
+81-05,Carmaux-1 Le Ségala,22,,
+81-06,Carmaux-2 Vallée du Cérou,15,,
+81-08,Castres-2,32,,
+81-09,Castres-3,71,,
+81-10,Deux Rives,38,,
+81-11,Gaillac,27,,
+81-12,Graulhet,33,,
+81-13,Haut Dadou,16,,
+81-14,Hautes Terres d'Oc,11,,
+81-15,Lavaur Cocagne,26,,
+81-16,Mazamet-1,29,,
+81-17,Mazamet-2 Vallée du Thoré,19,,
+81-18,Montagne noire,27,,
+81-19,Pastel,50,,
+81-20,Plaine de l'Agoût,30,,
+81-21,Portes du Tarn,43,,
+81-22,Saint-Juéry,49,,
+81-23,Vignobles et Bastides,20,,
 81001,Aguts,23,1.92,43.53
 81002,Aiguefonde,137,2.32,43.49
 81003,Alban,97,2.46,43.88
@@ -33732,6 +34919,17 @@ insee,name,density,x,y
 81324,Viviers-lès-Lavaur,22,1.79,43.63
 81325,Viviers-lès-Montagnes,105,2.18,43.55
 81326,Sainte-Croix,52,2.07,43.97
+82-01,Aveyron-Lère,22,,
+82-02,Beaumont-de-Lomagne,22,,
+82-03,Castelsarrasin,62,,
+82-04,Garonne-Lomagne-Brulhois,19,,
+82-05,Moissac,34,,
+82-10,Pays de Serres Sud-Quercy,19,,
+82-11,Quercy-Aveyron,32,,
+82-12,Quercy-Rouergue,18,,
+82-13,Tarn-Tescou-Quercy vert,28,,
+82-14,Valence,25,,
+82-15,Verdun-sur-Garonne,29,,
 82001,Albefeuille-Lagarde,76,1.27,44.05
 82002,Albias,147,1.45,44.08
 82003,Angeville,26,1.03,43.99
@@ -33927,6 +35125,13 @@ insee,name,density,x,y
 82193,Vigueron,21,1.06,43.89
 82194,Villebrumier,107,1.45,43.92
 82195,Villemade,75,1.29,44.08
+83-01,Brignoles,36,,
+83-04,Flayosc,10,,
+83-07,Garéoult,16,,
+83-09,Luc,22,,
+83-11,Roquebrune-sur-Argens,11,,
+83-12,Saint-Cyr-sur-Mer,2,,
+83-13,Saint-Maximin-la-Sainte-Baume,12,,
 83001,Les Adrets-de-l'Estérel,125,6.81,43.54
 83002,Aiguines,2,6.30,43.73
 83003,Ampus,11,6.37,43.63
@@ -34080,6 +35285,15 @@ insee,name,density,x,y
 83152,Rayol-Canadel-sur-Mer,105,6.48,43.16
 83153,Saint-Mandrier-sur-Mer,1123,5.93,43.08
 83154,Saint-Antonin-du-Var,39,6.29,43.51
+84-01,Apt,17,,
+84-05,Bollène,34,,
+84-08,Cheval-Blanc,35,,
+84-09,Isle-sur-la-Sorgue,44,,
+84-10,Monteux,34,,
+84-12,Pernes-les-Fontaines,16,,
+84-13,Pertuis,33,,
+84-16,Vaison-la-Romaine,26,,
+84-17,Valréas,61,,
 84001,Althen-des-Paluds,419,4.96,44.01
 84002,Ansouis,66,5.47,43.74
 84003,Apt,269,5.39,43.88
@@ -34231,6 +35445,16 @@ insee,name,density,x,y
 84149,Violès,105,4.95,44.18
 84150,Visan,47,4.94,44.33
 84151,Vitrolles-en-Lubéron,13,5.60,43.81
+85-01,Aizenay,70,,
+85-02,Challans,49,,
+85-03,Chantonnay,58,,
+85-04,Châtaigneraie,35,,
+85-05,Fontenay-le-Comte,47,,
+85-06,Herbiers,41,,
+85-08,Luçon,31,,
+85-09,Mareuil-sur-Lay-Dissais,37,,
+85-11,Mortagne-sur-Sèvre,70,,
+85-17,Talmont-Saint-Hilaire,46,,
 85001,L'Aiguillon-sur-Mer,253,-1.27,46.31
 85002,L'Aiguillon-sur-Vie,78,-1.83,46.67
 85003,Aizenay,105,-1.63,46.74
@@ -34513,6 +35737,18 @@ insee,name,density,x,y
 85305,Vouvant,42,-0.76,46.56
 85306,Xanton-Chassenon,38,-0.71,46.45
 85307,La Faute-sur-Mer,103,-1.31,46.31
+86-01,Chasseneuil-du-Poitou,39,,
+86-03,Châtellerault-2,25,,
+86-04,Châtellerault-3,22,,
+86-05,Chauvigny,21,,
+86-06,Civray,20,,
+86-08,Loudun,21,,
+86-09,Lusignan,27,,
+86-10,Lussac-les-Châteaux,15,,
+86-11,Migné-Auxances,29,,
+86-12,Montmorillon,14,,
+86-18,Vivonne,26,,
+86-19,Vouneuil-sous-Biard,32,,
 86001,Adriers,11,0.79,46.26
 86002,Amberre,35,0.15,46.76
 86003,Anché,22,0.27,46.35
@@ -34794,6 +36030,16 @@ insee,name,density,x,y
 86298,Vouneuil-sur-Vienne,55,0.54,46.72
 86299,Vouzailles,36,0.10,46.71
 86300,Yversay,60,0.21,46.67
+87-01,Aixe-sur-Vienne,56,,
+87-02,Ambazac,24,,
+87-03,Bellac,17,,
+87-04,Châteauponsac,12,,
+87-05,Condat-sur-Vienne,23,,
+87-07,Eymoutiers,15,,
+87-18,Rochechouart,20,,
+87-19,Saint-Junien,31,,
+87-20,Saint-Léonard-de-Noblat,27,,
+87-21,Saint-Yrieix-la-Perche,27,,
 87001,Aixe-sur-Vienne,245,1.13,45.80
 87002,Ambazac,97,1.40,45.95
 87003,Arnac-la-Poste,22,1.37,46.26
@@ -34995,6 +36241,23 @@ insee,name,density,x,y
 87204,Videix,13,0.73,45.78
 87205,Le Vigen,70,1.28,45.74
 87206,Villefavard,17,1.21,46.17
+88-01,Bresse,37,,
+88-02,Bruyères,32,,
+88-03,Charmes,23,,
+88-04,Darney,19,,
+88-05,Épinal-1,12,,
+88-06,Épinal-2,51,,
+88-07,Gérardmer,22,,
+88-08,Golbey,38,,
+88-09,Mirecourt,25,,
+88-10,Neufchâteau,18,,
+88-11,Raon-l'Etape,24,,
+88-12,Remiremont,59,,
+88-13,Saint-Dié-des-Vosges-1,35,,
+88-14,Saint-Dié-des-Vosges-2,37,,
+88-15,Thillot,59,,
+88-16,Val-d'Ajol,17,,
+88-17,Vittel,21,,
 88001,Les Ableuvenettes,17,6.19,48.19
 88002,Ahéville,10,6.20,48.28
 88003,Aingeville,13,5.77,48.21
@@ -35510,6 +36773,24 @@ insee,name,density,x,y
 88530,Xertigny,55,6.38,48.04
 88531,Xonrupt-Longemer,51,6.95,48.07
 88532,Zincourt,20,6.44,48.31
+89-02,Auxerre-2,44,,
+89-03,Auxerre-3,40,,
+89-04,Auxerre-4,59,,
+89-05,Avallon,20,,
+89-06,Brienon-sur-Armançon,23,,
+89-07,Chablis,16,,
+89-08,Charny,24,,
+89-09,Cur de Puisaye,16,,
+89-10,Gâtinais en Bourgogne,37,,
+89-11,Joigny,34,,
+89-12,Joux-la-Ville,19,,
+89-13,Migennes,23,,
+89-14,Pont-sur-Yonne,49,,
+89-15,Saint-Florentin,35,,
+89-18,Thorigny-sur-Oreuse,24,,
+89-19,Tonnerrois,14,,
+89-20,Villeneuve-sur-Yonne,34,,
+89-21,Vincelles,19,,
 89001,Accolay,45,3.71,47.66
 89002,Aigremont,11,3.89,47.72
 89003,Aillant-sur-Tholon,76,3.33,47.87
@@ -35965,6 +37246,10 @@ insee,name,density,x,y
 89484,Volgré,36,3.31,47.92
 89485,Voutenay-sur-Cure,23,3.79,47.56
 89486,Yrouerre,13,3.96,47.79
+90-05,Châtenois-les-Forges,63,,
+90-06,Delle,43,,
+90-07,Giromagny,44,,
+90-08,Grandvillars,53,,
 90001,Andelnans,298,6.87,47.60
 90002,Angeot,49,7.01,47.70
 90003,Anjoutey,85,6.93,47.70
@@ -36067,6 +37352,10 @@ insee,name,density,x,y
 90103,Vétrigne,253,6.89,47.67
 90104,Vézelois,99,6.92,47.61
 90105,Villars-le-Sec,49,6.99,47.46
+91-05,Dourdan,54,,
+91-08,Étampes,35,,
+91-13,Mennecy,45,,
+91-18,Ulis,72,,
 91001,Abbéville-la-Rivière,19,2.19,48.34
 91016,Angerville,160,2.01,48.31
 91017,Angervilliers,182,2.06,48.59
@@ -36386,6 +37675,13 @@ insee,name,density,x,y
 94079,Villiers-sur-Marne,6406,2.55,48.83
 94080,Vincennes,26090,2.44,48.85
 94081,Vitry-sur-Seine,7549,2.39,48.79
+95-04,Cergy-1,73,,
+95-07,Domont,61,,
+95-09,Fosses,42,,
+95-12,Goussainville,55,,
+95-16,Pontoise,45,,
+95-17,Saint-Ouen-l'Aumône,61,,
+95-20,Vauréal,43,,
 95002,Ableiges,116,1.97,49.09
 95008,Aincourt,95,1.77,49.07
 95011,Ambleville,54,1.69,49.15
@@ -36683,1299 +37979,3 @@ insee,name,density,x,y
 97422,Le Tampon,457,55.56,-21.22
 97423,Les Trois-Bassins,172,55.33,-21.11
 97424,Cilaos,64,55.46,-21.14
-13201,Marseille 1er Arrondissement,21651,,
-13202,Marseille 2e Arrondissement,4816,,
-13203,Marseille 3e Arrondissement,17179,,
-13204,Marseille 4e Arrondissement,16507,,
-13205,Marseille 5e Arrondissement,20741,,
-13206,Marseille 6e Arrondissement,19923,,
-13207,Marseille 7e Arrondissement,6141,,
-13208,Marseille 8e Arrondissement,4208,,
-13209,Marseille 9e Arrondissement,1172,,
-13210,Marseille 10e Arrondissement,5007,,
-13211,Marseille 11e Arrondissement,1692,,
-13212,Marseille 12e Arrondissement,4293,,
-13213,Marseille 13e Arrondissement,3203,,
-13214,Marseille 14e Arrondissement,3707,,
-13215,Marseille 15e Arrondissement,4782,,
-13216,Marseille 16e Arrondissement,1049,,
-69381,Lyon 1er Arrondissement,19344,,
-69382,Lyon 2e Arrondissement,9079,,
-69383,Lyon 3e Arrondissement,15454,,
-69384,Lyon 4e Arrondissement,12369,,
-69385,Lyon 5e Arrondissement,7495,,
-69386,Lyon 6e Arrondissement,13124,,
-69387,Lyon 7e Arrondissement,7769,,
-69388,Lyon 8e Arrondissement,12212,,
-69389,Lyon 9e Arrondissement,6680,,
-75101,Paris 1er Arrondissement,9344,,
-75102,Paris 2e Arrondissement,22616,,
-75103,Paris 3e Arrondissement,30762,,
-75104,Paris 4e Arrondissement,17356,,
-75105,Paris 5e Arrondissement,23693,,
-75106,Paris 6e Arrondissement,20104,,
-75107,Paris 7e Arrondissement,13959,,
-75108,Paris 8e Arrondissement,9987,,
-75109,Paris 9e Arrondissement,27282,,
-75110,Paris 10e Arrondissement,32690,,
-75111,Paris 11e Arrondissement,42236,,
-75112,Paris 12e Arrondissement,8880,,
-75113,Paris 13e Arrondissement,25509,,
-75114,Paris 14e Arrondissement,25018,,
-75115,Paris 15e Arrondissement,28088,,
-75116,Paris 16e Arrondissement,10239,,
-75117,Paris 17e Arrondissement,30010,,
-75118,Paris 18e Arrondissement,33506,,
-75119,Paris 19e Arrondissement,27410,,
-75120,Paris 20e Arrondissement,32995,,
-01-01,Ambérieu-en-Bugey,30,,
-01-02,Attignat,59,,
-01-03,Bellegarde-sur-Valserine,30,,
-01-04,Belley,38,,
-01-07,Ceyzériat,27,,
-01-08,Châtillon-sur-Chalaronne,34,,
-01-09,Gex,50,,
-01-10,Hauteville-Lompnes,19,,
-01-11,Lagnieu,25,,
-01-12,Meximieux,42,,
-01-14,Nantua,28,,
-01-16,Pont-d'Ain,31,,
-01-17,Replonges,33,,
-01-18,Saint-Étienne-du-Bois,34,,
-01-20,Thoiry,23,,
-01-22,Villars-les-Dombes,37,,
-01-23,Vonnas,62,,
-02-01,Bohain-en-Vermandois,46,,
-02-02,Château-Thierry,31,,
-02-03,Chauny,47,,
-02-04,Essômes-sur-Marne,25,,
-02-05,Fère-en-Tardenois,28,,
-02-06,Guignicourt,25,,
-02-07,Guise,33,,
-02-08,Hirson,26,,
-02-09,Laon-1,42,,
-02-10,Laon-2,29,,
-02-11,Marle,26,,
-02-12,Ribemont,40,,
-02-13,Saint-Quentin-1,31,,
-02-14,Saint-Quentin-2,39,,
-02-15,Saint-Quentin-3,33,,
-02-16,Soissons-1,33,,
-02-17,Soissons-2,39,,
-02-18,Tergnier,38,,
-02-19,Vervins,24,,
-02-20,Vic-sur-Aisne,36,,
-02-21,Villers-Cotterêts,25,,
-03-01,Bellerive-sur-Allier,40,,
-03-02,Bourbon-l'Archambault,13,,
-03-03,Commentry,18,,
-03-04,Cusset,21,,
-03-05,Dompierre-sur-Besbre,13,,
-03-06,Gannat,22,,
-03-07,Huriel,13,,
-03-08,Lapalisse,16,,
-03-11,Montluçon-3,17,,
-03-12,Montluçon-4,36,,
-03-13,Moulins-1,21,,
-03-14,Moulins-2,14,,
-03-15,Saint-Pourçain-sur-Sioule,36,,
-03-16,Souvigny,19,,
-03-19,Yzeure,17,,
-04-01,Barcelonnette,5,,
-04-02,Castellane,6,,
-04-03,Château-Arnoux-Saint-Auban,26,,
-04-04,Digne-les-Bains-1,9,,
-04-05,Digne-les-Bains-2,25,,
-04-06,Forcalquier,15,,
-04-07,Manosque-1,11,,
-04-08,Manosque-2,12,,
-04-11,Reillanne,8,,
-04-12,Riez,8,,
-04-13,Seyne,7,,
-04-14,Sisteron,8,,
-04-15,Valensole,14,,
-05-01,Argentière-la-Bessée,9,,
-05-02,Briançon-1,8,,
-05-03,Briançon-2,5,,
-05-04,Chorges,16,,
-05-05,Embrun,12,,
-05-10,Guillestre,7,,
-05-11,Laragne-Montéglin,16,,
-05-12,Saint-Bonnet-en-Champsaur,11,,
-05-13,Serres,8,,
-05-14,Tallard,23,,
-05-15,Veynes,8,,
-06-10,Contes,10,,
-06-11,Grasse-1,11,,
-06-14,Menton,51,,
-06-24,Tourrette-Levens,8,,
-06-25,Valbonne,11,,
-06-26,Vence,9,,
-07-01,Annonay-1,68,,
-07-02,Annonay-2,25,,
-07-03,Aubenas-1,18,,
-07-04,Aubenas-2,34,,
-07-05,Bourg-Saint-Andéol,10,,
-07-06,Cheylard,15,,
-07-07,Guilherand-Granges,54,,
-07-08,Lamastre,24,,
-07-09,Pouzin,36,,
-07-10,Privas,18,,
-07-11,Sarras,57,,
-07-12,Teil,19,,
-07-13,Thueyts,11,,
-07-14,Tournon-sur-Rhône,48,,
-07-15,Vallon-Pont-d'Arc,24,,
-07-16,Vans,19,,
-07-17,Voulte-sur-Rhône,18,,
-08-01,Attigny,13,,
-08-02,Bogny-sur-Meuse,27,,
-08-03,Carignan,22,,
-08-04,Charleville-Mézières-1,41,,
-08-05,Charleville-Mézières-2,42,,
-08-08,Château-Porcien,21,,
-08-09,Givet,43,,
-08-10,Nouvion-sur-Meuse,24,,
-08-11,Rethel,23,,
-08-12,Revin,15,,
-08-13,Rocroi,25,,
-08-14,Sedan-1,33,,
-08-15,Sedan-2,21,,
-08-16,Sedan-3,25,,
-08-17,Signy-l'Abbaye,18,,
-08-18,Villers-Semeuse,69,,
-08-19,Vouziers,14,,
-09-01,Haute-Ariège,6,,
-09-02,Arize-Lèze,21,,
-09-03,Couserans Est,11,,
-09-04,Couserans Ouest,8,,
-09-05,Foix,41,,
-09-06,Mirepoix,17,,
-09-07,Pamiers-1,21,,
-09-08,Pamiers-2,44,,
-09-09,Pays d'Olmes,15,,
-09-10,Portes d'Ariège,32,,
-09-11,Portes du Couserans,22,,
-09-12,Sabarthès,8,,
-09-13,Val d'Ariège,25,,
-10-01,Aix-en-Othe,22,,
-10-02,Arcis-sur-Aube,14,,
-10-03,Bar-sur-Aube,15,,
-10-04,Bar-sur-Seine,19,,
-10-05,Brienne-le-Château,18,,
-10-06,Creney-près-Troyes,24,,
-10-07,Nogent-sur-Seine,26,,
-10-08,Riceys,16,,
-10-09,Romilly-sur-Seine,37,,
-10-10,Saint-André-les-Vergers,75,,
-10-11,Saint-Lyé,17,,
-10-17,Vendeuvre-sur-Barse,27,,
-11-01,Bram,17,,
-11-03,Carcassonne-2,35,,
-11-04,Carcassonne-3,46,,
-11-05,Castelnaudary,30,,
-11-07,Fabrezan,12,,
-11-08,Lézignan-Corbières,45,,
-11-09,Limoux,17,,
-11-10,Montréal,28,,
-11-12,Narbonne-2,69,,
-11-14,Quillan,9,,
-11-15,Rieux-Minervois,19,,
-11-16,Sallèles-d'Aude,55,,
-11-17,Sigean,9,,
-11-18,Trèbes,21,,
-11-19,Villemoustaussou,16,,
-12-01,Aubrac et Carladez,11,,
-12-02,Aveyron et Tarn,19,,
-12-03,Causse-Comtal,20,,
-12-04,Causses-Rougiers,9,,
-12-05,Ceor-Ségala,21,,
-12-06,Enne et Alzou,27,,
-12-07,Lot et Dourdou,17,,
-12-08,Lot et Montbazinois,28,,
-12-09,Lot et Palanges,13,,
-12-10,Lot et Truyère,16,,
-12-11,Millau-1,21,,
-12-12,Millau-2,17,,
-12-13,Monts du Réquistanais,19,,
-12-15,Raspes et Lévezou,12,,
-12-19,Saint-Affrique,16,,
-12-20,Tarn et Causses,11,,
-12-21,Vallon,21,,
-12-22,Villefranche-de-Rouergue,23,,
-12-23,Villeneuvois et Villefranchois,25,,
-13-07,Châteaurenard,56,,
-13-25,Pélissanne,36,,
-13-26,Salon-de-Provence-1,26,,
-13-28,Trets,23,,
-14-01,Aunay-sur-Odon,38,,
-14-02,Bayeux,50,,
-14-03,Bretteville-l'Orgueilleuse,48,,
-14-04,Cabourg,39,,
-14-10,Condé-sur-Noireau,34,,
-14-11,Courseulles-sur-Mer,36,,
-14-12,Évrecy,47,,
-14-13,Falaise,34,,
-14-15,Honfleur-Deauville,50,,
-14-17,Lisieux,53,,
-14-18,Livarot,29,,
-14-19,Mézidon-Canon,31,,
-14-21,Pont-l'Évêque,45,,
-14-22,Thury-Harcourt,37,,
-14-23,Trévières,33,,
-14-24,Troarn,43,,
-14-25,Vire,39,,
-15-01,Arpajon-sur-Cère,21,,
-15-05,Mauriac,16,,
-15-06,Maurs,17,,
-15-07,Murat,10,,
-15-08,Naucelles,18,,
-15-09,Neuvéglise,9,,
-15-10,Riom-ès-Montagnes,9,,
-15-11,Saint-Flour-1,12,,
-15-12,Saint-Flour-2,12,,
-15-13,Saint-Paul-des-Landes,14,,
-15-14,Vic-sur-Cère,16,,
-15-15,Ydes,14,,
-16-04,Boëme-Echelle,43,,
-16-05,Boixe-et-Manslois,33,,
-16-06,Charente-Bonnieure,20,,
-16-07,Charente-Champagne,36,,
-16-08,Charente-Nord,24,,
-16-09,Charente-Sud,24,,
-16-10,Charente-Vienne,19,,
-16-11,Cognac-1,42,,
-16-12,Cognac-2,64,,
-16-15,Jarnac,50,,
-16-16,Touvre-et-Braconne,30,,
-16-17,Tude-et-Lavalette,20,,
-16-18,Val de Nouère,34,,
-16-19,Val de Tardoire,31,,
-17-02,Chaniers,40,,
-17-05,Île de Ré,73,,
-17-06,Jarrie,48,,
-17-07,Jonzac,34,,
-17-09,Marans,47,,
-17-10,Marennes,31,,
-17-11,Matha,24,,
-17-12,Pons,30,,
-17-18,Saint-Jean-d'Angély,31,,
-17-19,Saint-Porchaire,47,,
-17-21,Saintonge Estuaire,39,,
-17-22,Saujon,62,,
-17-23,Surgères,43,,
-17-24,Thénac,43,,
-17-25,Tonnay-Charente,29,,
-17-27,Trois Monts,27,,
-18-01,Aubigny-sur-Nère,8,,
-18-02,Avord,21,,
-18-07,Chârost,21,,
-18-08,Châteaumeillant,12,,
-18-09,Dun-sur-Auron,12,,
-18-10,Guerche-sur-l'Aubois,16,,
-18-11,Mehun-sur-Yèvre,24,,
-18-12,Saint-Amand-Montrond,22,,
-18-14,Saint-Germain-du-Puy,16,,
-18-15,Saint-Martin-d'Auxigny,20,,
-18-16,Sancerre,20,,
-18-17,Trouy,20,,
-18-19,Vierzon-2,27,,
-19-01,Allassac,29,,
-19-02,Argentat,14,,
-19-07,Égletons,12,,
-19-08,Haute-Dordogne,12,,
-19-09,Malemort-sur-Corrèze,46,,
-19-10,Midi Corrézien,27,,
-19-11,Naves,24,,
-19-12,Plateau de Millevaches,9,,
-19-13,Saint-Pantaléon-de-Larche,38,,
-19-14,Sainte-Fortunade,22,,
-19-15,Seilhac-Monédières,13,,
-19-17,Ussel,14,,
-19-18,Uzerche,20,,
-19-19,Yssandonnais,35,,
-21-01,Arnay-le-Duc,14,,
-21-02,Auxonne,33,,
-21-04,Brazey-en-Plaine,36,,
-21-05,Châtillon-sur-Seine,9,,
-21-13,Dijon-6,39,,
-21-14,Fontaine-lès-Dijon,15,,
-21-15,Genlis,55,,
-21-16,Is-sur-Tille,13,,
-21-17,Ladoix-Serrigny,34,,
-21-18,Longvic,24,,
-21-19,Montbard,14,,
-21-20,Nuits-Saint-Georges,34,,
-21-21,Saint-Apollinaire,22,,
-21-22,Semur-en-Auxois,14,,
-21-23,Talant,26,,
-22-01,Bégard,54,,
-22-02,Broons,30,,
-22-03,Callac,20,,
-22-06,Lamballe,45,,
-22-08,Lanvallay,53,,
-22-09,Loudéac,31,,
-22-10,Mûr-de-Bretagne,28,,
-22-11,Paimpol,62,,
-22-13,Plaintel,30,,
-22-14,Plancoët,45,,
-22-15,Plélo,31,,
-22-16,Plénée-Jugon,41,,
-22-17,Pléneuf-Val-André,48,,
-22-19,Pleslin-Trigavou,40,,
-22-20,Plestin-les-Grèves,25,,
-22-22,Plouha,51,,
-22-23,Rostrenen,19,,
-22-27,Tréguier,53,,
-23-01,Ahun,14,,
-23-02,Aubusson,16,,
-23-03,Auzances,10,,
-23-04,Bonnat,18,,
-23-05,Bourganeuf,10,,
-23-06,Boussac,14,,
-23-07,Dun-le-Palestel,21,,
-23-08,Évaux-les-Bains,14,,
-23-09,Felletin,9,,
-23-10,Gouzon,14,,
-23-11,Grand-Bourg,19,,
-23-12,Guéret-1,45,,
-23-13,Guéret-2,20,,
-23-14,Saint-Vaury,28,,
-23-15,Souterraine,24,,
-24-02,Bergerac-2,47,,
-24-03,Brantôme,20,,
-24-05,Haut-Périgord Noir,21,,
-24-06,Isle-Loue-Auvézère,23,,
-24-07,Isle-Manoire,35,,
-24-08,Lalinde,19,,
-24-09,Montpon-Ménestérol,18,,
-24-10,Pays de la Force,18,,
-24-11,Pays de Montaigne et Gurson,28,,
-24-12,Périgord Central,22,,
-24-13,Périgord Vert Nontronnais,21,,
-24-16,Ribérac,21,,
-24-17,Saint-Astier,37,,
-24-18,Sarlat-la-Canéda,40,,
-24-19,Sud-Bergeracois,27,,
-24-20,Terrasson-Lavilledieu,26,,
-24-21,Thiviers,24,,
-24-22,Trélissac,51,,
-24-23,Vallée Dordogne,23,,
-24-24,Vallée de l'Isle,23,,
-24-25,Vallée de l'Homme,21,,
-25-02,Baume-les-Dames,27,,
-25-03,Bavans,29,,
-25-04,Besançon-1,69,,
-25-05,Besançon-2,53,,
-25-07,Besançon-4,44,,
-25-08,Besançon-5,48,,
-25-09,Besançon-6,59,,
-25-11,Frasne,24,,
-25-12,Maîche,30,,
-25-14,Morteau,33,,
-25-15,Ornans,28,,
-25-16,Pontarlier,45,,
-25-17,Saint-Vit,35,,
-25-18,Valdahon,24,,
-25-19,Valentigney,33,,
-26-02,Crest,21,,
-26-03,Dieulefit,19,,
-26-04,Diois,6,,
-26-05,Drôme des collines,40,,
-26-06,Grignan,32,,
-26-07,Loriol-sur-Drôme,32,,
-26-10,Nyons et Baronnies,8,,
-26-11,Romans-sur-Isère,54,,
-26-12,Saint-Vallier,51,,
-26-13,Tain-l'Hermitage,69,,
-26-14,Tricastin,36,,
-26-19,Vercors-Monts du Matin,17,,
-27-01,Andelys,47,,
-27-02,Bernay,36,,
-27-03,Beuzeville,40,,
-27-04,Bourg-Achard,47,,
-27-05,Bourgtheroulde-Infreville,56,,
-27-06,Breteuil,26,,
-27-07,Brionne,44,,
-27-08,Conches-en-Ouche,35,,
-27-10,Évreux-2,57,,
-27-11,Évreux-3,55,,
-27-12,Gaillon,52,,
-27-13,Gisors,42,,
-27-15,Neubourg,49,,
-27-16,Pacy-sur-Eure,49,,
-27-17,Pont-Audemer,55,,
-27-18,Pont-de-l'Arche,49,,
-27-19,Romilly-sur-Andelle,36,,
-27-20,Saint-André-de-l'Eure,39,,
-27-21,Val-de-Reuil,38,,
-27-22,Verneuil-sur-Avre,33,,
-28-01,Anet,52,,
-28-02,Auneau,34,,
-28-03,Brou,22,,
-28-04,Chartres-1,39,,
-28-05,Chartres-2,48,,
-28-06,Chartres-3,53,,
-28-07,Châteaudun,24,,
-28-08,Dreux-1,51,,
-28-09,Dreux-2,45,,
-28-10,Épernon,46,,
-28-11,Illiers-Combray,32,,
-28-12,Lucé,61,,
-28-13,Nogent-le-Rotrou,29,,
-28-14,Saint-Lubin-des-Joncherets,22,,
-28-15,Voves,19,,
-29-06,Briec,32,,
-29-07,Carhaix-Plouguer,20,,
-29-09,Crozon,32,,
-29-10,Douarnenez,51,,
-29-13,Landerneau,63,,
-29-14,Landivisiau,49,,
-29-15,Lesneven,72,,
-29-17,Morlaix,41,,
-29-19,Plonéour-Lanvern,43,,
-29-20,Plouigneau,30,,
-29-21,Pont-de-Buis-lès-Quimerch,30,,
-29-25,Quimperlé,32,,
-29-26,Saint-Pol-de-Léon,60,,
-29-27,Saint-Renan,57,,
-2A-05,Ajaccio-5,31,,
-2A-07,Grand Sud,12,,
-2A-08,Gravona-Prunelli,11,,
-2A-09,Sartenais-Valinco,8,,
-2A-10,Sevi-Sorru-Cinarca,7,,
-2A-11,Taravo-Ornano,9,,
-2B-05,Biguglia-Nebbio,9,,
-2B-06,Borgo,17,,
-2B-07,Calvi,8,,
-2B-08,Cap Corse,17,,
-2B-09,Casinca-Fumalto,35,,
-2B-10,Castagniccia,21,,
-2B-11,Corte,12,,
-2B-12,Fiumorbo-Castello,6,,
-2B-13,Ghisonaccia,6,,
-2B-14,Golo-Morosaglia,8,,
-2B-15,île-Rousse,9,,
-30-02,Alès-1,69,,
-30-03,Alès-2,15,,
-30-04,Alès-3,44,,
-30-05,Bagnols-sur-Cèze,67,,
-30-07,Calvisson,52,,
-30-08,Grand-Combe,21,,
-30-14,Pont-Saint-Esprit,30,,
-30-15,Quissac,33,,
-30-16,Redessan,44,,
-30-18,Rousson,35,,
-30-19,Saint-Gilles,60,,
-30-20,Uzès,37,,
-30-22,Vigan,10,,
-31-01,Auterive,29,,
-31-02,Bagnères-de-Luchon,21,,
-31-04,Castanet-Tolosan,53,,
-31-06,Cazères,23,,
-31-07,Escalquens,37,,
-31-08,Léguevin,33,,
-31-10,Pechbonnieu,52,,
-31-11,Plaisance-du-Touch,43,,
-31-13,Revel,39,,
-31-14,Saint-Gaudens,25,,
-31-24,Toulouse-10,60,,
-31-27,Villemur-sur-Tarn,50,,
-32-01,Adour-Gersoise,20,,
-32-02,Armagnac-Ténarèze,20,,
-32-03,Astarac-Gimone,16,,
-32-04,Auch-1,17,,
-32-05,Auch-2,26,,
-32-06,Auch-3,24,,
-32-07,Baïse-Armagnac,22,,
-32-08,Fezensac,12,,
-32-09,Fleurance-Lomagne,19,,
-32-10,Gascogne-Auscitaine,21,,
-32-11,Gimone-Arrats,21,,
-32-12,Grand-Bas-Armagnac,18,,
-32-13,Isle-Jourdain,33,,
-32-14,Lectoure-Lomagne,16,,
-32-15,Mirande-Astarac,19,,
-32-16,Pardiac-Rivière-Basse,15,,
-32-17,Val de Save,18,,
-33-10,Coteaux de Dordogne,50,,
-33-11,Créon,54,,
-33-12,Entre-Deux-Mers,41,,
-33-13,Estuaire,60,,
-33-15,Landes des Graves,17,,
-33-16,Libournais-Fronsadais,57,,
-33-20,Nord-Gironde,39,,
-33-21,Nord-Libournais,41,,
-33-22,Nord-Médoc,27,,
-33-27,Réolais et Les Bastides,33,,
-33-29,Sud-Gironde,17,,
-33-30,Sud-Médoc,14,,
-34-05,Cazouls-lès-Béziers,20,,
-34-06,Clermont-l'Hérault,18,,
-34-07,Crès,73,,
-34-09,Gignac,18,,
-34-11,Lodève,13,,
-34-12,Lunel,53,,
-34-14,Mèze,42,,
-34-23,Saint-Gély-du-Fesc,33,,
-34-24,Saint-Pons-de-Thomières,14,,
-35-01,Antrain,42,,
-35-02,Bain-de-Bretagne,47,,
-35-05,Châteaugiron,54,,
-35-06,Combourg,55,,
-35-07,Dol-de-Bretagne,40,,
-35-08,Fougères-1,51,,
-35-09,Fougères-2,41,,
-35-10,Guerche-de-Bretagne,46,,
-35-11,Guichen,42,,
-35-12,Janzé,63,,
-35-15,Montauban-de-Bretagne,47,,
-35-16,Montfort-sur-Meu,38,,
-35-17,Redon,42,,
-35-27,Vitré,46,,
-36-01,Ardentes,23,,
-36-02,Argenton-sur-Creuse,20,,
-36-03,Blanc,12,,
-36-04,Buzançais,13,,
-36-08,Châtre,15,,
-36-09,Issoudun,20,,
-36-10,Levroux,11,,
-36-11,Neuvy-Saint-Sépulchre,17,,
-36-12,Saint-Gaultier,11,,
-36-13,Valençay,17,,
-37-01,Amboise,33,,
-37-02,Ballan-Miré,41,,
-37-03,Bléré,23,,
-37-04,Château-Renault,23,,
-37-05,Chinon,29,,
-37-06,Descartes,17,,
-37-08,Langeais,25,,
-37-09,Loches,17,,
-37-13,Sainte-Maure-de-Touraine,26,,
-38-01,Bièvre,43,,
-38-02,Bourgoin-Jallieu,69,,
-38-03,Chartreuse-Guiers,33,,
-38-04,Charvieu-Chavagneux,49,,
-38-07,Fontaine-Vercors,14,,
-38-08,Grand-Lemps,61,,
-38-10,Grenoble-2,33,,
-38-13,Haut-Grésivaudan,21,,
-38-15,Matheysine-Trièves,14,,
-38-17,Morestel,54,,
-38-18,Moyen Grésivaudan,34,,
-38-19,Oisans-Romanche,12,,
-38-21,Roussillon,45,,
-38-23,Sud Grésivaudan,32,,
-38-25,Tullins,37,,
-38-29,Voiron,35,,
-39-01,Arbois,22,,
-39-02,Authume,33,,
-39-03,Bletterans,33,,
-39-04,Champagnole,24,,
-39-08,Lons-le-Saunier-2,42,,
-39-09,Moirans-en-Montagne,20,,
-39-10,Mont-sous-Vaudrey,28,,
-39-11,Morez,27,,
-39-12,Poligny,25,,
-39-13,Saint-Amour,24,,
-39-14,Saint-Claude,34,,
-39-15,Saint-Laurent-en-Grandvaux,17,,
-39-16,Saint-Lupicin,22,,
-39-17,Tavaux,36,,
-40-01,Adour Armagnac,26,,
-40-02,Chalosse Tursan,31,,
-40-03,Côte d'Argent,14,,
-40-04,Coteau de Chalosse,42,,
-40-05,Dax-1,30,,
-40-07,Grands Lacs,9,,
-40-08,Haute Lande Armagnac,6,,
-40-09,Marensin Sud,32,,
-40-10,Mont-de-Marsan-1,19,,
-40-11,Mont-de-Marsan-2,35,,
-40-12,Orthe et Arrigans,47,,
-40-13,Pays morcenais tarusate,13,,
-40-14,Pays Tyrossais,48,,
-40-15,Seignanx,49,,
-41-01,Beauce,20,,
-41-03,Blois-2,52,,
-41-04,Blois-3,47,,
-41-05,Chambord,13,,
-41-06,Montoire-sur-le-Loir,22,,
-41-07,Montrichard,37,,
-41-08,Onzain,27,,
-41-09,Perche,18,,
-41-10,Romorantin-Lanthenay,10,,
-41-11,Saint-Aignan,29,,
-41-12,Selles-sur-Cher,25,,
-41-13,Sologne,14,,
-41-14,Vendôme,39,,
-41-15,Vineuil,30,,
-42-01,Andrézieux-Bouthéon,74,,
-42-02,Boën-sur-Lignon,22,,
-42-03,Charlieu,44,,
-42-04,Coteau,40,,
-42-05,Feurs,50,,
-42-06,Firminy,74,,
-42-07,Montbrison,29,,
-42-08,Pilat,35,,
-42-09,Renaison,19,,
-42-20,Saint-Just-Saint-Rambert,32,,
-43-02,Bas-en-Basset,23,,
-43-03,Boutières,21,,
-43-04,Brioude,27,,
-43-05,Deux Rivières et Vallées,58,,
-43-06,Emblavez-et-Meygal,42,,
-43-07,Gorges de l'Allier-Gévaudan,8,,
-43-08,Mézenc,10,,
-43-10,Pays de Lafayette,12,,
-43-11,Plateau du Haut-Velay granitique,15,,
-43-12,Puy-en-Velay-1,37,,
-43-13,Puy-en-Velay-2,46,,
-43-16,Saint-Paulien,22,,
-43-17,Sainte-Florine,15,,
-43-18,Velay volcanique,15,,
-43-19,Yssingeaux,32,,
-44-01,Ancenis,32,,
-44-03,Blain,44,,
-44-06,Châteaubriant,26,,
-44-08,Guémené-Penfao,38,,
-45-01,Beaugency,27,,
-45-02,Châlette-sur-Loing,42,,
-45-03,Châteauneuf-sur-Loire,17,,
-45-04,Courtenay,31,,
-45-05,Ferté-Saint-Aubin,14,,
-45-07,Gien,13,,
-45-08,Lorris,24,,
-45-09,Malesherbes,36,,
-45-10,Meung-sur-Loire,22,,
-45-11,Montargis,32,,
-45-17,Pithiviers,23,,
-45-20,Saint-Jean-le-Blanc,33,,
-45-21,Sully-sur-Loire,18,,
-46-02,Cahors-2,36,,
-46-03,Cahors-3,40,,
-46-04,Causse et Bouriane,22,,
-46-05,Causse et Vallées,11,,
-46-06,Cère et Ségala,22,,
-46-07,Figeac-1,36,,
-46-08,Figeac-2,24,,
-46-09,Gourdon,23,,
-46-10,Gramat,17,,
-46-11,Lacapelle-Marival,18,,
-46-12,Luzech,20,,
-46-13,Marches du Sud-Quercy,17,,
-46-14,Martel,25,,
-46-15,Puy-l'Evêque,23,,
-46-16,Saint-Céré,26,,
-46-17,Souillac,24,,
-47-05,Albret,18,,
-47-06,Confluent,32,,
-47-07,Coteaux de Guyenne,26,,
-47-08,Forêts de Gascogne,13,,
-47-09,Fumélois,25,,
-47-10,Haut Agenais Périgord,20,,
-47-11,Lavardac,30,,
-47-12,Livradais,32,,
-47-13,Marmande-1,55,,
-47-14,Marmande-2,47,,
-47-15,Ouest agenais,16,,
-47-16,Pays de Serres,28,,
-47-17,Sud-Est agenais,41,,
-47-18,Tonneins,29,,
-47-19,Val du Dropt,23,,
-47-21,Villeneuve-sur-Lot-2,39,,
-48-01,Aumont-Aubrac,8,,
-48-02,Canourgue,8,,
-48-03,Chirac,23,,
-48-04,Collet-de-Dèze,8,,
-48-05,Florac,7,,
-48-06,Grandrieu,8,,
-48-07,Langogne,9,,
-48-08,Marvejols,9,,
-48-11,Saint-Alban-sur-Limagnole,9,,
-48-12,Saint-Chély-d'Apcher,22,,
-48-13,Saint-Etienne-du-Valdonnez,7,,
-49-03,Angers-3,56,,
-49-05,Angers-5,49,,
-49-06,Angers-6,42,,
-49-08,Beaufort-en-Vallée,24,,
-49-09,Beaupréau,63,,
-49-10,Chalonnes-sur-Loire,41,,
-49-11,Chemillé-Melay,47,,
-49-13,Cholet-2,31,,
-49-14,Doué-la-Fontaine,37,,
-49-15,Longué-Jumelles,27,,
-49-16,Pommeraye,56,,
-49-17,Ponts-de-Cé,49,,
-49-18,Saint-Macaire-en-Mauges,45,,
-49-19,Saumur,52,,
-49-20,Segré,28,,
-49-21,Tiercé,38,,
-50-01,Agon-Coutainville,35,,
-50-02,Avranches,54,,
-50-03,Bréhal,43,,
-50-04,Bricquebec,39,,
-50-05,Carentan,29,,
-50-09,Condé-sur-Vire,36,,
-50-10,Coutances,55,,
-50-11,Créances,32,,
-50-14,Hague,42,,
-50-15,Isigny-le-Buat,30,,
-50-16,Mortainais,24,,
-50-17,Pieux,48,,
-50-18,Pont-Hébert,38,,
-50-19,Pontorson,44,,
-50-20,Quettreville-sur-Sienne,37,,
-50-21,Saint-Hilaire-du-Harcouët,33,,
-50-22,Saint-Lô-1,47,,
-50-23,Saint-Lô-2,54,,
-50-24,Tourlaville,51,,
-50-25,Valognes,37,,
-50-26,Val-de-Saire,43,,
-50-27,Villedieu-les-Poêles,37,,
-51-01,Argonne Suippe et Vesle,10,,
-51-02,Bourgogne,42,,
-51-03,Châlons-en-Champagne-1,15,,
-51-04,Châlons-en-Champagne-2,31,,
-51-05,Châlons-en-Champagne-3,15,,
-51-06,Dormans-Paysages de Champagne,26,,
-51-07,Épernay-1,39,,
-51-08,Épernay-2,36,,
-51-09,Fismes-Montagne de Reims,39,,
-51-10,Mourmelon-Vesle et Monts de Champagne,26,,
-51-14,Reims-4,26,,
-51-18,Reims-8,46,,
-51-20,Sermaize-les-Bains,18,,
-51-21,Sézanne-Brie et Champagne,16,,
-51-22,Vertus-Plaine Champenoise,18,,
-51-23,Vitry-le-François-Champagne et Der,16,,
-52-01,Bologne,14,,
-52-02,Bourbonne-les-Bains,13,,
-52-03,Chalindrey,17,,
-52-04,Châteauvillain,11,,
-52-05,Chaumont-1,34,,
-52-06,Chaumont-2,33,,
-52-07,Chaumont-3,26,,
-52-08,Eurville-Bienville,20,,
-52-09,Joinville,17,,
-52-10,Langres,23,,
-52-11,Nogent,21,,
-52-12,Poissons,11,,
-52-13,Saint-Dizier-1,36,,
-52-16,Villegusien-le-Lac,10,,
-52-17,Wassy,20,,
-53-01,Azé,33,,
-53-02,Bonchamp-lès-Laval,47,,
-53-03,Château-Gontier,29,,
-53-04,Cossé-le-Vivien,32,,
-53-05,Ernée,28,,
-53-06,Évron,25,,
-53-07,Gorron,25,,
-53-09,Lassay-les-Châteaux,28,,
-53-13,Loiron,37,,
-53-14,Mayenne,30,,
-53-15,Meslay-du-Maine,23,,
-53-17,Villaines-la-Juhel,21,,
-54-01,Baccarat,21,,
-54-02,Entre Seille et Meurthe,38,,
-54-03,Grand Couronné,44,,
-54-04,Jarny,27,,
-54-05,Jarville-la-Malgrange,47,,
-54-08,Lunéville-1,30,,
-54-09,Lunéville-2,26,,
-54-10,Meine au Saintois,29,,
-54-11,Mont-Saint-Martin,38,,
-54-15,Neuves-Maisons,55,,
-54-16,Nord-Toulois,25,,
-54-17,Pays de Briey,26,,
-54-18,Pont-à-Mousson,44,,
-54-20,Toul,51,,
-54-23,Villerupt,36,,
-55-01,Ancerville,29,,
-55-02,Bar-le-Duc-1,28,,
-55-03,Bar-le-Duc-2,38,,
-55-04,Belleville-sur-Meuse,13,,
-55-05,Bouligny,22,,
-55-06,Clermont-en-Argonne,12,,
-55-07,Commercy,20,,
-55-08,Dieue-sur-Meuse,14,,
-55-09,Étain,19,,
-55-10,Ligny-en-Barrois,14,,
-55-11,Montmédy,17,,
-55-12,Revigny-sur-Ornain,20,,
-55-13,Saint-Mihiel,14,,
-55-14,Stenay,18,,
-55-15,Vaucouleurs,14,,
-55-16,Verdun-1,21,,
-55-17,Verdun-2,57,,
-56-02,Gourin,24,,
-56-03,Grand-Champ,39,,
-56-04,Guer,42,,
-56-05,Guidel,41,,
-56-10,Moréac,37,,
-56-11,Muzillac,67,,
-56-13,Ploërmel,32,,
-56-15,Pontivy,35,,
-56-16,Questembert,48,,
-56-17,Quiberon,40,,
-56-20,Vannes-2,75,,
-57-01,Algrange,41,,
-57-02,Bitche,30,,
-57-03,Boulay-Moselle,43,,
-57-04,Bouzonville,43,,
-57-05,Coteaux de Moselle,40,,
-57-07,Faulquemont,39,,
-57-09,Freyming-Merlebach,67,,
-57-14,Metzervisse,46,,
-57-16,Pays Messin,38,,
-57-17,Phalsbourg,35,,
-57-20,Sarralbe,39,,
-57-21,Sarrebourg,28,,
-57-22,Sarreguemines,63,,
-57-23,Saulnois,23,,
-57-24,Sillon Mosellan,69,,
-57-27,Yutz,49,,
-58-01,Charité-sur-Loire,15,,
-58-02,Château-Chinon,11,,
-58-03,Clamecy,16,,
-58-04,Corbigny,11,,
-58-05,Cosne-Cours-sur-Loire,29,,
-58-06,Decize,16,,
-58-07,Fourchambault,40,,
-58-08,Guérigny,13,,
-58-09,Imphy,19,,
-58-10,Luzy,10,,
-58-13,Nevers-3,25,,
-58-15,Pouilly-sur-Loire,15,,
-58-16,Saint-Pierre-le-Moûtier,13,,
-58-17,Varennes-Vauzelles,32,,
-59-04,Armentières,54,,
-59-05,Aulnoye-Aymeries,62,,
-59-07,Avesnes-sur-Helpe,34,,
-59-08,Bailleul,70,,
-59-09,Cambrai,50,,
-59-10,Cateau-Cambrésis,48,,
-59-11,Caudry,60,,
-59-17,Dunkerque-2,47,,
-59-19,Fourmies,37,,
-59-20,Grande-Synthe,43,,
-59-21,Hazebrouck,71,,
-59-30,Maubeuge,70,,
-59-41,Wormhout,58,,
-60-01,Beauvais-1,68,,
-60-02,Beauvais-2,43,,
-60-03,Chantilly,57,,
-60-04,Chaumont-en-Vexin,43,,
-60-05,Clermont,53,,
-60-06,Compiègne-1,27,,
-60-07,Compiègne-2,35,,
-60-09,Crépy-en-Valois,39,,
-60-10,Estrées-Saint-Denis,44,,
-60-11,Grandvilliers,36,,
-60-12,Méru,63,,
-60-13,Montataire,49,,
-60-14,Mouy,38,,
-60-15,Nanteuil-le-Haudouin,40,,
-60-17,Noyon,46,,
-60-18,Pont-Sainte-Maxence,42,,
-60-19,Saint-Just-en-Chaussée,40,,
-60-20,Senlis,49,,
-60-21,Thourotte,48,,
-61-01,Aigle,49,,
-61-04,Argentan-1,33,,
-61-05,Argentan-2,20,,
-61-06,Athis-de-l'Orne,25,,
-61-07,Bagnoles-de-l'Orne,27,,
-61-08,Bretoncelles,22,,
-61-09,Ceton,26,,
-61-10,Damigny,33,,
-61-11,Domfront,29,,
-61-12,Ferté-Macé,40,,
-61-13,Flers-1,58,,
-61-14,Flers-2,67,,
-61-15,Magny-le-Désert,19,,
-61-16,Mortagne-au-Perche,26,,
-61-17,Radon,27,,
-61-18,Rai,20,,
-61-19,Sées,22,,
-61-20,Tourouvre,22,,
-61-21,Vimoutiers,17,,
-62-01,Aire-sur-la-Lys,55,,
-62-03,Arras-2,69,,
-62-04,Arras-3,63,,
-62-05,Auchel,65,,
-62-06,Auxi-le-Château,34,,
-62-07,Avesnes-le-Comte,45,,
-62-09,Bapaume,47,,
-62-10,Berck,45,,
-62-13,Boulogne-sur-Mer-1,57,,
-62-14,Boulogne-sur-Mer-2,64,,
-62-15,Brebières,52,,
-62-16,Bruay-la-Buissière,56,,
-62-18,Calais-1,60,,
-62-19,Calais-2,55,,
-62-22,Desvres,46,,
-62-24,Étaples,39,,
-62-25,Fruges,36,,
-62-31,Lillers,73,,
-62-33,Lumbres,42,,
-62-34,Marck,61,,
-62-37,Saint-Omer,47,,
-62-38,Saint-Pol-sur-Ternoise,40,,
-63-01,Aigueperse,51,,
-63-02,Ambert,14,,
-63-05,Billom,34,,
-63-06,Brassac-les-Mines,16,,
-63-18,Issoire,49,,
-63-19,Lezoux,48,,
-63-20,Maringues,34,,
-63-22,Monts du Livradois,18,,
-63-23,Orcines,23,,
-63-26,Saint-Éloy-les-Mines,16,,
-63-27,Saint-Georges-de-Mons,24,,
-63-28,Saint-Ours,14,,
-63-29,Sancy,14,,
-63-30,Thiers,20,,
-63-31,Vic-le-Comte,35,,
-64-02,Artix et Pays de Soubestre,34,,
-64-03,Baïgura et Mondarrain,27,,
-64-08,Billère et Coteaux de Jurançon,46,,
-64-09,Cur de Béarn,31,,
-64-12,Montagne Basque,14,,
-64-13,Nive-Adour,45,,
-64-14,Oloron-Sainte-Marie-1,11,,
-64-15,Oloron-Sainte-Marie-2,24,,
-64-16,Orthez et Terres des Gaves et du Sel,33,,
-64-17,"Ouzom, Gave et Rives du Neez",53,,
-64-22,"Pays de Bidache, Amikuze et Ostibarre",22,,
-64-23,Pays de Morlaàs et du Montanérès,34,,
-64-25,Terres des Luys et Coteaux du Vic-Bilh,25,,
-64-26,Ustaritz-Vallées de Nive et Nivelle,41,,
-64-27,Vallées de l'Ousse et du Lagoin,39,,
-65-03,Coteaux,24,,
-65-04,Haute-Bigorre,33,,
-65-05,Lourdes-1,46,,
-65-06,Lourdes-2,19,,
-65-07,Moyen Adour,54,,
-65-08,"Neste, Aure et Louron",12,,
-65-09,Ossun,48,,
-65-13,Val d'Adour-Rustan-Madiranais,27,,
-65-14,Vallée de l'Arros et des Baïses,27,,
-65-15,Vallée de la Barousse,18,,
-65-16,Vallée des Gaves,8,,
-65-17,Vic-en-Bigorre,35,,
-66-01,Aspres,20,,
-66-02,Canigou,9,,
-66-13,Pyrénées catalanes,9,,
-66-14,Ribéral,9,,
-66-15,Vallée de l'Agly,15,,
-66-16,Vallée de la Têt,9,,
-66-17,Vallespir-Albères,14,,
-67-01,Bischwiller,26,,
-67-02,Bouxwiller,55,,
-67-03,Brumath,69,,
-67-04,Erstein,52,,
-67-08,Ingwiller,44,,
-67-11,Mutzig,35,,
-67-12,Obernai,31,,
-67-13,Reichshoffen,40,,
-67-14,Saverne,45,,
-67-16,Sélestat,58,,
-67-23,Wissembourg,66,,
-68-01,Altkirch,49,,
-68-02,Brunstatt,68,,
-68-03,Cernay,48,,
-68-06,Ensisheim,57,,
-68-07,Guebwiller,36,,
-68-09,Masevaux,49,,
-68-13,Rixheim,44,,
-68-14,Saint-Louis,52,,
-68-15,Sainte-Marie-aux-Mines,50,,
-68-16,Wintzenheim,34,,
-69-02,Arbresle,54,,
-69-03,Belleville,32,,
-69-04,Bois-d'Oingt,56,,
-69-07,Gleizé,31,,
-69-08,Mornant,48,,
-69-10,Tarare,43,,
-69-11,Thizy-les-Bourgs,25,,
-69-12,Vaugneray,63,,
-70-01,Dampierre-sur-Salon,17,,
-70-02,Gray,25,,
-70-03,Héricourt-1,59,,
-70-04,Héricourt-2,28,,
-70-05,Jussey,17,,
-70-06,Lure-1,35,,
-70-07,Lure-2,38,,
-70-08,Luxeuil-les-Bains,48,,
-70-09,Marnay,28,,
-70-10,Mélisey,21,,
-70-11,Port-sur-Saône,27,,
-70-12,Rioz,28,,
-70-13,Saint-Loup-sur-Semouse,35,,
-70-14,Scey-sur-Saône-et-Saint-Albin,23,,
-70-15,Vesoul-1,36,,
-70-16,Vesoul-2,32,,
-70-17,Villersexel,30,,
-71-01,Autun-1,16,,
-71-02,Autun-2,14,,
-71-03,Blanzy,22,,
-71-04,Chagny,40,,
-71-08,Chapelle-de-Guinchay,30,,
-71-09,Charolles,18,,
-71-10,Chauffailles,30,,
-71-11,Cluny,20,,
-71-13,Creusot-2,42,,
-71-14,Cuiseaux,36,,
-71-15,Digoin,17,,
-71-16,Gergy,31,,
-71-17,Givry,30,,
-71-18,Gueugnon,13,,
-71-19,Hurigny,47,,
-71-20,Louhans,35,,
-71-24,Ouroux-sur-Saône,35,,
-71-25,Paray-le-Monial,21,,
-71-26,Pierre-de-Bresse,24,,
-71-27,Saint-Rémy,50,,
-71-29,Tournus,37,,
-72-01,Bonnétable,33,,
-72-03,Château-du-Loir,29,,
-72-05,Ferté-Bernard,40,,
-72-06,Flèche,35,,
-72-07,Loué,31,,
-72-08,Lude,23,,
-72-09,Mamers,28,,
-72-16,Mans-7,64,,
-72-17,Sablé-sur-Sarthe,33,,
-72-18,Saint-Calais,24,,
-72-19,Savigné-l'Évêque,56,,
-72-20,Sillé-le-Guillaume,32,,
-72-21,Suze-sur-Sarthe,44,,
-73-01,Aix-les-Bains-1,46,,
-73-03,Albertville-1,36,,
-73-04,Albertville-2,37,,
-73-05,Bourg-Saint-Maurice,17,,
-73-06,Bugey savoyard,45,,
-73-10,Modane,7,,
-73-11,Montmélian,36,,
-73-12,Motte-Servolex,35,,
-73-13,Moûtiers,18,,
-73-14,Pont-de-Beauvoisin,34,,
-73-16,Saint-Alban-Leysse,19,,
-73-17,Saint-Jean-de-Maurienne,14,,
-73-18,Saint-Pierre-d'Albigny,25,,
-73-19,Ugine,22,,
-74-03,Annecy-le-Vieux,60,,
-74-05,Bonneville,43,,
-74-06,Cluses,17,,
-74-07,Évian-les-Bains,30,,
-74-08,Faverges,29,,
-74-10,Mont-Blanc,23,,
-74-11,Roche-sur-Foron,56,,
-74-12,Rumilly,58,,
-74-13,Saint-Julien-en-Genevois,50,,
-74-15,Sciez,54,,
-74-16,Seynod,29,,
-74-17,Thonon-les-Bains,56,,
-76-01,Barentin,47,,
-76-02,Bois-Guillaume,57,,
-76-03,Bolbec,65,,
-76-04,Canteleu,72,,
-76-07,Dieppe-1,52,,
-76-08,Dieppe-2,45,,
-76-10,Eu,35,,
-76-11,Fécamp,55,,
-76-12,Gournay-en-Bray,28,,
-76-20,Luneray,46,,
-76-21,Mesnil-Esnard,48,,
-76-23,Neufchâtel-en-Bray,32,,
-76-24,Notre-Dame-de-Bondeville,53,,
-76-25,Notre-Dame-de-Gravenchon,58,,
-76-26,Octeville-sur-Mer,42,,
-76-32,Saint-Romain-de-Colbosc,54,,
-76-33,Saint-Valery-en-Caux,46,,
-76-35,Yvetot,53,,
-77-03,Claye-Souilly,54,,
-77-05,Coulommiers,40,,
-77-06,Ferté-sous-Jouarre,39,,
-77-07,Fontainebleau,36,,
-77-08,Fontenay-Trésigny,38,,
-77-11,Melun,49,,
-77-12,Mitry-Mory,58,,
-77-13,Montereau-Fault-Yonne,46,,
-77-14,Nangis,41,,
-77-15,Nemours,34,,
-77-18,Provins,30,,
-77-21,Serris,44,,
-77-22,Torcy,67,,
-78-01,Aubergenville,52,,
-78-02,Bonnières-sur-Seine,54,,
-78-07,Limay,62,,
-78-09,Maurepas,65,,
-78-14,Rambouillet,41,,
-78-15,Saint-Cyr-l'École,51,,
-78-19,Verneuil-sur-Seine,54,,
-79-01,Autize-Egray,34,,
-79-02,Bressuire,16,,
-79-03,Celles-sur-Belle,24,,
-79-04,Cerizay,31,,
-79-05,Frontenay-Rohan-Rohan,45,,
-79-06,Gâtine,24,,
-79-07,Mauléon,21,,
-79-08,Melle,24,,
-79-09,Mignon-et-Boutonne,25,,
-79-13,Parthenay,25,,
-79-14,Plaine Niortaise,39,,
-79-15,Saint-Maixent-l'École,43,,
-79-16,Thouars,70,,
-79-17,Val de Thouet,25,,
-80-01,Abbeville-1,37,,
-80-02,Abbeville-2,47,,
-80-03,Ailly-sur-Noye,34,,
-80-04,Ailly-sur-Somme,37,,
-80-05,Albert,34,,
-80-07,Amiens-2,63,,
-80-08,Amiens-3,47,,
-80-09,Amiens-4,45,,
-80-11,Amiens-6,71,,
-80-12,Amiens-7,65,,
-80-13,Corbie,48,,
-80-14,Doullens,31,,
-80-15,Flixecourt,42,,
-80-16,Friville-Escarbotin,56,,
-80-17,Gamaches,43,,
-80-18,Ham,42,,
-80-19,Moreuil,45,,
-80-20,Péronne,35,,
-80-21,Poix-de-Picardie,29,,
-80-22,Roye,34,,
-80-23,Rue,28,,
-81-02,Albi-2,59,,
-81-03,Albi-3,30,,
-81-05,Carmaux-1 Le Ségala,22,,
-81-06,Carmaux-2 Vallée du Cérou,15,,
-81-08,Castres-2,32,,
-81-09,Castres-3,71,,
-81-10,Deux Rives,38,,
-81-11,Gaillac,27,,
-81-12,Graulhet,33,,
-81-13,Haut Dadou,16,,
-81-14,Hautes Terres d'Oc,11,,
-81-15,Lavaur Cocagne,26,,
-81-16,Mazamet-1,29,,
-81-17,Mazamet-2 Vallée du Thoré,19,,
-81-18,Montagne noire,27,,
-81-19,Pastel,50,,
-81-20,Plaine de l'Agoût,30,,
-81-21,Portes du Tarn,43,,
-81-22,Saint-Juéry,49,,
-81-23,Vignobles et Bastides,20,,
-82-01,Aveyron-Lère,22,,
-82-02,Beaumont-de-Lomagne,22,,
-82-03,Castelsarrasin,62,,
-82-04,Garonne-Lomagne-Brulhois,19,,
-82-05,Moissac,34,,
-82-10,Pays de Serres Sud-Quercy,19,,
-82-11,Quercy-Aveyron,32,,
-82-12,Quercy-Rouergue,18,,
-82-13,Tarn-Tescou-Quercy vert,28,,
-82-14,Valence,25,,
-82-15,Verdun-sur-Garonne,29,,
-83-01,Brignoles,36,,
-83-04,Flayosc,10,,
-83-07,Garéoult,16,,
-83-09,Luc,22,,
-83-11,Roquebrune-sur-Argens,11,,
-83-12,Saint-Cyr-sur-Mer,2,,
-83-13,Saint-Maximin-la-Sainte-Baume,12,,
-84-01,Apt,17,,
-84-05,Bollène,34,,
-84-08,Cheval-Blanc,35,,
-84-09,Isle-sur-la-Sorgue,44,,
-84-10,Monteux,34,,
-84-12,Pernes-les-Fontaines,16,,
-84-13,Pertuis,33,,
-84-16,Vaison-la-Romaine,26,,
-84-17,Valréas,61,,
-85-01,Aizenay,70,,
-85-02,Challans,49,,
-85-03,Chantonnay,58,,
-85-04,Châtaigneraie,35,,
-85-05,Fontenay-le-Comte,47,,
-85-06,Herbiers,41,,
-85-08,Luçon,31,,
-85-09,Mareuil-sur-Lay-Dissais,37,,
-85-11,Mortagne-sur-Sèvre,70,,
-85-17,Talmont-Saint-Hilaire,46,,
-86-01,Chasseneuil-du-Poitou,39,,
-86-03,Châtellerault-2,25,,
-86-04,Châtellerault-3,22,,
-86-05,Chauvigny,21,,
-86-06,Civray,20,,
-86-08,Loudun,21,,
-86-09,Lusignan,27,,
-86-10,Lussac-les-Châteaux,15,,
-86-11,Migné-Auxances,29,,
-86-12,Montmorillon,14,,
-86-18,Vivonne,26,,
-86-19,Vouneuil-sous-Biard,32,,
-87-01,Aixe-sur-Vienne,56,,
-87-02,Ambazac,24,,
-87-03,Bellac,17,,
-87-04,Châteauponsac,12,,
-87-05,Condat-sur-Vienne,23,,
-87-07,Eymoutiers,15,,
-87-18,Rochechouart,20,,
-87-19,Saint-Junien,31,,
-87-20,Saint-Léonard-de-Noblat,27,,
-87-21,Saint-Yrieix-la-Perche,27,,
-88-01,Bresse,37,,
-88-02,Bruyères,32,,
-88-03,Charmes,23,,
-88-04,Darney,19,,
-88-05,Épinal-1,12,,
-88-06,Épinal-2,51,,
-88-07,Gérardmer,22,,
-88-08,Golbey,38,,
-88-09,Mirecourt,25,,
-88-10,Neufchâteau,18,,
-88-11,Raon-l'Etape,24,,
-88-12,Remiremont,59,,
-88-13,Saint-Dié-des-Vosges-1,35,,
-88-14,Saint-Dié-des-Vosges-2,37,,
-88-15,Thillot,59,,
-88-16,Val-d'Ajol,17,,
-88-17,Vittel,21,,
-89-02,Auxerre-2,44,,
-89-03,Auxerre-3,40,,
-89-04,Auxerre-4,59,,
-89-05,Avallon,20,,
-89-06,Brienon-sur-Armançon,23,,
-89-07,Chablis,16,,
-89-08,Charny,24,,
-89-09,Cur de Puisaye,16,,
-89-10,Gâtinais en Bourgogne,37,,
-89-11,Joigny,34,,
-89-12,Joux-la-Ville,19,,
-89-13,Migennes,23,,
-89-14,Pont-sur-Yonne,49,,
-89-15,Saint-Florentin,35,,
-89-18,Thorigny-sur-Oreuse,24,,
-89-19,Tonnerrois,14,,
-89-20,Villeneuve-sur-Yonne,34,,
-89-21,Vincelles,19,,
-90-05,Châtenois-les-Forges,63,,
-90-06,Delle,43,,
-90-07,Giromagny,44,,
-90-08,Grandvillars,53,,
-91-05,Dourdan,54,,
-91-08,Étampes,35,,
-91-13,Mennecy,45,,
-91-18,Ulis,72,,
-95-04,Cergy-1,73,,
-95-07,Domont,61,,
-95-09,Fosses,42,,
-95-12,Goussainville,55,,
-95-16,Pontoise,45,,
-95-17,Saint-Ouen-l'Aumône,61,,
-95-20,Vauréal,43,,
