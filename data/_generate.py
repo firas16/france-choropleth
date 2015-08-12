@@ -11,19 +11,19 @@ can = DataFrame(data={'name':can.NCCENR,'canton':can.DEP+"-"+can.CANTON}).set_in
 
 
 # Load communes from ‘chiffres clefs’ database
-cc = read_excel("_tmp/base-cc-resume-15.xls", sheetname=[0,1], header=5, index_col=[0])
-cc[1].index = cc[1].index.astype('str')
-cc = concat([cc[0],cc[1]]).rename(columns = {'LIBGEO':'name'})
+com = read_excel("_tmp/base-cc-resume-15.xls", sheetname=[0,1], header=5, index_col=[0])
+com[1].index = com[1].index.astype('str')
+com = concat([com[0],com[1]]).rename(columns = {'LIBGEO':'name'})
 
 
 # Link communes to cantons
-cc = concat([cc, cog[cog.canton.str[-2:].fillna("99").astype('int') < 50]], axis=1).dropna(subset=["name"])
-cc.canton[(cc.P12_POP/cc.SUPERF > 75) | (cc.P12_POP > 1000)] = nan
-cc.dropna(subset=['canton']).to_csv('_tmp/cog.csv', columns = ['canton'], index_label = 'insee')
+com = concat([com, cog[cog.canton.str[-2:].fillna("99").astype('int') < 50]], axis=1).dropna(subset=["name"])
+com.canton[(com.P12_POP/com.SUPERF > 75) | (com.P12_POP > 1000)] = nan
+com.dropna(subset=['canton']).to_csv('_tmp/cog.csv', columns = ['canton'], index_label = 'insee')
 
 
 # Generate base data (names, centroids, density)
-df = concat([cc,concat([cc.groupby('canton').sum(),can],axis=1).dropna(subset=["name","P12_POP"])])
+df = concat([com,concat([com.groupby('canton').sum(),can],axis=1).dropna(subset=["name","P12_POP"])])
 df['density'] = (df.P12_POP/df.SUPERF).map(lambda x: '%.0f' % x)
 df = concat([df, read_csv("_tmp/centroids.csv").set_index('insee')], axis=1).dropna(subset=["name"])
 
