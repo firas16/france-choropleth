@@ -19,13 +19,13 @@ function france(map, stat, domain, range, title, unit, plus) {
                   if (!$.data) {
                     $.data = {};
                     for (var i in f) {
-                      $.data[f[i].insee] = {};
+                      $.data[f[i].id] = {};
                     }
                   }
                   for (var j in f[0]) {
-                    if (j != 'insee') {
+                    if (j != 'id') {
                       for (var i in f) {
-                        $.data[f[i].insee][j] = f[i][j];
+                        $.data[f[i].id][j] = f[i][j];
                       }
                     }
                   }

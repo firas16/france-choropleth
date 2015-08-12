@@ -16,12 +16,12 @@ tmp:
 
 stats: tmp
 	mkdir -p stats
-	mapshaper -i _tmp/communes-20150101-5m.shp -each 'x = $$.centroidX, y = $$.centroidY' -o drop-table force id-field=insee _tmp/centroids.csv
+	mapshaper -i _tmp/communes-20150101-5m.shp -each 'id=insee, x = $$.centroidX, y = $$.centroidY' -o drop-table force id-field=id _tmp/centroids.csv
 	python3 _generate.py
 
 geo: stats
 	mkdir -p geo
-	mapshaper -i _tmp/communes-20150101-5m.shp -join _tmp/cog.csv keys=insee,insee:str -each 'insee = canton || insee' -rename-layers can -dissolve insee -simplify visvalingam 1% -o drop-table force id-field=insee geo/base.topojson
+	mapshaper -i _tmp/communes-20150101-5m.shp -join _tmp/cog.csv keys=insee,id:str -each 'id = canton || insee' -rename-layers can -dissolve id -simplify visvalingam 1% -o drop-table force id-field=id geo/base.topojson
 
 clean:
 	rm -rf _tmp
