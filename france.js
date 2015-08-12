@@ -18,14 +18,14 @@ function france(map, stat, domain, range, title, unit, plus) {
                   var f = arguments[file];
                   if (!$.data) {
                     $.data = {};
-                    for (var line in f) {
-                      $.data[f[line].insee] = {};
+                    for (var i in f) {
+                      $.data[f[i].insee] = {};
                     }
                   }
-                  for (var column in f[0]) {
-                    if (column != 'insee') {
-                      for (var line in f) {
-                        $.data[f[line].insee][column] = f[line][column];
+                  for (var j in f[0]) {
+                    if (j != 'insee') {
+                      for (var i in f) {
+                        $.data[f[i].insee][j] = f[i][j];
                       }
                     }
                   }
