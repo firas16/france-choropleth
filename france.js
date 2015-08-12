@@ -1,10 +1,6 @@
-function france(id, stat, domain, range, title, unit, plus) {
+function france(map, stat, domain, range, title, unit, plus) {
 
   this.init = function() {
-                self.map = L.map(id, { center: [46.6, 2.1], zoom: 6, minZoom: 6, maxZoom: 9, renderer: L.canvas({padding: .4})})
-                           .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
-                              subdomains: 'abcd', detectRetina: true }));
-
                 d3.json('/data/geo/base.topojson', function (e, json){
                   d3.csv('/data/stats/data.csv', function (e, data){
                     d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
@@ -54,7 +50,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                         }
                       }
                     });
-                  self.layer.addTo(self.map);
+                  self.layer.addTo(map);
                 }
               }
 
@@ -97,7 +93,7 @@ function france(id, stat, domain, range, title, unit, plus) {
                   if (i.slice(0,2) == value.slice(-3,-1) && self.data[i].name == value.slice(0,-5) ) {
                     self.i = i;
                     self.popup(i);
-                    self.map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
+                    map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
                   }
                 }
               });
@@ -106,7 +102,7 @@ function france(id, stat, domain, range, title, unit, plus) {
  this.popup = function(i) {
                 self.marker = L.popup().setLatLng(L.latLng(self.data[i].y, self.data[i].x))
                             .setContent('<strong>'+self.data[i].name+'</strong><br />'+
-                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit).openOn(self.map);
+                              title+' : '+self.data[i][stat].replace(".",",")+' '+unit).openOn(map);
               }
 
   this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
