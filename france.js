@@ -37,6 +37,9 @@ function france(id, stat, domain, range, title, unit, plus) {
               }
 
   this.draw = function(json) {
+                var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]);
+                var color = d3.scale.linear().clamp(1).domain(domain).range(range);
+
                 for (var key in json.objects) {
                   self.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
@@ -46,8 +49,8 @@ function france(id, stat, domain, range, title, unit, plus) {
                       },
                       style: function(feature){
                         if (self.data[feature.id]) return { stroke: 0,
-                          fillOpacity: d3.scale.log().clamp(1).domain([1,15000]).range([0,1])(self.data[feature.id].density),
-                          fillColor: d3.scale.linear().clamp(1).domain(domain).range(range)(self.data[feature.id][stat])
+                          fillOpacity: alpha(self.data[feature.id].density),
+                          fillColor: color(self.data[feature.id][stat])
                         }
                       }
                     });
@@ -110,10 +113,10 @@ function france(id, stat, domain, range, title, unit, plus) {
                 d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
                   self.read(csv);
                   stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
+                  var color = d3.scale.linear().clamp(1).domain(domain).range(range);
                   self.layer.eachLayer( function(e) {
                     if (self.data[e.feature.id]) {
-                      var scale = d3.scale.linear().clamp(1).domain(domain).range(range);
-                      e.setStyle({ fillColor: scale(self.data[e.feature.id][stat]) });
+                      e.setStyle({ fillColor: color(self.data[e.feature.id][stat]) });
                     }
                   });
                   if (self.marker) self.popup(self.i);
