@@ -23,11 +23,17 @@ com.dropna(subset=['canton']).to_csv('_tmp/cog.csv', columns = ['canton'], index
 
 
 # Generate base data (names, centroids, density)
-df = concat([com,concat([com.groupby('canton').sum(),can],axis=1).dropna(subset=["name","P12_POP"])])
-df['density'] = (df.P12_POP/df.SUPERF).map(lambda x: '%.0f' % x)
-df = concat([df, read_csv("_tmp/centroids.csv").set_index('insee')], axis=1).dropna(subset=["name"])
+xy = read_csv("_tmp/centroids.csv").set_index('insee')
 
-df.to_csv('stats/data.csv', columns = ['name','density','x','y'], index_label='insee', float_format='%.2f')
+cp = read_csv("_tmp/cp.csv", sep=";", encoding="iso-8859-1", dtype=str)
+cp = DataFrame(data={'insee':cp["code commune INSEE"], 'postcode':cp["code postal"]}).drop_duplicates(subset='insee', take_last=True).set_index('insee')
+
+df = concat([com, concat([com.groupby('canton').sum(),can], axis=1).dropna(subset=["name","P12_POP"]) ])
+df = concat([df, xy, cp], axis=1).dropna(subset=["name","P12_POP"])
+
+df['density'] = (df.P12_POP/df.SUPERF).map(lambda x: '%.0f' % x)
+
+df.to_csv('stats/data.csv', columns = ['postcode','name','density','x','y'], index_label='insee', float_format='%.2f')
 
 
 # Unemployement
