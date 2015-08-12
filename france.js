@@ -35,13 +35,13 @@ function france(map, stat, domain, range, title, unit, plus) {
   this.draw = function(json) {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]);
                 var color = d3.scale.linear().clamp(1).domain(domain).range(range);
-
                 for (var key in json.objects) {
                   self.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
                       onEachFeature: function (feature, layer) {
-                        layer.on({ mouseover: function(e) { d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) },
-                                   mouseout:  function(e) { d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") } })
+                        var i = feature.id, input = d3.selectAll(".info .value");
+                        layer.on({ mouseover: function() { input.attr("value", self.data[i].name+" : "+self.data[i][stat].replace(".",",")+" "+unit) },
+                                   mouseout:  function() { input.attr("value", "") } })
                       },
                       style: function(feature){
                         if (self.data[feature.id]) return { stroke: 0,
@@ -59,7 +59,7 @@ function france(map, stat, domain, range, title, unit, plus) {
 
                 var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control")
                 div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
-                div.append("div").attr("class", "value").text("").append("span").text("Survolez un territoire");
+                div.append("input").attr("class", "value").attr("disabled","").attr("placeholder","Survolez un territoire");
 
                 var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
                 var canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d");
