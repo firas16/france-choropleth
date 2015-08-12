@@ -106,17 +106,20 @@ function france(map, stat, domain, range, title, unit, plus) {
               }
 
   this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
+                stat = _stat, domain = _domain, unit = _unit;
+                title = _title, range = _range, plus = _plus;
+                var color = d3.scale.linear().clamp(1).domain(domain).range(range);
                 d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
                   self.read(csv);
-                  stat = _stat, title = _title, unit = _unit, range = _range, domain = _domain, plus = _plus;
-                  var color = d3.scale.linear().clamp(1).domain(domain).range(range);
                   self.layer.eachLayer( function(e) {
                     if (self.data[e.feature.id]) {
                       e.setStyle({ fillColor: color(self.data[e.feature.id][stat]) });
                     }
                   });
-                  if (self.marker) self.popup(self.i);
                   self.info();
+                  if (self.marker) {
+                    self.popup(self.i);
+                  }
                 })
               }
 
