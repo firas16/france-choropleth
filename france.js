@@ -98,6 +98,7 @@ function france(map, stat, domain, range, title, unit, plus) {
                       self.i = i;
                       self.popup(i);
                       map.flyTo(L.latLng(self.data[i].y, self.data[i].x), 9);
+                      break;
                     }
                   }
                 });
