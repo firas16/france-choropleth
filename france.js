@@ -43,9 +43,9 @@ function france(id, stat, domain, range, title, unit, plus) {
                 for (var key in json.objects) {
                   self.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
-                      onEachFeature: function (feature, json) {
-                        json.on({ mouseover: function(e) { d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) },
-                                  mouseout:  function(e) { d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") } })
+                      onEachFeature: function (feature, layer) {
+                        layer.on({ mouseover: function(e) { d3.selectAll(".info .value").text(self.data[e.target.feature.id].name+" : "+self.data[e.target.feature.id][stat].replace(".",",")+" "+unit) },
+                                   mouseout:  function(e) { d3.selectAll(".info .value").text("").append("span").text("Survolez un territoire") } })
                       },
                       style: function(feature){
                         if (self.data[feature.id]) return { stroke: 0,
