@@ -71,6 +71,7 @@
   }
 
   .search {
+    line-height: 18px;
     height: 22px;
     width: 200px;
   }
@@ -84,9 +85,10 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/awesomplete/1.0.0/awesomplete.min.js"></script>
+  <link href="://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.0.0/awesomplete.min.css" rel="stylesheet" />
   <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet.css" rel="stylesheet" />
-  <script src="/librairies/awesomplete.js"></script>
-  <link href="/librairies/awesomplete.css" rel="stylesheet" />
+
   <script src="/france.js"></script>
 
 </head>
@@ -111,7 +113,7 @@
     var map = L.map("map",{ renderer: L.canvas( { padding: .4 }),
                             center: [46.6, 2.1],
                             zoom: 6,
-                            minZoom: 6,
+                            minZoom: 1,
                             maxZoom: 9 })
                 .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', { subdomains: 'abcd', detectRetina: 1 }));
 
