@@ -71,5 +71,11 @@
   }
 
   .search #search {
-    width: 190px;
+    width: 171px;
+    padding-left: 25px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABNUlEQVQ4jZXSsS4EURSH8bsqjVZssj2tBxDiDSRaQq8QtWIatWqzmdzzfcnWlApv4BHwBgpCoZAsO5orZJjF6W7u/H/nnMxN6bN66rZ6CTwAL8AtcJpzHqRZBSwAF2qj3gPnKuqVOlWfga2ufK+Ep8BJVVXzXy8jYhW4ASbq+rd0GbsBTro61HXdB+7U65RSrw1cqvftzj+seag2Oee19sUDcD4rXKZYKZMetYEXlT8AfbWJiOM2cKte/QbknDcLsNMGTtVpRKzOAoAzYDIajRbb8kB9Vq+Hw+HST+GIOCj7j7v0LWAC3AGHwHJd1/2c8yZwVh5Yo74Ce107bgA3Xz5uStcJMFZfy/mtE6mqai7nvAYcRcRxROx87KzuA2+/IrOqjXz7I/9F1Md/AymlBOwCT0C8A3DOFIGPqdMbAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: 5px 2px;
+    border: 1px #ccc solid;
+    height: 18px;
   }
