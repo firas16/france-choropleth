@@ -39,9 +39,8 @@ function france(map, stat, domain, range, title, unit, plus) {
                   $.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
                       smoothFactor: .3,
                       onEachFeature: function (feature, layer) {
-                        var i = feature.id, input = d3.selectAll(".info .value");
-                        layer.on({ mouseover: function() { input.attr("value", $.data[i].name+" : "+$.data[i][stat].replace(".",",")+" "+unit) },
-                                   mouseout:  function() { input.attr("value", "") } })
+                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][stat].replace(".",",")+" "+unit) },
+                                   mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
                       },
                       style: function(feature){
                         if ($.data[feature.id]) return { stroke: 0,
@@ -77,7 +76,7 @@ function france(map, stat, domain, range, title, unit, plus) {
 
  this.search = function() {
                 var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
-                var input = div.append("input").attr("type", "text").attr("id", "search").attr("placeholder","Commune ou un code postal");
+                var search = div.append("input").attr("type", "text").attr("id", "search").attr("placeholder","Commune ou un code postal");
 
                 L.DomEvent.disableClickPropagation(div.node());
                 L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
@@ -91,8 +90,8 @@ function france(map, stat, domain, range, title, unit, plus) {
 
                 new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
 
-                input.on('awesomplete-selectcomplete', function(){
-                  var value = input.node().value;
+                search.on('awesomplete-selectcomplete', function(){
+                  var value = search.node().value;
                   for (var i in $.data) {
                     if (value == $.data[i].name+" ("+$.data[i].postcode+")" && i[3] != "-") {
                       $.i = i;
