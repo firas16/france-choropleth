@@ -114,8 +114,18 @@ function france(map, stat, domain, range, title, unit, plus) {
                 stat = _stat, domain = _domain, unit = _unit;
                 title = _title, range = _range, plus = _plus;
                 var color = d3.scale.linear().clamp(1).domain(domain).range(range);
-                d3.csv('/data/stats/'+_stat+'.csv', function (e, csv){
-                  $.read(csv);
+
+                if ($.data[Object.keys($.data)[0]][stat]) {
+                  refresh(stat);
+                }
+                else {
+                  d3.csv('/data/stats/'+stat+'.csv', function (err, csv){
+                    $.read(csv);
+                    refresh(stat);
+                  })
+                }
+
+                function refresh(csv) {
                   $.layer.eachLayer( function(e) {
                     if ($.data[e.feature.id]) {
                       e.setStyle({ fillColor: color($.data[e.feature.id][stat]) });
@@ -125,7 +135,7 @@ function france(map, stat, domain, range, title, unit, plus) {
                   if ($.marker) {
                     $.popup($.i);
                   }
-                })
+                }
               }
 
   var $ = this;
