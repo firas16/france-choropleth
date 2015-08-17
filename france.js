@@ -86,9 +86,7 @@ function france(map, stat, domain, range, title, unit, plus) {
 
                 var list = [];
                 for (var c in $.data) {
-                  if ($.data[c].x && $.data[c].y) {
-                    list.push($.data[c].name+" ("+$.data[c].postcode+")");
-                  }
+                  $.data[c].x && list.push($.data[c].name+" ("+$.data[c].postcode+")");
                 }
 
                 new Awesomplete( document.getElementById("search"), { list: list, maxItems: 20 });
@@ -120,9 +118,7 @@ function france(map, stat, domain, range, title, unit, plus) {
                   $.read(csv);
                   $.draw();
                   $.info();
-                  if ($.marker) {
-                    $.popup($.i);
-                  }
+                  $.marker && $.popup($.i);
                 })
               }
 
