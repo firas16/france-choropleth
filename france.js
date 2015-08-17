@@ -34,23 +34,23 @@ function france(map, stat, domain, range, title, unit, plus) {
               }
 
   this.draw = function() {
-                var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]);
-                var color = d3.scale.linear().clamp(1).domain(domain).range(range);
-                var canvas = L.canvas();
-                var layer = new L.GeoJSON($.topo, {
-                    renderer: canvas,
-                    smoothFactor: .3,
-                    onEachFeature: function (feature, layer) {
-                      layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][stat].replace(".",",")+" "+unit) },
-                                 mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
-                    },
-                    style: function(feature){
-                      if ($.data[feature.id]) return { stroke: 0,
-                        fillOpacity: Math.max(alpha($.data[feature.id].density), .05),
-                        fillColor: color($.data[feature.id][stat])
+                var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]),
+                    color = d3.scale.linear().clamp(1).domain(domain).range(range),
+                    canvas = L.canvas(),
+                    layer = new L.GeoJSON($.topo, {
+                      renderer: canvas,
+                      smoothFactor: .3,
+                      onEachFeature: function (feature, layer) {
+                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][stat].replace(".",",")+" "+unit) },
+                                   mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
+                      },
+                      style: function(feature){
+                        if ($.data[feature.id]) return { stroke: 0,
+                          fillOpacity: Math.max(alpha($.data[feature.id].density), .05),
+                          fillColor: color($.data[feature.id][stat])
+                        }
                       }
-                    }
-                  });
+                    });
                 d3.selectAll("canvas.leaflet-zoom-animated").remove();
                 layer.addTo(map);
               }
@@ -58,14 +58,15 @@ function france(map, stat, domain, range, title, unit, plus) {
   this.info = function() {
                 d3.selectAll(".info").remove();
 
-                var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control")
+                var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control"),
+                    x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]),
+                    canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d"),
+                    gradient = canvas.createLinearGradient(0,0,240,10),
+                    a = range.map(function(d, i) { return { x: x(domain[i]), z:d }});
+
                 div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
                 div.append("input").attr("class", "value").attr("disabled","").attr("placeholder","Survolez un territoire");
 
-                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]);
-                var canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d");
-                var gradient = canvas.createLinearGradient(0,0,240,10);
-                var a = range.map(function(d, i) { return { x: x(domain[i]), z:d }});
                 for (var el in a) {
                   gradient.addColorStop(a[el].x/239,a[el].z);
                 }
@@ -77,8 +78,8 @@ function france(map, stat, domain, range, title, unit, plus) {
               }
 
  this.search = function() {
-                var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control");
-                var search = div.append("input").attr("type", "text").attr("id", "search").attr("placeholder","Commune ou un code postal");
+                var div = d3.select(".leaflet-top.leaflet-left").append("div").attr("class", "search leaflet-control"),
+                    search = div.append("input").attr("type", "text").attr("id", "search").attr("placeholder","Commune ou un code postal");
 
                 L.DomEvent.disableClickPropagation(div.node());
                 L.DomEvent.on(div.node(), 'mousewheel', L.DomEvent.stopPropagation);
