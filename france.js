@@ -44,7 +44,7 @@ function france(map, stat, domain, range, title, unit, plus) {
                       },
                       style: function(feature){
                         if ($.data[feature.id]) return { stroke: 0,
-                          fillOpacity: alpha($.data[feature.id].density),
+                          fillOpacity: Math.max(alpha($.data[feature.id].density), .05),
                           fillColor: color($.data[feature.id][stat])
                         }
                       }
