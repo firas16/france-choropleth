@@ -4,10 +4,11 @@ function france(map, stat, domain, range, title, unit, plus) {
                 d3.json('/data/geo/france.topojson', function (e, json){
                   d3.csv('/data/geo/data.csv', function (e, data){
                     d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
+                      $.topo = topojson.feature(json, json.objects["can"]);
                       $.read(data, stats);
                       $.info();
                       $.search();
-                      $.draw(json);
+                      $.draw();
                     })
                   })
                 })
@@ -32,10 +33,12 @@ function france(map, stat, domain, range, title, unit, plus) {
                 }
               }
 
-  this.draw = function(json) {
+  this.draw = function() {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]);
                 var color = d3.scale.linear().clamp(1).domain(domain).range(range);
-                $.layer = new L.GeoJSON(topojson.feature(json, json.objects["can"]), {
+                var canvas = L.canvas();
+                var layer = new L.GeoJSON($.topo, {
+                    renderer: canvas,
                     smoothFactor: .3,
                     onEachFeature: function (feature, layer) {
                       layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][stat].replace(".",",")+" "+unit) },
@@ -48,7 +51,8 @@ function france(map, stat, domain, range, title, unit, plus) {
                       }
                     }
                   });
-                $.layer.addTo(map);
+                d3.selectAll("canvas.leaflet-zoom-animated").remove();
+                layer.addTo(map);
               }
 
   this.info = function() {
@@ -110,29 +114,15 @@ function france(map, stat, domain, range, title, unit, plus) {
   this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
                 stat = _stat, domain = _domain, unit = _unit;
                 title = _title, range = _range, plus = _plus;
-                var color = d3.scale.linear().clamp(1).domain(domain).range(range);
 
-                if ($.data[Object.keys($.data)[0]][stat]) {
-                  refresh(stat);
-                }
-                else {
-                  d3.csv('/data/stats/'+stat+'.csv', function (err, csv){
-                    $.read(csv);
-                    refresh(stat);
-                  })
-                }
-
-                function refresh(csv) {
-                  $.layer.eachLayer( function(e) {
-                    if ($.data[e.feature.id]) {
-                      e.setStyle({ fillColor: color($.data[e.feature.id][stat]) });
-                    }
-                  });
+                d3.csv('/data/stats/'+stat+'.csv', function (err, csv){
+                  $.read(csv);
+                  $.draw();
                   $.info();
                   if ($.marker) {
                     $.popup($.i);
                   }
-                }
+                })
               }
 
   var $ = this;
