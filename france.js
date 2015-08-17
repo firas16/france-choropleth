@@ -58,14 +58,14 @@ function france(map, stat, domain, range, title, unit, plus) {
   this.info = function() {
                 d3.selectAll(".info").remove();
 
-                var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control"),
-                    x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]),
+                var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control");
+                div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
+                div.append("input").attr("class", "value").attr("disabled","").attr("placeholder","Survolez un territoire");
+
+                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]),
                     canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d"),
                     gradient = canvas.createLinearGradient(0,0,240,10),
                     a = range.map(function(d, i) { return { x: x(domain[i]), z:d }});
-
-                div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
-                div.append("input").attr("class", "value").attr("disabled","").attr("placeholder","Survolez un territoire");
 
                 for (var el in a) {
                   gradient.addColorStop(a[el].x/239,a[el].z);
