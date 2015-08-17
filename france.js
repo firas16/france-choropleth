@@ -35,22 +35,20 @@ function france(map, stat, domain, range, title, unit, plus) {
   this.draw = function(json) {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]);
                 var color = d3.scale.linear().clamp(1).domain(domain).range(range);
-                for (var key in json.objects) {
-                  $.layer = new L.GeoJSON(topojson.feature(json, json.objects[key]), {
-                      smoothFactor: .3,
-                      onEachFeature: function (feature, layer) {
-                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][stat].replace(".",",")+" "+unit) },
-                                   mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
-                      },
-                      style: function(feature){
-                        if ($.data[feature.id]) return { stroke: 0,
-                          fillOpacity: Math.max(alpha($.data[feature.id].density), .05),
-                          fillColor: color($.data[feature.id][stat])
-                        }
+                $.layer = new L.GeoJSON(topojson.feature(json, json.objects["can"]), {
+                    smoothFactor: .3,
+                    onEachFeature: function (feature, layer) {
+                      layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][stat].replace(".",",")+" "+unit) },
+                                 mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
+                    },
+                    style: function(feature){
+                      if ($.data[feature.id]) return { stroke: 0,
+                        fillOpacity: Math.max(alpha($.data[feature.id].density), .05),
+                        fillColor: color($.data[feature.id][stat])
                       }
-                    });
-                  $.layer.addTo(map);
-                }
+                    }
+                  });
+                $.layer.addTo(map);
               }
 
   this.info = function() {
