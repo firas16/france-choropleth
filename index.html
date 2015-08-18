@@ -20,43 +20,6 @@
 
   <h1>France-Leaflet</h1>
 
-  <p>Leaflet map showing French <em>departements</em>, <em>cantons</em> and <em>communes</em> depending of the zoom level.</p>
-
-  <p> Show:
-    <a href="javascript: choropleth.load({
-                                       stat: 'second',
-                                      title: 'Part de résidences secondaires',
-                                     domain: [0,10,75,100],
-                                      range: ['#01665e','#01665e','#e08214','#e08214'],
-                                       unit: '%'
-                                    });">second homes</a>,
-
-    <a href="javascript: choropleth.load({
-                                       stat: 'empty',
-                                      title: 'Logements vacants',
-                                     domain: [0,5,25],
-                                      range: ['#045a8d','#045a8d','#e08214'],
-                                       unit: '%'
-                                    });">empty houses</a>,
-
-    <a href="javascript: choropleth.load({
-                                       stat: 'growth',
-                                      title: 'Variation annuelle de la population',
-                                     domain: [-1,1],
-                                      range: ['#bd0026','#045a8d'],
-                                       unit: '%',
-                                       plus: '+'
-                                    });">population growth</a>,
-
-    <a href="javascript: choropleth.load({
-                                       stat: 'unemployement',
-                                      title: 'Taux de chômage',
-                                     domain: [0,5,15,20],
-                                      range: ['#006837','#006837','#d62728','#d62728'],
-                                       unit: '%'
-                                    });">unemployement</a>.
-  </p>
-
   <div id="map"></div>
 
   <script>
@@ -68,14 +31,37 @@
                             maxZoom: 9 })
                 .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', { subdomains: 'abcd', detectRetina: 1 }));
 
-    var choropleth = new france({
-                            map: map,
-                           stat: 'unemployement',
-                          title: 'Taux de chômage',
-                         domain: [0,5,15,20],
-                          range: ['#006837','#006837','#d62728','#d62728'],
-                           unit: '%'
-                        });
+    var choropleth = new france(
+                          {
+                             stat: 'unemployement',
+                            title: 'Taux de chômage',
+                           domain: [0,5,15,20],
+                            range: ['#006837','#006837','#d62728','#d62728'],
+                             unit: '%'
+                          },
+                          {
+                             stat: 'second',
+                            title: 'Part de résidences secondaires',
+                           domain: [0,10,75,100],
+                            range: ['#01665e','#01665e','#e08214','#e08214'],
+                             unit: '%'
+                          },
+                          {
+                             stat: 'empty',
+                            title: 'Logements vacants',
+                           domain: [0,5,25],
+                            range: ['#045a8d','#045a8d','#e08214'],
+                             unit: '%'
+                          },
+                          {
+                             stat: 'growth',
+                            title: 'Variation annuelle de la population',
+                           domain: [-1,1],
+                            range: ['#bd0026','#045a8d'],
+                             unit: '%',
+                             plus: '+'
+                          }
+                        );
 
   </script>
 

@@ -79,3 +79,7 @@
     border: 1px #ccc solid;
     height: 18px;
   }
+
+.leaflet-control-layers-base {
+  display: block;
+}

@@ -6,6 +6,7 @@ function france() {
                     $.topo = topojson.feature(json, json.objects["can"]);
                     $.read(data);
                     $.search();
+                    $.roll();
                     $.load(arg[0]);
                   })
                 })
@@ -117,6 +118,16 @@ function france() {
                 $.marker = L.popup().setLatLng(L.latLng($.data[i].y, $.data[i].x))
                             .setContent('<strong>'+$.data[i].name+'</strong><br />'+
                               $.title+' : '+$.data[i][$.stat].replace(".",",")+' '+$.unit).openOn(map);
+              }
+
+  this.roll = function() {
+                var select = L.control.layers(null).addTo(map);
+                select._onInputClick = function () {}
+                for (var i in arg) {
+                  var label = d3.select(".leaflet-control-layers-base").append("label")
+                  label.append("input").attr("type","radio").attr("name","select").attr("onchange","choropleth.load("+JSON.stringify(arg[i])+")");
+                  label.append("span").text(' '+arg[i].title);
+                }
               }
 
   var $ = this, arg = arguments;
