@@ -126,7 +126,7 @@ function france(map) {
                 for (var i = 1; i < arg.length; i++) {
                   var label = d3.select(".leaflet-control-layers-base").append("label").attr("name",i);
                   label.on("change", function() {$.load(arg[d3.select(this).attr("name")])});
-                  label.append("input").attr("type","radio").attr("name","select");
+                  label.append("input").attr("type","radio").attr("name","select").attr(i==1?"checked":"unchecked","");
                   label.append("span").text(' '+arg[i].title);
                 }
               }
