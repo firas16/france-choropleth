@@ -30,6 +30,18 @@ function france() {
                 }
               }
 
+  this.load = function (arg) {
+                for (var i in arg) {
+                  $[i] = arg[i];
+                }
+                d3.csv('/data/stats/'+$.stat+'.csv', function (err, csv){
+                  $.read(csv);
+                  $.draw();
+                  $.info();
+                  $.marker && $.popup($.i);
+                })
+              }
+
   this.draw = function() {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]),
                     color = d3.scale.linear().clamp(1).domain($.domain).range($.range),
@@ -105,18 +117,6 @@ function france() {
                 $.marker = L.popup().setLatLng(L.latLng($.data[i].y, $.data[i].x))
                             .setContent('<strong>'+$.data[i].name+'</strong><br />'+
                               $.title+' : '+$.data[i][$.stat].replace(".",",")+' '+$.unit).openOn(map);
-              }
-
-  this.load = function (arg) {
-                for (var i in arg) {
-                  $[i] = arg[i];
-                }
-                d3.csv('/data/stats/'+$.stat+'.csv', function (err, csv){
-                  $.read(csv);
-                  $.draw();
-                  $.info();
-                  $.marker && $.popup($.i);
-                })
               }
 
   var $ = this, arg = arguments;
