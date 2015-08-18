@@ -55,9 +55,9 @@ function france(map) {
                                    mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
                       },
                       style: function(feature){
-                        if ($.data[feature.id]) return { stroke: 0,
-                          fillOpacity: Math.max(alpha($.data[feature.id].density), .05),
-                          fillColor: color($.data[feature.id][$.stat])
+                        return { stroke: 0,
+                          fillOpacity: Math.max($.data[feature.id] ? alpha($.data[feature.id].density) : .2, .05),
+                            fillColor:    color($.data[feature.id] ? $.data[feature.id][$.stat] : "#000")
                         }
                       }
                     });
