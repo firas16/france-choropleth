@@ -1,4 +1,4 @@
-function france(arg) {
+function france() {
 
   this.init = function() {
                 d3.json('/data/geo/france.topojson', function (e, json){
@@ -6,7 +6,7 @@ function france(arg) {
                     $.topo = topojson.feature(json, json.objects["can"]);
                     $.read(data);
                     $.search();
-                    $.load(arg);
+                    $.load(arg[0]);
                   })
                 })
               }
@@ -119,7 +119,7 @@ function france(arg) {
                 })
               }
 
-  var $ = this;
+  var $ = this, arg = arguments;
   $.init();
 
 }
