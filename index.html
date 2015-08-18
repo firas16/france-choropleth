@@ -68,14 +68,14 @@
                             maxZoom: 9 })
                 .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', { subdomains: 'abcd', detectRetina: 1 }));
 
-    var choropleth = new france([{
+    var choropleth = new france({
                             map: map,
                            stat: 'unemployement',
                           title: 'Taux de chômage',
                          domain: [0,5,15,20],
                           range: ['#006837','#006837','#d62728','#d62728'],
                            unit: '%'
-                        }]);
+                        });
 
   </script>
 

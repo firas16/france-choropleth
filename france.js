@@ -1,17 +1,12 @@
 function france(arg) {
-  //map, stat, domain, range, title, $.unit, $.plus
 
   this.init = function() {
-                for (var i in arg[0]) $[i] = arg[0][i];
                 d3.json('/data/geo/france.topojson', function (e, json){
                   d3.csv('/data/geo/data.csv', function (e, data){
-                    d3.csv('/data/stats/'+$.stat+'.csv', function (e, stats){
-                      $.topo = topojson.feature(json, json.objects["can"]);
-                      $.read(data, stats);
-                      $.info();
-                      $.search();
-                      $.draw();
-                    })
+                    $.topo = topojson.feature(json, json.objects["can"]);
+                    $.read(data);
+                    $.search();
+                    $.load(arg);
                   })
                 })
               }
@@ -112,9 +107,9 @@ function france(arg) {
                               $.title+' : '+$.data[i][$.stat].replace(".",",")+' '+$.unit).openOn(map);
               }
 
-  this.load = function () {
-                for (var i in arguments[0]) {
-                  $[i] = arguments[0][i];
+  this.load = function (arg) {
+                for (var i in arg) {
+                  $[i] = arg[i];
                 }
                 d3.csv('/data/stats/'+$.stat+'.csv', function (err, csv){
                   $.read(csv);
