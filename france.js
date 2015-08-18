@@ -1,9 +1,11 @@
-function france(map, stat, domain, range, title, unit, plus) {
+function france(arg) {
+  //map, stat, domain, range, title, $.unit, $.plus
 
   this.init = function() {
+                for (var i in arg[0]) $[i] = arg[0][i];
                 d3.json('/data/geo/france.topojson', function (e, json){
                   d3.csv('/data/geo/data.csv', function (e, data){
-                    d3.csv('/data/stats/'+stat+'.csv', function (e, stats){
+                    d3.csv('/data/stats/'+$.stat+'.csv', function (e, stats){
                       $.topo = topojson.feature(json, json.objects["can"]);
                       $.read(data, stats);
                       $.info();
@@ -35,19 +37,19 @@ function france(map, stat, domain, range, title, unit, plus) {
 
   this.draw = function() {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]),
-                    color = d3.scale.linear().clamp(1).domain(domain).range(range),
+                    color = d3.scale.linear().clamp(1).domain($.domain).range($.range),
                     canvas = L.canvas(),
                     layer = new L.GeoJSON($.topo, {
                       renderer: canvas,
                       smoothFactor: .3,
                       onEachFeature: function (feature, layer) {
-                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][stat].replace(".",",")+" "+unit) },
+                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][$.stat].replace(".",",")+" "+$.unit) },
                                    mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
                       },
                       style: function(feature){
                         if ($.data[feature.id]) return { stroke: 0,
                           fillOpacity: Math.max(alpha($.data[feature.id].density), .05),
-                          fillColor: color($.data[feature.id][stat])
+                          fillColor: color($.data[feature.id][$.stat])
                         }
                       }
                     });
@@ -59,13 +61,13 @@ function france(map, stat, domain, range, title, unit, plus) {
                 d3.selectAll(".info").remove();
 
                 var div = d3.select(".leaflet-bottom.leaflet-left").append("div").attr("class", "info leaflet-control");
-                div.append("div").attr("class", "title").text(title).append("span").text(" (en "+unit+")");
+                div.append("div").attr("class", "title").text($.title).append("span").text(" (en "+$.unit+")");
                 div.append("input").attr("class", "value").attr("disabled","").attr("placeholder","Survolez un territoire");
 
-                var x = d3.scale.linear().domain([domain[0], domain[domain.length-1]]).range([1, 239]),
+                var x = d3.scale.linear().domain([$.domain[0], $.domain[$.domain.length-1]]).range([1, 239]),
                     canvas = div.append("canvas").attr("height",10).attr("width",250).node().getContext("2d"),
                     gradient = canvas.createLinearGradient(0,0,240,10),
-                    a = range.map(function(d, i) { return { x: x(domain[i]), z:d }});
+                    a = $.range.map(function(d, i) { return { x: x($.domain[i]), z:d }});
 
                 for (var el in a) {
                   gradient.addColorStop(a[el].x/239,a[el].z);
@@ -74,7 +76,7 @@ function france(map, stat, domain, range, title, unit, plus) {
                 canvas.fillRect(10,0,240,10);
 
                 div.append("svg").attr("width", 260).attr("height", 14).append("g").attr("transform", "translate(10,0)").attr("class", "key")
-                   .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||plus)+'.0f')).tickValues(domain).tickSize(3));
+                   .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||$.plus)+'.0f')).tickValues($.domain).tickSize(3));
               }
 
  this.search = function() {
@@ -107,14 +109,14 @@ function france(map, stat, domain, range, title, unit, plus) {
  this.popup = function(i) {
                 $.marker = L.popup().setLatLng(L.latLng($.data[i].y, $.data[i].x))
                             .setContent('<strong>'+$.data[i].name+'</strong><br />'+
-                              title+' : '+$.data[i][stat].replace(".",",")+' '+unit).openOn(map);
+                              $.title+' : '+$.data[i][$.stat].replace(".",",")+' '+$.unit).openOn(map);
               }
 
-  this.load = function (_stat, _domain, _range, _title, _unit, _plus) {
-                stat = _stat, domain = _domain, unit = _unit;
-                title = _title, range = _range, plus = _plus;
-
-                d3.csv('/data/stats/'+stat+'.csv', function (err, csv){
+  this.load = function () {
+                for (var i in arguments[0]) {
+                  $[i] = arguments[0][i];
+                }
+                d3.csv('/data/stats/'+$.stat+'.csv', function (err, csv){
                   $.read(csv);
                   $.draw();
                   $.info();
