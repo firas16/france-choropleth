@@ -12,20 +12,17 @@ function france(map) {
                 })
               }
 
-  this.read = function() {
-                for (var file in arguments) {
-                  var f = arguments[file];
-                  if (!$.data) {
-                    $.data = {};
-                    for (var i in f) {
-                      $.data[f[i].id] = {};
-                    }
+  this.read = function(f) {
+                if (!$.data) {
+                  $.data = {};
+                  for (var i in f) {
+                    $.data[f[i].id] = {};
                   }
-                  for (var j in f[0]) {
-                    if (j != 'id') {
-                      for (var i in f) {
-                        $.data[f[i].id][j] = f[i][j];
-                      }
+                }
+                for (var j in f[0]) {
+                  if (j != 'id') {
+                    for (var i in f) {
+                      $.data[f[i].id][j] = f[i][j];
                     }
                   }
                 }
