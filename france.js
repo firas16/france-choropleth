@@ -1,4 +1,4 @@
-function france() {
+function france(map) {
 
   this.init = function() {
                 d3.json('/data/geo/france.topojson', function (e, json){
@@ -7,7 +7,7 @@ function france() {
                     $.read(data);
                     $.search();
                     $.roll();
-                    $.load(arg[0]);
+                    $.load(arg[1]);
                   })
                 })
               }
@@ -124,9 +124,11 @@ function france() {
                 var select = L.control.layers(null).addTo(map);
                 select._onInputClick = function () {}
                 for (var i in arg) {
-                  var label = d3.select(".leaflet-control-layers-base").append("label")
-                  label.append("input").attr("type","radio").attr("name","select").attr("onchange","choropleth.load("+JSON.stringify(arg[i])+")");
-                  label.append("span").text(' '+arg[i].title);
+                  if (i != 0) {
+                    var label = d3.select(".leaflet-control-layers-base").append("label")
+                    label.append("input").attr("type","radio").attr("name","select").attr("onchange","choropleth.load("+JSON.stringify(arg[i])+")");
+                    label.append("span").text(' '+arg[i].title);
+                  }
                 }
               }
 
