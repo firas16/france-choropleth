@@ -121,14 +121,16 @@ function france(map) {
               }
 
   this.roll = function() {
-                var select = L.control.layers().addTo(map);
-                select._onInputClick = function () {}
-                for (var i in arg) {
-                  if (i != 0) {
-                    var label = d3.select(".leaflet-control-layers-base").append("label").attr("name",i);
-                    label.on("change", function() {$.load(arg[d3.select(this).attr("name")])});
-                    label.append("input").attr("type","radio").attr("name","select");
-                    label.append("span").text(' '+arg[i].title);
+                if (arg[2]) {
+                  var select = L.control.layers().addTo(map);
+                  select._onInputClick = function () {}
+                  for (var i in arg) {
+                    if (i != 0) {
+                      var label = d3.select(".leaflet-control-layers-base").append("label").attr("name",i);
+                      label.on("change", function() {$.load(arg[d3.select(this).attr("name")])});
+                      label.append("input").attr("type","radio").attr("name","select");
+                      label.append("span").text(' '+arg[i].title);
+                    }
                   }
                 }
               }
