@@ -48,7 +48,7 @@ function france(map) {
                       renderer: canvas,
                       smoothFactor: .3,
                       onEachFeature: function (feature, layer) {
-                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", $.data[feature.id].name+" : "+$.data[feature.id][$.stat].replace(".",",")+" "+$.unit) },
+                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", (feature.id.slice(2,3)=="-"?"Canton d"+((/^[EÉAOUIY]/i).test($.data[feature.id].name)?"’":"e "):"")+$.data[feature.id].name+" : "+$.data[feature.id][$.stat].replace(".",",")+" "+$.unit) },
                                    mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
                       },
                       style: function(feature){
