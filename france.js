@@ -43,7 +43,7 @@ function france(map) {
   this.draw = function() {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]),
                     color = d3.scale.linear().clamp(1).domain($.domain).range($.range),
-                    canvas = L.canvas(),
+                    canvas = L.canvas({padding: .6}),
                     layer = new L.GeoJSON($.topo, {
                       renderer: canvas,
                       smoothFactor: .3,
