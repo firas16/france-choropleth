@@ -121,10 +121,13 @@ function france(map) {
                 var select = L.control.layers().addTo(map);
                 select._onInputClick = function () {}
                 for (var i = 1; i < arg.length; i++) {
-                  var label = d3.select(".leaflet-control-layers-base").append("label").attr("name",i);
-                  label.on("change", function() {$.load(arg[d3.select(this).attr("name")])});
-                  label.append("input").attr("type","radio").attr("name","select").attr(i==1?"checked":"unchecked","");
-                  label.append("span").text(' '+arg[i].title);
+                  var div = d3.select(".leaflet-control-layers-base").append("div");
+                  div.append("input").attr("type","radio").attr("name","select").attr("id","select"+i).attr(i==1?"checked":"unchecked","")
+                  div.append("span").text(' '+arg[i].title);
+                  div.on("click", function() {
+                    d3.select(this).select("input").node().checked = true;
+                    $.load(arg[d3.select(this).select("input").attr("id").slice(6)]);
+                  });
                 }
               }
 

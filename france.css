@@ -80,6 +80,7 @@
     height: 18px;
   }
 
-.leaflet-control-layers-base {
+.leaflet-control-layers-base div {
   display: block;
+  cursor: pointer;
 }
