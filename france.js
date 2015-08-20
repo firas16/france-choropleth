@@ -106,6 +106,7 @@ function france(map) {
                       $.i = i;
                       $.show(i);
                       map.flyTo(L.latLng($.data[i].y, $.data[i].x), 9);
+                      search.node().value = '';
                       break;
                     }
                   }
