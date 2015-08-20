@@ -36,7 +36,7 @@ function france(map) {
                   $.read(csv);
                   $.draw();
                   $.info();
-                  $.marker && $.popup($.i);
+                  $.popup && $.show($.i);
                 })
               }
 
@@ -104,7 +104,7 @@ function france(map) {
                   for (var i in $.data) {
                     if (value == $.data[i].name+" ("+$.data[i].postcode+")" && i[3] != "-") {
                       $.i = i;
-                      $.popup(i);
+                      $.show(i);
                       map.flyTo(L.latLng($.data[i].y, $.data[i].x), 9);
                       break;
                     }
@@ -112,11 +112,11 @@ function france(map) {
                 });
               }
 
- this.popup = function(i) {
-                $.marker = L.popup().setLatLng(L.latLng($.data[i].y, $.data[i].x))
+ this.show = function(i) {
+                $.popup = L.popup().setLatLng(L.latLng($.data[i].y, $.data[i].x))
                             .setContent('<strong>'+$.data[i].name+'</strong><br />'+
                               $.title+' : '+$.data[i][$.stat].replace(".",",")+' '+$.unit).openOn(map);
-                map.on("popupclose", function() {delete $.marker});
+                map.on("popupclose", function() {delete $.popup});
               }
 
   this.roll = function() {
