@@ -59,6 +59,10 @@ function france(map) {
                       }
                     });
                 d3.selectAll("canvas.leaflet-zoom-animated").remove();
+                map._events.moveend_idx = { "39_36": map._events.moveend_idx["39_36"] };
+                map._events.viewreset_idx = { "37_36": map._events.viewreset_idx["37_36"] };
+                map._events.zoomend_idx = { "33_30": map._events.zoomend_idx["33_30"] };
+                map._layers = {};
                 layer.addTo(map);
               }
 
