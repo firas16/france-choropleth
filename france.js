@@ -82,7 +82,7 @@ function france(map) {
                 canvas.fillRect(10,0,240,10);
 
                 div.append("svg").attr("width", 260).attr("height", 14).append("g").attr("transform", "translate(10,0)").attr("class", "key")
-                   .call(d3.svg.axis().scale(x).tickFormat(d3.format((''||$.plus)+'.0f')).tickValues($.domain).tickSize(3));
+                   .call(d3.svg.axis().scale(x).tickFormat(d3.format($.plus+'.0f')).tickValues($.domain).tickSize(3));
               }
 
  this.search = function() {
