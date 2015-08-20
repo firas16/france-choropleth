@@ -43,27 +43,24 @@ function france(map) {
   this.draw = function() {
                 var alpha = d3.scale.log().clamp(1).domain([1,15000]).range([0,1]),
                     color = d3.scale.linear().clamp(1).domain($.domain).range($.range),
-                    canvas = L.canvas({padding: .6}),
-                    layer = new L.GeoJSON($.topo, {
-                      renderer: canvas,
-                      smoothFactor: .3,
-                      onEachFeature: function (feature, layer) {
-                        layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", (feature.id.slice(2,3)=="-"?"Canton d"+((/^[EÉAOUIY]/i).test($.data[feature.id].name)?"’":"e "):"")+$.data[feature.id].name+" : "+$.data[feature.id][$.stat].replace(".",",")+" "+$.unit) },
-                                   mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
-                      },
-                      style: function(feature){
-                        return { stroke: 0,
-                          fillOpacity: Math.max($.data[feature.id] ? alpha($.data[feature.id].density) : .2, .05),
-                            fillColor:    color($.data[feature.id] ? $.data[feature.id][$.stat] : "#000")
-                        }
-                      }
-                    });
+                    canvas = L.canvas({padding: .6});
                 d3.selectAll("canvas.leaflet-zoom-animated").remove();
-                map._events.moveend_idx = { "39_36": map._events.moveend_idx["39_36"] };
-                map._events.viewreset_idx = { "37_36": map._events.viewreset_idx["37_36"] };
-                map._events.zoomend_idx = { "33_30": map._events.zoomend_idx["33_30"] };
-                map._layers = {};
-                layer.addTo(map);
+                $.layer && $.layer.remove();
+                $.layer = new L.GeoJSON($.topo, {
+                    renderer: canvas,
+                    smoothFactor: .3,
+                    onEachFeature: function (feature, layer) {
+                      layer.on({ mouseover: function() { d3.selectAll(".info .value").attr("value", (feature.id.slice(2,3)=="-"?"Canton d"+((/^[EÉAOUIY]/i).test($.data[feature.id].name)?"’":"e "):"")+$.data[feature.id].name+" : "+$.data[feature.id][$.stat].replace(".",",")+" "+$.unit) },
+                                 mouseout:  function() { d3.selectAll(".info .value").attr("value", "") } })
+                    },
+                    style: function(feature){
+                      return { stroke: 0,
+                        fillOpacity: Math.max($.data[feature.id] ? alpha($.data[feature.id].density) : .2, .05),
+                          fillColor:    color($.data[feature.id] ? $.data[feature.id][$.stat] : "#000")
+                      }
+                    }
+                  });
+                $.layer.addTo(map);
               }
 
   this.info = function() {
