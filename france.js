@@ -116,6 +116,7 @@ function france(map) {
                 $.marker = L.popup().setLatLng(L.latLng($.data[i].y, $.data[i].x))
                             .setContent('<strong>'+$.data[i].name+'</strong><br />'+
                               $.title+' : '+$.data[i][$.stat].replace(".",",")+' '+$.unit).openOn(map);
+                map.on("popupclose", function() {delete $.marker});
               }
 
   this.roll = function() {
