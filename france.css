@@ -71,13 +71,12 @@
   }
 
   .search #search {
-    width: 171px;
-    padding-left: 25px;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABNUlEQVQ4jZXSsS4EURSH8bsqjVZssj2tBxDiDSRaQq8QtWIatWqzmdzzfcnWlApv4BHwBgpCoZAsO5orZJjF6W7u/H/nnMxN6bN66rZ6CTwAL8AtcJpzHqRZBSwAF2qj3gPnKuqVOlWfga2ufK+Ep8BJVVXzXy8jYhW4ASbq+rd0GbsBTro61HXdB+7U65RSrw1cqvftzj+seag2Oee19sUDcD4rXKZYKZMetYEXlT8AfbWJiOM2cKte/QbknDcLsNMGTtVpRKzOAoAzYDIajRbb8kB9Vq+Hw+HST+GIOCj7j7v0LWAC3AGHwHJd1/2c8yZwVh5Yo74Ce107bgA3Xz5uStcJMFZfy/mtE6mqai7nvAYcRcRxROx87KzuA2+/IrOqjXz7I/9F1Md/AymlBOwCT0C8A3DOFIGPqdMbAAAAAElFTkSuQmCC');
-    background-repeat: no-repeat;
-    background-position: 5px 2px;
-    border: 1px #ccc solid;
+    width: 172px;
     height: 18px;
+    padding-left: 25px;
+    border: 1px #ccc solid;
+    background: #FFF no-repeat left center url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAL/wAAC/8Bk9f7AQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOnSURBVGiB7ZhPaBxVHMc/vxezuzlsQqQqFf+Af8CLoWgsNHjoYjazbrR4SsGbgkcPInooLb1YRdBDQRCtCp6E3NLDZmendRXpaiC1kXqwh17EixQsmxATk935edhJHELczbydskOZz+m937zf+73v/Gbe+82IqnI3YQa9gLhJBSWdVFDSSQUlnVRQ0kkFJZ174p6wXC5nVXXC9/2RXC53bWFhYS3uGN2QOIrTQqFwKJPJnAGeB54GhoNLCtwAlowxHywuLt7oO1gP+hbkOM4rwGfA/T2GbojIKdd1z+sdLPH7EuQ4zufAGyHTH8BPIrKsqn8Dk8BR4KmdAar63fb29ov1en3TOnAXrN8hx3Fe5z8x/4jI2dHR0Y/m5+fb+4w9KSKfqOohETmezWbPAW/bxu6GVYbK5fJD7Xb7V2AMWPd9/5jnedd7+NzXbrd/BB4HfBE5Xq1Wf7BadRestu1Wq3WejhiAd3uJAahUKrdE5DU6G4VR1S9tYvcisiDpUAy6S7Va7dOD+gYZ+SLoPuk4zsNR4/cisqBisfgEkAdQVTfqjqWqi6H2ZNT4vbDJ0DOh7tWo/qq662OMGbwg4IGdhoj8GdV5fX39Fp33CN/3D1vE70pkQar6S6h9JKp/Pp+fAARARK5F9e+FjaAVgjssIs9axNz1McYsW/h3JbIgz/OawM2ge7JYLD5yUN9CoZAD3gy67WazuRI1fi+sziER+ThojhpjLhzUb3h4+D2CMkhVLzQajQ2b+F3XZlMpiIg4juOp6guB6auhoaG3KpXK6n7j5+bmhprN5jvAOTo3sRVUClesV/5/a7MtTmdnZx9ttVrXCc4k4HcROWOMuVKpVG4ClEqlw8BRVT1Np1ANc1tEpqvV6s+2i9+PvqrtmZmZIyLyNTCx59JtYAN4cI99E8iF+n/5vj/teV5su11fn+C1Wm1lbGzsORF5HwhX2ePsESMi36jqYyLihsz3GmMul0ql8GHdF7F8sUKnAm+1WseMMZNBSTOiqldFZBlYcl33N+jsdJlMZgGYCbnH9vjFJigKgaiLQDFkjkXUQP761Ov1za2trROAFzKPq+qlfh+/gWRoh6mpqZF8Pn8RmA6Z+8rUQP/LNRqNjbW1tRPApZC5r0wN/EfjjigRuRwyjwNnbeYbuCDoiFpdXX0Z+DYwfa+qr9rMlQhBsJupl1T1w2w2W3Zdd91mnoFuCneCxGQoLlJBSScVlHRSQUknFZR0UkFJ564T9C+LGmRQ/iQvLwAAAABJRU5ErkJggg==");
+    background-size: 26px 26px;
   }
 
 .leaflet-control-layers-base div {
