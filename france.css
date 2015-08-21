@@ -11,7 +11,7 @@
     display: none;
   }
 
-  .info, .search{
+  .legend, .search{
     line-height: 5px;
     width: 260px;
     padding: 4px;
@@ -21,7 +21,7 @@
     border-radius: 5px;
   }
 
-  .info div, .info input{
+  .legend div, .legend input{
     line-height: 18px;
     margin: 0 10px;
     width: 240px;
@@ -32,18 +32,18 @@
     border: 0;
   }
 
-  .info .title{
+  .legend .title{
     margin-bottom: -3px;
     font-weight: bold;
     color: #777;
 }
 
-  .info .title span{
+  .legend .title span{
     font-weight: normal;
     font-style: italic;
   }
 
-  .info canvas, .info svg {
+  .legend canvas, .legend svg {
     opacity: .6;
   }
 
@@ -70,7 +70,7 @@
     width: 200px;
   }
 
-  .search #search {
+  .search #field {
     width: 172px;
     height: 18px;
     padding-left: 25px;
