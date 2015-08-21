@@ -1,3 +1,8 @@
+/*
+  France Choropleth with Leaflet: https://carto.sylvaindurand.org
+  Copyright 2015 Sylvain Durand – released under the MIT license.
+*/
+
 function france( map ) {
 
 
