@@ -70,6 +70,7 @@ function france( map ) {
                     $.legend();
 
                     // Update an existing popup
+                    d3.select(".leaflet-popup").remove();
                     $.i && $.popup( $.i );
 
                   });
