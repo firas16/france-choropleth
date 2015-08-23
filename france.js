@@ -161,6 +161,11 @@ function france( map ) {
                   d3.select( ".legend" ).remove();
 
                   var
+
+                        // Legend size
+                        width = 280,
+                        padding = 10,
+
                         // Create legend control
                         div = d3.select( ".leaflet-bottom.leaflet-left" ).append( "div" )
                                   .attr( "class", "legend leaflet-control" ),
@@ -181,29 +186,29 @@ function france( map ) {
                         // Prepare linear scale and axis for gradient legend
                         x = d3.scale.linear()
                                     .domain( [$.domain[0], $.domain[$.domain.length-1]] )
-                                     .range( [1, 259] ),
+                                     .range( [1, width - 2 * padding - 1] ),
 
                         canvas = div.append( "canvas" )
-                                      .attr( "height", 10 )
-                                      .attr( "width", 270 )
+                                      .attr( "height", padding )
+                                      .attr( "width", width - padding )
                                       .node().getContext( "2d" ),
 
-                        gradient = canvas.createLinearGradient( 0, 0, 260, 10 ),
+                        gradient = canvas.createLinearGradient( 0, 0, width - 2 * padding, padding ),
 
                         stops = $.range.map( function( d, i ) { return { x: x( $.domain[i] ), color:d } } );
 
                   // Define color stops on the legend
                   for ( var s in stops ) {
-                    gradient.addColorStop( stops[s].x/259, stops[s].color );
+                    gradient.addColorStop( stops[s].x/(width - 2 * padding - 1), stops[s].color );
                   }
 
                   // Draw the gradient rectangle
                   canvas.fillStyle = gradient;
-                  canvas.fillRect( 10, 0, 260, 10 );
+                  canvas.fillRect( padding, 0, width - 2 * padding, padding );
 
                   // Draw horizontal axis
                   div.append( "svg" )
-                       .attr( "width", 280 )
+                       .attr( "width", width )
                        .attr( "height", 14 )
                      .append( "g" )
                        .attr( "class", "key" )
