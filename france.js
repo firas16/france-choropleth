@@ -123,6 +123,7 @@ function france( map ) {
                                             feature.id.slice( 2, 3 ) == "-" ? "Canton d"
                                             + ( ( /^[EÉAOUIY]/i ).test( $.data[ feature.id ].name ) ? "’" : "e " ) : "" )
                                             + $.data[ feature.id ].name + " : "
+                                            + ( $.data[ feature.id ][ $.stat ] > 0 ? $.plus : "" )
                                             + $.data[ feature.id ][ $.stat ].replace( ".", "," ) + " "
                                             + $.unit
                                           )
@@ -286,6 +287,7 @@ function france( map ) {
                   map.openPopup(L.popup().setLatLng( L.latLng( $.data[i].y, $.data[i].x ) )
                                          .setContent( '<b>' + $.data[i].name + '</b><br />'
                                                       + $.title[0] + ' : '
+                                                      + ( $.data[i][ $.stat ] > 0 ? $.plus : "" )
                                                       + $.data[i][ $.stat ].replace( ".", "," ) + ' '
                                                       + $.unit) );
 
