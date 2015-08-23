@@ -170,7 +170,7 @@ function france( map ) {
                                      .attr( "class", "title" )
                                      .text( $.title )
                                    .append( "span" )
-                                     .text( " ( en " + $.unit + " )" ),
+                                     .text( " (" + $.unit + ")" ),
 
                         // Input where to display communes on hover
                         input = div.append( "input" )
@@ -181,29 +181,29 @@ function france( map ) {
                         // Prepare linear scale and axis for gradient legend
                         x = d3.scale.linear()
                                     .domain( [$.domain[0], $.domain[$.domain.length-1]] )
-                                     .range( [1, 239] ),
+                                     .range( [1, 259] ),
 
                         canvas = div.append( "canvas" )
                                       .attr( "height", 10 )
-                                      .attr( "width", 250 )
+                                      .attr( "width", 270 )
                                       .node().getContext( "2d" ),
 
-                        gradient = canvas.createLinearGradient( 0, 0, 240, 10 ),
+                        gradient = canvas.createLinearGradient( 0, 0, 260, 10 ),
 
                         stops = $.range.map( function( d, i ) { return { x: x( $.domain[i] ), color:d } } );
 
                   // Define color stops on the legend
                   for ( var s in stops ) {
-                    gradient.addColorStop( stops[s].x/239, stops[s].color );
+                    gradient.addColorStop( stops[s].x/259, stops[s].color );
                   }
 
                   // Draw the gradient rectangle
                   canvas.fillStyle = gradient;
-                  canvas.fillRect( 10, 0, 240, 10 );
+                  canvas.fillRect( 10, 0, 260, 10 );
 
                   // Draw horizontal axis
                   div.append( "svg" )
-                       .attr( "width", 260 )
+                       .attr( "width", 280 )
                        .attr( "height", 14 )
                      .append( "g" )
                        .attr( "class", "key" )

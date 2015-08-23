@@ -32,24 +32,24 @@
 
     var choropleth = new france(map,
                           {
-                             stat: 'unemployement',
-                            title: 'Taux de chômage',
-                           domain: [0,5,15,20],
-                            range: ['#006837','#006837','#d62728','#d62728'],
-                             unit: '%',
-                             plus: ''
-                          },
-                          {
                              stat: 'second',
-                            title: 'Part de résidences secondaires',
+                            title: 'Résidences secondaires en 2012',
                            domain: [0,10,75,100],
                             range: ['#01665e','#01665e','#e08214','#e08214'],
                              unit: '%',
                              plus: ''
                           },
                           {
+                             stat: 'unemployement',
+                            title: 'Chômage en 2012',
+                           domain: [0,5,15,20],
+                            range: ['#006837','#006837','#d62728','#d62728'],
+                             unit: '%',
+                             plus: ''
+                          },
+                          {
                              stat: 'empty',
-                            title: 'Logements vacants',
+                            title: 'Logements vacants en 2012',
                            domain: [0,5,25],
                             range: ['#045a8d','#045a8d','#e08214'],
                              unit: '%',
@@ -57,10 +57,10 @@
                           },
                           {
                              stat: 'growth',
-                            title: 'Variation annuelle de la population',
+                            title: 'Variation de la population 2007-2012',
                            domain: [-1,1],
                             range: ['#bd0026','#045a8d'],
-                             unit: '%',
+                             unit: '% par an',
                              plus: '+'
                           }
                         );
