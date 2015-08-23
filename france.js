@@ -173,7 +173,7 @@ function france( map ) {
                         // Display title and unit
                         title = div.append( "div" )
                                      .attr( "class", "title" )
-                                     .text( $.title )
+                                     .text( $.title[0]+' '+$.title[1] )
                                    .append( "span" )
                                      .text( " (" + $.unit + ")" ),
 
@@ -285,7 +285,7 @@ function france( map ) {
                   // Open a popup showing communes name and data
                   map.openPopup(L.popup().setLatLng( L.latLng( $.data[i].y, $.data[i].x ) )
                                          .setContent( '<b>' + $.data[i].name + '</b><br />'
-                                                      + $.title + ' : '
+                                                      + $.title[0] + ' : '
                                                       + $.data[i][ $.stat ].replace( ".", "," ) + ' '
                                                       + $.unit) );
 
@@ -311,7 +311,7 @@ function france( map ) {
                                        .attr( "id", "select" + i )
                                        .attr( i==1 ? "checked" : "unchecked", "" ),
 
-                          span = div.append( "span" ).text( ' ' + arg[i].title );
+                          span = div.append( "span" ).text( ' ' + arg[i].title[0] );
 
                     // Detect selected layer and load it
                     div.on( "click", function() {
