@@ -33,6 +33,7 @@
     var choropleth = new france(map,
                           {
                              stat: 'second',
+                             file: '/data/stats/second.csv',
                             title: ['Résidences secondaires','en 2012'],
                            domain: [0,10,75,100],
                             range: ['#01665e','#01665e','#e08214','#e08214'],
@@ -41,6 +42,7 @@
                           },
                           {
                              stat: 'unemployement',
+                             file: '/data/stats/unemployement.csv',
                             title: ['Chômage','en 2012'],
                            domain: [0,5,15,20],
                             range: ['#006837','#006837','#d62728','#d62728'],
@@ -49,6 +51,7 @@
                           },
                           {
                              stat: 'empty',
+                             file: '/data/stats/empty.csv',
                             title: ['Logements vacants','en 2012'],
                            domain: [0,5,25],
                             range: ['#045a8d','#045a8d','#e08214'],
@@ -57,6 +60,7 @@
                           },
                           {
                              stat: 'growth',
+                             file: '/data/stats/growth.csv',
                             title: ['Variation de la population','2007-2012'],
                            domain: [-1,1],
                             range: ['#bd0026','#045a8d'],

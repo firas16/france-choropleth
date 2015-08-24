@@ -63,7 +63,7 @@ function france( map ) {
                   }
 
                   // Download the selected stat
-                  d3.csv( '/data/stats/' + $.stat + '.csv', function ( err, csv ) {
+                  d3.csv( $.file, function ( err, csv ) {
 
                     // Store metadata
                     $.read( csv );
