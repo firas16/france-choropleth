@@ -1,5 +1,5 @@
 /*
-  France Choropleth with Leaflet: https://carto.sylvaindurand.org
+  France Choropleth with Leaflet: https://choropleth.sylvaindurand.org
   Copyright 2015 Sylvain Durand – released under the MIT license.
 */
 
