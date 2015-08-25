@@ -25,7 +25,7 @@ A layer is defined as follows:
   stat: 'filename',                            // column name in csv file
   file: '/path/to/file.csv',                   // url to csv file
  title: ['Layer title','Date'],                // legend title (and date)
-domain: [x_0, x_1, ..., x_n],                 // values stops and limits...
+domain: [x_0, x_1, ..., x_n],                  // values stops and limits...
  range: ['color_0','color_1', ...,'color_n'],  // ... and associated colors
   unit: 'unit name',                           // prefix after numbers (%, €)
   plus: ''                                     // suffix before numbers (+)
@@ -36,19 +36,19 @@ domain: [x_0, x_1, ..., x_n],                 // values stops and limits...
 ## Requirement
 
 The javascript code requires [Leaflet](https://github.com/Leaflet/Leaflet), [d3js](https://github.com/mbostock/d3), [Awesomplete](https://leaverou.github.io/awesomplete/) and [TopoJSON](https://github.com/mbostock/topojson).
-The `makefile` and `_generate.py` needs `python3` and its `pandas` library.
+The `makefile` and `_generate.py` need `python3` and its `pandas` library.
 
 
 ## Administrative levels
 
-*’Communes’* are the smallest administrative level in France. Although their high number (more than 36.000) is quite satisfying for spatial statistics purposes, users would have to download a 10MB file and more than 20 seconds to be processed. On the other side, there is only 2000 ‘*cantons*’ (higher administrative level), which is not quite enough.
+*‘Communes’* are the smallest administrative level in France. Although their high number (more than 36.000) is quite satisfying for spatial statistics purposes, users would have to download a 10MB file and to wait more than 20 seconds for the rendering. On the other side, there is only 2.000 ‘*cantons*’ (higher administrative level), which is not quite enough.
 
-Keeping communes with more than 1.000 people, or more than 75 people per square kilometre, and then showing cantons for the others, gives us a 2.9MB file and a good looking map.
+Keeping *communes* with more than 1.000 people, or with more than 75 people per square kilometre, and showing cantons for the smaller *communes*, gives us a 2.9MB file and a good looking map.
 
 
 ## License
 
-Contents and codes are published under the MIT license; you are free to reuse them but please keep a link to [sylvaindurand.org](https://www.sylvaindurand.org).
+Contents and codes are published under the MIT license; you are free to reuse them, but please keep a link to [sylvaindurand.org](https://www.sylvaindurand.org).
 
 Spatial data is provided by [OpenStreetMap](https://www.openstreetmap.org/) project (© OpenStreetMap contributor), and licensed under [ODbL](http://opendatacommons.org/licenses/odbl/). Tiles are kindly provided by [CartoCDN](https://cartodb.com/basemaps/) and released under [Creative Commons Attribution (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/).
 
