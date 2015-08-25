@@ -39,7 +39,8 @@
     var map = L.map("map",{ center: [46.6, 2.1],
                             zoom: 5.6,
                             minZoom: 1,
-                            maxZoom: 9 })
+                            maxZoom: 9,
+                            scrollWheelZoom: 0 })
                 .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', { subdomains: 'abcd', detectRetina: 1 }));
 
 
