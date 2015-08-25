@@ -9,8 +9,8 @@ function france( map ) {
     this.init = function() {
 
                   // Download geospatial vector data and metadata
-                  d3.json( '/data/geo/france.topojson', function ( e, json ) {
-                    d3.csv( '/data/geo/data.csv', function ( e, data ) {
+                  d3.json( 'data/geo/france.topojson', function ( e, json ) {
+                    d3.csv( 'data/geo/data.csv', function ( e, data ) {
 
                       // Convert TopoJSON to GeoJSON
                       $.topo = topojson.feature( json, json.objects["can"] );
