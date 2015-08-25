@@ -3,15 +3,20 @@
 
 body {
   font-family: PT Sans, sans-serif;
-  width: 700px;
+  width: 540px;
   margin: 10px auto;
 }
 
 #map {
-  height: 700px;
+  height: 530px;
   background: #F5F5F3;
 }
 
+h1 {
+  font-size: 27px;
+  text-align: center;
+  color: #999;
+}
 
 
 /* France Choropleth styles */
