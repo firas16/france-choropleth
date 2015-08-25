@@ -4,12 +4,18 @@
   <meta charset="utf-8">
   <title>Carto</title>
 
+
+  <!-- ‘France Choropleth’ dependencies -->
+
   <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/awesomplete/1.0.0/awesomplete.min.js"></script>
   <link href="//cdnjs.cloudflare.com/ajax/libs/awesomplete/1.0.0/awesomplete.min.css" rel="stylesheet" />
   <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.1/leaflet.css" rel="stylesheet" />
+
+
+  <!-- ‘France Choropleth’ script and style -->
 
   <script src="/france.js"></script>
   <link href="/france.css" rel="stylesheet" />
@@ -20,15 +26,24 @@
 
   <h1>France Choropleth</h1>
 
+
+  <!-- Div containing the future map -->
+
   <div id="map"></div>
 
   <script>
+
+
+   // Create the map with Leaflet
 
     var map = L.map("map",{ center: [46.6, 2.1],
                             zoom: 6,
                             minZoom: 1,
                             maxZoom: 9 })
                 .addLayer(new L.tileLayer('https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', { subdomains: 'abcd', detectRetina: 1 }));
+
+
+    // Create the choropleth with layers
 
     var choropleth = new france(map,
                           {
