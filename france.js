@@ -15,6 +15,14 @@ function france( map ) {
                       // Convert TopoJSON to GeoJSON
                       $.topo = topojson.feature( json, json.objects["can"] );
 
+                      // Save events for faster layer replacements
+                      $.save = { "moveend_idx":"", "zoomend_idx":"", "viewreset_idx":"" } ;
+                      for ( var i in $.save ) {
+                        for ( var j in map._events[i] ) {
+                          $.save[i] = j;
+                        }
+                      }
+
                       // Store metadata
                       $.read( data );
 
@@ -101,12 +109,14 @@ function france( map ) {
                         // Define the renderer
                         canvas = L.canvas( { padding: .6 } );
 
-                  // Remove previous canvas and layer
+                  // Remove previous canvas, layers and events
                   d3.select( ".leaflet-pane canvas" ).remove();
-                  map._events.moveend_idx   = { "39_36": map._events.moveend_idx["39_36"]   };
-                  map._events.zoomend_idx   = { "33_30": map._events.zoomend_idx["33_30"]   };
-                  map._events.viewreset_idx = { "37_36": map._events.viewreset_idx["37_36"] };
                   map._layers = {};
+                  for ( var i in $.save ) {
+                    var reset = map._events[i][ $.save[i] ];
+                    map._events[i] = {};
+                    map._events[i][ $.save[i] ] = reset ;
+                  }
 
                   // Define new layer
                   map.addLayer(
@@ -119,7 +129,7 @@ function france( map ) {
                         layer.on( {
                           mouseover: function() {
                                         d3.select( ".legend .value" )
-                                          .attr( "value", (
+                                          .attr( "value", 
                                             feature.id.slice( 2, 3 ) == "-" ? "Canton d"
                                             + ( ( /^[EÉAOUIY]/i ).test( $.data[ feature.id ].name ) ? "’" : "e " ) : "" )
                                             + $.data[ feature.id ].name + " : "
