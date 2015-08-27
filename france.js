@@ -287,23 +287,6 @@ function france( map ) {
                 }
 
 
-   this.popup = function( i ) {
-
-                  // Prevent load() to reopen a closed popup
-                  map.on( "popupclose", function() { delete $.i } );
-                  $.i = i;
-
-                  // Open a popup showing communes name and data
-                  map.openPopup(L.popup().setLatLng( L.latLng( $.data[i].y, $.data[i].x ) )
-                                         .setContent( '<b>' + $.data[i].name + '</b><br />'
-                                                      + $.title[0] + ' : '
-                                                      + ( $.data[i][ $.stat ] > 0 ? $.plus : "" )
-                                                      + $.data[i][ $.stat ].replace( ".", "," ) + ' '
-                                                      + $.unit) );
-
-                }
-
-
   this.select = function() {
 
                   // Create a control layer and disable click events
@@ -332,6 +315,23 @@ function france( map ) {
                     });
 
                   }
+
+                }
+
+
+   this.popup = function( i ) {
+
+                  // Prevent load() to reopen a closed popup
+                  map.on( "popupclose", function() { delete $.i } );
+                  $.i = i;
+
+                  // Open a popup showing communes name and data
+                  map.openPopup(L.popup().setLatLng( L.latLng( $.data[i].y, $.data[i].x ) )
+                                         .setContent( '<b>' + $.data[i].name + '</b><br />'
+                                                      + $.title[0] + ' : '
+                                                      + ( $.data[i][ $.stat ] > 0 ? $.plus : "" )
+                                                      + $.data[i][ $.stat ].replace( ".", "," ) + ' '
+                                                      + $.unit) );
 
                 }
 
