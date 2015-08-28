@@ -129,7 +129,7 @@ function france( map ) {
                         layer.on( {
                           mouseover: function() {
                                         d3.select( ".legend .value" )
-                                          .attr( "value", 
+                                          .attr( "value", (
                                             feature.id.slice( 2, 3 ) == "-" ? "Canton d"
                                             + ( ( /^[EÉAOUIY]/i ).test( $.data[ feature.id ].name ) ? "’" : "e " ) : "" )
                                             + $.data[ feature.id ].name + " : "
