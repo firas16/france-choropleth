@@ -3,8 +3,8 @@ rvm:
   - 2.1.1
 script:
   - gem install html-proofer
-  - bundle exec htmlproof
   - sudo pip install html5validator
+  - htmlproof
   - html5validator
 branches:
   only:
