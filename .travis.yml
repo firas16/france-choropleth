@@ -1,9 +1,11 @@
-language: python
+language: ruby
+rvm:
+  - 2.1.1
+script:
+  - gem install html-proofer
+  - bundle exec htmlproof
+  - sudo pip install html5validator
+  - html5validator
 branches:
   only:
     - gh-pages
-python:
- - "2.7"
-install:
- - "pip install html5validator"
-script: "html5validator"
