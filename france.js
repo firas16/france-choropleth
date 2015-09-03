@@ -55,7 +55,9 @@ function france( map ) {
                   for ( var j in f[0] ) {
                     if ( j != 'id' ) {
                       for ( var i in f ) {
-                        $.data[ f[i].id ][j] = f[i][j];
+                        if ( $.data[ f[i].id ] ) {
+                          $.data[ f[i].id ][j] = f[i][j];
+                        }
                       }
                     }
                   }
