@@ -1,13 +1,15 @@
-language: ruby
-rvm:
-  - 2.1.1
+language: python
+python:
+  - 3.4
 
 install:
-  - export PATH=$HOME/.local/bin:$PATH
-  - pip install --user html5validator
+  - rvm use 2.1.1 --install --binary --fuzzy
+  - npm install -g mapshaper
+  - pip install html5validator pandas xlrd
   - gem install github-pages html-proofer
 
 script:
+  - (cd data && make)
   - jekyll build
   - htmlproof
   - html5validator
