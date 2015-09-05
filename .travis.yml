@@ -1,11 +1,17 @@
 language: ruby
 rvm:
   - 2.1.1
+
+install:
+  - export PATH=$HOME/.local/bin:$PATH
+  - pip install --user html5validator
+  - gem install github-pages html-proofer
+
 script:
-  - gem install html-proofer
-  - sudo pip install html5validator
+  - jekyll build
   - htmlproof
   - html5validator
+
 branches:
   only:
     - gh-pages
