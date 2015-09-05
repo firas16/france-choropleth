@@ -36,7 +36,7 @@ domain: [x_0, x_1, ..., x_n],                  // values stops and limits...
 ## Requirement
 
 The javascript code requires [Leaflet](https://github.com/Leaflet/Leaflet), [d3js](https://github.com/mbostock/d3), [Awesomplete](https://leaverou.github.io/awesomplete/) and [TopoJSON](https://github.com/mbostock/topojson).
-The `makefile` and `_generate.py` need `python3` and its `pandas` library.
+The `makefile` and `_generate.py` need `python3`, `pandas` and `xlrd` libraries.
 
 
 ## Administrative levels
