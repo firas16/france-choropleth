@@ -3,16 +3,14 @@ python:
   - 3.4
 
 install:
-  - rvm use 2.1.1 --install --binary --fuzzy
+  - rvm use 2.2 --install --binary --fuzzy
   - npm install -g mapshaper
-  - pip install html5validator pandas xlrd
-  - gem install github-pages html-proofer
+  - pip install pandas xlrd
+  - gem install html-proofer
 
 script:
   - (cd data && make)
-  - jekyll build
-  - htmlproof
-  - html5validator
+  - htmlproof --check-html .
 
 branches:
   only:
