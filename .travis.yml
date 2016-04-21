@@ -11,7 +11,3 @@ install:
 script:
   - (cd data && make)
   - htmlproof --check-html .
-
-branches:
-  only:
-    - gh-pages
