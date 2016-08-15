@@ -3,12 +3,12 @@
 
 body {
   font-family: PT Sans, sans-serif;
-  width: 540px;
-  margin: 10px auto;
+  width: 800px;
+  margin: 0 auto;
 }
 
 #map {
-  height: 530px;
+  height: 640px;
   background: #F5F5F3;
 }
 
