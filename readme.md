@@ -1,6 +1,6 @@
 # France Choropleth
 
-This repository shows a complete [choropleth map](https://en.wikipedia.org/wiki/Choropleth_map), made with [Leaflet](https://github.com/Leaflet/Leaflet) and [d3.js](https://github.com/mbostock/d3). It provides a full towns search engine (thanks to [Awesomplete](https://leaverou.github.io/awesomplete/)), legend generation, and layer support. [See the demo.](https://www.sylvaindurand.org/france-choropleth/).
+This repository shows a complete [choropleth map](https://en.wikipedia.org/wiki/Choropleth_map), made with [Leaflet](https://github.com/Leaflet/Leaflet) and [d3.js](https://github.com/mbostock/d3). It provides a full towns search engine (thanks to [Awesomplete](https://leaverou.github.io/awesomplete/)), legend generation, and layer support. [See the demo](https://www.sylvaindurand.org/france-choropleth/).
 
 [![Choropleth demo](readme.gif)](https://www.sylvaindurand.org/france-choropleth/)
 
